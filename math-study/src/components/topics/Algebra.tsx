@@ -1,5 +1,7 @@
 import { FormulaCard } from '../FormulaCard';
+import { FormulaCardWithVisual } from '../FormulaCardWithVisual';
 import { Math } from '../Math';
+import { CoordinatePlaneDiagram } from '../diagrams/CoordinatePlaneDiagram';
 
 interface AlgebraProps {
   visible: boolean;
@@ -12,12 +14,17 @@ export function Algebra({ visible }: AlgebraProps) {
     <section id="algebra" className="scroll-mt-24">
       <h2 className="text-2xl font-bold text-blue-800 border-b-2 border-blue-200 pb-2 mb-6">Algebra & Coordinate Geometry</h2>
       <div className="grid md:grid-cols-2 gap-6">
-        <FormulaCard title="Slope of a Line">
+        <FormulaCardWithVisual
+          title="Slope of a Line"
+          visual={<CoordinatePlaneDiagram mode="slope" />}
+          visualLabel="Show diagram"
+          borderColor="border-blue-500"
+        >
           <p className="text-gray-600 mb-2">Change in <Math>y</Math> over change in <Math>x</Math>:</p>
           <div className="bg-blue-50 p-4 rounded-lg text-center font-mono text-xl">
             <Math display>{'m = \\frac{y_2 - y_1}{x_2 - x_1}'}</Math>
           </div>
-        </FormulaCard>
+        </FormulaCardWithVisual>
         <FormulaCard title="Quadratic Formula">
           <p className="text-gray-600 mb-2">For <Math>ax^2 + bx + c = 0</Math>:</p>
           <div className="bg-blue-50 p-4 rounded-lg text-center font-mono text-xl">
@@ -31,7 +38,12 @@ export function Algebra({ visible }: AlgebraProps) {
             <li><span className="font-semibold">Point-Slope:</span> <Math>y - y_1 = m(x - x_1)</Math></li>
           </ul>
         </FormulaCard>
-        <FormulaCard title="Distance & Midpoint">
+        <FormulaCardWithVisual
+          title="Distance & Midpoint"
+          visual={<CoordinatePlaneDiagram mode="midpoint" />}
+          visualLabel="Show diagram"
+          borderColor="border-blue-500"
+        >
           <div className="space-y-4">
             <div>
               <p className="text-sm text-gray-500">Distance:</p>
@@ -42,7 +54,7 @@ export function Algebra({ visible }: AlgebraProps) {
               <p className="bg-gray-50 p-2 rounded"><Math>{'M = (\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2})'}</Math></p>
             </div>
           </div>
-        </FormulaCard>
+        </FormulaCardWithVisual>
       </div>
     </section>
   );
