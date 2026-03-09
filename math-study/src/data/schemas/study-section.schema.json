@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://space-force-career.local/schemas/study-section.schema.json",
+  "title": "Study Section",
+  "description": "Reusable schema for ASVAB study sections used by app models.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sectionMeta",
+    "topics",
+    "facts",
+    "quizQuestions",
+    "recallDrill",
+    "trapChecklist",
+    "studyPlan"
+  ],
+  "properties": {
+    "sectionMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "examDomain", "sourceTests"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "examDomain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceTests": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "section"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "definition", "section", "color"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "definition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contrast": {
+            "type": "string"
+          },
+          "example": {
+            "type": "string"
+          },
+          "memoryAnchor": {
+            "type": "string"
+          },
+          "highYield": {
+            "type": "boolean",
+            "default": false
+          },
+          "trapPatterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          }
+        }
+      }
+    },
+    "quizQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "prompt",
+          "options",
+          "correctAnswer",
+          "explanation",
+          "difficulty"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "correctAnswer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "distractorTip": {
+            "type": "string"
+          },
+          "memoryAnchor": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "recallDrill": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "question", "correctAnswer", "options"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "correctAnswer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "topicId": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          }
+        }
+      }
+    },
+    "trapChecklist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "pair", "distinction", "topicIds"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "pair": {
+            "type": "string",
+            "minLength": 1
+          },
+          "distinction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topicIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+$"
+            }
+          }
+        }
+      }
+    },
+    "studyPlan": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["day", "durationMinutes", "tasks"],
+        "properties": {
+          "day": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "durationMinutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "tasks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

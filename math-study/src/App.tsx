@@ -14,6 +14,8 @@ import { GeneralScience } from './components/topics/GeneralScience';
 import { QuizModal } from './components/QuizModal';
 import { AsvabPracticeTest } from './components/AsvabPracticeTest';
 import { AstronomyPage } from './pages/AstronomyPage';
+import { BiologyPage } from './pages/BiologyPage';
+import { ChemistryPage } from './pages/ChemistryPage';
 
 const SECTION_IDS = [
   'general-science',
@@ -28,7 +30,36 @@ const SECTION_IDS = [
 ] as const;
 
 const SEARCH_TERMS: Record<string, string[]> = {
-  'general-science': ['astronomy', 'planet', 'solar system', 'asteroid', 'light-year', 'venus', 'jupiter', 'mars'],
+  'general-science': [
+    'astronomy',
+    'planet',
+    'solar system',
+    'asteroid',
+    'light-year',
+    'venus',
+    'jupiter',
+    'mars',
+    'biology',
+    'human body',
+    'cell',
+    'nucleus',
+    'osmosis',
+    'heart',
+    'intestines',
+    'carnivore',
+    'kingdom',
+    'white blood cells',
+    'chemistry',
+    'atom',
+    'atomic number',
+    'electron',
+    'proton',
+    'element',
+    'compound',
+    'mixture',
+    'oxidation',
+    'acid',
+  ],
   algebra: ['slope', 'quadratic', 'line', 'distance', 'midpoint', 'coordinate'],
   'geometry-2d': ['triangle', 'pythagorean', 'circle', 'polygon', 'trapezoid', 'area'],
   'geometry-3d': ['volume', 'surface', 'cube', 'cylinder', 'sphere', 'pyramid', 'cone'],
@@ -50,6 +81,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/astronomy" element={<AstronomyPage />} />
+      <Route path="/biology" element={<BiologyPage />} />
+      <Route path="/chemistry" element={<ChemistryPage />} />
       <Route path="/" element={<MathStudyPage />} />
     </Routes>
   );
