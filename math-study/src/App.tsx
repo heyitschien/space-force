@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Algebra } from './components/topics/Algebra';
@@ -9,9 +10,13 @@ import { Factoring } from './components/topics/Factoring';
 import { ProbabilityStats } from './components/topics/ProbabilityStats';
 import { UnitsConversions } from './components/topics/UnitsConversions';
 import { SpecialTopics } from './components/topics/SpecialTopics';
+import { GeneralScience } from './components/topics/GeneralScience';
 import { QuizModal } from './components/QuizModal';
+import { AsvabPracticeTest } from './components/AsvabPracticeTest';
+import { AstronomyPage } from './pages/AstronomyPage';
 
 const SECTION_IDS = [
+  'general-science',
   'algebra',
   'geometry-2d',
   'geometry-3d',
@@ -23,6 +28,7 @@ const SECTION_IDS = [
 ] as const;
 
 const SEARCH_TERMS: Record<string, string[]> = {
+  'general-science': ['astronomy', 'planet', 'solar system', 'asteroid', 'light-year', 'venus', 'jupiter', 'mars'],
   algebra: ['slope', 'quadratic', 'line', 'distance', 'midpoint', 'coordinate'],
   'geometry-2d': ['triangle', 'pythagorean', 'circle', 'polygon', 'trapezoid', 'area'],
   'geometry-3d': ['volume', 'surface', 'cube', 'cylinder', 'sphere', 'pyramid', 'cone'],
@@ -41,9 +47,19 @@ function sectionMatchesSearch(sectionId: string, term: string): boolean {
 }
 
 export default function App() {
+  return (
+    <Routes>
+      <Route path="/astronomy" element={<AstronomyPage />} />
+      <Route path="/" element={<MathStudyPage />} />
+    </Routes>
+  );
+}
+
+function MathStudyPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeSection, setActiveSection] = useState('algebra');
+  const [activeSection, setActiveSection] = useState('general-science');
   const [quizOpen, setQuizOpen] = useState(false);
+  const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,6 +85,7 @@ export default function App() {
         <Sidebar activeSection={activeSection} />
 
         <main className="lg:w-3/4 space-y-12 pb-24">
+          <GeneralScience visible={sectionMatchesSearch('general-science', searchTerm)} />
           <Algebra visible={sectionMatchesSearch('algebra', searchTerm)} />
           <Geometry2D visible={sectionMatchesSearch('geometry-2d', searchTerm)} />
           <Geometry3D visible={sectionMatchesSearch('geometry-3d', searchTerm)} />
@@ -90,7 +107,18 @@ export default function App() {
         <span className="font-bold">Practice Question</span>
       </button>
 
+      <button
+        onClick={() => setAsvabPracticeOpen(true)}
+        className="fixed bottom-24 right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v12m6-6H6m14-7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2z" />
+        </svg>
+        <span className="font-bold">ASVAB Practice Test</span>
+      </button>
+
       <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {asvabPracticeOpen && <AsvabPracticeTest onClose={() => setAsvabPracticeOpen(false)} />}
     </div>
   );
 }
