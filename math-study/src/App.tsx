@@ -16,6 +16,7 @@ import { AsvabPracticeTest } from './components/AsvabPracticeTest';
 import { AstronomyPage } from './pages/AstronomyPage';
 import { BiologyPage } from './pages/BiologyPage';
 import { ChemistryPage } from './pages/ChemistryPage';
+import { EarthSciencePage } from './pages/EarthSciencePage';
 
 const SECTION_IDS = [
   'general-science',
@@ -59,6 +60,17 @@ const SEARCH_TERMS: Record<string, string[]> = {
     'mixture',
     'oxidation',
     'acid',
+    'earth',
+    'crust',
+    'mantle',
+    'core',
+    'biosphere',
+    'igneous',
+    'pumice',
+    'sedimentary',
+    'metamorphic',
+    'tropical rainforest',
+    'biome',
   ],
   algebra: ['slope', 'quadratic', 'line', 'distance', 'midpoint', 'coordinate'],
   'geometry-2d': ['triangle', 'pythagorean', 'circle', 'polygon', 'trapezoid', 'area'],
@@ -83,6 +95,7 @@ export default function App() {
       <Route path="/astronomy" element={<AstronomyPage />} />
       <Route path="/biology" element={<BiologyPage />} />
       <Route path="/chemistry" element={<ChemistryPage />} />
+      <Route path="/earth-science" element={<EarthSciencePage />} />
       <Route path="/" element={<MathStudyPage />} />
     </Routes>
   );
