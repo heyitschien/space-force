@@ -25,10 +25,12 @@ interface NavCategory {
   items: NavItem[];
 }
 
+const CONTENT_CATEGORY_IDS = ['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'];
+
 const CATEGORIES: NavCategory[] = [
   {
     id: 'general-science',
-    label: 'General Science',
+    label: '1. General Science',
     expanded: true,
     items: [
       { id: 'general-science-astronomy', label: 'Astronomy', href: '/astronomy' },
@@ -39,8 +41,26 @@ const CATEGORIES: NavCategory[] = [
     ],
   },
   {
+    id: 'arithmetic-reasoning',
+    label: '2. Arithmetic Reasoning',
+    expanded: true,
+    items: [{ id: 'arithmetic-reasoning-overview', label: 'Overview', href: '#arithmetic-reasoning' }],
+  },
+  {
+    id: 'word-knowledge',
+    label: '3. Word Knowledge',
+    expanded: false,
+    items: [{ id: 'word-knowledge-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+  },
+  {
+    id: 'paragraph-comprehension',
+    label: '4. Paragraph Comprehension',
+    expanded: false,
+    items: [{ id: 'paragraph-comprehension-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+  },
+  {
     id: 'mathematics-knowledge',
-    label: 'Mathematics Knowledge',
+    label: '5. Mathematics Knowledge',
     expanded: true,
     items: [
       { id: 'algebra', label: 'Algebra & Lines', href: '#algebra' },
@@ -54,18 +74,28 @@ const CATEGORIES: NavCategory[] = [
     ],
   },
   {
-    id: 'future',
-    label: 'Coming Soon',
+    id: 'electronics-information',
+    label: '6. Electronics Information',
     expanded: false,
-    items: [
-      { id: 'arithmetic-reasoning', label: 'Arithmetic Reasoning', href: null, comingSoon: true },
-      { id: 'word-knowledge', label: 'Word Knowledge', href: null, comingSoon: true },
-      { id: 'paragraph-comprehension', label: 'Paragraph Comprehension', href: null, comingSoon: true },
-      { id: 'electronics-information', label: 'Electronics Information', href: null, comingSoon: true },
-      { id: 'mechanical-comprehension', label: 'Mechanical Comprehension', href: null, comingSoon: true },
-      { id: 'auto-shop', label: 'Auto & Shop', href: null, comingSoon: true },
-      { id: 'assembling-objects', label: 'Assembling Objects', href: null, comingSoon: true },
-    ],
+    items: [{ id: 'electronics-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+  },
+  {
+    id: 'auto-shop',
+    label: '7. Auto and Shop',
+    expanded: false,
+    items: [{ id: 'auto-shop-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+  },
+  {
+    id: 'mechanical-comprehension',
+    label: '8. Mechanical Comprehension',
+    expanded: false,
+    items: [{ id: 'mechanical-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+  },
+  {
+    id: 'assembling-objects',
+    label: '9. Assembling Objects',
+    expanded: false,
+    items: [{ id: 'assembling-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
   },
 ];
 
@@ -89,7 +119,7 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
   };
 
   const handleCategoryClick = (cat: NavCategory) => {
-    if (cat.id !== 'future') {
+    if (CONTENT_CATEGORY_IDS.includes(cat.id)) {
       onCategorySelect(cat.id);
     }
     toggle(cat.id);
@@ -154,7 +184,8 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
                       href={href}
                       onClick={(e) => {
                         e.preventDefault();
-                        onCategorySelect('mathematics-knowledge', item.id);
+                        const categoryId = href.includes('arithmetic') ? 'arithmetic-reasoning' : 'mathematics-knowledge';
+                        onCategorySelect(categoryId, item.id.replace(/-overview$/, ''));
                       }}
                       className={`${itemClasses} ${isActive ? 'bg-emerald-50 text-emerald-700' : 'hover:bg-gray-100 text-gray-700'}`}
                     >

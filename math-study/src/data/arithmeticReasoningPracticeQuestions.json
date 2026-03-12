@@ -1,0 +1,1270 @@
+{
+  "meta": {
+    "section": "Arithmetic Reasoning",
+    "timeMinutes": 36,
+    "questionsPerTest": 30,
+    "sources": ["practice-1", "practice-2", "practice-3"]
+  },
+  "questions": [
+    {
+      "id": "ar-p1-001",
+      "order": 1,
+      "text": "If a car is towed 12 miles to the repair shop and the tow charge is $3.50 per mile, how much does the tow cost?",
+      "options": [
+        { "id": "A", "text": "$12.00" },
+        { "id": "B", "text": "$3.50" },
+        { "id": "C", "text": "$42.00" },
+        { "id": "D", "text": "$100.00" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p1-002",
+      "order": 2,
+      "text": "The sum of two numbers is 70. One number is 8 more than the other. What's the smaller number?",
+      "options": [
+        { "id": "A", "text": "31" },
+        { "id": "B", "text": "33" },
+        { "id": "C", "text": "35" },
+        { "id": "D", "text": "36" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p1-003",
+      "order": 3,
+      "text": "A sales manager buys antacid in bottles by the gross. If he goes through 3 bottles of antacid every day, how long will the gross last?",
+      "options": [
+        { "id": "A", "text": "144 days" },
+        { "id": "B", "text": "3 days" },
+        { "id": "C", "text": "20 days" },
+        { "id": "D", "text": "48 days" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p1-004",
+      "order": 4,
+      "text": "Jenny's test grades are 93, 89, 96, and 98. If she wishes to raise her average to 95, what does she need to score on her next test?",
+      "options": [
+        { "id": "A", "text": "100" },
+        { "id": "B", "text": "99" },
+        { "id": "C", "text": "97" },
+        { "id": "D", "text": "95" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p1-005",
+      "order": 5,
+      "text": "A waitress earns an average tip of 12% of the cost of the food she serves. If she serves $375 worth of food in one evening, how much money in tips will she earn on average?",
+      "options": [
+        { "id": "A", "text": "$37" },
+        { "id": "B", "text": "$45" },
+        { "id": "C", "text": "$42" },
+        { "id": "D", "text": "$420" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-006",
+      "order": 6,
+      "text": "How many square feet of carpeting are needed to carpet a 12-foot x 12-foot room?",
+      "options": [
+        { "id": "A", "text": "24" },
+        { "id": "B", "text": "120" },
+        { "id": "C", "text": "48" },
+        { "id": "D", "text": "144" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p1-007",
+      "order": 7,
+      "text": "Carpet stain protector costs $0.65 per square yard to apply. How much will it cost to apply the protector to a 16-foot x 18-foot carpet?",
+      "options": [
+        { "id": "A", "text": "$187.20" },
+        { "id": "B", "text": "$62.40" },
+        { "id": "C", "text": "$20.80" },
+        { "id": "D", "text": "$96.00" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p1-008",
+      "order": 8,
+      "text": "A printing plant that produces baseball cards has a monthly overhead of $6,000. It costs 18 cents to print each card, and the cards sell for 30 cents each. How many cards must the printing plant sell each month in order to make a profit?",
+      "options": [
+        { "id": "A", "text": "30,000" },
+        { "id": "B", "text": "40,000" },
+        { "id": "C", "text": "50,000" },
+        { "id": "D", "text": "60,000" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "inequalities"
+    },
+    {
+      "id": "ar-p1-009",
+      "order": 9,
+      "text": "Joe received an hourly wage of $8.15. His boss gave him a 7% raise. How much does Joe make per hour now?",
+      "options": [
+        { "id": "A", "text": "$0.57" },
+        { "id": "B", "text": "$8.90" },
+        { "id": "C", "text": "$8.72" },
+        { "id": "D", "text": "$13.85" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-010",
+      "order": 10,
+      "text": "Alice leaves her house, driving east at 45 miles per hour (mph). Thirty minutes later, her husband Dave notices she forgot her cell phone and sets off after her. How fast must Dave travel in order to catch up with Alice 3 hours after he leaves?",
+      "options": [
+        { "id": "A", "text": "49 mph" },
+        { "id": "B", "text": "50.5 mph" },
+        { "id": "C", "text": "52.5 mph" },
+        { "id": "D", "text": "54 mph" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p1-011",
+      "order": 11,
+      "text": "A baker made 20 pies. A Boy Scout troop buys one-fourth of his pies, a preschool teacher buys one-third of his pies, and a caterer buys one-sixth of his pies. How many pies does the baker have left?",
+      "options": [
+        { "id": "A", "text": "3⁄4" },
+        { "id": "B", "text": "15" },
+        { "id": "C", "text": "12" },
+        { "id": "D", "text": "5" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p1-012",
+      "order": 12,
+      "text": "Miriam bought five cases of motor oil on sale. A case of motor oil normally costs $24.00, but she was able to purchase the oil for $22.50 a case. How much money did Miriam save on her entire purchase?",
+      "options": [
+        { "id": "A", "text": "$7.50" },
+        { "id": "B", "text": "$1.50" },
+        { "id": "C", "text": "$8.00" },
+        { "id": "D", "text": "$22.50" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p1-013",
+      "order": 13,
+      "text": "A security guard walks the equivalent of six city blocks when he makes a circuit around the building. If he walks at a pace of eight city blocks every 30 minutes, how long will it take him to complete a circuit around the building, assuming he doesn't run into any thieves?",
+      "options": [
+        { "id": "A", "text": "20.00 minutes" },
+        { "id": "B", "text": "3.75 minutes" },
+        { "id": "C", "text": "22.50 minutes" },
+        { "id": "D", "text": "7.5 minutes" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p1-014",
+      "order": 14,
+      "text": "The population of Grand Island, Nebraska, grew by 600,000 people between 1995 and 2005, one-fifth more than the town council predicted. The town council originally predicted the city's population would grow by",
+      "options": [
+        { "id": "A", "text": "400,000" },
+        { "id": "B", "text": "500,000" },
+        { "id": "C", "text": "300,000" },
+        { "id": "D", "text": "100,000" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-015",
+      "order": 15,
+      "text": "Joan is taking an admissions examination. If she has to get at least 40 of the 60 questions right to pass, what percent of the questions does she need to answer correctly?",
+      "options": [
+        { "id": "A", "text": "30%" },
+        { "id": "B", "text": "40%" },
+        { "id": "C", "text": "66 2/3%" },
+        { "id": "D", "text": "60%" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-016",
+      "order": 16,
+      "text": "A teacher deposits $3,000 in a retirement fund. If she doesn't add any more money to the fund, which earns an annual interest rate of 6%, how much money will she have in 1 year?",
+      "options": [
+        { "id": "A", "text": "$180" },
+        { "id": "B", "text": "$3,006" },
+        { "id": "C", "text": "$3,180" },
+        { "id": "D", "text": "$6,000" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-017",
+      "order": 17,
+      "text": "The high school track measures one-quarter of a mile around. How many laps would you have to run in order to run three and a half miles?",
+      "options": [
+        { "id": "A", "text": "12" },
+        { "id": "B", "text": "14" },
+        { "id": "C", "text": "16" },
+        { "id": "D", "text": "18" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p1-018",
+      "order": 18,
+      "text": "Karl is driving in Austria, where the speed limit is posted in kilometers per hour. The car's speedometer shows that he's traveling at a rate of 75 kilometers per hour. Karl knows that a kilometer is about 5/8 of a mile. Approximately how many miles per hour is Karl traveling?",
+      "options": [
+        { "id": "A", "text": "47" },
+        { "id": "B", "text": "120" },
+        { "id": "C", "text": "50" },
+        { "id": "D", "text": "53" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p1-019",
+      "order": 19,
+      "text": "A carpenter earns $12.30 an hour for a 40-hour week. His overtime pay is 1.5 times his base pay. If he puts in a 46-hour week, how much is his weekly pay?",
+      "options": [
+        { "id": "A", "text": "$602.70" },
+        { "id": "B", "text": "$492.00" },
+        { "id": "C", "text": "$565.80" },
+        { "id": "D", "text": "$110.70" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p1-020",
+      "order": 20,
+      "text": "An office building has 30 employees and provides 42 square feet of work space per employee. If five more employees are hired, how much less work space will each employee have?",
+      "options": [
+        { "id": "A", "text": "6 square feet" },
+        { "id": "B", "text": "7 square feet" },
+        { "id": "C", "text": "7.5 square feet" },
+        { "id": "D", "text": "36 square feet" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p1-021",
+      "order": 21,
+      "text": "Stan bought a monster truck for $2,000 down and payments of $450 a month for five years. What's the total cost of the monster truck?",
+      "options": [
+        { "id": "A", "text": "$4,250" },
+        { "id": "B", "text": "$29,000" },
+        { "id": "C", "text": "$27,000" },
+        { "id": "D", "text": "$34,400" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p1-022",
+      "order": 22,
+      "text": "Darla spent $120.37 on groceries in January, $108.45 in February, and $114.86 in March. What was the average monthly cost of Darla's groceries?",
+      "options": [
+        { "id": "A", "text": "$343.68" },
+        { "id": "B", "text": "$110.45" },
+        { "id": "C", "text": "$114.86" },
+        { "id": "D", "text": "$114.56" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p1-023",
+      "order": 23,
+      "text": "Keith is driving from Reno to Kansas City to meet his girlfriend. The distance between the two cities is 1,650 miles. If Keith can average 50 miles per hour, how many hours will it take him to complete his trip?",
+      "options": [
+        { "id": "A", "text": "8 hours" },
+        { "id": "B", "text": "30 hours" },
+        { "id": "C", "text": "33 hours" },
+        { "id": "D", "text": "82 hours" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p1-024",
+      "order": 24,
+      "text": "Michael needs 55 gallons of paint to paint an apartment building. He would like to purchase the paint for the least amount of money possible. Which of the following should he buy?",
+      "options": [
+        { "id": "A", "text": "two 25-gallon buckets at $550 each" },
+        { "id": "B", "text": "eleven 5-gallon buckets at $108 each" },
+        { "id": "C", "text": "six 10-gallon buckets at $215 each" },
+        { "id": "D", "text": "fifty-five 1-gallon buckets at $23 each" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "inequalities"
+    },
+    {
+      "id": "ar-p1-025",
+      "order": 25,
+      "text": "As a member of FEMA, you're required to set up a contingency plan to supply meals to residents of a town devastated by a tornado. A breakfast ration weighs 12 ounces and the lunch and dinner rations weigh 18 ounces each. Assuming a food truck can carry 3 tons and that each resident will receive 3 meals per day, how many residents can you feed from one truck during a 10-day period?",
+      "options": [
+        { "id": "A", "text": "150 residents" },
+        { "id": "B", "text": "200 residents" },
+        { "id": "C", "text": "250 residents" },
+        { "id": "D", "text": "300 residents" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p1-026",
+      "order": 26,
+      "text": "A train headed south for Wichita left the station at the same time a train headed north for Des Moines left the same station. The train headed for Wichita traveled at 55 miles per hour. The train headed for Des Moines traveled at 70 miles per hour. How many miles apart are the trains at the end of 3 hours?",
+      "options": [
+        { "id": "A", "text": "210 miles" },
+        { "id": "B", "text": "165 miles" },
+        { "id": "C", "text": "125 miles" },
+        { "id": "D", "text": "375 miles" }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p1-027",
+      "order": 27,
+      "text": "A carpenter needs to cut four sections, each 3 feet, 8 inches long, from a piece of molding. If the board is only sold by the foot, what's the shortest length of board she can buy?",
+      "options": [
+        { "id": "A", "text": "15 feet" },
+        { "id": "B", "text": "14 feet" },
+        { "id": "C", "text": "16 feet" },
+        { "id": "D", "text": "12 feet" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p1-028",
+      "order": 28,
+      "text": "Kiya had only one coupon for 10% off one frozen turkey breast. The turkey breasts cost $8.50 each, and Kiya wanted to buy two. How much did she pay?",
+      "options": [
+        { "id": "A", "text": "$16.15" },
+        { "id": "B", "text": "$17.00" },
+        { "id": "C", "text": "$15.30" },
+        { "id": "D", "text": "$7.65" }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p1-029",
+      "order": 29,
+      "text": "A recruiter travels 1,100 miles during a 40-hour workweek. If she spends 2/5 of her time traveling, how many hours does she spend traveling?",
+      "options": [
+        { "id": "A", "text": "22" },
+        { "id": "B", "text": "5" },
+        { "id": "C", "text": "16" },
+        { "id": "D", "text": "8" }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p1-030",
+      "order": 30,
+      "text": "Your car uses gasoline at the rate of 21 miles per gallon. If gasoline costs $2.82 per gallon and you drive for 7 hours at a speed of 48 miles per hour, how much will you pay for gasoline for the trip?",
+      "options": [
+        { "id": "A", "text": "$38.18" },
+        { "id": "B", "text": "$45.12" },
+        { "id": "C", "text": "$47.73" },
+        { "id": "D", "text": "$59.27" }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p2-001",
+      "order": 1,
+      "text": "The bride and groom invited 120 guests for their wedding reception. 90 guests arrived. What percent of the guest list was not present?",
+      "options": [
+        { "id": "A", "text": "92%" },
+        { "id": "B", "text": "25%" },
+        { "id": "C", "text": "20.9%" },
+        { "id": "D", "text": "29.9%" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-002",
+      "order": 2,
+      "text": "If x is 75 percent of 360, what is x?",
+      "options": [
+        { "id": "A", "text": "298.50" },
+        { "id": "B", "text": "297.50" },
+        { "id": "C", "text": "279.50" },
+        { "id": "D", "text": "270" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-003",
+      "order": 3,
+      "text": "A philanthropist donates 2/5 of his monthly income for the construction of the nearby church. How much percentage of his monthly income is he donating?",
+      "options": [
+        { "id": "A", "text": "40%" },
+        { "id": "B", "text": "4%" },
+        { "id": "C", "text": "14%" },
+        { "id": "D", "text": "400%" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p2-004",
+      "order": 4,
+      "text": "In a bundle of 30 fruits, 6 are apples and the rest are oranges. What percent of the bundle is composed of apples?",
+      "options": [
+        { "id": "A", "text": "47%" },
+        { "id": "B", "text": "47.75%" },
+        { "id": "C", "text": "20%" },
+        { "id": "D", "text": "40.75%" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-005",
+      "order": 5,
+      "text": "A writer finishes 360 pages of his manuscript in 40 hours. How many pages is his average?",
+      "options": [
+        { "id": "A", "text": "9" },
+        { "id": "B", "text": "12" },
+        { "id": "C", "text": "6" },
+        { "id": "D", "text": "4" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p2-006",
+      "order": 6,
+      "text": "If you were making $5.00 per hour and got a raise to $5.75 per hour, what percentage increase was the raise?",
+      "options": [
+        { "id": "A", "text": "8%" },
+        { "id": "B", "text": "7%" },
+        { "id": "C", "text": "15%" },
+        { "id": "D", "text": "8.5%" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-007",
+      "order": 7,
+      "text": "Grace answered 14 out of the 20 questions correctly. What percentage of the total number of questions was she able to answer correctly?",
+      "options": [
+        { "id": "A", "text": "7%" },
+        { "id": "B", "text": "17%" },
+        { "id": "C", "text": "70%" },
+        { "id": "D", "text": "77%" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-008",
+      "order": 8,
+      "text": "While at work, Nina checks her email once every 80 minutes. In her 8-hour work shift, how many times does she check her email?",
+      "options": [
+        { "id": "A", "text": "6 times" },
+        { "id": "B", "text": "7 times" },
+        { "id": "C", "text": "5 times" },
+        { "id": "D", "text": "4 times" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p2-009",
+      "order": 9,
+      "text": "If a gym measures 25 feet by 38 feet, what is its area?",
+      "options": [
+        { "id": "A", "text": "905 feet" },
+        { "id": "B", "text": "950 feet" },
+        { "id": "C", "text": "509 feet" },
+        { "id": "D", "text": "590 feet" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p2-010",
+      "order": 10,
+      "text": "Jean had $25.86 in her pocket. If shoes cost $7.50 a pair plus 10% tax. How many pairs can she buy?",
+      "options": [
+        { "id": "A", "text": "2" },
+        { "id": "B", "text": "3" },
+        { "id": "C", "text": "4" },
+        { "id": "D", "text": "5" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-011",
+      "order": 11,
+      "text": "A family owns 20 dozens of magazines. After donating 78 magazines to the public library, how many magazines are still with the family?",
+      "options": [
+        { "id": "A", "text": "62" },
+        { "id": "B", "text": "26" },
+        { "id": "C", "text": "162" },
+        { "id": "D", "text": "126" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p2-012",
+      "order": 12,
+      "text": "If 3 garbage trucks can collect the trash of 24 homes in a day, how many trucks are needed to collect in 72 houses?",
+      "options": [
+        { "id": "A", "text": "9" },
+        { "id": "B", "text": "3" },
+        { "id": "C", "text": "24" },
+        { "id": "D", "text": "8" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "ratios"
+    },
+    {
+      "id": "ar-p2-013",
+      "order": 13,
+      "text": "If angles A and B are angles of a parallelogram, what is the sum of the measures of the two angles?",
+      "options": [
+        { "id": "A", "text": "360 degrees" },
+        { "id": "B", "text": "180 degrees" },
+        { "id": "C", "text": "90 degrees" },
+        { "id": "D", "text": "Cannot be determined" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p2-014",
+      "order": 14,
+      "text": "If a box has red and blue balls in a ratio of 3:4 red to blue, how many red balls are there if 80 blue balls are in the box?",
+      "options": [
+        { "id": "A", "text": "40" },
+        { "id": "B", "text": "60" },
+        { "id": "C", "text": "80" },
+        { "id": "D", "text": "30" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "ratios"
+    },
+    {
+      "id": "ar-p2-015",
+      "order": 15,
+      "text": "There are 47 convention participants staying in the university dormitory. If one dormitory room accommodates 6 participants, how many participants will be staying in the room that is not full?",
+      "options": [
+        { "id": "A", "text": "7" },
+        { "id": "B", "text": "6" },
+        { "id": "C", "text": "5" },
+        { "id": "D", "text": "4" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p2-016",
+      "order": 16,
+      "text": "There are 40 rooms that need to be painted and only 6 painters available. If there are still 10 rooms unpainted by the end of the day, what is the average number of rooms that each painter has painted?",
+      "options": [
+        { "id": "A", "text": "5" },
+        { "id": "B", "text": "6" },
+        { "id": "C", "text": "7" },
+        { "id": "D", "text": "8" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p2-017",
+      "order": 17,
+      "text": "Linda needs 2/5 of an ounce of salt to make 1 cup of dip for fries. How many cups of dip will she be able to make if she has 40 ounces of salt?",
+      "options": [
+        { "id": "A", "text": "40 cups" },
+        { "id": "B", "text": "80 cups" },
+        { "id": "C", "text": "100 cups" },
+        { "id": "D", "text": "120 cups" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p2-018",
+      "order": 18,
+      "text": "An architect's floor plan uses 1/2 inch to represent one mile. What is the actual distance represented by 4 1/2 inches?",
+      "options": [
+        { "id": "A", "text": "9 miles" },
+        { "id": "B", "text": "8 miles" },
+        { "id": "C", "text": "7 miles" },
+        { "id": "D", "text": "6 miles" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "ratios"
+    },
+    {
+      "id": "ar-p2-019",
+      "order": 19,
+      "text": "In the deck of cards, there are two spades, 3 hearts, 5 clubs, and 8 diamonds. What is the probability that Alan will pick out a spade?",
+      "options": [
+        { "id": "A", "text": "1/18" },
+        { "id": "B", "text": "1/2" },
+        { "id": "C", "text": "1/9" },
+        { "id": "D", "text": "1/8" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "ratios"
+    },
+    {
+      "id": "ar-p2-020",
+      "order": 20,
+      "text": "If a tutor earns $1 per hour, how much will she earn in a week if she reports on Mondays and Thursdays, 10 AM to 12 noon and 1 PM to 7 PM, and Saturdays, 9 AM to 12 noon?",
+      "options": [
+        { "id": "A", "text": "$20" },
+        { "id": "B", "text": "$19" },
+        { "id": "C", "text": "$18" },
+        { "id": "D", "text": "$17" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p2-021",
+      "order": 21,
+      "text": "What is the prime factorization of 560?",
+      "options": [
+        { "id": "A", "text": "2 x 2 x 5 x 7" },
+        { "id": "B", "text": "5 x 7" },
+        { "id": "C", "text": "2 x 2 x 2 x 2 x 5 x 7" },
+        { "id": "D", "text": "2 x 2 x 2 x 5 x 7" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p2-022",
+      "order": 22,
+      "text": "I've got 26 quarts of milk and my family drinks 2 gallons of milk per week. How many weeks will that last us?",
+      "options": [
+        { "id": "A", "text": "2 weeks" },
+        { "id": "B", "text": "2.5 weeks" },
+        { "id": "C", "text": "2.25 weeks" },
+        { "id": "D", "text": "3.25 weeks" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p2-023",
+      "order": 23,
+      "text": "An employee's ratings on performance appraisals for the last three quarters were 92, 88, and 86. If the required yearly average to qualify for the promotion is 90, how much should the fourth quarter rating be?",
+      "options": [
+        { "id": "A", "text": "90" },
+        { "id": "B", "text": "93" },
+        { "id": "C", "text": "92" },
+        { "id": "D", "text": "94" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p2-024",
+      "order": 24,
+      "text": "ABC Corporation earned only $120,000 during the previous year, one-third only of the management's predicted income. How much earning did the management predict?",
+      "options": [
+        { "id": "A", "text": "$40,000" },
+        { "id": "B", "text": "$360,000" },
+        { "id": "C", "text": "$36,000" },
+        { "id": "D", "text": "$400,000" }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p2-025",
+      "order": 25,
+      "text": "Mae reported to work at 8:45 AM and went out at 6:15 PM. How many hours and minutes did she stay in the office?",
+      "options": [
+        { "id": "A", "text": "9 hours" },
+        { "id": "B", "text": "6 hours" },
+        { "id": "C", "text": "9 hours and 30 minutes" },
+        { "id": "D", "text": "6 hours and 30 minutes" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p2-026",
+      "order": 26,
+      "text": "42 passengers fit on my plane. How many trips will I have to make to transport 104 people 100 miles in 1 day?",
+      "options": [
+        { "id": "A", "text": "4" },
+        { "id": "B", "text": "5" },
+        { "id": "C", "text": "3" },
+        { "id": "D", "text": "2" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p2-027",
+      "order": 27,
+      "text": "A pole is 8 feet long. Its shadow is 6 feet long. If you draw a line from the tip of the pole to the tip of the shadow, how long will the line be?",
+      "options": [
+        { "id": "A", "text": "18 feet" },
+        { "id": "B", "text": "12 feet" },
+        { "id": "C", "text": "20 feet" },
+        { "id": "D", "text": "10 feet" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p2-028",
+      "order": 28,
+      "text": "A company pays its writer $3 for every 300 words written. How much will a writer earn for an article with 760 words?",
+      "options": [
+        { "id": "A", "text": "$9" },
+        { "id": "B", "text": "$3.6" },
+        { "id": "C", "text": "$7.6" },
+        { "id": "D", "text": "$6.7" }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p2-029",
+      "order": 29,
+      "text": "An item in the store originally priced at $300 was marked down 20% then an additional 15%. What was the final sale price of the item?",
+      "options": [
+        { "id": "A", "text": "$240" },
+        { "id": "B", "text": "$204" },
+        { "id": "C", "text": "$195" },
+        { "id": "D", "text": "$200" }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p2-030",
+      "order": 30,
+      "text": "A newlywed couple bought a car with $3500 down payment and needs to pay $580 per month for four and a half years. How much did they have to pay for that car, all in all?",
+      "options": [
+        { "id": "A", "text": "$34,820" },
+        { "id": "B", "text": "$35,802" },
+        { "id": "C", "text": "$5,800" },
+        { "id": "D", "text": "$31,320" }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p3-001",
+      "order": 1,
+      "text": "If a car is towed 12 miles to the repair shop and the tow charge is $3.50 per mile, how much does the tow cost?",
+      "options": [
+        { "id": "A", "text": "$12.00" },
+        { "id": "B", "text": "$3.50" },
+        { "id": "C", "text": "$42.00" },
+        { "id": "D", "text": "$100.00" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p3-002",
+      "order": 2,
+      "text": "The sum of two numbers is 70. One number is 8 more than the other. What's the smaller number?",
+      "options": [
+        { "id": "A", "text": "31" },
+        { "id": "B", "text": "33" },
+        { "id": "C", "text": "35" },
+        { "id": "D", "text": "36" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "word-problem-setup"
+    },
+    {
+      "id": "ar-p3-003",
+      "order": 3,
+      "text": "A sales manager buys antacid in bottles by the gross. If he goes through 3 bottles of antacid every day, how long will the gross last?",
+      "options": [
+        { "id": "A", "text": "144 days" },
+        { "id": "B", "text": "3 days" },
+        { "id": "C", "text": "20 days" },
+        { "id": "D", "text": "48 days" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p3-004",
+      "order": 4,
+      "text": "Jenny's test grades are 93, 89, 96, and 98. If she wishes to raise her average to 95, what does she need to score on her next test?",
+      "options": [
+        { "id": "A", "text": "100" },
+        { "id": "B", "text": "99" },
+        { "id": "C", "text": "97" },
+        { "id": "D", "text": "95" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p3-005",
+      "order": 5,
+      "text": "A waitress earns an average tip of 12% of the cost of the food she serves. If she serves $375 worth of food in one evening, how much money in tips will she earn on average?",
+      "options": [
+        { "id": "A", "text": "$37" },
+        { "id": "B", "text": "$45" },
+        { "id": "C", "text": "$42" },
+        { "id": "D", "text": "$420" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-006",
+      "order": 6,
+      "text": "How many square feet of carpeting are needed to carpet a 12-foot x 12-foot room?",
+      "options": [
+        { "id": "A", "text": "24" },
+        { "id": "B", "text": "120" },
+        { "id": "C", "text": "48" },
+        { "id": "D", "text": "144" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p3-007",
+      "order": 7,
+      "text": "Carpet stain protector costs $0.65 per square yard to apply. How much will it cost to apply the protector to a 16-foot x 18-foot carpet?",
+      "options": [
+        { "id": "A", "text": "$187.20" },
+        { "id": "B", "text": "$62.40" },
+        { "id": "C", "text": "$20.80" },
+        { "id": "D", "text": "$96.00" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p3-008",
+      "order": 8,
+      "text": "A printing plant that produces baseball cards has a monthly overhead of $6,000. It costs 18 cents to print each card, and the cards sell for 30 cents each. How many cards must the printing plant sell each month in order to make a profit?",
+      "options": [
+        { "id": "A", "text": "30,000" },
+        { "id": "B", "text": "40,000" },
+        { "id": "C", "text": "50,000" },
+        { "id": "D", "text": "60,000" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "inequalities"
+    },
+    {
+      "id": "ar-p3-009",
+      "order": 9,
+      "text": "Joe received an hourly wage of $8.15. His boss gave him a 7% raise. How much does Joe make per hour now?",
+      "options": [
+        { "id": "A", "text": "$0.57" },
+        { "id": "B", "text": "$8.90" },
+        { "id": "C", "text": "$8.72" },
+        { "id": "D", "text": "$13.85" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-010",
+      "order": 10,
+      "text": "Alice leaves her house, driving east at 45 miles per hour (mph). Thirty minutes later, her husband Dave notices she forgot her cell phone and sets off after her. How fast must Dave travel in order to catch up with Alice 3 hours after he leaves?",
+      "options": [
+        { "id": "A", "text": "49 mph" },
+        { "id": "B", "text": "50.5 mph" },
+        { "id": "C", "text": "52.5 mph" },
+        { "id": "D", "text": "54 mph" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p3-011",
+      "order": 11,
+      "text": "A baker made 20 pies. A Boy Scout troop buys one-fourth of his pies, a preschool teacher buys one-third of his pies, and a caterer buys one-sixth of his pies. How many pies does the baker have left?",
+      "options": [
+        { "id": "A", "text": "3⁄4" },
+        { "id": "B", "text": "15" },
+        { "id": "C", "text": "12" },
+        { "id": "D", "text": "5" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p3-012",
+      "order": 12,
+      "text": "Miriam bought five cases of motor oil on sale. A case of motor oil normally costs $24.00, but she was able to purchase the oil for $22.50 a case. How much money did Miriam save on her entire purchase?",
+      "options": [
+        { "id": "A", "text": "$7.50" },
+        { "id": "B", "text": "$1.50" },
+        { "id": "C", "text": "$8.00" },
+        { "id": "D", "text": "$22.50" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p3-013",
+      "order": 13,
+      "text": "A security guard walks the equivalent of six city blocks when he makes a circuit around the building. If he walks at a pace of eight city blocks every 30 minutes, how long will it take him to complete a circuit around the building, assuming he doesn't run into any thieves?",
+      "options": [
+        { "id": "A", "text": "20.00 minutes" },
+        { "id": "B", "text": "3.75 minutes" },
+        { "id": "C", "text": "22.50 minutes" },
+        { "id": "D", "text": "7.5 minutes" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p3-014",
+      "order": 14,
+      "text": "The population of Grand Island, Nebraska, grew by 600,000 people between 1995 and 2005, one-fifth more than the town council predicted. The town council originally predicted the city's population would grow by",
+      "options": [
+        { "id": "A", "text": "400,000" },
+        { "id": "B", "text": "500,000" },
+        { "id": "C", "text": "300,000" },
+        { "id": "D", "text": "100,000" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-015",
+      "order": 15,
+      "text": "Joan is taking an admissions examination. If she has to get at least 40 of the 60 questions right to pass, what percent of the questions does she need to answer correctly?",
+      "options": [
+        { "id": "A", "text": "30%" },
+        { "id": "B", "text": "40%" },
+        { "id": "C", "text": "66 2/3%" },
+        { "id": "D", "text": "60%" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-016",
+      "order": 16,
+      "text": "A teacher deposits $3,000 in a retirement fund. If she doesn't add any more money to the fund, which earns an annual interest rate of 6%, how much money will she have in 1 year?",
+      "options": [
+        { "id": "A", "text": "$180" },
+        { "id": "B", "text": "$3,006" },
+        { "id": "C", "text": "$3,180" },
+        { "id": "D", "text": "$6,000" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-017",
+      "order": 17,
+      "text": "The high school track measures one-quarter of a mile around. How many laps would you have to run in order to run three and a half miles?",
+      "options": [
+        { "id": "A", "text": "12" },
+        { "id": "B", "text": "14" },
+        { "id": "C", "text": "16" },
+        { "id": "D", "text": "18" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p3-018",
+      "order": 18,
+      "text": "Karl is driving in Austria, where the speed limit is posted in kilometers per hour. The car's speedometer shows that he's traveling at a rate of 75 kilometers per hour. Karl knows that a kilometer is about 5/8 of a mile. Approximately how many miles per hour is Karl traveling?",
+      "options": [
+        { "id": "A", "text": "47" },
+        { "id": "B", "text": "120" },
+        { "id": "C", "text": "50" },
+        { "id": "D", "text": "53" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p3-019",
+      "order": 19,
+      "text": "A carpenter earns $12.30 an hour for a 40-hour week. His overtime pay is 1.5 times his base pay. If he puts in a 46-hour week, how much is his weekly pay?",
+      "options": [
+        { "id": "A", "text": "$602.70" },
+        { "id": "B", "text": "$492.00" },
+        { "id": "C", "text": "$565.80" },
+        { "id": "D", "text": "$110.70" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p3-020",
+      "order": 20,
+      "text": "An office building has 30 employees and provides 42 square feet of work space per employee. If five more employees are hired, how much less work space will each employee have?",
+      "options": [
+        { "id": "A", "text": "6 square feet" },
+        { "id": "B", "text": "7 square feet" },
+        { "id": "C", "text": "7.5 square feet" },
+        { "id": "D", "text": "36 square feet" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "area-volume"
+    },
+    {
+      "id": "ar-p3-021",
+      "order": 21,
+      "text": "Stan bought a monster truck for $2,000 down and payments of $450 a month for five years. What's the total cost of the monster truck?",
+      "options": [
+        { "id": "A", "text": "$4,250" },
+        { "id": "B", "text": "$29,000" },
+        { "id": "C", "text": "$27,000" },
+        { "id": "D", "text": "$34,400" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "rate-multiply"
+    },
+    {
+      "id": "ar-p3-022",
+      "order": 22,
+      "text": "Darla spent $120.37 on groceries in January, $108.45 in February, and $114.86 in March. What was the average monthly cost of Darla's groceries?",
+      "options": [
+        { "id": "A", "text": "$343.68" },
+        { "id": "B", "text": "$110.45" },
+        { "id": "C", "text": "$114.86" },
+        { "id": "D", "text": "$114.56" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "averages"
+    },
+    {
+      "id": "ar-p3-023",
+      "order": 23,
+      "text": "Keith is driving from Reno to Kansas City to meet his girlfriend. The distance between the two cities is 1,650 miles. If Keith can average 50 miles per hour, how many hours will it take him to complete his trip?",
+      "options": [
+        { "id": "A", "text": "8 hours" },
+        { "id": "B", "text": "30 hours" },
+        { "id": "C", "text": "33 hours" },
+        { "id": "D", "text": "82 hours" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p3-024",
+      "order": 24,
+      "text": "Michael needs 55 gallons of paint to paint an apartment building. He would like to purchase the paint for the least amount of money possible. Which of the following should he buy?",
+      "options": [
+        { "id": "A", "text": "two 25-gallon buckets at $550 each" },
+        { "id": "B", "text": "eleven 5-gallon buckets at $108 each" },
+        { "id": "C", "text": "six 10-gallon buckets at $215 each" },
+        { "id": "D", "text": "fifty-five 1-gallon buckets at $23 each" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "inequalities"
+    },
+    {
+      "id": "ar-p3-025",
+      "order": 25,
+      "text": "As a member of FEMA, you're required to set up a contingency plan to supply meals to residents of a town devastated by a tornado. A breakfast ration weighs 12 ounces and the lunch and dinner rations weigh 18 ounces each. Assuming a food truck can carry 3 tons and that each resident will receive 3 meals per day, how many residents can you feed from one truck during a 10-day period?",
+      "options": [
+        { "id": "A", "text": "150 residents" },
+        { "id": "B", "text": "200 residents" },
+        { "id": "C", "text": "250 residents" },
+        { "id": "D", "text": "300 residents" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p3-026",
+      "order": 26,
+      "text": "A train headed south for Wichita left the station at the same time a train headed north for Des Moines left the same station. The train headed for Wichita traveled at 55 miles per hour. The train headed for Des Moines traveled at 70 miles per hour. How many miles apart are the trains at the end of 3 hours?",
+      "options": [
+        { "id": "A", "text": "210 miles" },
+        { "id": "B", "text": "165 miles" },
+        { "id": "C", "text": "125 miles" },
+        { "id": "D", "text": "375 miles" }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "bucket": "rate-distance-time"
+    },
+    {
+      "id": "ar-p3-027",
+      "order": 27,
+      "text": "A carpenter needs to cut four sections, each 3 feet, 8 inches long, from a piece of molding. If the board is only sold by the foot, what's the shortest length of board she can buy?",
+      "options": [
+        { "id": "A", "text": "15 feet" },
+        { "id": "B", "text": "14 feet" },
+        { "id": "C", "text": "16 feet" },
+        { "id": "D", "text": "12 feet" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "unit-conversion"
+    },
+    {
+      "id": "ar-p3-028",
+      "order": 28,
+      "text": "Kiya had only one coupon for 10% off one frozen turkey breast. The turkey breasts cost $8.50 each, and Kiya wanted to buy two. How much did she pay?",
+      "options": [
+        { "id": "A", "text": "$16.15" },
+        { "id": "B", "text": "$17.00" },
+        { "id": "C", "text": "$15.30" },
+        { "id": "D", "text": "$7.65" }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "bucket": "percents"
+    },
+    {
+      "id": "ar-p3-029",
+      "order": 29,
+      "text": "A recruiter travels 1,100 miles during a 40-hour workweek. If she spends 2/5 of her time traveling, how many hours does she spend traveling?",
+      "options": [
+        { "id": "A", "text": "22" },
+        { "id": "B", "text": "5" },
+        { "id": "C", "text": "16" },
+        { "id": "D", "text": "8" }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "bucket": "fractions"
+    },
+    {
+      "id": "ar-p3-030",
+      "order": 30,
+      "text": "Your car uses gasoline at the rate of 21 miles per gallon. If gasoline costs $2.82 per gallon and you drive for 7 hours at a speed of 48 miles per hour, how much will you pay for gasoline for the trip?",
+      "options": [
+        { "id": "A", "text": "$38.18" },
+        { "id": "B", "text": "$45.12" },
+        { "id": "C", "text": "$47.73" },
+        { "id": "D", "text": "$59.27" }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "bucket": "rate-distance-time"
+    }
+  ]
+}

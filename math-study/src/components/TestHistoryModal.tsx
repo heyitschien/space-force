@@ -1,9 +1,12 @@
 import { Clock, X } from 'lucide-react';
-import { getResults } from '../utils/testResults';
+import { getResults, getArResults } from '../utils/testResults';
+
+type TestHistorySection = 'general-science' | 'arithmetic-reasoning';
 
 interface TestHistoryModalProps {
   isOpen: boolean;
   onClose: () => void;
+  section?: TestHistorySection;
 }
 
 function formatDate(iso: string): string {
@@ -27,16 +30,17 @@ function formatTime(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
-export function TestHistoryModal({ isOpen, onClose }: TestHistoryModalProps) {
+export function TestHistoryModal({ isOpen, onClose, section = 'general-science' }: TestHistoryModalProps) {
   if (!isOpen) return null;
 
-  const results = getResults();
+  const results = section === 'arithmetic-reasoning' ? getArResults() : getResults();
+  const sectionLabel = section === 'arithmetic-reasoning' ? 'Arithmetic Reasoning' : 'General Science';
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 p-4">
       <div className="max-h-[85vh] w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4">
-          <h2 className="text-xl font-bold text-slate-900">Test History</h2>
+          <h2 className="text-xl font-bold text-slate-900">{sectionLabel} Test History</h2>
           <button
             onClick={onClose}
             className="rounded-full p-2 text-slate-500 hover:bg-slate-200 hover:text-slate-700"
@@ -58,7 +62,7 @@ export function TestHistoryModal({ isOpen, onClose }: TestHistoryModalProps) {
                   <div>
                     <p className="font-semibold text-slate-800">{formatDate(r.date)}</p>
                     <p className="text-sm text-slate-500">
-                      {r.mode === 'mix' ? 'Mix' : `Practice ${r.mode.replace('practice-', '')}`}
+                      {r.mode === 'mix' ? 'Mix' : `Practice Test ${r.mode.replace('practice-', '')}`}
                     </p>
                   </div>
                   <div className="flex items-center gap-4">

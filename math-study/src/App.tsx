@@ -14,6 +14,8 @@ import { GeneralScience } from './components/topics/GeneralScience';
 import { QuizModal } from './components/QuizModal';
 import { AsvabPracticeTest } from './components/AsvabPracticeTest';
 import { GeneralScienceTestLauncher } from './components/GeneralScienceTestLauncher';
+import { ArithmeticReasoningTestLauncher } from './components/ArithmeticReasoningTestLauncher';
+import { ArithmeticReasoning } from './components/topics/ArithmeticReasoning';
 import { PracticeMenu } from './components/PracticeMenu';
 import { TestHistoryModal } from './components/TestHistoryModal';
 import { AstronomyPage } from './pages/AstronomyPage';
@@ -33,7 +35,7 @@ const MATH_SECTION_IDS = [
   'special-topics',
 ] as const;
 
-type ActiveCategory = 'general-science' | 'mathematics-knowledge';
+type ActiveCategory = 'general-science' | 'arithmetic-reasoning' | 'mathematics-knowledge';
 
 const SEARCH_TERMS: Record<string, string[]> = {
   'general-science': [
@@ -98,6 +100,7 @@ const SEARCH_TERMS: Record<string, string[]> = {
   'probability-stats': ['mean', 'median', 'mode', 'probability', 'statistics'],
   'units-conversions': ['unit', 'convert', 'length', 'mass', 'capacity', 'time'],
   'special-topics': ['interest', 'distance', 'rate', 'temperature', 'pemdas', 'percent'],
+  'arithmetic-reasoning': ['fractions', 'decimals', 'percents', 'ratios', 'averages', 'word problem', 'rate', 'distance', 'time'],
 };
 
 function sectionMatchesSearch(sectionId: string, term: string): boolean {
@@ -127,10 +130,11 @@ function MathStudyPage() {
   const [quizOpen, setQuizOpen] = useState(false);
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
   const [generalSciencePracticeOpen, setGeneralSciencePracticeOpen] = useState(false);
+  const [arithmeticReasoningPracticeOpen, setArithmeticReasoningPracticeOpen] = useState(false);
   const [testHistoryOpen, setTestHistoryOpen] = useState(false);
 
   const handleCategorySelect = (categoryId: string, sectionId?: string) => {
-    if (categoryId === 'future') return;
+    if (!['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'].includes(categoryId)) return;
     setActiveCategory(categoryId as ActiveCategory);
     if (sectionId) {
       setTimeout(() => {
@@ -141,11 +145,12 @@ function MathStudyPage() {
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
-    if (hash && (MATH_SECTION_IDS as readonly string[]).includes(hash)) {
+    if (hash === 'arithmetic-reasoning') {
+      setActiveCategory('arithmetic-reasoning');
+      setTimeout(() => document.getElementById('arithmetic-reasoning')?.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else if (hash && (MATH_SECTION_IDS as readonly string[]).includes(hash)) {
       setActiveCategory('mathematics-knowledge');
-      setTimeout(() => {
-        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(() => document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   }, []);
 
@@ -181,6 +186,9 @@ function MathStudyPage() {
           {activeCategory === 'general-science' && (
             <GeneralScience visible={sectionMatchesSearch('general-science', searchTerm)} />
           )}
+          {activeCategory === 'arithmetic-reasoning' && (
+            <ArithmeticReasoning visible={sectionMatchesSearch('arithmetic-reasoning', searchTerm)} />
+          )}
           {activeCategory === 'mathematics-knowledge' && (
             <>
               <Algebra visible={sectionMatchesSearch('algebra', searchTerm)} />
@@ -198,6 +206,7 @@ function MathStudyPage() {
 
       <PracticeMenu
         onGeneralScienceTest={() => setGeneralSciencePracticeOpen(true)}
+        onArithmeticReasoningTest={() => setArithmeticReasoningPracticeOpen(true)}
         onMathPracticeTest={() => setAsvabPracticeOpen(true)}
         onPracticeQuestion={() => setQuizOpen(true)}
         onTestHistory={() => setTestHistoryOpen(true)}
@@ -208,6 +217,9 @@ function MathStudyPage() {
       {asvabPracticeOpen && <AsvabPracticeTest onClose={() => setAsvabPracticeOpen(false)} />}
       {generalSciencePracticeOpen && (
         <GeneralScienceTestLauncher onClose={() => setGeneralSciencePracticeOpen(false)} />
+      )}
+      {arithmeticReasoningPracticeOpen && (
+        <ArithmeticReasoningTestLauncher onClose={() => setArithmeticReasoningPracticeOpen(false)} />
       )}
     </div>
   );

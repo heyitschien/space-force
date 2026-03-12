@@ -3,6 +3,7 @@ import { ClipboardList, History, Lightbulb, FileText } from 'lucide-react';
 
 interface PracticeMenuProps {
   onGeneralScienceTest: () => void;
+  onArithmeticReasoningTest: () => void;
   onMathPracticeTest: () => void;
   onPracticeQuestion: () => void;
   onTestHistory: () => void;
@@ -10,6 +11,7 @@ interface PracticeMenuProps {
 
 export function PracticeMenu({
   onGeneralScienceTest,
+  onArithmeticReasoningTest,
   onMathPracticeTest,
   onPracticeQuestion,
   onTestHistory,
@@ -60,6 +62,21 @@ export function PracticeMenu({
               <div>
                 <p className="font-semibold text-slate-800">General Science Test</p>
                 <p className="text-xs text-slate-500">25 questions, 11 min</p>
+              </div>
+            </button>
+            <button
+              onClick={() => {
+                onArithmeticReasoningTest();
+                setOpen(false);
+              }}
+              className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left transition-colors hover:bg-rose-50"
+            >
+              <div className="rounded-lg bg-rose-100 p-2">
+                <FileText className="h-5 w-5 text-rose-600" />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-800">Arithmetic Reasoning Test</p>
+                <p className="text-xs text-slate-500">30 questions, 36 min</p>
               </div>
             </button>
             <button
