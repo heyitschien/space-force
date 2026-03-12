@@ -267,6 +267,54 @@ export function BodySystemsDiagram({ onSelect, selectedId }: BodySystemsDiagramP
           </text>
         </g>
 
+        {/* Spinal cord / nervous system */}
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select nervous system fact"
+          {...btn('nervous-system')}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="95"
+            y="65"
+            width="10"
+            height="95"
+            rx="2"
+            fill={sel('nervous-system') ? '#a5b4fc' : '#c7d2fe'}
+            stroke={sel('nervous-system') ? '#4f46e5' : '#6366f1'}
+            strokeWidth={sel('nervous-system') ? 2 : 1}
+            className="transition-all hover:fill-indigo-100"
+          />
+          <text x="100" y="115" textAnchor="middle" fontSize="6" fill="#4338ca" transform="rotate(-90 100 115)">
+            Spinal cord
+          </text>
+        </g>
+
+        {/* Right ventricle (pumps to lungs) */}
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select right ventricle fact"
+          {...btn('right-ventricle')}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="118"
+            y="118"
+            width="28"
+            height="18"
+            rx="4"
+            fill={sel('right-ventricle') ? '#93c5fd' : '#bfdbfe'}
+            stroke={sel('right-ventricle') ? '#1d4ed8' : '#3b82f6'}
+            strokeWidth={sel('right-ventricle') ? 2 : 1}
+            className="transition-all"
+          />
+          <text x="132" y="130" textAnchor="middle" fontSize="6" fill="#1e40af">
+            RV→lungs
+          </text>
+        </g>
+
         {/* Legs */}
         <rect x="75" y="220" width="20" height="50" rx="4" fill="#e2e8f0" stroke="#94a3b8" />
         <rect x="105" y="220" width="20" height="50" rx="4" fill="#e2e8f0" stroke="#94a3b8" />

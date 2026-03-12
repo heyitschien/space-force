@@ -29,7 +29,7 @@ const TAB_TOPIC_IDS: Record<
 > = {
   metrics: ['meter-cm', 'kilometer'],
   temperature: ['celsius-boiling', 'celsius-freezing', 'melting-point', 'boiling-point'],
-  light: ['speed-of-light', 'light-year'],
+  light: ['speed-of-light', 'light-year', 'quantum'],
   motion: ['velocity', 'speed', 'newton-first', 'newton-second', 'newton-third'],
   energy: ['energy', 'power'],
 };

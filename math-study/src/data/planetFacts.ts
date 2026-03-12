@@ -10,7 +10,10 @@ export type CelestialId =
   | 'uranus'
   | 'neptune'
   | 'proxima-centauri'
-  | 'light-year';
+  | 'light-year'
+  | 'lunar-eclipse'
+  | 'blue-moon'
+  | 'ganymede';
 
 export interface CelestialFact {
   id: CelestialId;
@@ -111,6 +114,27 @@ export const PLANET_FACTS: CelestialFact[] = [
     memoryAnchor: 'Light-year = distance, not time.',
     color: '#a5f3fc',
   },
+  {
+    id: 'lunar-eclipse',
+    name: 'Lunar Eclipse',
+    fact: 'When the Moon moves into the Earth\'s shadow. (Solar eclipse = Moon blocks Sun.)',
+    memoryAnchor: 'Moon in Earth\'s shadow = lunar eclipse.',
+    color: '#6366f1',
+  },
+  {
+    id: 'blue-moon',
+    name: 'Blue Moon',
+    fact: 'The second full moon in a single calendar month.',
+    memoryAnchor: 'Second full moon in month = blue moon.',
+    color: '#818cf8',
+  },
+  {
+    id: 'ganymede',
+    name: 'Ganymede',
+    fact: 'Jupiter\'s moon; the largest moon in the solar system.',
+    memoryAnchor: 'Largest moon = Ganymede.',
+    color: '#f59e0b',
+  },
 ];
 
 export const ASVAB_FACTS_CARDS = PLANET_FACTS.filter(
@@ -122,7 +146,10 @@ export const ASVAB_FACTS_CARDS = PLANET_FACTS.filter(
     f.id === 'uranus' ||
     f.id === 'saturn' ||
     f.id === 'proxima-centauri' ||
-    f.id === 'light-year'
+    f.id === 'light-year' ||
+    f.id === 'lunar-eclipse' ||
+    f.id === 'blue-moon' ||
+    f.id === 'ganymede'
 );
 
 export function getFactById(id: CelestialId): CelestialFact | undefined {
@@ -198,5 +225,29 @@ export const ASTRONOMY_QUIZ_QUESTIONS: AstronomyQuizQuestion[] = [
     correctAnswer: 'The distance light travels in one year',
     explanation: 'A light-year measures distance, not time.',
     memoryAnchor: 'Light-year = distance, not time.',
+  },
+  {
+    id: 'lunar-eclipse',
+    prompt: 'When the moon moves into the Earth\'s shadow, a ____ occurs.',
+    options: ['Half moon', 'Full moon', 'Solar eclipse', 'Lunar eclipse'],
+    correctAnswer: 'Lunar eclipse',
+    explanation: 'A lunar eclipse happens when Earth blocks sunlight from reaching the Moon.',
+    memoryAnchor: 'Moon in Earth\'s shadow = lunar eclipse.',
+  },
+  {
+    id: 'blue-moon',
+    prompt: 'If there are two full moons in a single month, the second full moon is called:',
+    options: ['New moon', 'Full moon', 'Blue moon', 'Secondary moon'],
+    correctAnswer: 'Blue moon',
+    explanation: 'A blue moon is the second full moon in a calendar month.',
+    memoryAnchor: 'Second full moon in month = blue moon.',
+  },
+  {
+    id: 'largest-moon',
+    prompt: 'The largest moon in the solar system is:',
+    options: ['Ganymede', 'Titan', 'Io', 'Charon'],
+    correctAnswer: 'Ganymede',
+    explanation: 'Ganymede, a moon of Jupiter, is the largest moon in the solar system.',
+    memoryAnchor: 'Largest moon = Ganymede.',
   },
 ];

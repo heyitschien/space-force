@@ -11,6 +11,7 @@ interface LightConstantsDiagramProps {
 const ITEMS: Array<{ id: MeasurementPhysicsTopicId; label: string; sub: string }> = [
   { id: 'speed-of-light', label: 'Speed of light', sub: '~186,000 mi/s' },
   { id: 'light-year', label: 'Light-year', sub: 'Distance, not time' },
+  { id: 'quantum', label: 'Quantum', sub: 'Single unit of quanta' },
 ];
 
 export function LightConstantsDiagram({

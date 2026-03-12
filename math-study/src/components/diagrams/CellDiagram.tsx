@@ -49,6 +49,10 @@ export function CellDiagram({ onSelect, selectedId }: CellDiagramProps) {
   const mito = mem('mitochondria');
   const osmo = mem('osmosis');
   const diff = mem('diffusion');
+  const resp = mem('respiration');
+  const cleav = mem('cleavage');
+  const gene = mem('gene');
+  const proto = mem('protoplasm');
 
   return (
     <DiagramContainer
@@ -57,7 +61,7 @@ export function CellDiagram({ onSelect, selectedId }: CellDiagramProps) {
       aria-label="Interactive cell diagram with nucleus, membrane, cytoplasm, mitochondria, osmosis and diffusion"
     >
       <svg
-        viewBox="0 0 220 200"
+        viewBox="0 0 220 240"
         className="max-h-80 w-full"
         onClick={(e) => e.stopPropagation()}
       >
@@ -213,6 +217,107 @@ export function CellDiagram({ onSelect, selectedId }: CellDiagramProps) {
           />
           <text x="162" y="195" textAnchor="middle" fontSize="9" fill="#166534">
             Diffusion
+          </text>
+        </g>
+        {/* Cell processes - second row */}
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select respiration fact"
+          onClick={resp.onClick}
+          onKeyDown={resp.onKeyDown}
+          onFocus={resp.onFocus}
+          onBlur={resp.onBlur}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="20"
+            y="210"
+            width="45"
+            height="14"
+            rx="4"
+            fill={resp.isSelected ? '#bbf7d0' : '#f0fdf4'}
+            stroke={resp.isSelected ? '#16a34a' : '#86efac'}
+            strokeWidth={1}
+            className="transition-all"
+          />
+          <text x="42" y="220" textAnchor="middle" fontSize="7" fill="#166534">
+            Respiration
+          </text>
+        </g>
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select cleavage fact"
+          onClick={cleav.onClick}
+          onKeyDown={cleav.onKeyDown}
+          onFocus={cleav.onFocus}
+          onBlur={cleav.onBlur}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="72"
+            y="210"
+            width="45"
+            height="14"
+            rx="4"
+            fill={cleav.isSelected ? '#bbf7d0' : '#f0fdf4'}
+            stroke={cleav.isSelected ? '#16a34a' : '#86efac'}
+            strokeWidth={1}
+            className="transition-all"
+          />
+          <text x="94" y="220" textAnchor="middle" fontSize="7" fill="#166534">
+            Cleavage
+          </text>
+        </g>
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select gene fact"
+          onClick={gene.onClick}
+          onKeyDown={gene.onKeyDown}
+          onFocus={gene.onFocus}
+          onBlur={gene.onBlur}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="124"
+            y="210"
+            width="45"
+            height="14"
+            rx="4"
+            fill={gene.isSelected ? '#bbf7d0' : '#f0fdf4'}
+            stroke={gene.isSelected ? '#16a34a' : '#86efac'}
+            strokeWidth={1}
+            className="transition-all"
+          />
+          <text x="146" y="220" textAnchor="middle" fontSize="7" fill="#166534">
+            Gene
+          </text>
+        </g>
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Select protoplasm fact"
+          onClick={proto.onClick}
+          onKeyDown={proto.onKeyDown}
+          onFocus={proto.onFocus}
+          onBlur={proto.onBlur}
+          className="cursor-pointer outline-none"
+        >
+          <rect
+            x="172"
+            y="210"
+            width="48"
+            height="14"
+            rx="4"
+            fill={proto.isSelected ? '#bbf7d0' : '#f0fdf4'}
+            stroke={proto.isSelected ? '#16a34a' : '#86efac'}
+            strokeWidth={1}
+            className="transition-all"
+          />
+          <text x="196" y="220" textAnchor="middle" fontSize="7" fill="#166534">
+            Protoplasm
           </text>
         </g>
       </svg>

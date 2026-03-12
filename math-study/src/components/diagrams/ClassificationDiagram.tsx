@@ -17,6 +17,9 @@ const CARD_ITEMS: { id: BiologyTopicId; label: string; sub: string; letter: stri
   { id: 'carbs', label: 'Carbs', sub: 'Quick energy', letter: 'C' },
   { id: 'fats', label: 'Fats', sub: 'Long-term energy', letter: 'F' },
   { id: 'water', label: 'Water', sub: 'Transport, temp', letter: 'W' },
+  { id: 'domains', label: 'Domains', sub: 'Eukarya, Bacteria, Archaea', letter: 'D' },
+  { id: 'marsupials', label: 'Marsupials', sub: 'Kangaroo', letter: 'M' },
+  { id: 'food-chains', label: 'Food chains', sub: 'Plankton = Producer', letter: 'F' },
 ];
 
 export function ClassificationDiagram({ onSelect, selectedId }: ClassificationDiagramProps) {

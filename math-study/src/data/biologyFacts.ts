@@ -22,7 +22,16 @@ export type BiologyTopicId =
   | 'protein-apples'
   | 'carbs'
   | 'fats'
-  | 'water';
+  | 'water'
+  | 'domains'
+  | 'marsupials'
+  | 'respiration'
+  | 'cleavage'
+  | 'gene'
+  | 'protoplasm'
+  | 'right-ventricle'
+  | 'nervous-system'
+  | 'food-chains';
 
 export interface BiologyFact {
   id: BiologyTopicId;
@@ -142,10 +151,10 @@ export const BIOLOGY_FACTS: BiologyFact[] = [
   {
     id: 'heart',
     name: 'Human Heart',
-    fact: 'The human heart has 4 chambers: two atria and two ventricles.',
+    fact: 'The human heart has 4 chambers: two atria and two ventricles. Right ventricle pumps blood to the lungs.',
     contrast: 'Heart pumps blood; lungs exchange gases.',
     example: 'O2 enters blood in lungs, then heart circulates that blood.',
-    memoryAnchor: 'Heart = 4 chambers.',
+    memoryAnchor: 'Heart = 4 chambers. Right ventricle → lungs.',
     color: '#3b82f6',
     section: 'systems',
   },
@@ -288,6 +297,99 @@ export const BIOLOGY_FACTS: BiologyFact[] = [
     example: 'Blood is mostly water; it transports nutrients.',
     memoryAnchor: 'Water = transport, temp control, reactions.',
     color: '#0ea5e9',
+    section: 'classification',
+  },
+  // Missed topics — cell
+  {
+    id: 'respiration',
+    name: 'Cellular Respiration',
+    fact: 'The process by which energy is provided at the cellular level. Not metabolism (broader term).',
+    contrast: 'Respiration = cellular energy; metabolism = all chemical processes in body.',
+    example: 'Mitochondria carry out cellular respiration to produce ATP.',
+    memoryAnchor: 'Energy at cellular level = respiration.',
+    color: '#166534',
+    section: 'cell',
+  },
+  {
+    id: 'cleavage',
+    name: 'Cleavage',
+    fact: 'A series of cell divisions that results in the formation of an embryo. Not mitosis or meiosis.',
+    contrast: 'Cleavage = embryo formation; mitosis = general cell division; meiosis = sex cells.',
+    example: 'Early embryo development involves rapid cleavage divisions.',
+    memoryAnchor: 'Cell divisions forming embryo = cleavage.',
+    color: '#15803d',
+    section: 'cell',
+  },
+  {
+    id: 'gene',
+    name: 'Gene',
+    fact: 'A DNA unit that contains the code for a particular characteristic.',
+    contrast: 'Gene = unit for one trait; chromosome = carries many genes.',
+    example: 'Eye color is determined by genes.',
+    memoryAnchor: 'DNA unit for characteristic = gene.',
+    color: '#22c55e',
+    section: 'cell',
+  },
+  {
+    id: 'protoplasm',
+    name: 'Cell Protoplasm',
+    fact: 'Protoplasm and cells are made up mostly of water. Water is the most abundant inorganic substance in cells.',
+    contrast: 'Water is inorganic; protein and sugar are organic.',
+    example: 'Animal cells are mostly water by weight.',
+    memoryAnchor: 'Protoplasm mostly water. Inorganic in cells = water.',
+    color: '#0ea5e9',
+    section: 'cell',
+  },
+  // Missed topics — systems
+  {
+    id: 'right-ventricle',
+    name: 'Right Ventricle',
+    fact: 'The chamber of the heart that pumps blood to the lungs.',
+    contrast: 'Right ventricle → lungs; left ventricle → body.',
+    example: 'Deoxygenated blood goes from right ventricle to lungs for O2.',
+    memoryAnchor: 'Chamber pumping to lungs = right ventricle.',
+    color: '#3b82f6',
+    section: 'systems',
+  },
+  {
+    id: 'nervous-system',
+    name: 'Nervous System',
+    fact: 'The spinal cord is part of the nervous system. Brain, spinal cord, and nerves.',
+    contrast: 'Nervous = brain, spinal cord, nerves; circulatory = heart, blood vessels.',
+    example: 'Spinal cord carries signals between brain and body.',
+    memoryAnchor: 'Spinal cord part of = nervous system.',
+    color: '#6366f1',
+    section: 'systems',
+  },
+  // Missed topics — classification
+  {
+    id: 'domains',
+    name: 'Biological Domains',
+    fact: 'The three domains of life are Eukarya, Bacteria, and Archaea. Regelia is NOT a domain.',
+    contrast: 'Domains = Eukarya, Bacteria, Archaea. Regelia is a distractor.',
+    example: 'Humans belong to domain Eukarya.',
+    memoryAnchor: 'Domains: Eukarya, Bacteria, Archaea. Not Regelia.',
+    color: '#f59e0b',
+    section: 'classification',
+  },
+  {
+    id: 'marsupials',
+    name: 'Marsupials',
+    fact: 'Mammals that carry young in a pouch. Kangaroo is a marsupial.',
+    contrast: 'Marsupial = pouch; platypus = monotreme; squirrel = placental mammal.',
+    example: 'Kangaroo, koala, and opossum are marsupials.',
+    memoryAnchor: 'Example marsupial = Kangaroo.',
+    color: '#eab308',
+    section: 'classification',
+  },
+  {
+    id: 'food-chains',
+    name: 'Food Chain Roles',
+    fact: 'Producers (e.g., plankton, plants) make food from sunlight. Plankton → Shrimp → Salmon: plankton is the producer.',
+    contrast: 'Producer = makes food; consumer = eats others; decomposer = breaks down dead matter.',
+    example: 'In Plankton → Shrimp → Salmon → Sea Gull, plankton = producer.',
+    memoryAnchor: 'Plankton role = Producer.',
+    color: '#84cc16',
     section: 'classification',
   },
 ];
@@ -530,6 +632,87 @@ export const BIOLOGY_QUIZ_QUESTIONS: BiologyQuizQuestion[] = [
     distractorTip: 'Water does not provide calories; it supports body processes.',
     memoryAnchor: 'Water = transport, temp control, reactions.',
   },
+  {
+    id: 'respiration',
+    prompt: 'The process by which energy is provided at the cellular level is called:',
+    options: ['Respiration', 'Recreation', 'Oxidation', 'Metabolism'],
+    correctAnswer: 'Respiration',
+    explanation: 'Cellular respiration provides energy at the cellular level.',
+    distractorTip: 'Metabolism is broader (all chemical processes); respiration is specifically cellular energy.',
+    memoryAnchor: 'Energy at cellular level = respiration.',
+  },
+  {
+    id: 'cleavage',
+    prompt: 'A series of cell divisions that results in the formation of an embryo is called:',
+    options: ['Mitosis', 'Meiosis', 'Osmosis', 'Cleavage'],
+    correctAnswer: 'Cleavage',
+    explanation: 'Cleavage is the rapid cell division that forms an embryo.',
+    distractorTip: 'Mitosis and meiosis are general cell division types; cleavage is specific to embryo formation.',
+    memoryAnchor: 'Cell divisions forming embryo = cleavage.',
+  },
+  {
+    id: 'gene',
+    prompt: 'A _____ is a DNA unit that contains the code for a particular characteristic.',
+    options: ['Gene', 'Chromosome', 'Allele', 'Double helix'],
+    correctAnswer: 'Gene',
+    explanation: 'A gene is a DNA unit that codes for a specific trait.',
+    distractorTip: 'Chromosomes carry many genes; a gene is the unit for one characteristic.',
+    memoryAnchor: 'DNA unit for characteristic = gene.',
+  },
+  {
+    id: 'protoplasm',
+    prompt: 'Cell protoplasm is made up mostly of:',
+    options: ['Water', 'Oxygen', 'Sugar', 'Protein'],
+    correctAnswer: 'Water',
+    explanation: 'Protoplasm and cells are mostly water.',
+    distractorTip: 'Water is the most abundant inorganic substance in cells.',
+    memoryAnchor: 'Protoplasm mostly water.',
+  },
+  {
+    id: 'right-ventricle',
+    prompt: 'The chamber of the heart that pumps blood to the lungs is called the:',
+    options: ['Right ventricle', 'Left ventricle', 'Right atrium', 'Left atrium'],
+    correctAnswer: 'Right ventricle',
+    explanation: 'The right ventricle pumps deoxygenated blood to the lungs.',
+    distractorTip: 'Right ventricle → lungs; left ventricle → body.',
+    memoryAnchor: 'Chamber pumping to lungs = right ventricle.',
+  },
+  {
+    id: 'nervous-system',
+    prompt: 'The spinal cord is part of the:',
+    options: ['Circulatory system', 'Nervous system', 'Respiratory system', 'Digestive system'],
+    correctAnswer: 'Nervous system',
+    explanation: 'The spinal cord, brain, and nerves make up the nervous system.',
+    distractorTip: 'Spinal cord carries nerve signals; it is not part of circulatory or respiratory systems.',
+    memoryAnchor: 'Spinal cord part of = nervous system.',
+  },
+  {
+    id: 'domains',
+    prompt: 'All of the following are domains except:',
+    options: ['Regelia', 'Eukarya', 'Bacteria', 'Archaea'],
+    correctAnswer: 'Regelia',
+    explanation: 'The three domains are Eukarya, Bacteria, and Archaea. Regelia is not a domain.',
+    distractorTip: 'Regelia is a common distractor; the real domains are Eukarya, Bacteria, Archaea.',
+    memoryAnchor: 'Domains: Eukarya, Bacteria, Archaea. Not Regelia.',
+  },
+  {
+    id: 'marsupials',
+    prompt: 'An example of a marsupial is:',
+    options: ['Squirrel', 'Kangaroo', 'Platypus', 'Woodpecker'],
+    correctAnswer: 'Kangaroo',
+    explanation: 'Kangaroos are marsupials; they carry young in a pouch.',
+    distractorTip: 'Marsupials have pouches; platypus is a monotreme; squirrel is placental.',
+    memoryAnchor: 'Example marsupial = Kangaroo.',
+  },
+  {
+    id: 'food-chains',
+    prompt: 'In this food chain, Plankton → Shrimp → Salmon → Sea Gull → Falcon, the role of the plankton is:',
+    options: ['Producer', 'Primary consumer', 'Secondary consumer', 'Decomposer'],
+    correctAnswer: 'Producer',
+    explanation: 'Plankton (like phytoplankton) are producers; they make food from sunlight.',
+    distractorTip: 'Producers make food; consumers eat others; plankton starts the chain.',
+    memoryAnchor: 'Plankton role = Producer.',
+  },
 ];
 
 // 60-Second Recall Drill questions (from review sheet)
@@ -622,6 +805,69 @@ export const RECALL_DRILL_ITEMS: RecallDrillItem[] = [
     options: ['Yes', 'No'],
     topicId: 'protein-apples',
   },
+  {
+    id: '11',
+    question: 'Energy at cellular level?',
+    correctAnswer: 'Respiration',
+    options: ['Respiration', 'Metabolism', 'Oxidation', 'Recreation'],
+    topicId: 'respiration',
+  },
+  {
+    id: '12',
+    question: 'Cell divisions forming embryo?',
+    correctAnswer: 'Cleavage',
+    options: ['Cleavage', 'Mitosis', 'Meiosis', 'Osmosis'],
+    topicId: 'cleavage',
+  },
+  {
+    id: '13',
+    question: 'DNA unit for a characteristic?',
+    correctAnswer: 'Gene',
+    options: ['Gene', 'Chromosome', 'Allele', 'Double helix'],
+    topicId: 'gene',
+  },
+  {
+    id: '14',
+    question: 'Protoplasm mostly made of?',
+    correctAnswer: 'Water',
+    options: ['Water', 'Oxygen', 'Sugar', 'Protein'],
+    topicId: 'protoplasm',
+  },
+  {
+    id: '15',
+    question: 'Chamber pumping blood to lungs?',
+    correctAnswer: 'Right ventricle',
+    options: ['Right ventricle', 'Left ventricle', 'Right atrium', 'Left atrium'],
+    topicId: 'right-ventricle',
+  },
+  {
+    id: '16',
+    question: 'Spinal cord part of which system?',
+    correctAnswer: 'Nervous system',
+    options: ['Nervous system', 'Circulatory', 'Respiratory', 'Digestive'],
+    topicId: 'nervous-system',
+  },
+  {
+    id: '17',
+    question: 'Which is NOT a domain? (Eukarya, Bacteria, Archaea, Regelia)',
+    correctAnswer: 'Regelia',
+    options: ['Regelia', 'Eukarya', 'Bacteria', 'Archaea'],
+    topicId: 'domains',
+  },
+  {
+    id: '18',
+    question: 'Example of a marsupial?',
+    correctAnswer: 'Kangaroo',
+    options: ['Kangaroo', 'Squirrel', 'Platypus', 'Woodpecker'],
+    topicId: 'marsupials',
+  },
+  {
+    id: '19',
+    question: 'Plankton role in food chain?',
+    correctAnswer: 'Producer',
+    options: ['Producer', 'Primary consumer', 'Secondary consumer', 'Decomposer'],
+    topicId: 'food-chains',
+  },
 ];
 
 // Trap-Answer Checklist items
@@ -680,5 +926,23 @@ export const TRAP_CHECKLIST_ITEMS: TrapChecklistItem[] = [
     pair: 'Apples protein',
     distinction: 'Apples are NOT a meaningful protein source.',
     topicIds: ['protein-apples'],
+  },
+  {
+    id: '9',
+    pair: 'Respiration vs metabolism',
+    distinction: 'Respiration = energy at cellular level. Metabolism = all chemical processes in body.',
+    topicIds: ['respiration'],
+  },
+  {
+    id: '10',
+    pair: 'Domains vs Regelia',
+    distinction: 'Domains = Eukarya, Bacteria, Archaea. Regelia is NOT a domain.',
+    topicIds: ['domains'],
+  },
+  {
+    id: '11',
+    pair: 'Cleavage vs mitosis vs meiosis',
+    distinction: 'Cleavage = cell divisions forming embryo. Mitosis = general division. Meiosis = sex cells.',
+    topicIds: ['cleavage'],
   },
 ];

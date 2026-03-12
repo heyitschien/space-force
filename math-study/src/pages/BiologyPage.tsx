@@ -22,10 +22,10 @@ const TABS = [
 ] as const;
 
 const TAB_TOPIC_IDS: Record<(typeof TABS)[number]['id'], BiologyTopicId[]> = {
-  cell: ['nucleus', 'cell-membrane', 'cytoplasm', 'mitochondria', 'osmosis', 'diffusion'],
-  systems: ['heart', 'lungs', 'intestines', 'fixed-joints', 'hinge-joint', 'ball-socket-joint'],
+  cell: ['nucleus', 'cell-membrane', 'cytoplasm', 'mitochondria', 'osmosis', 'diffusion', 'respiration', 'cleavage', 'gene', 'protoplasm'],
+  systems: ['heart', 'lungs', 'intestines', 'fixed-joints', 'hinge-joint', 'ball-socket-joint', 'right-ventricle', 'nervous-system'],
   blood: ['white-blood-cells', 'rbc', 'platelets'],
-  classification: ['kingdom', 'species', 'carnivore', 'herbivore', 'omnivore', 'protein-apples', 'carbs', 'fats', 'water'],
+  classification: ['kingdom', 'species', 'carnivore', 'herbivore', 'omnivore', 'protein-apples', 'carbs', 'fats', 'water', 'domains', 'marsupials', 'food-chains'],
 };
 
 function FactInfoPanel({

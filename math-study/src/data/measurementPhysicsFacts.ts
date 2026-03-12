@@ -13,7 +13,8 @@ export type MeasurementPhysicsTopicId =
   | 'boiling-point'
   | 'newton-first'
   | 'newton-second'
-  | 'newton-third';
+  | 'newton-third'
+  | 'quantum';
 
 export interface MeasurementPhysicsFact {
   id: MeasurementPhysicsTopicId;
@@ -96,6 +97,16 @@ export const MEASUREMENT_PHYSICS_FACTS: MeasurementPhysicsFact[] = [
     example: 'Proxima Centauri is about 4 light-years away.',
     memoryAnchor: 'Light-year = distance.',
     color: '#eab308',
+    section: 'light',
+  },
+  {
+    id: 'quantum',
+    name: 'Quantum',
+    fact: 'A single unit of quanta. The smallest discrete amount of a physical property.',
+    contrast: 'Quantum = single unit; not quantumonium, quantus, or quanfactorial.',
+    example: 'Light can be described in quanta (photons).',
+    memoryAnchor: 'Single unit of quanta = quantum.',
+    color: '#a78bfa',
     section: 'light',
   },
   {
@@ -197,11 +208,13 @@ export const MEASUREMENT_PHYSICS_FACTS_CARDS = MEASUREMENT_PHYSICS_FACTS.filter(
       'kilometer',
       'celsius-boiling',
       'speed-of-light',
+      'light-year',
       'velocity',
       'energy',
       'power',
       'melting-point',
       'newton-second',
+      'quantum',
     ].includes(fact.id)
 );
 
@@ -272,6 +285,16 @@ export const MEASUREMENT_PHYSICS_QUIZ_QUESTIONS: MeasurementPhysicsQuizQuestion[
       explanation: 'A light-year is a distance, not a unit of time.',
       distractorTip: 'Light-year = distance.',
       memoryAnchor: 'Light-year = distance.',
+    },
+    {
+      id: 'quantum',
+      topicId: 'quantum',
+      prompt: 'What is a single unit of quanta called?',
+      options: ['Quantum', 'Quantumonium', 'Quantus', 'Quanfactorial'],
+      correctAnswer: 'Quantum',
+      explanation: 'A quantum is the smallest discrete unit of a physical quantity.',
+      distractorTip: 'Quantumonium, quantus, quanfactorial are distractors.',
+      memoryAnchor: 'Single unit of quanta = quantum.',
     },
     {
       id: 'velocity',
@@ -519,5 +542,17 @@ export const MEASUREMENT_PHYSICS_TRAP_CHECKLIST_ITEMS: MeasurementPhysicsTrapChe
       pair: 'Newton 2nd: F = ma',
       distinction: 'Force ∝ mass for acceleration; not inertia (1st) or action-reaction (3rd).',
       topicIds: ['newton-second'],
+    },
+    {
+      id: 'newton-laws-vs-distractors',
+      pair: 'Newton laws vs Entropy/Gravity/Relativity',
+      distinction: 'Newton\'s laws: Inertia (1st), F=ma (2nd), Action-reaction (3rd). Entropy, Gravity, Relativity are NOT Newton laws.',
+      topicIds: ['newton-first', 'newton-second', 'newton-third'],
+    },
+    {
+      id: 'quantum',
+      pair: 'Single unit of quanta',
+      distinction: 'Quantum = single unit. Not quantumonium, quantus, or quanfactorial.',
+      topicIds: ['quantum'],
     },
   ];
