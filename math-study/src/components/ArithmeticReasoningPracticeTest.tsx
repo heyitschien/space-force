@@ -52,17 +52,16 @@ const TOTAL_SECONDS = DATA.meta.timeMinutes * 60;
 const QUESTIONS_PER_TEST = DATA.meta.questionsPerTest;
 
 const BUCKET_TO_PATH: Record<string, string> = {
-  fractions: '/',
-  decimals: '/',
-  percents: '/',
-  ratios: '/',
-  averages: '/',
-  'rate-distance-time': '/',
-  'area-volume': '/',
-  'word-problem-setup': '/',
-  inequalities: '/',
-  'unit-conversion': '/',
-  'rate-multiply': '/',
+  percents: '/arithmetic-reasoning/percents',
+  'rate-multiply': '/arithmetic-reasoning/rate-multiply',
+  'unit-conversion': '/arithmetic-reasoning/unit-conversion',
+  'rate-distance-time': '/arithmetic-reasoning/rate-distance-time',
+  fractions: '/arithmetic-reasoning/fractions',
+  averages: '/arithmetic-reasoning/averages',
+  'area-volume': '/arithmetic-reasoning/area-volume',
+  ratios: '/arithmetic-reasoning/ratios',
+  inequalities: '/arithmetic-reasoning/inequalities',
+  'word-problem-setup': '/arithmetic-reasoning/word-problem-setup',
 };
 
 function shuffleArray<T>(arr: T[]): T[] {

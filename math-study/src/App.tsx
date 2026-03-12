@@ -23,6 +23,9 @@ import { BiologyPage } from './pages/BiologyPage';
 import { ChemistryPage } from './pages/ChemistryPage';
 import { EarthSciencePage } from './pages/EarthSciencePage';
 import { MeasurementPhysicsPage } from './pages/MeasurementPhysicsPage';
+import { ArTopicPage } from './components/ArTopicPage';
+import { ArPatternsPage } from './components/ArPatternsPage';
+import { PatternRecognitionDrill } from './components/PatternRecognitionDrill';
 
 const MATH_SECTION_IDS = [
   'algebra',
@@ -118,6 +121,9 @@ export default function App() {
       <Route path="/chemistry" element={<ChemistryPage />} />
       <Route path="/earth-science" element={<EarthSciencePage />} />
       <Route path="/measurement-physics" element={<MeasurementPhysicsPage />} />
+      <Route path="/arithmetic-reasoning/patterns" element={<ArPatternsPage />} />
+      <Route path="/arithmetic-reasoning/pattern-drill" element={<PatternRecognitionDrill />} />
+      <Route path="/arithmetic-reasoning/:topicId" element={<ArTopicPage />} />
       <Route path="/" element={<MathStudyPage />} />
     </Routes>
   );
