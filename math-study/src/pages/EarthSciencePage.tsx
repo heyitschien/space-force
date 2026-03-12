@@ -15,7 +15,7 @@ import type { EarthScienceTopicId } from '../data/earthScienceFacts';
 const TABS = [
   { id: 'layers', label: 'Earth Layers', section: 'layers' as const },
   { id: 'rocks', label: 'Rock Types', section: 'rocks' as const },
-  { id: 'biomes', label: 'Biomes & Spheres', section: 'biomes' as const },
+  { id: 'biomes', label: 'Biomes', section: 'biomes' as const },
 ] as const;
 
 const TAB_TOPIC_IDS: Record<(typeof TABS)[number]['id'], EarthScienceTopicId[]> = {
@@ -104,24 +104,47 @@ function EarthScienceFactInfoPanel({
   );
 }
 
-function ContrastStrip() {
-  const contrasts = [
-    'Crust vs Mantle vs Core',
-    'Igneous vs Sedimentary vs Metamorphic',
-    'Tropical rainforest = high rainfall + high temp',
-    'Pumice = igneous',
-    'Oxygen = most abundant in crust',
-  ];
+const TAB_CONTRASTS: Record<
+  (typeof TABS)[number]['id'],
+  Array<{ label: string; topicId: EarthScienceTopicId }>
+> = {
+  layers: [
+    { label: 'Crust vs Mantle vs Core', topicId: 'crust' },
+    { label: 'Biosphere vs Atmosphere vs Lithosphere', topicId: 'biosphere' },
+    { label: 'Oxygen = most abundant in crust', topicId: 'crust-oxygen' },
+  ],
+  rocks: [
+    { label: 'Igneous vs Sedimentary vs Metamorphic', topicId: 'igneous' },
+    { label: 'Pumice = igneous', topicId: 'pumice' },
+    { label: 'Heat + pressure -> Metamorphic', topicId: 'metamorphic' },
+  ],
+  biomes: [
+    { label: 'Tropical rainforest = high rainfall + high temp', topicId: 'tropical-rainforest' },
+    { label: 'Desert = low rainfall', topicId: 'desert' },
+    { label: 'Tundra = cold + dry', topicId: 'tundra' },
+  ],
+};
+
+function ContrastStrip({
+  activeTab,
+  onSelectTopic,
+}: {
+  activeTab: (typeof TABS)[number]['id'];
+  onSelectTopic: (topicId: EarthScienceTopicId) => void;
+}) {
+  const contrasts = TAB_CONTRASTS[activeTab];
 
   return (
     <div className="mx-auto mt-4 flex max-w-4xl flex-wrap gap-2">
-      {contrasts.map((label) => (
-        <span
-          key={label}
-          className="rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-800"
+      {contrasts.map((item) => (
+        <button
+          key={item.label}
+          type="button"
+          onClick={() => onSelectTopic(item.topicId)}
+          className="rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-800 transition-colors hover:bg-amber-100"
         >
-          {label}
-        </span>
+          {item.label}
+        </button>
       ))}
     </div>
   );
@@ -251,7 +274,7 @@ export function EarthSciencePage() {
             {renderDiagram()}
           </div>
         </div>
-        <ContrastStrip />
+        <ContrastStrip activeTab={activeTab} onSelectTopic={setSelectedId} />
         <EarthScienceFactInfoPanel
           selectedId={scopedSelectedId}
           onClose={() => setSelectedId(null)}
