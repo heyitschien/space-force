@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Reference Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for high-quality mathematical notation -->
+    <!-- Configure MathJax BEFORE loading it (enables $...$ inline math) -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                // Avoid unexpected parsing inside these tags
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .formula-card:hover { transform: translateY(-2px); transition: all 0.2s; }
+        .sidebar-link.active { border-left: 4px solid #2563eb; background-color: #eff6ff; color: #1e40af; }
+        .search-highlight { background-color: #fef08a; padding: 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation Header -->
+    <header class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <h1 class="text-2xl font-bold flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                Math Study Portal
+            </h1>
+            <div class="relative w-full md:w-96">
+                <input type="text" id="search" placeholder="Search formulas (e.g., 'slope', 'circle')..." 
+                       class="w-full pl-10 pr-4 py-2 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-2.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row p-4 gap-8">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="lg:w-1/4 space-y-1 bg-white p-4 rounded-xl shadow-sm h-fit sticky top-24">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">Table of Contents</h3>
+            <a href="#algebra" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Algebra & Lines</a>
+            <a href="#geometry-2d" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">2D Geometry</a>
+            <a href="#geometry-3d" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">3D Volume & Surface Area</a>
+            <a href="#exponents-radicals" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Exponents & Radicals</a>
+            <a href="#factoring" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Factoring Guide</a>
+            <a href="#probability-stats" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Stats & Probability</a>
+            <a href="#units-conversions" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Units & Conversions</a>
+            <a href="#special-topics" class="sidebar-link block px-3 py-2 rounded-md hover:bg-gray-100 font-medium">Special Topics</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lg:w-3/4 space-y-12 pb-24">
+
+            <!-- ALGEBRA & LINES -->
+            <section id="algebra" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-blue-800 border-b-2 border-blue-200 pb-2 mb-6">Algebra & Coordinate Geometry</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Slope -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-blue-500">
+                        <h3 class="font-bold text-lg mb-3">Slope of a Line</h3>
+                        <p class="text-gray-600 mb-2">Change in $y$ over change in $x$:</p>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center font-mono text-xl">
+                            $m = \frac{y_2 - y_1}{x_2 - x_1}$
+                        </div>
+                    </div>
+                    <!-- Quadratic Formula -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-blue-500">
+                        <h3 class="font-bold text-lg mb-3">Quadratic Formula</h3>
+                        <p class="text-gray-600 mb-2">For $ax^2 + bx + c = 0$:</p>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center font-mono text-xl">
+                            $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+                        </div>
+                    </div>
+                    <!-- Linear Forms -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-blue-500">
+                        <h3 class="font-bold text-lg mb-3">Equations of Lines</h3>
+                        <ul class="space-y-4">
+                            <li><span class="font-semibold">Standard:</span> $Ax + By = C$</li>
+                            <li><span class="font-semibold">Slope-Intercept:</span> $y = mx + b$</li>
+                            <li><span class="font-semibold">Point-Slope:</span> $y - y_1 = m(x - x_1)$</li>
+                        </ul>
+                    </div>
+                    <!-- Distance & Midpoint -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-blue-500">
+                        <h3 class="font-bold text-lg mb-3">Distance & Midpoint</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500">Distance:</p>
+                                <p class="bg-gray-50 p-2 rounded">$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Midpoint:</p>
+                                <p class="bg-gray-50 p-2 rounded">$M = (\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2})$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2D GEOMETRY -->
+            <section id="geometry-2d" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-green-800 border-b-2 border-green-200 pb-2 mb-6">2D Geometry & Polygons</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Triangle Sum -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Triangle Sum Theorem</h4>
+                        <p class="text-sm mt-2">Sum of interior angles = $180^\circ$</p>
+                    </div>
+                    <!-- Pythagorean -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Pythagorean Theorem</h4>
+                        <p class="text-sm mt-2">$a^2 + b^2 = c^2$</p>
+                    </div>
+                    <!-- Area Triangle -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Area of a Triangle</h4>
+                        <p class="text-sm mt-2">$A = \frac{1}{2}bh$</p>
+                    </div>
+                    <!-- Circles -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Circles</h4>
+                        <p class="text-xs">Area: $A = \pi r^2$</p>
+                        <p class="text-xs">Circumference: $C = 2\pi r = \pi d$</p>
+                    </div>
+                    <!-- Polygon Sum -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Polygon Interior Sum</h4>
+                        <p class="text-sm mt-2">$S = 180(n - 2)$</p>
+                    </div>
+                    <!-- Trapezoid -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                        <h4 class="font-bold text-green-700">Trapezoid Area</h4>
+                        <p class="text-sm mt-2">$A = \frac{1}{2}(b_1 + b_2)h$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3D GEOMETRY -->
+            <section id="geometry-3d" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-200 pb-2 mb-6">Volume & Surface Area</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-xl shadow-sm overflow-hidden">
+                        <thead class="bg-purple-700 text-white text-left">
+                            <tr>
+                                <th class="px-4 py-3">Shape</th>
+                                <th class="px-4 py-3">Volume ($V$)</th>
+                                <th class="px-4 py-3">Surface Area ($SA$)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Cube</td>
+                                <td class="px-4 py-3">$a^3$</td>
+                                <td class="px-4 py-3">$6a^2$</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Rect. Solid</td>
+                                <td class="px-4 py-3">$l \times w \times h$</td>
+                                <td class="px-4 py-3">$2(lw + wh + hl)$</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Cylinder</td>
+                                <td class="px-4 py-3">$\pi r^2 h$</td>
+                                <td class="px-4 py-3">$2\pi rh + 2\pi r^2$</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Sphere</td>
+                                <td class="px-4 py-3">$\frac{4}{3}\pi r^3$</td>
+                                <td class="px-4 py-3">$4\pi r^2$</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Pyramid</td>
+                                <td class="px-4 py-3">$\frac{1}{3}abh$</td>
+                                <td class="px-4 py-3">Sum of bases & faces</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Cone</td>
+                                <td class="px-4 py-3">$\frac{1}{3}\pi r^2 h$</td>
+                                <td class="px-4 py-3">$\pi r^2 + \pi rl$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- EXPONENTS & RADICALS -->
+            <section id="exponents-radicals" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-indigo-800 border-b-2 border-indigo-200 pb-2 mb-6">Laws of Exponents & Radicals</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm space-y-3 border-t-4 border-indigo-600">
+                        <h3 class="font-bold">Exponents Rules</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Zero Power:</span> <span>$a^0 = 1$</span></li>
+                            <li class="flex justify-between"><span>Product Rule:</span> <span>$a^m \cdot a^n = a^{m+n}$</span></li>
+                            <li class="flex justify-between"><span>Quotient Rule:</span> <span>$\frac{a^m}{a^n} = a^{m-n}$</span></li>
+                            <li class="flex justify-between"><span>Power of Power:</span> <span>$(a^m)^n = a^{mn}$</span></li>
+                            <li class="flex justify-between"><span>Negative Rule:</span> <span>$a^{-n} = \frac{1}{a^n}$</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm space-y-3 border-t-4 border-indigo-600">
+                        <h3 class="font-bold">Radical Properties</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Fractional Exp:</span> <span>$a^{1/n} = \sqrt[n]{a}$</span></li>
+                            <li class="flex justify-between"><span>General:</span> <span>$a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$</span></li>
+                            <li class="flex justify-between"><span>Product Prop:</span> <span>$\sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}$</span></li>
+                            <li class="flex justify-between"><span>Quotient Prop:</span> <span>$\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FACTORING -->
+            <section id="factoring" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-red-800 border-b-2 border-red-200 pb-2 mb-6">Factoring Guide</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-8 border-red-500">
+                    <div class="mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-0.5 rounded">STEP 1</span>
+                        <p class="mt-1 font-bold">Always check for a Greatest Common Factor (GCF) first!</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-red-700 underline">2 Terms</h4>
+                            <p class="text-xs">Difference of Squares:<br>$A^2 - B^2 = (A-B)(A+B)$</p>
+                            <p class="text-xs">Sum of Cubes:<br>$A^3 + B^3 = (A+B)(A^2 - AB + B^2)$</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-red-700 underline">3 Terms</h4>
+                            <p class="text-xs">Trinomials ($x^2 + bx + c$):<br>Find numbers that multiply to $c$ and add to $b$.</p>
+                            <p class="text-xs">Perfect Squares:<br>$(a+b)^2 = a^2 + 2ab + b^2$</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-red-700 underline">4 Terms</h4>
+                            <p class="text-xs italic">Factor by Grouping!</p>
+                            <p class="text-xs">Group terms 2-by-2 and find the common binomial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATS & PROBABILITY -->
+            <section id="probability-stats" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-orange-800 border-b-2 border-orange-200 pb-2 mb-6">Statistics & Probability</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="font-bold mb-4 flex items-center gap-2"><span class="text-orange-500">📊</span> Central Tendency</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b pb-1"><span>Mean</span> <span class="font-semibold text-xs text-gray-500">Sum / Total Items</span></div>
+                            <div class="flex justify-between border-b pb-1"><span>Median</span> <span class="font-semibold text-xs text-gray-500">Middle value (in order)</span></div>
+                            <div class="flex justify-between border-b pb-1"><span>Mode</span> <span class="font-semibold text-xs text-gray-500">Occurs most often</span></div>
+                            <div class="flex justify-between border-b pb-1"><span>Range</span> <span class="font-semibold text-xs text-gray-500">Max - Min</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="font-bold mb-4 flex items-center gap-2"><span class="text-orange-500">🎲</span> Probability</h3>
+                        <div class="space-y-3 text-sm">
+                            <p><span class="font-bold">Basic:</span> $P(A) = \frac{\text{Desired Outcomes}}{\text{Total Outcomes}}$</p>
+                            <p><span class="font-bold">Not A:</span> $1 - P(A)$</p>
+                            <p><span class="font-bold">Independent AND:</span> $P(A) \times P(B)$</p>
+                            <p><span class="font-bold">Exclusive OR:</span> $P(A) + P(B)$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- UNITS & CONVERSIONS -->
+            <section id="units-conversions" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-sky-800 border-b-2 border-sky-200 pb-2 mb-6">Units & Conversions (ASVAB Quick Reference)</h2>
+
+                <div class="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+                    <h3 class="font-bold text-sky-900 mb-2">How to convert (fast + reliable)</h3>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-sky-900">
+                        <li><span class="font-semibold">Step 1:</span> Write the value with units (e.g., $3 \text{ ft}$).</li>
+                        <li><span class="font-semibold">Step 2:</span> Multiply by a conversion fraction that cancels units (e.g., $\frac{12\text{ in}}{1\text{ ft}}$).</li>
+                        <li><span class="font-semibold">Step 3:</span> If converting <span class="font-semibold">area</span> or <span class="font-semibold">volume</span>, square/cube the factor:
+                            <span class="font-mono">1 ft = 12 in</span> → <span class="font-mono">$1 \text{ ft}^2 = 144 \text{ in}^2$</span>, <span class="font-mono">$1 \text{ ft}^3 = 1728 \text{ in}^3$</span>.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Length (US Customary)</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">12</span> in = <span class="font-semibold">1</span> ft</li>
+                            <li><span class="font-semibold">3</span> ft = <span class="font-semibold">1</span> yd</li>
+                            <li><span class="font-semibold">1760</span> yd = <span class="font-semibold">1</span> mi</li>
+                            <li><span class="font-semibold">5280</span> ft = <span class="font-semibold">1</span> mi</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">Tip: If the word problem mixes ft/in, convert first before computing area/perimeter.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Length (Metric)</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">10</span> mm = <span class="font-semibold">1</span> cm</li>
+                            <li><span class="font-semibold">100</span> cm = <span class="font-semibold">1</span> m</li>
+                            <li><span class="font-semibold">1000</span> m = <span class="font-semibold">1</span> km</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">Metric prefixes: kilo (1000), centi (1/100), milli (1/1000).</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Mass / Weight</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">16</span> oz = <span class="font-semibold">1</span> lb</li>
+                            <li><span class="font-semibold">2000</span> lb = <span class="font-semibold">1</span> ton</li>
+                            <li><span class="font-semibold">1000</span> g = <span class="font-semibold">1</span> kg</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">ASVAB usually uses these simple relationships—memorize them.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Capacity (US)</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">3</span> tsp = <span class="font-semibold">1</span> tbsp</li>
+                            <li><span class="font-semibold">2</span> tbsp = <span class="font-semibold">1</span> fl oz</li>
+                            <li><span class="font-semibold">8</span> fl oz = <span class="font-semibold">1</span> cup</li>
+                            <li><span class="font-semibold">2</span> cups = <span class="font-semibold">1</span> pt</li>
+                            <li><span class="font-semibold">2</span> pt = <span class="font-semibold">1</span> qt</li>
+                            <li><span class="font-semibold">4</span> qt = <span class="font-semibold">1</span> gal</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Capacity (Metric)</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">1000</span> mL = <span class="font-semibold">1</span> L</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">If a problem mixes L and mL, convert to one before computing.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm formula-card border-l-4 border-sky-500">
+                        <h3 class="font-bold text-lg mb-2">Time</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li><span class="font-semibold">60</span> sec = <span class="font-semibold">1</span> min</li>
+                            <li><span class="font-semibold">60</span> min = <span class="font-semibold">1</span> hr</li>
+                            <li><span class="font-semibold">24</span> hr = <span class="font-semibold">1</span> day</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">Used constantly with $d = rt$ word problems.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-sky-100">
+                    <div class="flex flex-col lg:flex-row lg:items-end gap-4 justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg">Quick Unit Converter</h3>
+                            <p class="text-sm text-gray-600">A small calculator so conversions are “working,” not just memorized.</p>
+                        </div>
+                        <p id="uc-error" class="hidden text-sm font-semibold text-red-700 bg-red-50 border border-red-200 px-3 py-2 rounded-lg"></p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-4">
+                        <div class="lg:col-span-1">
+                            <label for="uc-category" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Category</label>
+                            <select id="uc-category" class="mt-1 w-full border rounded-lg px-3 py-2 bg-white">
+                                <option value="length">Length</option>
+                                <option value="mass">Mass / Weight</option>
+                                <option value="volume">Capacity</option>
+                                <option value="time">Time</option>
+                                <option value="temperature">Temperature</option>
+                                <option value="speed">Speed</option>
+                            </select>
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <label for="uc-value" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Value</label>
+                            <input id="uc-value" type="number" inputmode="decimal" step="any" value="1"
+                                   class="mt-1 w-full border rounded-lg px-3 py-2" />
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <label for="uc-from" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">From</label>
+                            <select id="uc-from" class="mt-1 w-full border rounded-lg px-3 py-2 bg-white"></select>
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <label for="uc-to" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">To</label>
+                            <select id="uc-to" class="mt-1 w-full border rounded-lg px-3 py-2 bg-white"></select>
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Result</label>
+                            <div class="mt-1 w-full border rounded-lg px-3 py-2 bg-gray-50">
+                                <span id="uc-result" class="font-mono text-sm">—</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-xs text-gray-500">
+                        Notes: Speed here is common ASVAB word-problem usage (mph, ft/s, m/s, km/h). Temperature uses the exact $F \leftrightarrow C$ formulas.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPECIAL TOPICS (Interest, Combined Rates, Temperature) -->
+            <section id="special-topics" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-6">Special Topics</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">Simple Interest</h4>
+                        <p class="text-xl font-mono mt-2">$I = prt$</p>
+                        <p class="text-xs text-gray-500 mt-1">p=Principal, r=Rate, t=Time</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">Distance-Rate-Time</h4>
+                        <p class="text-xl font-mono mt-2">$d = rt$</p>
+                        <p class="text-xs text-gray-500 mt-1">Distance = Rate × Time</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">Combined Work</h4>
+                        <p class="text-sm font-mono mt-2">$\frac{T}{A} + \frac{T}{B} = 1$</p>
+                        <p class="text-xs text-gray-500 mt-1">T=Combined Time, A/B=Individual Times</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">Temperature</h4>
+                        <p class="text-xs">$F = \frac{9}{5}C + 32$</p>
+                        <p class="text-xs">$C = \frac{5}{9}(F - 32)$</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">PEMDAS</h4>
+                        <p class="text-xs font-bold text-blue-600">Parentheses, Exponents, Mult/Div, Add/Sub</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-700">Percent Change</h4>
+                        <p class="text-xs">$\frac{New - Old}{Old} \times 100$</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Floating Quick Quiz Button -->
+    <button id="quiz-btn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transform hover:scale-110 transition-all flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="font-bold">Practice Question</span>
+    </button>
+
+    <!-- Simple Modal for Quiz -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[100]">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 relative shadow-2xl">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" aria-label="Close" title="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold mb-4">Quick Practice</h2>
+            <div id="quiz-content">
+                <p id="question-text" class="text-lg mb-6">A triangle has a base of 10 and a height of 5. What is its area?</p>
+                <div id="options" class="grid grid-cols-1 gap-3">
+                    <button class="option-btn w-full p-3 border rounded-lg hover:bg-blue-50 text-left" data-correct="false">15</button>
+                    <button class="option-btn w-full p-3 border rounded-lg hover:bg-blue-50 text-left" data-correct="true">25</button>
+                    <button class="option-btn w-full p-3 border rounded-lg hover:bg-blue-50 text-left" data-correct="false">50</button>
+                    <button class="option-btn w-full p-3 border rounded-lg hover:bg-blue-50 text-left" data-correct="false">100</button>
+                </div>
+            </div>
+            <p id="feedback" class="hidden mt-6 p-4 rounded-lg font-bold"></p>
+        </div>
+    </div>
+
+    <script>
+        // Search Functionality
+        const searchInput = document.getElementById('search');
+        const sections = document.querySelectorAll('section');
+        const cards = document.querySelectorAll('.formula-card, .bg-white.p-4, .bg-white.p-5');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    card.style.display = 'block';
+                    card.classList.add('ring-2', 'ring-blue-200');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('ring-2', 'ring-blue-200');
+                }
+            });
+            // Show all sections regardless to prevent layout collapse
+            if (term === '') {
+                cards.forEach(c => {
+                    c.style.display = 'block';
+                    c.classList.remove('ring-2', 'ring-blue-200');
+                });
+            }
+        });
+
+        // Sidebar Navigation Active State
+        const links = document.querySelectorAll('.sidebar-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Practice Quiz Logic
+        const quizBtn = document.getElementById('quiz-btn');
+        const modal = document.getElementById('modal');
+        const closeModal = document.getElementById('close-modal');
+        const feedback = document.getElementById('feedback');
+        const options = document.querySelectorAll('.option-btn');
+
+        const questions = [
+            { q: "What is the slope between (1, 2) and (3, 6)?", options: ["1", "2", "3", "4"], correct: "2" },
+            { q: "Find the volume of a cube with side length 4.", options: ["12", "16", "32", "64"], correct: "64" },
+            { q: "Evaluate $0!$ (zero factorial).", options: ["0", "1", "Undefined", "Infinity"], correct: "1" },
+            { q: "What is the sum of interior angles of a pentagon (5 sides)?", options: ["180°", "360°", "540°", "720°"], correct: "540°" },
+            { q: "Solve for x in $x^2 - 9 = 0$.", options: ["3 only", "-3 only", "3 or -3", "0"], correct: "3 or -3" }
+        ];
+
+        quizBtn.addEventListener('click', () => {
+            const randomQ = questions[Math.floor(Math.random() * questions.length)];
+            document.getElementById('question-text').innerHTML = randomQ.q;
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            randomQ.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full p-3 border rounded-lg hover:bg-blue-50 text-left transition-all';
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+                    if (opt === randomQ.correct) {
+                        feedback.innerText = "Correct! Great job.";
+                        feedback.classList.add('bg-green-100', 'text-green-800');
+                    } else {
+                        feedback.innerText = `Incorrect. The correct answer is ${randomQ.correct}.`;
+                        feedback.classList.add('bg-red-100', 'text-red-800');
+                    }
+                    feedback.classList.remove('hidden');
+                };
+                optionsContainer.appendChild(btn);
+            });
+            feedback.classList.add('hidden');
+            modal.classList.remove('hidden');
+            // Re-typeset any TeX in the modal (safe even if MathJax isn't ready yet)
+            if (window.MathJax?.typesetPromise) {
+                window.MathJax.typesetPromise();
+            }
+        });
+
+        closeModal.onclick = () => modal.classList.add('hidden');
+        window.onclick = (e) => { if (e.target == modal) modal.classList.add('hidden'); };
+
+        // Unit Converter (simple, study-friendly)
+        const ucCategory = document.getElementById('uc-category');
+        const ucValue = document.getElementById('uc-value');
+        const ucFrom = document.getElementById('uc-from');
+        const ucTo = document.getElementById('uc-to');
+        const ucResult = document.getElementById('uc-result');
+        const ucError = document.getElementById('uc-error');
+
+        const ucData = {
+            length: {
+                label: 'Length',
+                base: 'm',
+                units: {
+                    in: { label: 'in', toBase: (v) => v * 0.0254, fromBase: (v) => v / 0.0254 },
+                    ft: { label: 'ft', toBase: (v) => v * 0.3048, fromBase: (v) => v / 0.3048 },
+                    yd: { label: 'yd', toBase: (v) => v * 0.9144, fromBase: (v) => v / 0.9144 },
+                    mi: { label: 'mi', toBase: (v) => v * 1609.344, fromBase: (v) => v / 1609.344 },
+                    mm: { label: 'mm', toBase: (v) => v / 1000, fromBase: (v) => v * 1000 },
+                    cm: { label: 'cm', toBase: (v) => v / 100, fromBase: (v) => v * 100 },
+                    m: { label: 'm', toBase: (v) => v, fromBase: (v) => v },
+                    km: { label: 'km', toBase: (v) => v * 1000, fromBase: (v) => v / 1000 }
+                }
+            },
+            mass: {
+                label: 'Mass / Weight',
+                base: 'kg',
+                units: {
+                    oz: { label: 'oz', toBase: (v) => v * 0.028349523125, fromBase: (v) => v / 0.028349523125 },
+                    lb: { label: 'lb', toBase: (v) => v * 0.45359237, fromBase: (v) => v / 0.45359237 },
+                    g: { label: 'g', toBase: (v) => v / 1000, fromBase: (v) => v * 1000 },
+                    kg: { label: 'kg', toBase: (v) => v, fromBase: (v) => v }
+                }
+            },
+            volume: {
+                label: 'Capacity',
+                base: 'L',
+                units: {
+                    tsp: { label: 'tsp', toBase: (v) => v * 0.00492892159375, fromBase: (v) => v / 0.00492892159375 },
+                    tbsp: { label: 'tbsp', toBase: (v) => v * 0.01478676478125, fromBase: (v) => v / 0.01478676478125 },
+                    floz: { label: 'fl oz', toBase: (v) => v * 0.0295735295625, fromBase: (v) => v / 0.0295735295625 },
+                    cup: { label: 'cup', toBase: (v) => v * 0.2365882365, fromBase: (v) => v / 0.2365882365 },
+                    pt: { label: 'pt', toBase: (v) => v * 0.473176473, fromBase: (v) => v / 0.473176473 },
+                    qt: { label: 'qt', toBase: (v) => v * 0.946352946, fromBase: (v) => v / 0.946352946 },
+                    gal: { label: 'gal', toBase: (v) => v * 3.785411784, fromBase: (v) => v / 3.785411784 },
+                    mL: { label: 'mL', toBase: (v) => v / 1000, fromBase: (v) => v * 1000 },
+                    L: { label: 'L', toBase: (v) => v, fromBase: (v) => v }
+                }
+            },
+            time: {
+                label: 'Time',
+                base: 'sec',
+                units: {
+                    sec: { label: 'sec', toBase: (v) => v, fromBase: (v) => v },
+                    min: { label: 'min', toBase: (v) => v * 60, fromBase: (v) => v / 60 },
+                    hr: { label: 'hr', toBase: (v) => v * 3600, fromBase: (v) => v / 3600 },
+                    day: { label: 'day', toBase: (v) => v * 86400, fromBase: (v) => v / 86400 }
+                }
+            },
+            temperature: {
+                label: 'Temperature',
+                base: 'C',
+                units: {
+                    C: { label: '°C', toBase: (v) => v, fromBase: (v) => v },
+                    F: { label: '°F', toBase: (v) => (v - 32) * (5 / 9), fromBase: (v) => (v * (9 / 5)) + 32 }
+                }
+            },
+            speed: {
+                label: 'Speed',
+                base: 'mps',
+                units: {
+                    mph: { label: 'mph', toBase: (v) => v * 0.44704, fromBase: (v) => v / 0.44704 },
+                    fps: { label: 'ft/s', toBase: (v) => v * 0.3048, fromBase: (v) => v / 0.3048 },
+                    mps: { label: 'm/s', toBase: (v) => v, fromBase: (v) => v },
+                    kmh: { label: 'km/h', toBase: (v) => v / 3.6, fromBase: (v) => v * 3.6 }
+                }
+            }
+        };
+
+        function ucSetError(message) {
+            if (!ucError) return;
+            if (!message) {
+                ucError.classList.add('hidden');
+                ucError.textContent = '';
+                return;
+            }
+            ucError.textContent = message;
+            ucError.classList.remove('hidden');
+        }
+
+        function ucPopulateUnits() {
+            if (!ucCategory || !ucFrom || !ucTo) return;
+            const category = ucCategory.value;
+            const units = ucData[category]?.units || {};
+
+            const currentFrom = ucFrom.value;
+            const currentTo = ucTo.value;
+
+            ucFrom.innerHTML = '';
+            ucTo.innerHTML = '';
+
+            Object.entries(units).forEach(([key, meta]) => {
+                const o1 = document.createElement('option');
+                o1.value = key;
+                o1.textContent = meta.label;
+                ucFrom.appendChild(o1);
+
+                const o2 = document.createElement('option');
+                o2.value = key;
+                o2.textContent = meta.label;
+                ucTo.appendChild(o2);
+            });
+
+            if (currentFrom && units[currentFrom]) ucFrom.value = currentFrom;
+            if (currentTo && units[currentTo]) ucTo.value = currentTo;
+
+            // Sensible defaults
+            if (!ucFrom.value) ucFrom.value = Object.keys(units)[0] || '';
+            if (!ucTo.value) ucTo.value = Object.keys(units)[1] || Object.keys(units)[0] || '';
+        }
+
+        function ucFormatNumber(v) {
+            if (!Number.isFinite(v)) return '—';
+            // Human-friendly: show up to 6 decimals, trim trailing zeros.
+            const s = v.toFixed(6);
+            return s.replace(/\.?0+$/, '');
+        }
+
+        function ucConvert() {
+            if (!ucCategory || !ucValue || !ucFrom || !ucTo || !ucResult) return;
+            ucSetError('');
+            const category = ucCategory.value;
+            const fromKey = ucFrom.value;
+            const toKey = ucTo.value;
+            const value = Number(ucValue.value);
+
+            if (!Number.isFinite(value)) {
+                ucResult.textContent = '—';
+                ucSetError('Enter a valid number.');
+                return;
+            }
+
+            const categoryData = ucData[category];
+            const fromUnit = categoryData?.units?.[fromKey];
+            const toUnit = categoryData?.units?.[toKey];
+            if (!fromUnit || !toUnit) {
+                ucResult.textContent = '—';
+                ucSetError('Select valid units.');
+                return;
+            }
+
+            const baseValue = fromUnit.toBase(value);
+            const outValue = toUnit.fromBase(baseValue);
+
+            ucResult.textContent = `${ucFormatNumber(outValue)} ${toUnit.label}`;
+        }
+
+        if (ucCategory && ucValue && ucFrom && ucTo && ucResult) {
+            ucPopulateUnits();
+            ucConvert();
+            ucCategory.addEventListener('change', () => {
+                ucPopulateUnits();
+                ucConvert();
+            });
+            ['input', 'change'].forEach(evt => {
+                ucValue.addEventListener(evt, ucConvert);
+                ucFrom.addEventListener(evt, ucConvert);
+                ucTo.addEventListener(evt, ucConvert);
+            });
+        }
+
+    </script>
+</body>
+</html>

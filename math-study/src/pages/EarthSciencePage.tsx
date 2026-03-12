@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EarthScienceQuizModal } from '../components/EarthScienceQuizModal';
+import { GeneralScienceTestLauncher } from '../components/GeneralScienceTestLauncher';
 import { EarthScienceRecallDrill } from '../components/EarthScienceRecallDrill';
 import { EarthScienceTrapChecklist } from '../components/EarthScienceTrapChecklist';
 import { EarthLayersDiagram } from '../components/diagrams/EarthLayersDiagram';
@@ -156,6 +157,7 @@ export function EarthSciencePage() {
   const [drillOpen, setDrillOpen] = useState(false);
   const [checklistOpen, setChecklistOpen] = useState(false);
   const [showFactsGrid, setShowFactsGrid] = useState(false);
+  const [generalScienceTestOpen, setGeneralScienceTestOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]['id']>('layers');
   const activeTabTopicIds = TAB_TOPIC_IDS[activeTab];
   const scopedSelectedId = useMemo(
@@ -243,6 +245,12 @@ export function EarthSciencePage() {
             Trap Checklist
           </button>
           <button
+            onClick={() => setGeneralScienceTestOpen(true)}
+            className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500"
+          >
+            General Science Test
+          </button>
+          <button
             onClick={() => setQuizOpen(true)}
             className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500"
           >
@@ -309,6 +317,9 @@ export function EarthSciencePage() {
       </p>
 
       <EarthScienceQuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {generalScienceTestOpen && (
+        <GeneralScienceTestLauncher onClose={() => setGeneralScienceTestOpen(false)} />
+      )}
       <EarthScienceRecallDrill isOpen={drillOpen} onClose={() => setDrillOpen(false)} />
       <EarthScienceTrapChecklist
         isOpen={checklistOpen}

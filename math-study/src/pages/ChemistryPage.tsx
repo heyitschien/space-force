@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChemistryQuizModal } from '../components/ChemistryQuizModal';
+import { GeneralScienceTestLauncher } from '../components/GeneralScienceTestLauncher';
 import { ChemistryRecallDrill } from '../components/ChemistryRecallDrill';
 import { ChemistryTrapChecklist } from '../components/ChemistryTrapChecklist';
 import { AtomicStructureDiagram } from '../components/diagrams/AtomicStructureDiagram';
@@ -116,6 +117,7 @@ export function ChemistryPage() {
   const [drillOpen, setDrillOpen] = useState(false);
   const [checklistOpen, setChecklistOpen] = useState(false);
   const [showFactsGrid, setShowFactsGrid] = useState(false);
+  const [generalScienceTestOpen, setGeneralScienceTestOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]['id']>('atomic');
   const activeTabTopicIds = TAB_TOPIC_IDS[activeTab];
   const scopedSelectedId = useMemo(
@@ -175,6 +177,12 @@ export function ChemistryPage() {
             className="rounded-lg bg-slate-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-600"
           >
             Trap Checklist
+          </button>
+          <button
+            onClick={() => setGeneralScienceTestOpen(true)}
+            className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500"
+          >
+            General Science Test
           </button>
           <button
             onClick={() => setQuizOpen(true)}
@@ -238,6 +246,9 @@ export function ChemistryPage() {
       </p>
 
       <ChemistryQuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {generalScienceTestOpen && (
+        <GeneralScienceTestLauncher onClose={() => setGeneralScienceTestOpen(false)} />
+      )}
       <ChemistryRecallDrill isOpen={drillOpen} onClose={() => setDrillOpen(false)} />
       <ChemistryTrapChecklist isOpen={checklistOpen} onClose={() => setChecklistOpen(false)} />
     </div>

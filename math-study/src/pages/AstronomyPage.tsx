@@ -1,41 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AstronomyQuizModal } from '../components/AstronomyQuizModal';
+import { GeneralScienceTestLauncher } from '../components/GeneralScienceTestLauncher';
 import { SolarSystem3D } from '../components/diagrams/SolarSystem3D';
 import { getFactById, ASVAB_FACTS_CARDS } from '../data/planetFacts';
 import type { CelestialId } from '../data/planetFacts';
-
-const ASTRONOMY_QUIZ_QUESTIONS = [
-  {
-    q: 'Which planet is the largest in the solar system?',
-    options: ['Earth', 'Mars', 'Saturn', 'Jupiter'],
-    correct: 'Jupiter',
-  },
-  {
-    q: 'Which planet is the brightest in the sky (after the Sun and Moon)?',
-    options: ['Mars', 'Saturn', 'Venus', 'Mercury'],
-    correct: 'Venus',
-  },
-  {
-    q: 'Where is the asteroid belt located?',
-    options: ['Around Mercury', 'Between Mars and Jupiter', 'Beyond Neptune', 'Inside Venus orbit'],
-    correct: 'Between Mars and Jupiter',
-  },
-  {
-    q: 'How many planets in the solar system have rings?',
-    options: ['One', 'Two', 'Three', 'Four'],
-    correct: 'Four',
-  },
-  {
-    q: 'What is a light-year?',
-    options: [
-      'The brightness of light at 30,000 miles',
-      'The distance light travels in one year',
-      '17 standard Earth years',
-      'A unit of time',
-    ],
-    correct: 'The distance light travels in one year',
-  },
-];
 
 function PlanetInfoPanel({ selectedId, onClose }: { selectedId: CelestialId | null; onClose: () => void }) {
   if (!selectedId) return null;
@@ -70,76 +39,11 @@ function PlanetInfoPanel({ selectedId, onClose }: { selectedId: CelestialId | nu
   );
 }
 
-function AstronomyQuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [currentQ] = useState(() =>
-    ASTRONOMY_QUIZ_QUESTIONS[Math.floor(Math.random() * ASTRONOMY_QUIZ_QUESTIONS.length)]
-  );
-
-  const handleAnswer = (opt: string) => {
-    if (opt === currentQ.correct) {
-      setFeedback('Correct! Great job.');
-    } else {
-      setFeedback(`Incorrect. The correct answer is ${currentQ.correct}.`);
-    }
-  };
-
-  const handleClose = () => {
-    setFeedback(null);
-    onClose();
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4"
-      onClick={(e) => e.target === e.currentTarget && handleClose()}
-    >
-      <div className="relative max-w-lg w-full rounded-2xl bg-white p-8 shadow-2xl">
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-          aria-label="Close"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l18 18" />
-          </svg>
-        </button>
-        <h2 className="text-2xl font-bold text-slate-800">Test Your Astronomy Knowledge</h2>
-        <p className="mt-3 text-sm text-slate-500">ASVAB General Science practice</p>
-        <div className="mt-6">
-          <p className="text-lg font-medium text-slate-700">{currentQ.q}</p>
-          <div className="mt-4 grid grid-cols-1 gap-3">
-            {currentQ.options.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => handleAnswer(opt)}
-                className="w-full rounded-lg border border-slate-200 p-3 text-left transition-all hover:bg-indigo-50 hover:border-indigo-200"
-              >
-                {opt}
-              </button>
-            ))}
-          </div>
-        </div>
-        {feedback && (
-          <p
-            className={`mt-6 rounded-lg p-4 font-bold ${
-              feedback.startsWith('Correct') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-            }`}
-          >
-            {feedback}
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function AstronomyPage() {
   const [selectedId, setSelectedId] = useState<CelestialId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [showFactsGrid, setShowFactsGrid] = useState(false);
+  const [generalScienceTestOpen, setGeneralScienceTestOpen] = useState(false);
 
   return (
     <div className="fixed inset-0 flex flex-col bg-slate-950">
@@ -161,6 +65,12 @@ export function AstronomyPage() {
             className="rounded-lg bg-slate-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-600"
           >
             {showFactsGrid ? 'Hide Facts' : 'Quick Facts'}
+          </button>
+          <button
+            onClick={() => setGeneralScienceTestOpen(true)}
+            className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500"
+          >
+            General Science Test
           </button>
           <button
             onClick={() => setQuizOpen(true)}
@@ -209,6 +119,9 @@ export function AstronomyPage() {
       </p>
 
       <AstronomyQuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {generalScienceTestOpen && (
+        <GeneralScienceTestLauncher onClose={() => setGeneralScienceTestOpen(false)} />
+      )}
     </div>
   );
 }

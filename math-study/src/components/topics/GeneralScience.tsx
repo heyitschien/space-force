@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AstronomyQuizModal } from '../AstronomyQuizModal';
+import { GeneralScienceTestLauncher } from '../GeneralScienceTestLauncher';
 import { SolarSystem3D } from '../diagrams/SolarSystem3D';
 import { getFactById, ASVAB_FACTS_CARDS } from '../../data/planetFacts';
 import type { CelestialId } from '../../data/planetFacts';
@@ -38,6 +39,7 @@ function PlanetInfo({ selectedId }: { selectedId: CelestialId | null }) {
 export function GeneralScience({ visible }: GeneralScienceProps) {
   const [selectedId, setSelectedId] = useState<CelestialId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
+  const [practiceTestOpen, setPracticeTestOpen] = useState(false);
 
   if (!visible) return null;
 
@@ -77,6 +79,12 @@ export function GeneralScience({ visible }: GeneralScienceProps) {
           >
             Earth Science →
           </Link>
+          <Link
+            to="/measurement-physics"
+            className="rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white shadow-md transition-colors hover:bg-violet-500"
+          >
+            Measurement & Physics →
+          </Link>
         </div>
       </div>
 
@@ -107,16 +115,25 @@ export function GeneralScience({ visible }: GeneralScienceProps) {
         </div>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center gap-4">
         <button
           onClick={() => setQuizOpen(true)}
           className="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-indigo-700"
         >
           Test Your Astronomy Knowledge
         </button>
+        <button
+          onClick={() => setPracticeTestOpen(true)}
+          className="rounded-xl bg-amber-600 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-amber-500"
+        >
+          General Science Practice Test (25 Q, 11 min)
+        </button>
       </div>
 
       <AstronomyQuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {practiceTestOpen && (
+        <GeneralScienceTestLauncher onClose={() => setPracticeTestOpen(false)} />
+      )}
     </section>
   );
 }

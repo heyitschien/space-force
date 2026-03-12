@@ -8,6 +8,7 @@ const SECTIONS: Array<
   { id: 'general-science-biology', label: 'General Science — Biology', href: '/biology' },
   { id: 'general-science-chemistry', label: 'General Science — Chemistry & Atoms', href: '/chemistry' },
   { id: 'general-science-earth', label: 'General Science — Earth Science', href: '/earth-science' },
+  { id: 'general-science-measurement', label: 'General Science — Measurement & Physics', href: '/measurement-physics' },
   { id: 'algebra', label: 'Algebra & Lines' },
   { id: 'geometry-2d', label: '2D Geometry' },
   { id: 'geometry-3d', label: '3D Volume & Surface Area' },
@@ -18,7 +19,7 @@ const SECTIONS: Array<
   { id: 'special-topics', label: 'Special Topics' },
 ];
 
-const GENERAL_SCIENCE_IDS = ['general-science-astronomy', 'general-science-biology', 'general-science-chemistry', 'general-science-earth'];
+const GENERAL_SCIENCE_IDS = ['general-science-astronomy', 'general-science-biology', 'general-science-chemistry', 'general-science-earth', 'general-science-measurement'];
 
 interface SidebarProps {
   activeSection: string;

@@ -20,6 +20,15 @@ export interface CelestialFact {
   color: string;
 }
 
+export interface AstronomyQuizQuestion {
+  id: string;
+  prompt: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+  memoryAnchor?: string;
+}
+
 export const PLANET_FACTS: CelestialFact[] = [
   {
     id: 'sun',
@@ -119,3 +128,75 @@ export const ASVAB_FACTS_CARDS = PLANET_FACTS.filter(
 export function getFactById(id: CelestialId): CelestialFact | undefined {
   return PLANET_FACTS.find((f) => f.id === id);
 }
+
+export const ASTRONOMY_QUIZ_QUESTIONS: AstronomyQuizQuestion[] = [
+  {
+    id: 'largest-planet',
+    prompt: 'Which planet is the largest in the solar system?',
+    options: ['Earth', 'Mars', 'Saturn', 'Jupiter'],
+    correctAnswer: 'Jupiter',
+    explanation: 'Jupiter is the biggest planet in our solar system.',
+    memoryAnchor: 'Jupiter is Giant.',
+  },
+  {
+    id: 'brightest-planet',
+    prompt: 'Which planet is the brightest in the sky after the Sun and Moon?',
+    options: ['Mars', 'Saturn', 'Venus', 'Mercury'],
+    correctAnswer: 'Venus',
+    explanation: 'Venus appears brightest from Earth because it reflects a lot of sunlight and is relatively close to us.',
+    memoryAnchor: '"Venus" = Visible / very bright.',
+  },
+  {
+    id: 'asteroid-belt-location',
+    prompt: 'Where is the asteroid belt located?',
+    options: ['Around Mercury', 'Between Mars and Jupiter', 'Beyond Neptune', 'Inside Venus orbit'],
+    correctAnswer: 'Between Mars and Jupiter',
+    explanation: 'The asteroid belt sits in the middle of Mars and Jupiter.',
+    memoryAnchor: 'Asteroids sit in the Mars-Jupiter middle.',
+  },
+  {
+    id: 'mars-atmosphere',
+    prompt: 'The atmosphere of Mars is composed mostly of what gas?',
+    options: ['Oxygen', 'Carbon dioxide', 'Helium', 'Hydrogen'],
+    correctAnswer: 'Carbon dioxide',
+    explanation: 'Mars has a thin atmosphere made mostly of carbon dioxide, not oxygen.',
+    memoryAnchor: 'Mars = CO2 atmosphere.',
+  },
+  {
+    id: 'ringed-planets-count',
+    prompt: 'How many planets in our solar system have rings?',
+    options: ['One', 'Two', 'Three', 'Four'],
+    correctAnswer: 'Four',
+    explanation: 'Jupiter, Saturn, Uranus, and Neptune all have ring systems.',
+    memoryAnchor: '4 planets have rings: Jupiter, Saturn, Uranus, Neptune.',
+  },
+  {
+    id: 'uranus-name',
+    prompt: 'Which planet is named after the Greek god who personified the sky?',
+    options: ['Neptune', 'Mars', 'Uranus', 'Mercury'],
+    correctAnswer: 'Uranus',
+    explanation: 'Uranus is named after the Greek sky god.',
+    memoryAnchor: 'Uranus = sky god.',
+  },
+  {
+    id: 'closest-star',
+    prompt: 'Other than the Sun, which star is closest to Earth?',
+    options: ['Rigel', 'Betelgeuse', 'Antares', 'Proxima Centauri'],
+    correctAnswer: 'Proxima Centauri',
+    explanation: 'Proxima Centauri is the closest known star to Earth after the Sun.',
+    memoryAnchor: 'Proxima = closest star.',
+  },
+  {
+    id: 'light-year-definition',
+    prompt: 'What is a light-year?',
+    options: [
+      'The brightness of light at 30,000 miles',
+      'The distance light travels in one year',
+      'Seventeen Earth years',
+      'A unit of time',
+    ],
+    correctAnswer: 'The distance light travels in one year',
+    explanation: 'A light-year measures distance, not time.',
+    memoryAnchor: 'Light-year = distance, not time.',
+  },
+];

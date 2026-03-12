@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiologyQuizModal } from '../components/BiologyQuizModal';
+import { GeneralScienceTestLauncher } from '../components/GeneralScienceTestLauncher';
 import { BiologyRecallDrill } from '../components/BiologyRecallDrill';
 import { BiologyTrapChecklist } from '../components/BiologyTrapChecklist';
 import { CellDiagram } from '../components/diagrams/CellDiagram';
@@ -100,6 +101,7 @@ export function BiologyPage() {
   const [drillOpen, setDrillOpen] = useState(false);
   const [checklistOpen, setChecklistOpen] = useState(false);
   const [showFactsGrid, setShowFactsGrid] = useState(false);
+  const [generalScienceTestOpen, setGeneralScienceTestOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]['id']>('cell');
   const activeTabTopicIds = TAB_TOPIC_IDS[activeTab];
   const scopedSelectedId = useMemo(
@@ -195,6 +197,12 @@ export function BiologyPage() {
             Trap Checklist
           </button>
           <button
+            onClick={() => setGeneralScienceTestOpen(true)}
+            className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500"
+          >
+            General Science Test
+          </button>
+          <button
             onClick={() => setQuizOpen(true)}
             className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
@@ -260,6 +268,9 @@ export function BiologyPage() {
       </p>
 
       <BiologyQuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      {generalScienceTestOpen && (
+        <GeneralScienceTestLauncher onClose={() => setGeneralScienceTestOpen(false)} />
+      )}
       <BiologyRecallDrill isOpen={drillOpen} onClose={() => setDrillOpen(false)} />
       <BiologyTrapChecklist isOpen={checklistOpen} onClose={() => setChecklistOpen(false)} />
     </div>

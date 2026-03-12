@@ -13,10 +13,12 @@ import { SpecialTopics } from './components/topics/SpecialTopics';
 import { GeneralScience } from './components/topics/GeneralScience';
 import { QuizModal } from './components/QuizModal';
 import { AsvabPracticeTest } from './components/AsvabPracticeTest';
+import { GeneralScienceTestLauncher } from './components/GeneralScienceTestLauncher';
 import { AstronomyPage } from './pages/AstronomyPage';
 import { BiologyPage } from './pages/BiologyPage';
 import { ChemistryPage } from './pages/ChemistryPage';
 import { EarthSciencePage } from './pages/EarthSciencePage';
+import { MeasurementPhysicsPage } from './pages/MeasurementPhysicsPage';
 
 const SECTION_IDS = [
   'general-science',
@@ -71,6 +73,19 @@ const SEARCH_TERMS: Record<string, string[]> = {
     'metamorphic',
     'tropical rainforest',
     'biome',
+    'meter',
+    'centimeter',
+    'kilometer',
+    'celsius',
+    'boiling',
+    'speed of light',
+    'velocity',
+    'energy',
+    'power',
+    'watts',
+    'melting point',
+    'newton',
+    'force',
   ],
   algebra: ['slope', 'quadratic', 'line', 'distance', 'midpoint', 'coordinate'],
   'geometry-2d': ['triangle', 'pythagorean', 'circle', 'polygon', 'trapezoid', 'area'],
@@ -96,6 +111,7 @@ export default function App() {
       <Route path="/biology" element={<BiologyPage />} />
       <Route path="/chemistry" element={<ChemistryPage />} />
       <Route path="/earth-science" element={<EarthSciencePage />} />
+      <Route path="/measurement-physics" element={<MeasurementPhysicsPage />} />
       <Route path="/" element={<MathStudyPage />} />
     </Routes>
   );
@@ -106,6 +122,7 @@ function MathStudyPage() {
   const [activeSection, setActiveSection] = useState('general-science');
   const [quizOpen, setQuizOpen] = useState(false);
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
+  const [generalSciencePracticeOpen, setGeneralSciencePracticeOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -154,17 +171,30 @@ function MathStudyPage() {
       </button>
 
       <button
+        onClick={() => setGeneralSciencePracticeOpen(true)}
+        className="fixed bottom-24 right-8 bg-amber-600 text-white p-4 rounded-full shadow-2xl hover:bg-amber-500 focus:ring-4 focus:ring-amber-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        <span className="font-bold">General Science Test</span>
+      </button>
+
+      <button
         onClick={() => setAsvabPracticeOpen(true)}
-        className="fixed bottom-24 right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
+        className="fixed bottom-40 right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v12m6-6H6m14-7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2z" />
         </svg>
-        <span className="font-bold">ASVAB Practice Test</span>
+        <span className="font-bold">Math Practice Test</span>
       </button>
 
       <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
       {asvabPracticeOpen && <AsvabPracticeTest onClose={() => setAsvabPracticeOpen(false)} />}
+      {generalSciencePracticeOpen && (
+        <GeneralScienceTestLauncher onClose={() => setGeneralSciencePracticeOpen(false)} />
+      )}
     </div>
   );
 }

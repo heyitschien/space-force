@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ASVAB Geometry Master Cheat Sheet</title>
+</head>
+<body class="bg-gray-50 p-8 font-sans">
+    <div class="max-w-4xl mx-auto bg-white border-2 border-blue-600 shadow-2xl p-8 rounded-xl">
+        
+        <div class="text-center border-b-4 border-blue-600 pb-4 mb-8">
+            <h1 class="text-4xl font-black text-blue-900 uppercase tracking-tight">📐 ASVAB Geometry Master Cheat Sheet</h1>
+            <p class="text-lg text-gray-600 mt-2 font-semibold italic">Identity Shape → Pick Formula → Plug & Chug</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            
+            <div class="border-2 border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h2 class="text-xl font-bold text-blue-800 mb-2 border-b border-blue-200">🟦 RECTANGLE</h2>
+                <div class="my-4 flex justify-center">
+                    <div class="w-32 h-20 border-2 border-black flex items-center justify-center bg-white relative">
+                        <span class="absolute -top-6">Length (L)</span>
+                        <span class="absolute -right-10">Width (W)</span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><strong>Perimeter:</strong> <code class="bg-white px-1">P = 2L + 2W</code></li>
+                    <li><strong>Area:</strong> <code class="bg-white px-1">A = L × W</code></li>
+                    <li class="text-red-600 font-bold mt-2">⚠️ TRAP: Area units are always squared (in², ft²).</li>
+                </ul>
+            </div>
+
+            <div class="border-2 border-orange-200 rounded-lg p-4 bg-orange-50">
+                <h2 class="text-xl font-bold text-orange-800 mb-2 border-b border-orange-200">🔺 TRIANGLE</h2>
+                <div class="my-4 flex justify-center">
+                    <svg width="100" height="80" viewBox="0 0 100 80">
+                        <polygon points="50,10 90,70 10,70" fill="white" stroke="black" stroke-width="2" />
+                        <line x1="50" y1="10" x2="50" y2="70" stroke="red" stroke-dasharray="4" />
+                        <text x="45" y="78" font-size="10">Base (b)</text>
+                        <text x="54" y="45" font-size="10" fill="red">h</text>
+                    </svg>
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><strong>Perimeter:</strong> <code class="bg-white px-1">P = s1 + s2 + s3</code></li>
+                    <li><strong>Area:</strong> <code class="bg-white px-1">A = ½ × b × h</code></li>
+                    <li class="text-red-600 font-bold mt-2">⚠️ TRAP: Height (h) must be perpendicular (straight up)!</li>
+                </ul>
+            </div>
+
+            <div class="border-2 border-green-200 rounded-lg p-4 bg-green-50">
+                <h2 class="text-xl font-bold text-green-800 mb-2 border-b border-green-200">⚪ CIRCLE</h2>
+                <div class="my-4 flex justify-center">
+                    <div class="w-20 h-20 border-2 border-black rounded-full flex items-center justify-center bg-white relative">
+                        <div class="w-1 h-1 bg-black rounded-full"></div>
+                        <line x1="40" y1="40" x2="80" y2="40" class="border-t border-black"></line>
+                        <span class="absolute right-2 top-6 text-xs text-blue-600 font-bold">r</span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><strong>Circumference:</strong> <code class="bg-white px-1">C = 2πr</code> or <code class="bg-white px-1">πd</code></li>
+                    <li><strong>Area:</strong> <code class="bg-white px-1">A = πr²</code></li>
+                    <li class="text-red-600 font-bold mt-2">⚠️ TRAP: Diameter (d) = 2 × radius. Divide by 2 first!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 text-white p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-yellow-400">🧠 ASVAB RECOGNITION DRILL</h3>
+                <ul class="space-y-2 italic">
+                    <li>"Fencing a yard" → <strong>Perimeter</strong></li>
+                    <li>"Installing carpet/grass" → <strong>Area</strong></li>
+                    <li>"A revolving wheel/tire" → <strong>Circumference</strong></li>
+                    <li>"Space inside a box/tank" → <strong>Volume</strong></li>
+                </ul>
+            </div>
+            <div class="bg-yellow-100 border-l-8 border-yellow-500 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-2">🚨 THE "TRAP" CHECKLIST</h3>
+                <ul class="list-disc ml-5 space-y-1 text-sm font-medium">
+                    <li>Did I use the <strong>radius</strong> (r) or <strong>diameter</strong> (d)?</li>
+                    <li>Did I remember the <strong>½</strong> for the triangle?</li>
+                    <li>Are all units the same (inches vs feet) before I started?</li>
+                    <li>Does the answer need <strong>π</strong> or <strong>3.14</strong>?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-gray-100 rounded-lg border-2 border-dashed border-gray-400">
+            <h3 class="text-lg font-bold mb-2">🧪 QUICK MENTAL CHECK:</h3>
+            <p class="text-sm">Rectangle: L=10, W=5 → Area is 50, Perimeter is 30.</p>
+            <p class="text-sm">Triangle: Base=6, Height=4 → Area is 12 (Don't forget the half!).</p>
+        </div>
+
+        <footer class="mt-8 text-center text-gray-400 text-xs">
+            Created for Chien's ASVAB Prep - 2026
+        </footer>
+    </div>
+</body>
+</html>

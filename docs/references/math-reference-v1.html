@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chien's ASVAB Master Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-bottom: 4px solid #1e40af; color: #1e40af; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-slate-100 p-4 md:p-10 font-sans">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
+        
+        <header class="bg-blue-800 text-white p-6 text-center">
+            <h1 class="text-3xl font-black uppercase tracking-widest">ASVAB Technical Study Portal</h1>
+            <p class="opacity-80">Verified Formulas & Recognition Drills</p>
+        </header>
+
+        <nav class="flex border-b overflow-x-auto bg-white sticky top-0 z-10">
+            <button onclick="openTab(event, 'geometry')" class="tab-btn active px-6 py-4 whitespace-nowrap">Geometry</button>
+            <button onclick="openTab(event, 'algebra')" class="tab-btn px-6 py-4 whitespace-nowrap">Algebra & Lines</button>
+            <button onclick="openTab(event, 'arithmetic')" class="tab-btn px-6 py-4 whitespace-nowrap">Arithmetic & Stats</button>
+            <button onclick="openTab(event, 'conversions')" class="tab-btn px-6 py-4 whitespace-nowrap">Conversions</button>
+        </nav>
+
+        <div id="geometry" class="tab-content active p-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-100 pb-2">2D Shapes & Circles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="border rounded-xl p-4 bg-blue-50">
+                    <h3 class="font-bold text-lg mb-2 underline">Rectangle</h3>
+                    <p><strong>Perimeter:</strong> P = 2l + 2w</p>
+                    <p><strong>Area:</strong> A = lw</p>
+                    <p class="text-xs mt-2 text-gray-500 italic">*Add all sides for any polygon perimeter.</p>
+                </div>
+                <div class="border rounded-xl p-4 bg-orange-50">
+                    <h3 class="font-bold text-lg mb-2 underline">Triangle</h3>
+                    <p><strong>Area:</strong> A = ½bh</p>
+                    <p><strong>Sum of Angles:</strong> 180°</p>
+                    <p><strong>Pythagorean:</strong> a² + b² = c² (Right Δ)</p>
+                </div>
+                <div class="border rounded-xl p-4 bg-green-50">
+                    <h3 class="font-bold text-lg mb-2 underline">Circle</h3>
+                    <p><strong>Circumference:</strong> C = 2πr OR πd</p>
+                    <p><strong>Area:</strong> A = πr²</p>
+                    <p class="text-xs mt-2 text-gray-500 italic">*Use π ≈ 3.14 or 22/7.</p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-100 pb-2">3D Volume & Surface Area</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-3 border rounded-lg"><strong>Cube:</strong> V = a³ | SA = 6a²</div>
+                <div class="p-3 border rounded-lg"><strong>Cylinder:</strong> V = πr²h</div>
+                <div class="p-3 border rounded-lg"><strong>Rect. Pyramid:</strong> V = ⅓abh</div>
+                <div class="p-3 border rounded-lg"><strong>Sphere:</strong> V = 4/3πr³</div>
+            </div>
+        </div>
+
+        <div id="algebra" class="tab-content p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <section>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-4">Linear Equations</h2>
+                    <ul class="space-y-3 bg-gray-50 p-4 rounded-xl border">
+                        <li><strong>Slope (m):</strong> (y₂ - y₁) / (x₂ - x₁)</li>
+                        <li><strong>Slope-Intercept:</strong> y = mx + b</li>
+                        <li><strong>Point-Slope:</strong> y - y₁ = m(x - x₁)</li>
+                        <li><strong>Distance:</strong> d = √[(x₂-x₁)² + (y₂-y₁)²]</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-4">Exponents & Roots</h2>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="p-2 bg-yellow-50 rounded">a⁰ = 1</div>
+                        <div class="p-2 bg-yellow-50 rounded">a⁻ⁿ = 1/aⁿ</div>
+                        <div class="p-2 bg-yellow-50 rounded">(aᵐ)ⁿ = aᵐⁿ</div>
+                        <div class="p-2 bg-yellow-50 rounded">aᵐ · aⁿ = aᵐ⁺ⁿ</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="arithmetic" class="tab-content p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-slate-50 border-l-4 border-blue-500 rounded">
+                    <h3 class="font-bold text-xl mb-3">Statistics</h3>
+                    <p><strong>Mean:</strong> Sum of points / Number of points</p>
+                    <p><strong>Median:</strong> Middle value (ordered small to large)</p>
+                    <p><strong>Mode:</strong> Occurs most often</p>
+                    <p><strong>Range:</strong> Max - Min</p>
+                </div>
+                <div class="p-6 bg-slate-50 border-l-4 border-green-500 rounded">
+                    <h3 class="font-bold text-xl mb-3">Interest & Percent</h3>
+                    <p><strong>Simple Interest:</strong> I = prt</p>
+                    <p><strong>Percent Change:</strong> [(New - Old) / Old] × 100</p>
+                    <p><strong>Probability:</strong> Desired outcomes / Total outcomes</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="conversions" class="tab-content p-8 text-sm">
+            <h2 class="text-2xl font-bold mb-6">Units to Memorize</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h4 class="font-bold border-b mb-2">Linear</h4>
+                    <p>12 in = 1 ft</p>
+                    <p>3 ft = 1 yd</p>
+                    <p>5,280 ft = 1 mi</p>
+                </div>
+                <div>
+                    <h4 class="font-bold border-b mb-2">Capacity</h4>
+                    <p>8 fl oz = 1 cup</p>
+                    <p>2 cups = 1 pt</p>
+                    <p>2 pt = 1 qt</p>
+                    <p>4 qt = 1 gal</p>
+                </div>
+                <div>
+                    <h4 class="font-bold border-b mb-2">Weight & Time</h4>
+                    <p>1 lb = 16 oz</p>
+                    <p>1 Ton = 2,000 lbs</p>
+                    <p>1 hr = 3,600 sec</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-gray-100 p-4 text-center text-xs text-gray-400">
+            Source: Grammar Hero Reference Sheet [cite: 1] | Personal Study Tool for Chien
+        </footer>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
