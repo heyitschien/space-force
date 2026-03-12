@@ -849,7 +849,7 @@
     {
       "id": "ar-p3-001",
       "order": 1,
-      "text": "If a car is towed 12 miles to the repair shop and the tow charge is $3.50 per mile, how much does the tow cost?",
+      "text": "If a car is towed 12 miles to the repair shop, and the tow charge is $3.50 per mile, how much did the tow cost?",
       "options": [
         { "id": "A", "text": "$12.00" },
         { "id": "B", "text": "$3.50" },
@@ -933,7 +933,7 @@
     {
       "id": "ar-p3-007",
       "order": 7,
-      "text": "Carpet stain protector costs $0.65 per square yard to apply. How much will it cost to apply the protector to a 16-foot x 18-foot carpet?",
+      "text": "Carpet stain protector costs $0.65 per square yard to apply. How much will it cost to apply the protectant to a 16-foot x 18-foot carpet?",
       "options": [
         { "id": "A", "text": "$187.20" },
         { "id": "B", "text": "$62.40" },
@@ -1022,7 +1022,7 @@
         { "id": "A", "text": "20.00 minutes" },
         { "id": "B", "text": "3.75 minutes" },
         { "id": "C", "text": "22.50 minutes" },
-        { "id": "D", "text": "7.5 minutes" }
+        { "id": "D", "text": "24.00 minutes" }
       ],
       "correct": "C",
       "source": "practice-3",
@@ -1031,12 +1031,12 @@
     {
       "id": "ar-p3-014",
       "order": 14,
-      "text": "The population of Grand Island, Nebraska, grew by 600,000 people between 1995 and 2005, one-fifth more than the town council predicted. The town council originally predicted the city's population would grow by",
+      "text": "The population of Grand Island, Nebraska, grew by 600,000 people between 1995 and 2005, one-fifth more than the town council predicted. The town council originally predicted the city's population would grow by:",
       "options": [
         { "id": "A", "text": "400,000" },
         { "id": "B", "text": "500,000" },
         { "id": "C", "text": "300,000" },
-        { "id": "D", "text": "100,000" }
+        { "id": "D", "text": "200,000" }
       ],
       "correct": "B",
       "source": "practice-3",
@@ -1049,8 +1049,8 @@
       "options": [
         { "id": "A", "text": "30%" },
         { "id": "B", "text": "40%" },
-        { "id": "C", "text": "66 2/3%" },
-        { "id": "D", "text": "60%" }
+        { "id": "C", "text": "66⅓%" },
+        { "id": "D", "text": "66⅔%" }
       ],
       "correct": "D",
       "source": "practice-3",
@@ -1059,7 +1059,7 @@
     {
       "id": "ar-p3-016",
       "order": 16,
-      "text": "A teacher deposits $3,000 in a retirement fund. If she doesn't add any more money to the fund, which earns an annual interest rate of 6%, how much money will she have in 1 year?",
+      "text": "A teacher deposited $3,000 in a retirement fund. If she didn't add any more money to the fund, which earns an annual interest rate of 6%, how much money would she have in 1 year?",
       "options": [
         { "id": "A", "text": "$180" },
         { "id": "B", "text": "$3,006" },
@@ -1073,7 +1073,7 @@
     {
       "id": "ar-p3-017",
       "order": 17,
-      "text": "The high school track measures one-quarter of a mile around. How many laps would you have to run in order to run three and a half miles?",
+      "text": "The high-school track measures one quarter of a mile around. How many laps would you have to run in order to run three and a half miles?",
       "options": [
         { "id": "A", "text": "12" },
         { "id": "B", "text": "14" },
@@ -1101,7 +1101,7 @@
     {
       "id": "ar-p3-019",
       "order": 19,
-      "text": "A carpenter earns $12.30 an hour for a 40-hour week. His overtime pay is 1.5 times his base pay. If he puts in a 46-hour week, how much is his weekly pay?",
+      "text": "A carpenter earns $12.30 an hour for a 40-hour week. His overtime pay is 1½ times his base pay. If he puts in a 46-hour week, how much is his weekly pay?",
       "options": [
         { "id": "A", "text": "$602.70" },
         { "id": "B", "text": "$492.00" },
@@ -1115,12 +1115,12 @@
     {
       "id": "ar-p3-020",
       "order": 20,
-      "text": "An office building has 30 employees and provides 42 square feet of work space per employee. If five more employees are hired, how much less work space will each employee have?",
+      "text": "An office building has 30 employees and allows 42 square feet of work space per employee. If five more employees are hired, how much less work space will each employee have?",
       "options": [
         { "id": "A", "text": "6 square feet" },
         { "id": "B", "text": "7 square feet" },
         { "id": "C", "text": "7.5 square feet" },
-        { "id": "D", "text": "36 square feet" }
+        { "id": "D", "text": "8 square feet" }
       ],
       "correct": "A",
       "source": "practice-3",
@@ -1199,7 +1199,7 @@
     {
       "id": "ar-p3-026",
       "order": 26,
-      "text": "A train headed south for Wichita left the station at the same time a train headed north for Des Moines left the same station. The train headed for Wichita traveled at 55 miles per hour. The train headed for Des Moines traveled at 70 miles per hour. How many miles apart are the trains at the end of 3 hours?",
+      "text": "A train headed south for Wichita left the station at the same time a train headed north for Des Moines left the same station. The train headed for Wichita traveled at 55 miles per hour. The train headed for Des Moines traveled at 70 miles per hour. How many miles apart were the trains at the end of 3 hours?",
       "options": [
         { "id": "A", "text": "210 miles" },
         { "id": "B", "text": "165 miles" },
@@ -1213,7 +1213,7 @@
     {
       "id": "ar-p3-027",
       "order": 27,
-      "text": "A carpenter needs to cut four sections, each 3 feet, 8 inches long, from a piece of molding. If the board is only sold by the foot, what's the shortest length of board she can buy?",
+      "text": "A carpenter needs to cut four sections, each 3-feet 8-inches long, from a piece of molding. If the board is only sold by the foot, what's the shortest length of board she can buy?",
       "options": [
         { "id": "A", "text": "15 feet" },
         { "id": "B", "text": "14 feet" },
@@ -1227,7 +1227,7 @@
     {
       "id": "ar-p3-028",
       "order": 28,
-      "text": "Kiya had only one coupon for 10% off one frozen turkey breast. The turkey breasts cost $8.50 each, and Kiya wanted to buy two. How much did she pay?",
+      "text": "Kiya had a coupon for 10% off one frozen turkey breast. The turkey breasts cost $8.50 each, and Kiya bought two. How much did she pay?",
       "options": [
         { "id": "A", "text": "$16.15" },
         { "id": "B", "text": "$17.00" },
@@ -1241,10 +1241,10 @@
     {
       "id": "ar-p3-029",
       "order": 29,
-      "text": "A recruiter travels 1,100 miles during a 40-hour workweek. If she spends 2/5 of her time traveling, how many hours does she spend traveling?",
+      "text": "A recruiter travels 1,100 miles during a 40-hour workweek. If she spends 2⁄5 of her time traveling, how many hours does she spend traveling?",
       "options": [
         { "id": "A", "text": "22" },
-        { "id": "B", "text": "5" },
+        { "id": "B", "text": "5½" },
         { "id": "C", "text": "16" },
         { "id": "D", "text": "8" }
       ],
@@ -1255,12 +1255,12 @@
     {
       "id": "ar-p3-030",
       "order": 30,
-      "text": "Your car uses gasoline at the rate of 21 miles per gallon. If gasoline costs $2.82 per gallon and you drive for 7 hours at a speed of 48 miles per hour, how much will you pay for gasoline for the trip?",
+      "text": "Your car uses gasoline at the rate of 21 miles per gallon. If gasoline costs $2.82 per gallon, and you drive for 7 hours at a speed of 48 miles per hour, how much will you pay for gasoline for the trip?",
       "options": [
         { "id": "A", "text": "$38.18" },
         { "id": "B", "text": "$45.12" },
         { "id": "C", "text": "$47.73" },
-        { "id": "D", "text": "$59.27" }
+        { "id": "D", "text": "59.27" }
       ],
       "correct": "B",
       "source": "practice-3",
