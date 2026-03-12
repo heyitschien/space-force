@@ -14,14 +14,15 @@ import { GeneralScience } from './components/topics/GeneralScience';
 import { QuizModal } from './components/QuizModal';
 import { AsvabPracticeTest } from './components/AsvabPracticeTest';
 import { GeneralScienceTestLauncher } from './components/GeneralScienceTestLauncher';
+import { PracticeMenu } from './components/PracticeMenu';
+import { TestHistoryModal } from './components/TestHistoryModal';
 import { AstronomyPage } from './pages/AstronomyPage';
 import { BiologyPage } from './pages/BiologyPage';
 import { ChemistryPage } from './pages/ChemistryPage';
 import { EarthSciencePage } from './pages/EarthSciencePage';
 import { MeasurementPhysicsPage } from './pages/MeasurementPhysicsPage';
 
-const SECTION_IDS = [
-  'general-science',
+const MATH_SECTION_IDS = [
   'algebra',
   'geometry-2d',
   'geometry-3d',
@@ -31,6 +32,8 @@ const SECTION_IDS = [
   'units-conversions',
   'special-topics',
 ] as const;
+
+type ActiveCategory = 'general-science' | 'mathematics-knowledge';
 
 const SEARCH_TERMS: Record<string, string[]> = {
   'general-science': [
@@ -119,15 +122,38 @@ export default function App() {
 
 function MathStudyPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('general-science');
   const [activeSection, setActiveSection] = useState('general-science');
   const [quizOpen, setQuizOpen] = useState(false);
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
   const [generalSciencePracticeOpen, setGeneralSciencePracticeOpen] = useState(false);
+  const [testHistoryOpen, setTestHistoryOpen] = useState(false);
+
+  const handleCategorySelect = (categoryId: string, sectionId?: string) => {
+    if (categoryId === 'future') return;
+    setActiveCategory(categoryId as ActiveCategory);
+    if (sectionId) {
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
 
   useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash && (MATH_SECTION_IDS as readonly string[]).includes(hash)) {
+      setActiveCategory('mathematics-knowledge');
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeCategory !== 'mathematics-knowledge') return;
     const handleScroll = () => {
       let current = '';
-      for (const id of SECTION_IDS) {
+      for (const id of MATH_SECTION_IDS) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 150) {
           current = id;
@@ -138,59 +164,47 @@ function MathStudyPage() {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeCategory]);
 
   return (
     <div className="bg-gray-50 text-gray-900 min-h-screen">
       <Header searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row p-4 gap-8">
-        <Sidebar activeSection={activeSection} />
+        <Sidebar
+          activeSection={activeSection}
+          activeCategory={activeCategory}
+          onCategorySelect={handleCategorySelect}
+        />
 
         <main className="lg:w-3/4 space-y-12 pb-24">
-          <GeneralScience visible={sectionMatchesSearch('general-science', searchTerm)} />
-          <Algebra visible={sectionMatchesSearch('algebra', searchTerm)} />
-          <Geometry2D visible={sectionMatchesSearch('geometry-2d', searchTerm)} />
-          <Geometry3D visible={sectionMatchesSearch('geometry-3d', searchTerm)} />
-          <ExponentsRadicals visible={sectionMatchesSearch('exponents-radicals', searchTerm)} />
-          <Factoring visible={sectionMatchesSearch('factoring', searchTerm)} />
-          <ProbabilityStats visible={sectionMatchesSearch('probability-stats', searchTerm)} />
-          <UnitsConversions visible={sectionMatchesSearch('units-conversions', searchTerm)} />
-          <SpecialTopics visible={sectionMatchesSearch('special-topics', searchTerm)} />
+          {activeCategory === 'general-science' && (
+            <GeneralScience visible={sectionMatchesSearch('general-science', searchTerm)} />
+          )}
+          {activeCategory === 'mathematics-knowledge' && (
+            <>
+              <Algebra visible={sectionMatchesSearch('algebra', searchTerm)} />
+              <Geometry2D visible={sectionMatchesSearch('geometry-2d', searchTerm)} />
+              <Geometry3D visible={sectionMatchesSearch('geometry-3d', searchTerm)} />
+              <ExponentsRadicals visible={sectionMatchesSearch('exponents-radicals', searchTerm)} />
+              <Factoring visible={sectionMatchesSearch('factoring', searchTerm)} />
+              <ProbabilityStats visible={sectionMatchesSearch('probability-stats', searchTerm)} />
+              <UnitsConversions visible={sectionMatchesSearch('units-conversions', searchTerm)} />
+              <SpecialTopics visible={sectionMatchesSearch('special-topics', searchTerm)} />
+            </>
+          )}
         </main>
       </div>
 
-      <button
-        onClick={() => setQuizOpen(true)}
-        className="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span className="font-bold">Practice Question</span>
-      </button>
-
-      <button
-        onClick={() => setGeneralSciencePracticeOpen(true)}
-        className="fixed bottom-24 right-8 bg-amber-600 text-white p-4 rounded-full shadow-2xl hover:bg-amber-500 focus:ring-4 focus:ring-amber-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-        <span className="font-bold">General Science Test</span>
-      </button>
-
-      <button
-        onClick={() => setAsvabPracticeOpen(true)}
-        className="fixed bottom-40 right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 transform hover:scale-110 transition-all flex items-center gap-2 z-40"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v12m6-6H6m14-7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2z" />
-        </svg>
-        <span className="font-bold">Math Practice Test</span>
-      </button>
+      <PracticeMenu
+        onGeneralScienceTest={() => setGeneralSciencePracticeOpen(true)}
+        onMathPracticeTest={() => setAsvabPracticeOpen(true)}
+        onPracticeQuestion={() => setQuizOpen(true)}
+        onTestHistory={() => setTestHistoryOpen(true)}
+      />
 
       <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      <TestHistoryModal isOpen={testHistoryOpen} onClose={() => setTestHistoryOpen(false)} />
       {asvabPracticeOpen && <AsvabPracticeTest onClose={() => setAsvabPracticeOpen(false)} />}
       {generalSciencePracticeOpen && (
         <GeneralScienceTestLauncher onClose={() => setGeneralSciencePracticeOpen(false)} />

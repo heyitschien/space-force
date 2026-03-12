@@ -10,17 +10,17 @@ export function Header({ searchTerm, onSearchChange }: HeaderProps) {
     <header className="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center gap-4">
-        <h1 className="text-2xl font-bold flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2 hover:opacity-90">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
-          Math Study Portal
-        </h1>
+          <h1 className="text-2xl font-bold">ASVAB Study Portal</h1>
+        </Link>
         <Link
-          to="/astronomy"
+          to="/"
           className="shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-colors hover:bg-white/30"
         >
-          Explore Astronomy
+          Home
         </Link>
         </div>
         <div className="relative w-full md:w-96">
