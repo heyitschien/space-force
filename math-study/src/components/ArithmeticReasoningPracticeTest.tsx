@@ -12,8 +12,14 @@ import {
 } from 'lucide-react';
 import arithmeticReasoningData from '../data/arithmeticReasoningPracticeQuestions.json';
 import { saveArResult } from '../utils/testResults';
+import {
+  selectNextQuestion,
+  getDifficulty,
+  DIFFICULTY_POINTS,
+  type Difficulty,
+} from '../utils/adaptiveQuestions';
 
-export type ArithmeticReasoningTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix';
+export type ArithmeticReasoningTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix' | 'adaptive';
 
 interface ArithmeticReasoningPracticeTestProps {
   onClose: () => void;
@@ -35,6 +41,7 @@ interface ArQuestion {
   correct: OptionId;
   source: string;
   bucket?: string;
+  difficulty?: Difficulty;
 }
 
 interface ArData {
@@ -73,7 +80,17 @@ function shuffleArray<T>(arr: T[]): T[] {
   return copy;
 }
 
+function getFirstMediumQuestion(): ArQuestion | null {
+  const medium = DATA.questions.filter((q) => (q.difficulty ?? 'medium') === 'medium');
+  if (medium.length === 0) return DATA.questions[0] ?? null;
+  return medium[Math.floor(Math.random() * medium.length)];
+}
+
 function getQuestionsForMode(mode: ArithmeticReasoningTestMode): ArQuestion[] {
+  if (mode === 'adaptive') {
+    const first = getFirstMediumQuestion();
+    return first ? [first] : [];
+  }
   if (mode === 'mix') {
     const shuffled = shuffleArray(DATA.questions);
     return shuffled.slice(0, Math.min(QUESTIONS_PER_TEST, shuffled.length));
@@ -95,6 +112,7 @@ export function ArithmeticReasoningPracticeTest({
   const [selectedAnswer, setSelectedAnswer] = useState<OptionId | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
+  const [weightedScore, setWeightedScore] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS);
   const [timeExpired, setTimeExpired] = useState(false);
   const [timeUsed, setTimeUsed] = useState(0);
@@ -110,6 +128,7 @@ export function ArithmeticReasoningPracticeTest({
     setSelectedAnswer(null);
     setShowFeedback(false);
     setScore(0);
+    setWeightedScore(0);
     setSecondsLeft(TOTAL_SECONDS);
     setTimeExpired(false);
     setAnswerHistory([]);
@@ -144,7 +163,10 @@ export function ArithmeticReasoningPracticeTest({
     setSelectedAnswer(optionId);
     setShowFeedback(true);
     const correct = optionId === currentQuestion.correct;
-    if (correct) setScore((s) => s + 1);
+    if (correct) {
+      setScore((s) => s + 1);
+      setWeightedScore((w) => w + DIFFICULTY_POINTS[getDifficulty(currentQuestion)]);
+    }
     setAnswerHistory((prev) => [
       ...prev,
       { question: currentQuestion, selectedAnswer: optionId, correct },
@@ -152,7 +174,22 @@ export function ArithmeticReasoningPracticeTest({
   };
 
   const handleNext = () => {
-    if (currentIndex < questions.length - 1) {
+    if (mode === 'adaptive') {
+      const lastEntry = answerHistory[answerHistory.length - 1];
+      const lastCorrect = lastEntry?.correct ?? false;
+      const lastDifficulty = lastEntry ? getDifficulty(lastEntry.question) : 'medium';
+      const usedIds = new Set(questions.map((q) => q.id));
+      const next = selectNextQuestion(DATA.questions as ArQuestion[], usedIds, lastDifficulty, lastCorrect);
+      if (next && questions.length < QUESTIONS_PER_TEST && !timeExpired) {
+        setQuestions((prev) => [...prev, next]);
+        setCurrentIndex(questions.length);
+        setSelectedAnswer(null);
+        setShowFeedback(false);
+      } else {
+        setTimeUsed(TOTAL_SECONDS - secondsLeft);
+        setPhase('complete');
+      }
+    } else if (currentIndex < questions.length - 1) {
       setCurrentIndex((i) => i + 1);
       setSelectedAnswer(null);
       setShowFeedback(false);
@@ -206,6 +243,21 @@ export function ArithmeticReasoningPracticeTest({
       : 0;
     const finalTimeUsed = timeUsed || TOTAL_SECONDS - secondsLeft;
     const missedQuestions = answerHistory.filter((a) => !a.correct);
+    const maxWeighted =
+      mode === 'adaptive'
+        ? questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[getDifficulty(q)], 0)
+        : undefined;
+    const missedByDifficulty =
+      mode === 'adaptive'
+        ? missedQuestions.reduce(
+            (acc, { question }) => {
+              const d = getDifficulty(question);
+              acc[d] = (acc[d] ?? 0) + 1;
+              return acc;
+            },
+            { easy: 0, medium: 0, hard: 0 } as Record<Difficulty, number>
+          )
+        : undefined;
 
     if (!savedRef.current) {
       savedRef.current = true;
@@ -218,6 +270,11 @@ export function ArithmeticReasoningPracticeTest({
         timeUsedSeconds: finalTimeUsed,
         timeExpired,
         missedQuestionIds: missedQuestions.map((a) => a.question.id),
+        ...(mode === 'adaptive' && {
+          weightedScore,
+          maxWeightedScore: maxWeighted,
+          missedByDifficulty,
+        }),
       });
     }
 
@@ -239,6 +296,38 @@ export function ArithmeticReasoningPracticeTest({
             </p>
           </div>
           <div className="p-8">
+            {mode === 'adaptive' && maxWeighted != null && (
+              <div className="mb-6 rounded-xl border-2 border-rose-200 bg-rose-50/50 p-4">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-rose-700">
+                  Weighted Score (CAT-style)
+                </p>
+                <p className="text-2xl font-black text-rose-900">
+                  {weightedScore} / {maxWeighted} pts
+                </p>
+                <p className="mt-1 text-xs text-slate-600">
+                  easy=1, medium=2, hard=3
+                </p>
+                {missedByDifficulty && (() => {
+                  const correctByDiff = answerHistory
+                    .filter((a) => a.correct)
+                    .reduce((acc, a) => {
+                      const d = getDifficulty(a.question);
+                      acc[d] = (acc[d] ?? 0) + 1;
+                      return acc;
+                    }, {} as Record<Difficulty, number>);
+                  return (
+                    <div className="mt-3 flex flex-wrap gap-4 text-sm">
+                      <span>
+                        Correct: {correctByDiff.easy ?? 0} easy, {correctByDiff.medium ?? 0} medium, {correctByDiff.hard ?? 0} hard
+                      </span>
+                      <span className="text-red-600">
+                        Missed: {missedByDifficulty.easy} easy, {missedByDifficulty.medium} medium, {missedByDifficulty.hard} hard
+                      </span>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
             <div className="mb-8 grid grid-cols-2 gap-4">
               <div className="rounded-xl border border-slate-100 bg-slate-50 p-6 text-center">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-wider text-slate-500">
@@ -262,6 +351,11 @@ export function ArithmeticReasoningPracticeTest({
               </div>
             </div>
 
+            {missedByDifficulty && (missedByDifficulty.hard ?? 0) > 0 && (
+              <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-medium text-amber-800">
+                Hard items to review — these are high-value on the real CAT.
+              </div>
+            )}
             {missedQuestions.length > 0 && (
               <div className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
                 <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-800">
@@ -273,11 +367,21 @@ export function ArithmeticReasoningPracticeTest({
                     const wrongText = question.options.find((o) => o.id === selectedAnswer)?.text ?? '';
                     const correctText = question.options.find((o) => o.id === question.correct)?.text ?? '';
                     const studyPath = question.bucket ? BUCKET_TO_PATH[question.bucket] : null;
+                    const diff = getDifficulty(question);
                     return (
                       <li
                         key={question.id}
                         className="rounded-lg border border-slate-200 bg-white p-4"
                       >
+                        {mode === 'adaptive' && (
+                          <span
+                            className={`mb-2 inline-block rounded px-2 py-0.5 text-xs font-bold uppercase ${
+                              diff === 'hard' ? 'bg-amber-100 text-amber-800' : diff === 'medium' ? 'bg-slate-200 text-slate-700' : 'bg-slate-100 text-slate-600'
+                            }`}
+                          >
+                            {diff}
+                          </span>
+                        )}
                         <p className="mb-2 font-medium text-slate-800">{question.text}</p>
                         <p className="mb-1 text-sm">
                           <span className="text-red-600">Your answer: {wrongText}</span>

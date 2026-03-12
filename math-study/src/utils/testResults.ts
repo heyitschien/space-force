@@ -1,8 +1,8 @@
 const GS_STORAGE_KEY = 'asvab-general-science-results';
 const AR_STORAGE_KEY = 'asvab-arithmetic-reasoning-results';
 
-export type GeneralScienceTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix';
-export type ArithmeticReasoningTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix';
+export type GeneralScienceTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix' | 'adaptive';
+export type ArithmeticReasoningTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix' | 'adaptive';
 
 export interface TestResult {
   id: string;
@@ -14,6 +14,9 @@ export interface TestResult {
   timeUsedSeconds: number;
   timeExpired: boolean;
   missedQuestionIds: string[];
+  weightedScore?: number;
+  maxWeightedScore?: number;
+  missedByDifficulty?: { easy: number; medium: number; hard: number };
 }
 
 export interface ArTestResult {
@@ -26,6 +29,9 @@ export interface ArTestResult {
   timeUsedSeconds: number;
   timeExpired: boolean;
   missedQuestionIds: string[];
+  weightedScore?: number;
+  maxWeightedScore?: number;
+  missedByDifficulty?: { easy: number; medium: number; hard: number };
 }
 
 export function saveResult(result: Omit<TestResult, 'id'>): void {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, History, Shuffle, X } from 'lucide-react';
+import { FileText, History, Shuffle, TrendingUp, X } from 'lucide-react';
 import {
   ArithmeticReasoningPracticeTest,
   type ArithmeticReasoningTestMode,
@@ -11,6 +11,7 @@ interface ArithmeticReasoningTestLauncherProps {
 }
 
 const MODES: { id: ArithmeticReasoningTestMode; label: string; description: string }[] = [
+  { id: 'adaptive', label: 'Adaptive (CAT-style)', description: 'Difficulty adjusts to you. Harder questions = more points.' },
   { id: 'practice-1', label: 'Practice Test 1', description: '30 questions from practice-1.pdf' },
   { id: 'practice-2', label: 'Practice Test 2', description: '30 questions from practice-2.pdf' },
   { id: 'practice-3', label: 'Practice Test 3', description: '30 questions from practice-3.pdf' },
@@ -63,7 +64,9 @@ export function ArithmeticReasoningTestLauncher({ onClose }: ArithmeticReasoning
               onClick={() => setSelectedMode(mode.id)}
               className="flex flex-col items-start gap-2 rounded-xl border-2 border-slate-200 bg-white p-6 text-left shadow-sm transition-all hover:border-rose-400 hover:bg-rose-50/50"
             >
-              {mode.id === 'mix' ? (
+              {mode.id === 'adaptive' ? (
+                <TrendingUp className="h-8 w-8 text-rose-600" />
+              ) : mode.id === 'mix' ? (
                 <Shuffle className="h-8 w-8 text-rose-600" />
               ) : (
                 <FileText className="h-8 w-8 text-rose-600" />

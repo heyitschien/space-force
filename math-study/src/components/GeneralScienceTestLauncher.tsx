@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, History, Shuffle, X } from 'lucide-react';
+import { FileText, History, Shuffle, TrendingUp, X } from 'lucide-react';
 import {
   GeneralSciencePracticeTest,
   type GeneralScienceTestMode,
@@ -11,6 +11,7 @@ interface GeneralScienceTestLauncherProps {
 }
 
 const MODES: { id: GeneralScienceTestMode; label: string; description: string }[] = [
+  { id: 'adaptive', label: 'Adaptive (CAT-style)', description: 'Difficulty adjusts to you. Harder questions = more points.' },
   { id: 'practice-1', label: 'Practice Test 1', description: '25 questions from practice-1.pdf' },
   { id: 'practice-2', label: 'Practice Test 2', description: '25 questions from practice-2.pdf' },
   { id: 'practice-3', label: 'Practice Test 3', description: '25 questions from practice-3.pdf' },
@@ -63,7 +64,9 @@ export function GeneralScienceTestLauncher({ onClose }: GeneralScienceTestLaunch
               onClick={() => setSelectedMode(mode.id)}
               className="flex flex-col items-start gap-2 rounded-xl border-2 border-slate-200 bg-white p-6 text-left shadow-sm transition-all hover:border-indigo-400 hover:bg-indigo-50/50"
             >
-              {mode.id === 'mix' ? (
+              {mode.id === 'adaptive' ? (
+                <TrendingUp className="h-8 w-8 text-indigo-600" />
+              ) : mode.id === 'mix' ? (
                 <Shuffle className="h-8 w-8 text-indigo-600" />
               ) : (
                 <FileText className="h-8 w-8 text-indigo-600" />
