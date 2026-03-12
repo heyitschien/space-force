@@ -5,6 +5,7 @@ import { getArTopicById } from '../data/arTopicContent';
 import { getPatternIdsForTopic } from '../data/ar20Patterns';
 import { getArQuestionById } from '../utils/arQuestionLookup';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
+import { DstTopicLayout } from './DstTopicLayout';
 
 export function ArTopicPage() {
   const { topicId } = useParams<{ topicId: string }>();
@@ -12,6 +13,10 @@ export function ArTopicPage() {
   const [expandedQuestionIds, setExpandedQuestionIds] = useState<Set<string>>(new Set());
 
   const topic = topicId ? getArTopicById(topicId) : undefined;
+
+  if (topic && topicId === 'rate-distance-time') {
+    return <DstTopicLayout topic={topic} />;
+  }
 
   const toggleQuestion = (id: string) => {
     setExpandedQuestionIds((prev) => {

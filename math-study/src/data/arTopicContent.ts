@@ -109,7 +109,7 @@ export const AR_TOPICS: ArTopic[] = [
   {
     id: 'rate-distance-time',
     title: 'Distance, Speed & Time',
-    description: 'Distance = speed × time; catch-up problems; trains moving apart.',
+    description: 'Master the 6 motion patterns used on the ASVAB',
     principles: [
       'distance = speed × time',
       'time = distance ÷ speed',
