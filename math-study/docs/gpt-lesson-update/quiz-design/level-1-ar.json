@@ -1,0 +1,387 @@
+{
+  "levelId": "ar-level-1",
+  "title": "Level 1 (Number Mechanics)",
+  "goal": "Build automatic accuracy and speed in foundational arithmetic so ASVAB Arithmetic Reasoning feels easier than practice.",
+  "topics": [
+    {
+      "topicId": "pemdas",
+      "title": "Order of Operations (PEMDAS)",
+      "lessonFocus": [
+        "Parentheses first",
+        "Exponents",
+        "Multiply/divide left to right",
+        "Add/subtract left to right",
+        "Avoid doing operations out of order"
+      ],
+      "quizDesign": {
+        "masteryQuiz": {
+          "quizId": "pemdas-mastery",
+          "title": "PEMDAS Mastery Quiz",
+          "questionCount": 15,
+          "timeLimitMinutes": 12,
+          "difficultyBreakdown": {
+            "easy": 5,
+            "medium": 6,
+            "hard": 3,
+            "expert": 1
+          },
+          "questionTypes": [
+            "pure expression evaluation",
+            "expressions with parentheses",
+            "expressions with exponents",
+            "mixed operations",
+            "ASVAB-style word translation into expression"
+          ],
+          "skillsTested": [
+            "operation order accuracy",
+            "left-to-right processing",
+            "expression simplification"
+          ],
+          "designRules": [
+            "Start with clean arithmetic expressions",
+            "Introduce one trap at a time",
+            "Final 4 questions should include common ASVAB order traps"
+          ]
+        },
+        "speedDrill": {
+          "quizId": "pemdas-speed",
+          "title": "PEMDAS Speed Drill",
+          "questionCount": 10,
+          "timeLimitSeconds": 90,
+          "difficulty": "easy-medium",
+          "goal": "Instantly apply operation order without hesitation",
+          "questionTypes": [
+            "short expressions",
+            "single-trap expressions",
+            "parentheses vs multiplication"
+          ]
+        },
+        "mixedInsertionTags": [
+          "order-of-operations",
+          "expression-trap",
+          "basic-calculation"
+        ]
+      }
+    },
+    {
+      "topicId": "decimals",
+      "title": "Decimal Operations",
+      "lessonFocus": [
+        "Multiply decimals",
+        "Place decimal correctly",
+        "Divide decimals",
+        "Estimate reasonableness",
+        "Money-style decimal fluency"
+      ],
+      "quizDesign": {
+        "masteryQuiz": {
+          "quizId": "decimals-mastery",
+          "title": "Decimal Operations Mastery Quiz",
+          "questionCount": 15,
+          "timeLimitMinutes": 12,
+          "difficultyBreakdown": {
+            "easy": 5,
+            "medium": 6,
+            "hard": 3,
+            "expert": 1
+          },
+          "questionTypes": [
+            "decimal multiplication",
+            "decimal division",
+            "money calculations",
+            "place-value trap questions",
+            "estimate then compute"
+          ],
+          "skillsTested": [
+            "decimal placement",
+            "division by decimal",
+            "computation confidence"
+          ],
+          "designRules": [
+            "At least 5 questions should require decimal placement logic",
+            "At least 3 should involve division with moving the decimal",
+            "At least 2 should use money contexts"
+          ]
+        },
+        "speedDrill": {
+          "quizId": "decimals-speed",
+          "title": "Decimal Operations Speed Drill",
+          "questionCount": 10,
+          "timeLimitSeconds": 90,
+          "difficulty": "easy-medium",
+          "goal": "Rapid decimal multiplication/division with high accuracy",
+          "questionTypes": [
+            "quick multiply",
+            "quick divide",
+            "money totals"
+          ]
+        },
+        "mixedInsertionTags": [
+          "decimal-multiply",
+          "decimal-divide",
+          "money-math"
+        ]
+      }
+    },
+    {
+      "topicId": "fractions",
+      "title": "Fractions",
+      "lessonFocus": [
+        "Fraction of a quantity",
+        "Add/subtract fractions",
+        "Multiply/divide fractions",
+        "Reciprocal logic",
+        "Simplifying fractions"
+      ],
+      "quizDesign": {
+        "masteryQuiz": {
+          "quizId": "fractions-mastery",
+          "title": "Fractions Mastery Quiz",
+          "questionCount": 15,
+          "timeLimitMinutes": 14,
+          "difficultyBreakdown": {
+            "easy": 5,
+            "medium": 6,
+            "hard": 3,
+            "expert": 1
+          },
+          "questionTypes": [
+            "fraction of whole number",
+            "common denominator",
+            "fraction multiplication",
+            "division by fraction",
+            "word problems with fraction relationships"
+          ],
+          "skillsTested": [
+            "fraction computation",
+            "simplification",
+            "reciprocal use",
+            "fraction word-problem translation"
+          ],
+          "designRules": [
+            "Include at least 2 simplify-first problems",
+            "Include at least 2 divide-by-fraction problems",
+            "Include 3 ASVAB-style wording problems"
+          ]
+        },
+        "speedDrill": {
+          "quizId": "fractions-speed",
+          "title": "Fractions Speed Drill",
+          "questionCount": 10,
+          "timeLimitSeconds": 100,
+          "difficulty": "easy-medium",
+          "goal": "Fast fraction recognition and reduction",
+          "questionTypes": [
+            "fraction of a number",
+            "simplify fraction",
+            "quick reciprocal division"
+          ]
+        },
+        "mixedInsertionTags": [
+          "fraction-of-number",
+          "common-denominator",
+          "reciprocal-division",
+          "fraction-word-problem"
+        ]
+      }
+    },
+    {
+      "topicId": "percents",
+      "title": "Percents",
+      "lessonFocus": [
+        "Percent of a number",
+        "Percent increase/decrease",
+        "Discounts and tax",
+        "Percent of total",
+        "Successive percent changes"
+      ],
+      "quizDesign": {
+        "masteryQuiz": {
+          "quizId": "percents-mastery",
+          "title": "Percents Mastery Quiz",
+          "questionCount": 15,
+          "timeLimitMinutes": 14,
+          "difficultyBreakdown": {
+            "easy": 5,
+            "medium": 6,
+            "hard": 3,
+            "expert": 1
+          },
+          "questionTypes": [
+            "simple percent of number",
+            "what percent is A of B",
+            "discount/tax/tip",
+            "percent increase/decrease",
+            "multi-step percent change"
+          ],
+          "skillsTested": [
+            "decimal-percent conversion",
+            "percentage reasoning",
+            "multi-step percent setup"
+          ],
+          "designRules": [
+            "Include at least 4 context variations: discount, tax, class scores, population/change",
+            "Include 2 mental math anchor questions using 10%, 25%, 50%",
+            "Final 2 questions should combine multiple percent steps"
+          ]
+        },
+        "speedDrill": {
+          "quizId": "percents-speed",
+          "title": "Percents Speed Drill",
+          "questionCount": 10,
+          "timeLimitSeconds": 90,
+          "difficulty": "easy-medium",
+          "goal": "Recognize percent anchors instantly",
+          "questionTypes": [
+            "10%/5%/25%/50%",
+            "simple discount",
+            "simple tip/tax"
+          ]
+        },
+        "mixedInsertionTags": [
+          "percent-of-number",
+          "discount",
+          "tax-tip",
+          "percent-change"
+        ]
+      }
+    },
+    {
+      "topicId": "unit-conversion",
+      "title": "Unit Conversion",
+      "lessonFocus": [
+        "Basic conversion facts",
+        "Multiply or divide by conversion factor",
+        "Area conversion",
+        "Multi-step conversions",
+        "Unit cancellation logic"
+      ],
+      "quizDesign": {
+        "masteryQuiz": {
+          "quizId": "unit-conversion-mastery",
+          "title": "Unit Conversion Mastery Quiz",
+          "questionCount": 15,
+          "timeLimitMinutes": 14,
+          "difficultyBreakdown": {
+            "easy": 5,
+            "medium": 6,
+            "hard": 3,
+            "expert": 1
+          },
+          "questionTypes": [
+            "single-step conversion",
+            "daily-use conversions",
+            "area/volume conversion",
+            "unit rate conversion",
+            "multi-step word problems"
+          ],
+          "skillsTested": [
+            "unit cancellation",
+            "conversion fact recall",
+            "step-by-step conversion fluency"
+          ],
+          "designRules": [
+            "Include both direct and reverse conversions",
+            "Include at least 2 square-unit conversion problems",
+            "Include at least 2 multi-step conversions"
+          ]
+        },
+        "speedDrill": {
+          "quizId": "unit-conversion-speed",
+          "title": "Unit Conversion Speed Drill",
+          "questionCount": 10,
+          "timeLimitSeconds": 100,
+          "difficulty": "easy-medium",
+          "goal": "Recall common conversions instantly",
+          "questionTypes": [
+            "gallons/quarts",
+            "feet/yards/inches",
+            "dozen/gross",
+            "pounds/ounces"
+          ]
+        },
+        "mixedInsertionTags": [
+          "basic-conversion",
+          "area-conversion",
+          "multi-step-conversion"
+        ]
+      }
+    }
+  ],
+  "levelWideAssessments": {
+    "level1MixedTest": {
+      "quizId": "level1-mixed-test",
+      "title": "Level 1 Mixed Test",
+      "questionCount": 20,
+      "timeLimitMinutes": 16,
+      "purpose": "Train recognition when topic is unknown, like real ASVAB conditions",
+      "difficultyBreakdown": {
+        "easy": 5,
+        "medium": 9,
+        "hard": 4,
+        "expert": 2
+      },
+      "topicDistribution": {
+        "pemdas": 4,
+        "decimals": 4,
+        "fractions": 4,
+        "percents": 4,
+        "unit-conversion": 4
+      },
+      "designRules": [
+        "Questions should be shuffled by topic",
+        "Avoid placing two identical pattern types back to back too often",
+        "Final 5 questions should feel more ASVAB-like and slightly harder"
+      ]
+    },
+    "level1ChallengeTest": {
+      "quizId": "level1-challenge-test",
+      "title": "Level 1 Challenge Test",
+      "questionCount": 25,
+      "timeLimitMinutes": 18,
+      "purpose": "Make the real ASVAB feel easier by training above test level",
+      "difficultyBreakdown": {
+        "easy": 3,
+        "medium": 8,
+        "hard": 10,
+        "expert": 4
+      },
+      "topicDistribution": {
+        "pemdas": 4,
+        "decimals": 5,
+        "fractions": 6,
+        "percents": 6,
+        "unit-conversion": 4
+      },
+      "designRules": [
+        "Use trickier wording than the mastery quizzes",
+        "Include multi-step setups",
+        "Mix context heavily so pattern recognition is required"
+      ]
+    }
+  },
+  "recommendedProgression": [
+    "Complete lesson",
+    "Take topic mastery quiz",
+    "Take topic speed drill",
+    "Repeat for all 5 topics",
+    "Take Level 1 Mixed Test",
+    "Take Level 1 Challenge Test"
+  ],
+  "masteryThresholds": {
+    "masteryQuiz": {
+      "targetAccuracyPercent": 85,
+      "retakeIfBelowPercent": 80
+    },
+    "speedDrill": {
+      "targetAccuracyPercent": 90,
+      "targetCompletionPercent": 100
+    },
+    "mixedTest": {
+      "targetAccuracyPercent": 80
+    },
+    "challengeTest": {
+      "targetAccuracyPercent": 75
+    }
+  }
+}

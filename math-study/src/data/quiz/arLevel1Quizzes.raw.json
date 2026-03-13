@@ -1,0 +1,2860 @@
+{
+  "levelId": "ar-level-1",
+  "title": "Level 1 (Number Mechanics)",
+  "quizzes": [
+    {
+      "quizId": "pemdas-mastery",
+      "title": "PEMDAS Mastery Quiz",
+      "topicId": "pemdas",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "pem-m-01",
+          "difficulty": "easy",
+          "stem": "Evaluate: 6 + 3 × 4",
+          "choices": [
+            "36",
+            "18",
+            "24",
+            "15"
+          ],
+          "answer": 1,
+          "explanation": "Multiply first: 3 × 4 = 12, then 6 + 12 = 18.",
+          "tags": [
+            "multiply-before-add"
+          ]
+        },
+        {
+          "id": "pem-m-02",
+          "difficulty": "easy",
+          "stem": "Evaluate: (8 + 2) × 3",
+          "choices": [
+            "14",
+            "24",
+            "30",
+            "18"
+          ],
+          "answer": 2,
+          "explanation": "Parentheses first: 8 + 2 = 10, then 10 × 3 = 30.",
+          "tags": [
+            "parentheses"
+          ]
+        },
+        {
+          "id": "pem-m-03",
+          "difficulty": "easy",
+          "stem": "Evaluate: 20 − 12 ÷ 3",
+          "choices": [
+            "8",
+            "16",
+            "4",
+            "12"
+          ],
+          "answer": 1,
+          "explanation": "Divide first: 12 ÷ 3 = 4, then 20 − 4 = 16.",
+          "tags": [
+            "divide-before-subtract"
+          ]
+        },
+        {
+          "id": "pem-m-04",
+          "difficulty": "easy",
+          "stem": "Evaluate: 2^3 + 5",
+          "choices": [
+            "11",
+            "13",
+            "9",
+            "15"
+          ],
+          "answer": 1,
+          "explanation": "Exponent first: 2^3 = 8, then 8 + 5 = 13.",
+          "tags": [
+            "exponents"
+          ]
+        },
+        {
+          "id": "pem-m-05",
+          "difficulty": "easy",
+          "stem": "Evaluate: 18 ÷ 3 × 2",
+          "choices": [
+            "3",
+            "6",
+            "12",
+            "9"
+          ],
+          "answer": 2,
+          "explanation": "Multiply/divide left to right: 18 ÷ 3 = 6, then 6 × 2 = 12.",
+          "tags": [
+            "left-to-right"
+          ]
+        },
+        {
+          "id": "pem-m-06",
+          "difficulty": "medium",
+          "stem": "Evaluate: 14 − 2 × (3 + 4)",
+          "choices": [
+            "0",
+            "2",
+            "12",
+            "-2"
+          ],
+          "answer": 0,
+          "explanation": "Parentheses: 3 + 4 = 7. Multiply: 2 × 7 = 14. Then 14 − 14 = 0.",
+          "tags": [
+            "parentheses",
+            "multiply-before-subtract"
+          ]
+        },
+        {
+          "id": "pem-m-07",
+          "difficulty": "medium",
+          "stem": "Evaluate: 36 ÷ (6 − 3) + 5",
+          "choices": [
+            "17",
+            "12",
+            "9",
+            "15"
+          ],
+          "answer": 0,
+          "explanation": "Parentheses: 6 − 3 = 3. Then 36 ÷ 3 = 12. Then 12 + 5 = 17.",
+          "tags": [
+            "parentheses",
+            "division"
+          ]
+        },
+        {
+          "id": "pem-m-08",
+          "difficulty": "medium",
+          "stem": "Evaluate: 4 + 18 ÷ 6 × 5",
+          "choices": [
+            "19",
+            "34",
+            "9",
+            "15"
+          ],
+          "answer": 0,
+          "explanation": "Division and multiplication left to right: 18 ÷ 6 = 3, 3 × 5 = 15, then 4 + 15 = 19.",
+          "tags": [
+            "left-to-right"
+          ]
+        },
+        {
+          "id": "pem-m-09",
+          "difficulty": "medium",
+          "stem": "Evaluate: 7 + 2 × 3^2",
+          "choices": [
+            "81",
+            "25",
+            "43",
+            "18"
+          ],
+          "answer": 1,
+          "explanation": "Exponent: 3^2 = 9. Multiply: 2 × 9 = 18. Add: 7 + 18 = 25.",
+          "tags": [
+            "exponents"
+          ]
+        },
+        {
+          "id": "pem-m-10",
+          "difficulty": "medium",
+          "stem": "Evaluate: (15 − 5) ÷ 2 + 9",
+          "choices": [
+            "14",
+            "10",
+            "7",
+            "19"
+          ],
+          "answer": 0,
+          "explanation": "Parentheses: 15 − 5 = 10. Divide: 10 ÷ 2 = 5. Add: 5 + 9 = 14.",
+          "tags": [
+            "parentheses"
+          ]
+        },
+        {
+          "id": "pem-m-11",
+          "difficulty": "medium",
+          "stem": "A student solves 5 + 4 × 2 as (5 + 4) × 2. What is the correct value of the original expression?",
+          "choices": [
+            "18",
+            "13",
+            "9",
+            "16"
+          ],
+          "answer": 1,
+          "explanation": "Correct order: 4 × 2 = 8, then 5 + 8 = 13.",
+          "tags": [
+            "trap"
+          ]
+        },
+        {
+          "id": "pem-m-12",
+          "difficulty": "hard",
+          "stem": "Evaluate: 24 ÷ 3 + 2 × (5 − 1)^2",
+          "choices": [
+            "40",
+            "24",
+            "18",
+            "28"
+          ],
+          "answer": 0,
+          "explanation": "Parentheses: 5 − 1 = 4. Exponent: 4^2 = 16. Multiply: 2 × 16 = 32. Division: 24 ÷ 3 = 8. Add: 8 + 32 = 40.",
+          "tags": [
+            "multi-step"
+          ]
+        },
+        {
+          "id": "pem-m-13",
+          "difficulty": "hard",
+          "stem": "Evaluate: 50 − [6 + 2 × (4^2 − 10)]",
+          "choices": [
+            "18",
+            "20",
+            "32",
+            "24"
+          ],
+          "answer": 2,
+          "explanation": "4^2 = 16. 16 − 10 = 6. 2 × 6 = 12. Bracket: 6 + 12 = 18. Then 50 − 18 = 32.",
+          "tags": [
+            "multi-step"
+          ]
+        },
+        {
+          "id": "pem-m-14",
+          "difficulty": "hard",
+          "stem": "Evaluate: 3 × {8 − [6 − (4 − 1)]}",
+          "choices": [
+            "3",
+            "9",
+            "15",
+            "21"
+          ],
+          "answer": 2,
+          "explanation": "(4 − 1)=3; [6 − 3]=3; {8 − 3}=5; 3 × 5 = 15.",
+          "tags": [
+            "nested-parentheses"
+          ]
+        },
+        {
+          "id": "pem-m-15",
+          "difficulty": "expert",
+          "stem": "Which expression has the same value as 18 − 6 ÷ 3 × 2 + 4?",
+          "choices": [
+            "(18 − 6) ÷ 3 × 2 + 4",
+            "18 − [(6 ÷ 3) × 2] + 4",
+            "18 − [6 ÷ (3 × 2)] + 4",
+            "(18 − 6) ÷ (3 × 2) + 4"
+          ],
+          "answer": 1,
+          "explanation": "Compute division and multiplication left to right inside the middle term. Equivalent form is 18 − [(6 ÷ 3) × 2] + 4.",
+          "tags": [
+            "equivalent-expression"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "pemdas-speed",
+      "title": "PEMDAS Speed Drill",
+      "topicId": "pemdas",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "pem-s-01",
+          "difficulty": "easy",
+          "stem": "Evaluate: 9 + 2 × 5",
+          "choices": [
+            "55",
+            "19",
+            "35",
+            "45"
+          ],
+          "answer": 1,
+          "explanation": "2 × 5 = 10; 9 + 10 = 19.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-02",
+          "difficulty": "easy",
+          "stem": "Evaluate: (7 + 1) × 2",
+          "choices": [
+            "9",
+            "14",
+            "16",
+            "8"
+          ],
+          "answer": 2,
+          "explanation": "7 + 1 = 8; 8 × 2 = 16.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-03",
+          "difficulty": "easy",
+          "stem": "Evaluate: 16 ÷ 4 + 3",
+          "choices": [
+            "7",
+            "1",
+            "4",
+            "19"
+          ],
+          "answer": 0,
+          "explanation": "16 ÷ 4 = 4; 4 + 3 = 7.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-04",
+          "difficulty": "easy",
+          "stem": "Evaluate: 5^2 − 10",
+          "choices": [
+            "15",
+            "20",
+            "10",
+            "5"
+          ],
+          "answer": 0,
+          "explanation": "5^2 = 25; 25 − 10 = 15.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-05",
+          "difficulty": "medium",
+          "stem": "Evaluate: 12 − 3 × 2",
+          "choices": [
+            "18",
+            "6",
+            "3",
+            "0"
+          ],
+          "answer": 1,
+          "explanation": "3 × 2 = 6; 12 − 6 = 6.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-06",
+          "difficulty": "medium",
+          "stem": "Evaluate: 8 + 24 ÷ 6",
+          "choices": [
+            "12",
+            "32",
+            "4",
+            "20"
+          ],
+          "answer": 0,
+          "explanation": "24 ÷ 6 = 4; 8 + 4 = 12.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-07",
+          "difficulty": "medium",
+          "stem": "Evaluate: (10 − 4) ÷ 3",
+          "choices": [
+            "3",
+            "2",
+            "6",
+            "4"
+          ],
+          "answer": 1,
+          "explanation": "10 − 4 = 6; 6 ÷ 3 = 2.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-08",
+          "difficulty": "medium",
+          "stem": "Evaluate: 2 × 3 + 4",
+          "choices": [
+            "14",
+            "10",
+            "12",
+            "16"
+          ],
+          "answer": 1,
+          "explanation": "2 × 3 = 6; 6 + 4 = 10.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-09",
+          "difficulty": "medium",
+          "stem": "Evaluate: 30 ÷ 5 × 2",
+          "choices": [
+            "3",
+            "12",
+            "6",
+            "10"
+          ],
+          "answer": 1,
+          "explanation": "30 ÷ 5 = 6; 6 × 2 = 12.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "pem-s-10",
+          "difficulty": "medium",
+          "stem": "Evaluate: 4 + (6 − 2)^2",
+          "choices": [
+            "20",
+            "8",
+            "16",
+            "10"
+          ],
+          "answer": 0,
+          "explanation": "6 − 2 = 4; 4^2 = 16; 16 + 4 = 20.",
+          "tags": [
+            "speed"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "decimals-mastery",
+      "title": "Decimal Operations Mastery Quiz",
+      "topicId": "decimals",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "dec-m-01",
+          "difficulty": "easy",
+          "stem": "Compute: 2.5 × 0.4",
+          "choices": [
+            "10",
+            "1",
+            "0.1",
+            "100"
+          ],
+          "answer": 1,
+          "explanation": "25 × 4 = 100, then place 2 decimal places total: 1.00.",
+          "tags": [
+            "decimal-multiply"
+          ]
+        },
+        {
+          "id": "dec-m-02",
+          "difficulty": "easy",
+          "stem": "Compute: 1.2 × 3.5",
+          "choices": [
+            "42",
+            "4.2",
+            "0.42",
+            "420"
+          ],
+          "answer": 1,
+          "explanation": "12 × 35 = 420, then 2 decimal places total gives 4.20.",
+          "tags": [
+            "decimal-multiply"
+          ]
+        },
+        {
+          "id": "dec-m-03",
+          "difficulty": "easy",
+          "stem": "Compute: 7.5 + 2.08",
+          "choices": [
+            "9.58",
+            "9.48",
+            "8.33",
+            "10.03"
+          ],
+          "answer": 0,
+          "explanation": "Align decimals and add.",
+          "tags": [
+            "decimal-add"
+          ]
+        },
+        {
+          "id": "dec-m-04",
+          "difficulty": "easy",
+          "stem": "Compute: 9.4 − 3.27",
+          "choices": [
+            "6.13",
+            "6.23",
+            "5.17",
+            "6.03"
+          ],
+          "answer": 0,
+          "explanation": "Line up decimals: 9.40 − 3.27 = 6.13.",
+          "tags": [
+            "decimal-subtract"
+          ]
+        },
+        {
+          "id": "dec-m-05",
+          "difficulty": "easy",
+          "stem": "Compute: 0.06 × 0.5",
+          "choices": [
+            "0.30",
+            "0.03",
+            "0.003",
+            "3"
+          ],
+          "answer": 1,
+          "explanation": "6 × 5 = 30; total 3 decimal places gives 0.030 = 0.03.",
+          "tags": [
+            "decimal-multiply"
+          ]
+        },
+        {
+          "id": "dec-m-06",
+          "difficulty": "medium",
+          "stem": "Compute: 3.6 ÷ 0.4",
+          "choices": [
+            "0.9",
+            "9",
+            "90",
+            "1.1"
+          ],
+          "answer": 1,
+          "explanation": "Move both decimals one place: 36 ÷ 4 = 9.",
+          "tags": [
+            "decimal-divide"
+          ]
+        },
+        {
+          "id": "dec-m-07",
+          "difficulty": "medium",
+          "stem": "Compute: 12.6 ÷ 0.3",
+          "choices": [
+            "4.2",
+            "42",
+            "0.42",
+            "420"
+          ],
+          "answer": 1,
+          "explanation": "Move decimals one place: 126 ÷ 3 = 42.",
+          "tags": [
+            "decimal-divide"
+          ]
+        },
+        {
+          "id": "dec-m-08",
+          "difficulty": "medium",
+          "stem": "A notebook costs $1.25. What is the cost of 6 notebooks?",
+          "choices": [
+            "$6.50",
+            "$7.25",
+            "$7.50",
+            "$8.25"
+          ],
+          "answer": 2,
+          "explanation": "1.25 × 6 = 7.50.",
+          "tags": [
+            "money"
+          ]
+        },
+        {
+          "id": "dec-m-09",
+          "difficulty": "medium",
+          "stem": "Estimate first, then compute: 4.9 × 2.1 is closest to",
+          "choices": [
+            "1",
+            "5",
+            "10",
+            "20"
+          ],
+          "answer": 2,
+          "explanation": "About 5 × 2 = 10, and exact answer 10.29 is closest to 10.",
+          "tags": [
+            "estimate"
+          ]
+        },
+        {
+          "id": "dec-m-10",
+          "difficulty": "medium",
+          "stem": "Compute: 0.75 ÷ 0.25",
+          "choices": [
+            "0.3",
+            "3",
+            "30",
+            "0.03"
+          ],
+          "answer": 1,
+          "explanation": "75 hundredths ÷ 25 hundredths = 3.",
+          "tags": [
+            "decimal-divide"
+          ]
+        },
+        {
+          "id": "dec-m-11",
+          "difficulty": "medium",
+          "stem": "Which is greater?",
+          "choices": [
+            "0.8 × 0.4",
+            "0.32",
+            "They are equal",
+            "Cannot determine"
+          ],
+          "answer": 2,
+          "explanation": "0.8 × 0.4 = 0.32.",
+          "tags": [
+            "comparison"
+          ]
+        },
+        {
+          "id": "dec-m-12",
+          "difficulty": "hard",
+          "stem": "A worker earns $18.75 per hour. How much does the worker earn in 8 hours?",
+          "choices": [
+            "$140.00",
+            "$150.00",
+            "$152.00",
+            "$156.25"
+          ],
+          "answer": 1,
+          "explanation": "18.75 × 8 = 150.00.",
+          "tags": [
+            "money",
+            "multi-step"
+          ]
+        },
+        {
+          "id": "dec-m-13",
+          "difficulty": "hard",
+          "stem": "A rope 12.5 feet long is cut into pieces of 0.5 foot each. How many pieces are made?",
+          "choices": [
+            "6",
+            "12",
+            "25",
+            "30"
+          ],
+          "answer": 2,
+          "explanation": "12.5 ÷ 0.5 = 25.",
+          "tags": [
+            "decimal-divide",
+            "word-problem"
+          ]
+        },
+        {
+          "id": "dec-m-14",
+          "difficulty": "hard",
+          "stem": "Compute: (2.4 × 0.5) + 1.08",
+          "choices": [
+            "2.28",
+            "2.88",
+            "1.68",
+            "1.20"
+          ],
+          "answer": 0,
+          "explanation": "2.4 × 0.5 = 1.2, then 1.2 + 1.08 = 2.28.",
+          "tags": [
+            "multi-step"
+          ]
+        },
+        {
+          "id": "dec-m-15",
+          "difficulty": "expert",
+          "stem": "A store marks a $48 item down by 12.5%. What is the sale price?",
+          "choices": [
+            "$42.00",
+            "$40.50",
+            "$36.00",
+            "$44.25"
+          ],
+          "answer": 0,
+          "explanation": "12.5% is 1/8. One-eighth of 48 is 6. Sale price = 48 − 6 = 42.",
+          "tags": [
+            "money",
+            "percent-anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "decimals-speed",
+      "title": "Decimal Operations Speed Drill",
+      "topicId": "decimals",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "dec-s-01",
+          "difficulty": "easy",
+          "stem": "Compute: 0.5 × 0.2",
+          "choices": [
+            "0.01",
+            "0.1",
+            "1",
+            "10"
+          ],
+          "answer": 1,
+          "explanation": "5 × 2 = 10, two decimal places gives 0.10.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-02",
+          "difficulty": "easy",
+          "stem": "Compute: 4.2 ÷ 0.6",
+          "choices": [
+            "7",
+            "0.7",
+            "70",
+            "6"
+          ],
+          "answer": 0,
+          "explanation": "42 ÷ 6 = 7.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-03",
+          "difficulty": "easy",
+          "stem": "Compute: 1.5 + 2.5",
+          "choices": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "answer": 1,
+          "explanation": "1.5 + 2.5 = 4.0.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-04",
+          "difficulty": "easy",
+          "stem": "Compute: 6.4 − 1.1",
+          "choices": [
+            "5.3",
+            "5.5",
+            "4.3",
+            "7.5"
+          ],
+          "answer": 0,
+          "explanation": "6.4 − 1.1 = 5.3.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-05",
+          "difficulty": "medium",
+          "stem": "Compute: 0.9 × 0.3",
+          "choices": [
+            "0.27",
+            "0.03",
+            "2.7",
+            "0.9"
+          ],
+          "answer": 0,
+          "explanation": "9 × 3 = 27, two decimal places gives 0.27.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-06",
+          "difficulty": "medium",
+          "stem": "Compute: 2.4 ÷ 0.8",
+          "choices": [
+            "0.3",
+            "3",
+            "30",
+            "2"
+          ],
+          "answer": 1,
+          "explanation": "24 ÷ 8 = 3.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-07",
+          "difficulty": "medium",
+          "stem": "Compute: $2.50 × 4",
+          "choices": [
+            "$8.00",
+            "$10.00",
+            "$12.00",
+            "$6.00"
+          ],
+          "answer": 1,
+          "explanation": "2.5 × 4 = 10.",
+          "tags": [
+            "speed",
+            "money"
+          ]
+        },
+        {
+          "id": "dec-s-08",
+          "difficulty": "medium",
+          "stem": "Which is closest to 3.1 × 2.9?",
+          "choices": [
+            "3",
+            "6",
+            "9",
+            "12"
+          ],
+          "answer": 2,
+          "explanation": "About 3 × 3 = 9; exact is 8.99.",
+          "tags": [
+            "speed",
+            "estimate"
+          ]
+        },
+        {
+          "id": "dec-s-09",
+          "difficulty": "medium",
+          "stem": "Compute: 0.84 ÷ 0.2",
+          "choices": [
+            "4.2",
+            "0.42",
+            "42",
+            "2.4"
+          ],
+          "answer": 0,
+          "explanation": "84 ÷ 2 = 42, then one decimal place => 4.2.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "dec-s-10",
+          "difficulty": "medium",
+          "stem": "Compute: 0.25 × 16",
+          "choices": [
+            "2",
+            "4",
+            "6",
+            "8"
+          ],
+          "answer": 1,
+          "explanation": "A quarter of 16 is 4.",
+          "tags": [
+            "speed",
+            "money-anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "fractions-mastery",
+      "title": "Fractions Mastery Quiz",
+      "topicId": "fractions",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "fra-m-01",
+          "difficulty": "easy",
+          "stem": "What is 3/4 of 24?",
+          "choices": [
+            "16",
+            "18",
+            "20",
+            "21"
+          ],
+          "answer": 1,
+          "explanation": "24 × 3/4 = 18.",
+          "tags": [
+            "fraction-of-number"
+          ]
+        },
+        {
+          "id": "fra-m-02",
+          "difficulty": "easy",
+          "stem": "Compute: 1/2 + 1/4",
+          "choices": [
+            "3/4",
+            "2/6",
+            "1/6",
+            "1/8"
+          ],
+          "answer": 0,
+          "explanation": "Convert 1/2 to 2/4; 2/4 + 1/4 = 3/4.",
+          "tags": [
+            "common-denominator"
+          ]
+        },
+        {
+          "id": "fra-m-03",
+          "difficulty": "easy",
+          "stem": "Compute: 2/3 × 9",
+          "choices": [
+            "3",
+            "6",
+            "9",
+            "12"
+          ],
+          "answer": 1,
+          "explanation": "2/3 of 9 = 6.",
+          "tags": [
+            "fraction-of-number"
+          ]
+        },
+        {
+          "id": "fra-m-04",
+          "difficulty": "easy",
+          "stem": "Simplify: 18/24",
+          "choices": [
+            "2/3",
+            "3/4",
+            "4/5",
+            "6/8"
+          ],
+          "answer": 1,
+          "explanation": "Divide numerator and denominator by 6.",
+          "tags": [
+            "simplify"
+          ]
+        },
+        {
+          "id": "fra-m-05",
+          "difficulty": "easy",
+          "stem": "Compute: 5/6 − 1/3",
+          "choices": [
+            "1/2",
+            "2/3",
+            "4/3",
+            "1/3"
+          ],
+          "answer": 0,
+          "explanation": "1/3 = 2/6; 5/6 − 2/6 = 3/6 = 1/2.",
+          "tags": [
+            "common-denominator"
+          ]
+        },
+        {
+          "id": "fra-m-06",
+          "difficulty": "medium",
+          "stem": "Compute: 3/5 ÷ 1/2",
+          "choices": [
+            "3/10",
+            "5/6",
+            "6/5",
+            "3/7"
+          ],
+          "answer": 2,
+          "explanation": "Multiply by reciprocal: 3/5 × 2/1 = 6/5.",
+          "tags": [
+            "reciprocal-division"
+          ]
+        },
+        {
+          "id": "fra-m-07",
+          "difficulty": "medium",
+          "stem": "A recipe uses 1/3 cup of sugar per batch. How many batches can be made from 4 cups?",
+          "choices": [
+            "7",
+            "9",
+            "12",
+            "16"
+          ],
+          "answer": 2,
+          "explanation": "4 ÷ 1/3 = 4 × 3 = 12.",
+          "tags": [
+            "word-problem",
+            "reciprocal-division"
+          ]
+        },
+        {
+          "id": "fra-m-08",
+          "difficulty": "medium",
+          "stem": "What fraction of 40 is 10?",
+          "choices": [
+            "1/2",
+            "1/3",
+            "1/4",
+            "2/5"
+          ],
+          "answer": 2,
+          "explanation": "10/40 = 1/4.",
+          "tags": [
+            "part-whole"
+          ]
+        },
+        {
+          "id": "fra-m-09",
+          "difficulty": "medium",
+          "stem": "Compute: 2/7 + 3/7",
+          "choices": [
+            "5/14",
+            "5/7",
+            "6/7",
+            "1"
+          ],
+          "answer": 1,
+          "explanation": "Same denominator: add numerators.",
+          "tags": [
+            "common-denominator"
+          ]
+        },
+        {
+          "id": "fra-m-10",
+          "difficulty": "medium",
+          "stem": "If 2/5 of a number is 18, what is the number?",
+          "choices": [
+            "36",
+            "40",
+            "45",
+            "50"
+          ],
+          "answer": 2,
+          "explanation": "x × 2/5 = 18, so x = 18 × 5/2 = 45.",
+          "tags": [
+            "inverse-fraction"
+          ]
+        },
+        {
+          "id": "fra-m-11",
+          "difficulty": "medium",
+          "stem": "A tank is 3/4 full. If 1/6 of the tank is used, what fraction of the tank remains?",
+          "choices": [
+            "7/12",
+            "1/2",
+            "5/8",
+            "2/3"
+          ],
+          "answer": 0,
+          "explanation": "3/4 = 9/12 and 1/6 = 2/12, so 9/12 − 2/12 = 7/12.",
+          "tags": [
+            "common-denominator",
+            "word-problem"
+          ]
+        },
+        {
+          "id": "fra-m-12",
+          "difficulty": "hard",
+          "stem": "If 600 is one-fifth more than x, what is x?",
+          "choices": [
+            "480",
+            "500",
+            "520",
+            "720"
+          ],
+          "answer": 1,
+          "explanation": "One-fifth more means 6/5 of x. So 600 = 6x/5; x = 600 × 5/6 = 500.",
+          "tags": [
+            "fraction-relationship"
+          ]
+        },
+        {
+          "id": "fra-m-13",
+          "difficulty": "hard",
+          "stem": "One number is 3/5 of another. If their sum is 64, what are the numbers?",
+          "choices": [
+            "24 and 40",
+            "20 and 44",
+            "18 and 46",
+            "16 and 48"
+          ],
+          "answer": 0,
+          "explanation": "Let larger be 5k and smaller be 3k. Sum 8k = 64, so k = 8. Numbers are 24 and 40.",
+          "tags": [
+            "ratio-fraction"
+          ]
+        },
+        {
+          "id": "fra-m-14",
+          "difficulty": "hard",
+          "stem": "Compute: (3/4) ÷ (9/8)",
+          "choices": [
+            "2/3",
+            "3/2",
+            "27/32",
+            "1/6"
+          ],
+          "answer": 0,
+          "explanation": "Multiply by reciprocal: 3/4 × 8/9 = 24/36 = 2/3.",
+          "tags": [
+            "reciprocal-division"
+          ]
+        },
+        {
+          "id": "fra-m-15",
+          "difficulty": "expert",
+          "stem": "A worker completes 2/3 of a job in 4 hours at a steady rate. How much of the job is completed in 1 hour?",
+          "choices": [
+            "1/6",
+            "1/4",
+            "2/3",
+            "3/8"
+          ],
+          "answer": 0,
+          "explanation": "Per hour rate is (2/3) ÷ 4 = 2/12 = 1/6 of the job.",
+          "tags": [
+            "fraction-rate"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "fractions-speed",
+      "title": "Fractions Speed Drill",
+      "topicId": "fractions",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "fra-s-01",
+          "difficulty": "easy",
+          "stem": "What is 1/2 of 18?",
+          "choices": [
+            "6",
+            "8",
+            "9",
+            "12"
+          ],
+          "answer": 2,
+          "explanation": "Half of 18 is 9.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-02",
+          "difficulty": "easy",
+          "stem": "Compute: 1/4 + 1/4",
+          "choices": [
+            "1/2",
+            "1/4",
+            "2/8",
+            "3/4"
+          ],
+          "answer": 0,
+          "explanation": "1/4 + 1/4 = 2/4 = 1/2.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-03",
+          "difficulty": "easy",
+          "stem": "Simplify: 6/9",
+          "choices": [
+            "1/2",
+            "2/3",
+            "3/4",
+            "4/5"
+          ],
+          "answer": 1,
+          "explanation": "Divide by 3.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-04",
+          "difficulty": "easy",
+          "stem": "Compute: 3/5 of 20",
+          "choices": [
+            "10",
+            "12",
+            "15",
+            "8"
+          ],
+          "answer": 1,
+          "explanation": "20 × 3/5 = 12.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-05",
+          "difficulty": "medium",
+          "stem": "Compute: 1/2 ÷ 1/4",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "answer": 1,
+          "explanation": "Multiply by reciprocal: 1/2 × 4 = 2.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-06",
+          "difficulty": "medium",
+          "stem": "Compute: 2/3 + 1/6",
+          "choices": [
+            "5/6",
+            "3/9",
+            "1/2",
+            "4/9"
+          ],
+          "answer": 0,
+          "explanation": "2/3 = 4/6; 4/6 + 1/6 = 5/6.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-07",
+          "difficulty": "medium",
+          "stem": "Compute: 3/4 − 1/2",
+          "choices": [
+            "1/2",
+            "1/4",
+            "1/3",
+            "2/5"
+          ],
+          "answer": 1,
+          "explanation": "1/2 = 2/4; 3/4 − 2/4 = 1/4.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-08",
+          "difficulty": "medium",
+          "stem": "What fraction of 30 is 6?",
+          "choices": [
+            "1/2",
+            "1/4",
+            "1/5",
+            "1/6"
+          ],
+          "answer": 2,
+          "explanation": "6/30 = 1/5.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-09",
+          "difficulty": "medium",
+          "stem": "Compute: 2/7 × 14",
+          "choices": [
+            "2",
+            "4",
+            "6",
+            "7"
+          ],
+          "answer": 1,
+          "explanation": "14 × 2/7 = 4.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "fra-s-10",
+          "difficulty": "medium",
+          "stem": "Compute: 5/8 ÷ 5",
+          "choices": [
+            "1/8",
+            "1/5",
+            "5/3",
+            "8/5"
+          ],
+          "answer": 0,
+          "explanation": "5/8 × 1/5 = 1/8.",
+          "tags": [
+            "speed"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "percents-mastery",
+      "title": "Percents Mastery Quiz",
+      "topicId": "percents",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "per-m-01",
+          "difficulty": "easy",
+          "stem": "What is 20% of 150?",
+          "choices": [
+            "15",
+            "20",
+            "30",
+            "45"
+          ],
+          "answer": 2,
+          "explanation": "20% = 0.20. Then 0.20 × 150 = 30.",
+          "tags": [
+            "percent-of-number"
+          ]
+        },
+        {
+          "id": "per-m-02",
+          "difficulty": "easy",
+          "stem": "A shirt costs $40 and is 25% off. What is the sale price?",
+          "choices": [
+            "$25",
+            "$28",
+            "$30",
+            "$35"
+          ],
+          "answer": 2,
+          "explanation": "25% off means pay 75%. 40 × 0.75 = 30.",
+          "tags": [
+            "discount"
+          ]
+        },
+        {
+          "id": "per-m-03",
+          "difficulty": "easy",
+          "stem": "18 out of 24 students passed. What percent passed?",
+          "choices": [
+            "65%",
+            "70%",
+            "75%",
+            "80%"
+          ],
+          "answer": 2,
+          "explanation": "18 ÷ 24 = 0.75 = 75%.",
+          "tags": [
+            "percent-of-total"
+          ]
+        },
+        {
+          "id": "per-m-04",
+          "difficulty": "easy",
+          "stem": "What is 50% of 84?",
+          "choices": [
+            "21",
+            "42",
+            "48",
+            "64"
+          ],
+          "answer": 1,
+          "explanation": "50% means half. Half of 84 is 42.",
+          "tags": [
+            "percent-anchor"
+          ]
+        },
+        {
+          "id": "per-m-05",
+          "difficulty": "easy",
+          "stem": "What is 10% of 360?",
+          "choices": [
+            "3.6",
+            "36",
+            "30",
+            "18"
+          ],
+          "answer": 1,
+          "explanation": "Move decimal one place left: 36.",
+          "tags": [
+            "percent-anchor"
+          ]
+        },
+        {
+          "id": "per-m-06",
+          "difficulty": "medium",
+          "stem": "A $60 item has 8% sales tax. What is the total cost?",
+          "choices": [
+            "$64.80",
+            "$64.00",
+            "$68.00",
+            "$65.20"
+          ],
+          "answer": 0,
+          "explanation": "Tax is 0.08 × 60 = 4.80. Total is 64.80.",
+          "tags": [
+            "tax"
+          ]
+        },
+        {
+          "id": "per-m-07",
+          "difficulty": "medium",
+          "stem": "A meal costs $32. A 15% tip is left. How much is the tip?",
+          "choices": [
+            "$3.20",
+            "$4.80",
+            "$5.20",
+            "$6.40"
+          ],
+          "answer": 1,
+          "explanation": "10% is 3.20 and 5% is 1.60, so 15% is 4.80.",
+          "tags": [
+            "tip",
+            "percent-anchor"
+          ]
+        },
+        {
+          "id": "per-m-08",
+          "difficulty": "medium",
+          "stem": "A population grows from 200 to 250. What is the percent increase?",
+          "choices": [
+            "20%",
+            "25%",
+            "30%",
+            "50%"
+          ],
+          "answer": 1,
+          "explanation": "Increase is 50. 50 ÷ 200 = 0.25 = 25%.",
+          "tags": [
+            "percent-change"
+          ]
+        },
+        {
+          "id": "per-m-09",
+          "difficulty": "medium",
+          "stem": "What percent of 80 is 12?",
+          "choices": [
+            "10%",
+            "12%",
+            "15%",
+            "18%"
+          ],
+          "answer": 2,
+          "explanation": "12 ÷ 80 = 0.15 = 15%.",
+          "tags": [
+            "percent-of-total"
+          ]
+        },
+        {
+          "id": "per-m-10",
+          "difficulty": "medium",
+          "stem": "A store offers 20% off a $90 jacket. What is the discount amount?",
+          "choices": [
+            "$18",
+            "$20",
+            "$22.50",
+            "$72"
+          ],
+          "answer": 0,
+          "explanation": "0.20 × 90 = 18.",
+          "tags": [
+            "discount"
+          ]
+        },
+        {
+          "id": "per-m-11",
+          "difficulty": "medium",
+          "stem": "A number decreases from 50 to 40. What is the percent decrease?",
+          "choices": [
+            "10%",
+            "20%",
+            "25%",
+            "40%"
+          ],
+          "answer": 1,
+          "explanation": "Decrease is 10. 10 ÷ 50 = 20%.",
+          "tags": [
+            "percent-change"
+          ]
+        },
+        {
+          "id": "per-m-12",
+          "difficulty": "hard",
+          "stem": "After a 20% discount, a bike costs $160. What was the original price?",
+          "choices": [
+            "$180",
+            "$192",
+            "$200",
+            "$220"
+          ],
+          "answer": 2,
+          "explanation": "After 20% off, price is 80% of original. Original = 160 ÷ 0.80 = 200.",
+          "tags": [
+            "reverse-percent"
+          ]
+        },
+        {
+          "id": "per-m-13",
+          "difficulty": "hard",
+          "stem": "A worker's pay increases from $18 to $21.60 per hour. What is the percent increase?",
+          "choices": [
+            "15%",
+            "18%",
+            "20%",
+            "25%"
+          ],
+          "answer": 2,
+          "explanation": "Increase is 3.60. 3.60 ÷ 18 = 0.20 = 20%.",
+          "tags": [
+            "percent-change"
+          ]
+        },
+        {
+          "id": "per-m-14",
+          "difficulty": "hard",
+          "stem": "A $80 item is discounted 25% and then another 10%. What is the final price?",
+          "choices": [
+            "$52",
+            "$54",
+            "$56",
+            "$60"
+          ],
+          "answer": 1,
+          "explanation": "80 × 0.75 = 60; then 60 × 0.90 = 54.",
+          "tags": [
+            "successive-discounts"
+          ]
+        },
+        {
+          "id": "per-m-15",
+          "difficulty": "expert",
+          "stem": "A town's population drops 10% one year and then rises 10% the next. Compared with the original population, the final population is",
+          "choices": [
+            "the same",
+            "1% lower",
+            "1% higher",
+            "10% lower"
+          ],
+          "answer": 1,
+          "explanation": "Start with 100. Drop to 90, then rise to 99. Final is 1% lower.",
+          "tags": [
+            "trap",
+            "successive-percent"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "percents-speed",
+      "title": "Percents Speed Drill",
+      "topicId": "percents",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "per-s-01",
+          "difficulty": "easy",
+          "stem": "What is 10% of 90?",
+          "choices": [
+            "9",
+            "19",
+            "0.9",
+            "90"
+          ],
+          "answer": 0,
+          "explanation": "10% is move decimal one place left.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-02",
+          "difficulty": "easy",
+          "stem": "What is 25% of 60?",
+          "choices": [
+            "20",
+            "15",
+            "12",
+            "10"
+          ],
+          "answer": 1,
+          "explanation": "25% is one-fourth. 60 ÷ 4 = 15.",
+          "tags": [
+            "speed",
+            "anchor"
+          ]
+        },
+        {
+          "id": "per-s-03",
+          "difficulty": "easy",
+          "stem": "What is 50% of 26?",
+          "choices": [
+            "26",
+            "13",
+            "12",
+            "6"
+          ],
+          "answer": 1,
+          "explanation": "Half of 26 is 13.",
+          "tags": [
+            "speed",
+            "anchor"
+          ]
+        },
+        {
+          "id": "per-s-04",
+          "difficulty": "easy",
+          "stem": "What is 5% of 80?",
+          "choices": [
+            "2",
+            "4",
+            "5",
+            "8"
+          ],
+          "answer": 1,
+          "explanation": "5% is half of 10%; 10% of 80 is 8, so 5% is 4.",
+          "tags": [
+            "speed",
+            "anchor"
+          ]
+        },
+        {
+          "id": "per-s-05",
+          "difficulty": "medium",
+          "stem": "15% of 40 is",
+          "choices": [
+            "4",
+            "5",
+            "6",
+            "8"
+          ],
+          "answer": 2,
+          "explanation": "10% is 4 and 5% is 2, total 6.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-06",
+          "difficulty": "medium",
+          "stem": "$50 with 20% off costs",
+          "choices": [
+            "$10",
+            "$30",
+            "$40",
+            "$45"
+          ],
+          "answer": 2,
+          "explanation": "Pay 80% of 50 = 40.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-07",
+          "difficulty": "medium",
+          "stem": "12 is what percent of 60?",
+          "choices": [
+            "10%",
+            "15%",
+            "20%",
+            "25%"
+          ],
+          "answer": 2,
+          "explanation": "12 ÷ 60 = 0.20.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-08",
+          "difficulty": "medium",
+          "stem": "A price rises from $30 to $36. Percent increase?",
+          "choices": [
+            "10%",
+            "20%",
+            "25%",
+            "30%"
+          ],
+          "answer": 1,
+          "explanation": "Increase is 6; 6/30 = 20%.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-09",
+          "difficulty": "medium",
+          "stem": "A $40 meal with 10% tip has total",
+          "choices": [
+            "$42",
+            "$43",
+            "$44",
+            "$46"
+          ],
+          "answer": 2,
+          "explanation": "Tip = 4, total = 44.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "per-s-10",
+          "difficulty": "medium",
+          "stem": "30% of 70 is",
+          "choices": [
+            "18",
+            "19",
+            "21",
+            "24"
+          ],
+          "answer": 2,
+          "explanation": "0.30 × 70 = 21.",
+          "tags": [
+            "speed"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "unit-conversion-mastery",
+      "title": "Unit Conversion Mastery Quiz",
+      "topicId": "unit-conversion",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "uni-m-01",
+          "difficulty": "easy",
+          "stem": "Convert 5 gallons to quarts.",
+          "choices": [
+            "10",
+            "15",
+            "20",
+            "25"
+          ],
+          "answer": 2,
+          "explanation": "1 gallon = 4 quarts, so 5 × 4 = 20.",
+          "tags": [
+            "gallon-quart"
+          ]
+        },
+        {
+          "id": "uni-m-02",
+          "difficulty": "easy",
+          "stem": "How many inches are in 3 feet?",
+          "choices": [
+            "12",
+            "24",
+            "36",
+            "48"
+          ],
+          "answer": 2,
+          "explanation": "1 foot = 12 inches.",
+          "tags": [
+            "feet-inches"
+          ]
+        },
+        {
+          "id": "uni-m-03",
+          "difficulty": "easy",
+          "stem": "How many ounces are in 2 pounds?",
+          "choices": [
+            "16",
+            "24",
+            "32",
+            "48"
+          ],
+          "answer": 2,
+          "explanation": "1 pound = 16 ounces, so 2 × 16 = 32.",
+          "tags": [
+            "pounds-ounces"
+          ]
+        },
+        {
+          "id": "uni-m-04",
+          "difficulty": "easy",
+          "stem": "How many items are in 2 dozen?",
+          "choices": [
+            "12",
+            "18",
+            "24",
+            "144"
+          ],
+          "answer": 2,
+          "explanation": "1 dozen = 12, so 2 dozen = 24.",
+          "tags": [
+            "dozen"
+          ]
+        },
+        {
+          "id": "uni-m-05",
+          "difficulty": "easy",
+          "stem": "Convert 4 yards to feet.",
+          "choices": [
+            "7",
+            "10",
+            "12",
+            "16"
+          ],
+          "answer": 2,
+          "explanation": "1 yard = 3 feet, so 4 × 3 = 12.",
+          "tags": [
+            "yards-feet"
+          ]
+        },
+        {
+          "id": "uni-m-06",
+          "difficulty": "medium",
+          "stem": "A room measures 15 ft by 12 ft. What is its area in square feet?",
+          "choices": [
+            "27",
+            "180",
+            "60",
+            "90"
+          ],
+          "answer": 1,
+          "explanation": "15 × 12 = 180 square feet.",
+          "tags": [
+            "area"
+          ]
+        },
+        {
+          "id": "uni-m-07",
+          "difficulty": "medium",
+          "stem": "Convert 180 square feet to square yards.",
+          "choices": [
+            "20",
+            "60",
+            "90",
+            "540"
+          ],
+          "answer": 0,
+          "explanation": "1 yd² = 9 ft². So 180 ÷ 9 = 20.",
+          "tags": [
+            "square-units"
+          ]
+        },
+        {
+          "id": "uni-m-08",
+          "difficulty": "medium",
+          "stem": "How many days will 72 bottles last if 4 are used each day?",
+          "choices": [
+            "16",
+            "18",
+            "20",
+            "24"
+          ],
+          "answer": 1,
+          "explanation": "72 ÷ 4 = 18 days.",
+          "tags": [
+            "rate-conversion"
+          ]
+        },
+        {
+          "id": "uni-m-09",
+          "difficulty": "medium",
+          "stem": "Convert 3.5 yards to inches.",
+          "choices": [
+            "42",
+            "84",
+            "108",
+            "126"
+          ],
+          "answer": 3,
+          "explanation": "1 yard = 36 inches. 3.5 × 36 = 126.",
+          "tags": [
+            "yards-inches"
+          ]
+        },
+        {
+          "id": "uni-m-10",
+          "difficulty": "medium",
+          "stem": "A recipe uses 2 quarts of juice. How many gallons is that?",
+          "choices": [
+            "1/4",
+            "1/2",
+            "2",
+            "8"
+          ],
+          "answer": 1,
+          "explanation": "4 quarts = 1 gallon, so 2 quarts = 1/2 gallon.",
+          "tags": [
+            "quarts-gallons"
+          ]
+        },
+        {
+          "id": "uni-m-11",
+          "difficulty": "medium",
+          "stem": "How many pounds are in 3 tons?",
+          "choices": [
+            "300",
+            "600",
+            "3,000",
+            "6,000"
+          ],
+          "answer": 3,
+          "explanation": "1 ton = 2,000 pounds.",
+          "tags": [
+            "tons-pounds"
+          ]
+        },
+        {
+          "id": "uni-m-12",
+          "difficulty": "hard",
+          "stem": "How many ounces are in 1.5 pounds?",
+          "choices": [
+            "12",
+            "18",
+            "24",
+            "36"
+          ],
+          "answer": 2,
+          "explanation": "1 pound = 16 ounces. 1.5 × 16 = 24.",
+          "tags": [
+            "pounds-ounces"
+          ]
+        },
+        {
+          "id": "uni-m-13",
+          "difficulty": "hard",
+          "stem": "A 2-mile run is how many feet?",
+          "choices": [
+            "5,280",
+            "7,920",
+            "10,560",
+            "12,000"
+          ],
+          "answer": 2,
+          "explanation": "1 mile = 5,280 feet. 2 × 5,280 = 10,560.",
+          "tags": [
+            "miles-feet"
+          ]
+        },
+        {
+          "id": "uni-m-14",
+          "difficulty": "hard",
+          "stem": "A storage bin holds 48 quarts. How many gallons does it hold?",
+          "choices": [
+            "8",
+            "10",
+            "12",
+            "16"
+          ],
+          "answer": 2,
+          "explanation": "48 ÷ 4 = 12 gallons.",
+          "tags": [
+            "quarts-gallons"
+          ]
+        },
+        {
+          "id": "uni-m-15",
+          "difficulty": "expert",
+          "stem": "A farmer has 1.5 tons of feed. If each animal needs 12.5 pounds per day, how many animal-days of feed are available?",
+          "choices": [
+            "120",
+            "180",
+            "200",
+            "240"
+          ],
+          "answer": 3,
+          "explanation": "1.5 tons = 3,000 lb. Then 3,000 ÷ 12.5 = 240 animal-days.",
+          "tags": [
+            "multi-step-conversion",
+            "rate"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "unit-conversion-speed",
+      "title": "Unit Conversion Speed Drill",
+      "topicId": "unit-conversion",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "uni-s-01",
+          "difficulty": "easy",
+          "stem": "1 gallon = how many quarts?",
+          "choices": [
+            "2",
+            "3",
+            "4",
+            "8"
+          ],
+          "answer": 2,
+          "explanation": "Basic conversion fact.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-02",
+          "difficulty": "easy",
+          "stem": "1 foot = how many inches?",
+          "choices": [
+            "10",
+            "12",
+            "16",
+            "18"
+          ],
+          "answer": 1,
+          "explanation": "Basic conversion fact.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-03",
+          "difficulty": "easy",
+          "stem": "1 pound = how many ounces?",
+          "choices": [
+            "8",
+            "12",
+            "16",
+            "24"
+          ],
+          "answer": 2,
+          "explanation": "Basic conversion fact.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-04",
+          "difficulty": "easy",
+          "stem": "2 dozen =",
+          "choices": [
+            "12",
+            "18",
+            "24",
+            "144"
+          ],
+          "answer": 2,
+          "explanation": "2 × 12 = 24.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-05",
+          "difficulty": "medium",
+          "stem": "3 yards =",
+          "choices": [
+            "6 ft",
+            "9 ft",
+            "12 ft",
+            "15 ft"
+          ],
+          "answer": 1,
+          "explanation": "3 × 3 = 9.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-06",
+          "difficulty": "medium",
+          "stem": "18 quarts =",
+          "choices": [
+            "2 gal",
+            "3 gal",
+            "4 gal",
+            "4.5 gal"
+          ],
+          "answer": 3,
+          "explanation": "18 ÷ 4 = 4.5 gallons.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-07",
+          "difficulty": "medium",
+          "stem": "27 ft² =",
+          "choices": [
+            "2 yd²",
+            "3 yd²",
+            "9 yd²",
+            "27 yd²"
+          ],
+          "answer": 1,
+          "explanation": "27 ÷ 9 = 3.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-08",
+          "difficulty": "medium",
+          "stem": "2 miles =",
+          "choices": [
+            "5,280 ft",
+            "7,920 ft",
+            "10,560 ft",
+            "12,560 ft"
+          ],
+          "answer": 2,
+          "explanation": "2 × 5,280 = 10,560.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-09",
+          "difficulty": "medium",
+          "stem": "32 oz =",
+          "choices": [
+            "1 lb",
+            "2 lb",
+            "3 lb",
+            "4 lb"
+          ],
+          "answer": 1,
+          "explanation": "32 ÷ 16 = 2.",
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "id": "uni-s-10",
+          "difficulty": "medium",
+          "stem": "144 items =",
+          "choices": [
+            "1 dozen",
+            "1 gross",
+            "12 gross",
+            "24 dozen"
+          ],
+          "answer": 1,
+          "explanation": "1 gross = 144.",
+          "tags": [
+            "speed"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "level1-mixed-test",
+      "title": "Level 1 Mixed Test",
+      "topicId": "level-1",
+      "quizType": "mixed",
+      "questionCount": 20,
+      "questions": [
+        {
+          "id": "lvl1-mix-01",
+          "difficulty": "easy",
+          "stem": "Evaluate: 14 − 2 × 5",
+          "choices": [
+            "20",
+            "4",
+            "60",
+            "24"
+          ],
+          "answer": 1,
+          "explanation": "Multiply first: 2 × 5 = 10; 14 − 10 = 4.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-mix-02",
+          "difficulty": "easy",
+          "stem": "Compute: 0.4 × 0.2",
+          "choices": [
+            "0.8",
+            "0.08",
+            "0.02",
+            "8"
+          ],
+          "answer": 1,
+          "explanation": "4 × 2 = 8, two decimal places total gives 0.08.",
+          "tags": [
+            "decimals"
+          ]
+        },
+        {
+          "id": "lvl1-mix-03",
+          "difficulty": "easy",
+          "stem": "What is 1/5 of 35?",
+          "choices": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "answer": 2,
+          "explanation": "35 × 1/5 = 7.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-mix-04",
+          "difficulty": "easy",
+          "stem": "What is 25% of 80?",
+          "choices": [
+            "10",
+            "20",
+            "25",
+            "40"
+          ],
+          "answer": 1,
+          "explanation": "25% means one-fourth. 80 ÷ 4 = 20.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-mix-05",
+          "difficulty": "easy",
+          "stem": "Convert 3 gallons to quarts.",
+          "choices": [
+            "7",
+            "12",
+            "16",
+            "24"
+          ],
+          "answer": 1,
+          "explanation": "3 × 4 = 12.",
+          "tags": [
+            "unit-conversion"
+          ]
+        },
+        {
+          "id": "lvl1-mix-06",
+          "difficulty": "medium",
+          "stem": "Evaluate: (9 + 3) ÷ 4",
+          "choices": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answer": 1,
+          "explanation": "12 ÷ 4 = 3.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-mix-07",
+          "difficulty": "medium",
+          "stem": "Compute: 4.8 ÷ 0.6",
+          "choices": [
+            "0.8",
+            "8",
+            "80",
+            "6"
+          ],
+          "answer": 1,
+          "explanation": "48 ÷ 6 = 8.",
+          "tags": [
+            "decimals"
+          ]
+        },
+        {
+          "id": "lvl1-mix-08",
+          "difficulty": "medium",
+          "stem": "Compute: 2/3 + 1/3",
+          "choices": [
+            "1/3",
+            "2/3",
+            "1",
+            "3/3"
+          ],
+          "answer": 2,
+          "explanation": "Same denominator: 3/3 = 1.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-mix-09",
+          "difficulty": "medium",
+          "stem": "A $50 item has 10% tax. What is the total?",
+          "choices": [
+            "$50",
+            "$52",
+            "$55",
+            "$60"
+          ],
+          "answer": 2,
+          "explanation": "Tax = 5, total = 55.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-mix-10",
+          "difficulty": "medium",
+          "stem": "Convert 2.5 yards to feet.",
+          "choices": [
+            "5.5",
+            "6.5",
+            "7.5",
+            "8.5"
+          ],
+          "answer": 2,
+          "explanation": "2.5 × 3 = 7.5.",
+          "tags": [
+            "unit-conversion"
+          ]
+        },
+        {
+          "id": "lvl1-mix-11",
+          "difficulty": "medium",
+          "stem": "Evaluate: 3 + 12 ÷ 4 × 2",
+          "choices": [
+            "9",
+            "12",
+            "15",
+            "18"
+          ],
+          "answer": 0,
+          "explanation": "12 ÷ 4 = 3, 3 × 2 = 6, then 3 + 6 = 9.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-mix-12",
+          "difficulty": "medium",
+          "stem": "Compute: $1.75 × 8",
+          "choices": [
+            "$12.00",
+            "$13.50",
+            "$14.00",
+            "$15.00"
+          ],
+          "answer": 2,
+          "explanation": "1.75 × 8 = 14.",
+          "tags": [
+            "decimals",
+            "money"
+          ]
+        },
+        {
+          "id": "lvl1-mix-13",
+          "difficulty": "medium",
+          "stem": "If 3/4 of a number is 27, the number is",
+          "choices": [
+            "30",
+            "32",
+            "36",
+            "40"
+          ],
+          "answer": 2,
+          "explanation": "x = 27 × 4/3 = 36.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-mix-14",
+          "difficulty": "medium",
+          "stem": "12 is what percent of 48?",
+          "choices": [
+            "20%",
+            "25%",
+            "30%",
+            "40%"
+          ],
+          "answer": 1,
+          "explanation": "12/48 = 1/4 = 25%.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-mix-15",
+          "difficulty": "hard",
+          "stem": "A carpet measures 12 ft by 15 ft. What is its area in square yards?",
+          "choices": [
+            "18",
+            "20",
+            "24",
+            "30"
+          ],
+          "answer": 1,
+          "explanation": "Area is 180 ft². Divide by 9 to get 20 yd².",
+          "tags": [
+            "unit-conversion",
+            "area"
+          ]
+        },
+        {
+          "id": "lvl1-mix-16",
+          "difficulty": "hard",
+          "stem": "Evaluate: 2 × (5 + 4^2) − 6",
+          "choices": [
+            "30",
+            "36",
+            "40",
+            "42"
+          ],
+          "answer": 1,
+          "explanation": "4^2 = 16; 5 + 16 = 21; 2 × 21 = 42; 42 − 6 = 36.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-mix-17",
+          "difficulty": "hard",
+          "stem": "Compute: 0.84 ÷ 0.07",
+          "choices": [
+            "1.2",
+            "12",
+            "120",
+            "0.12"
+          ],
+          "answer": 1,
+          "explanation": "84 ÷ 7 = 12.",
+          "tags": [
+            "decimals"
+          ]
+        },
+        {
+          "id": "lvl1-mix-18",
+          "difficulty": "hard",
+          "stem": "After a 20% discount, a coat costs $72. What was the original price?",
+          "choices": [
+            "$80",
+            "$84",
+            "$90",
+            "$96"
+          ],
+          "answer": 2,
+          "explanation": "72 is 80% of original. 72 ÷ 0.8 = 90.",
+          "tags": [
+            "percents",
+            "reverse-percent"
+          ]
+        },
+        {
+          "id": "lvl1-mix-19",
+          "difficulty": "hard",
+          "stem": "A jug is 5/6 full. If 1/3 of the jug is poured out, what fraction remains?",
+          "choices": [
+            "1/2",
+            "2/3",
+            "3/5",
+            "1/3"
+          ],
+          "answer": 0,
+          "explanation": "5/6 − 1/3 = 5/6 − 2/6 = 3/6 = 1/2.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-mix-20",
+          "difficulty": "expert",
+          "stem": "A warehouse has 2.25 tons of gravel. If each bag holds 45 pounds, how many full bags can be filled?",
+          "choices": [
+            "90",
+            "95",
+            "100",
+            "110"
+          ],
+          "answer": 2,
+          "explanation": "2.25 tons = 4,500 lb. 4,500 ÷ 45 = 100.",
+          "tags": [
+            "unit-conversion",
+            "multi-step"
+          ]
+        }
+      ]
+    },
+    {
+      "quizId": "level1-challenge-test",
+      "title": "Level 1 Challenge Test",
+      "topicId": "level-1",
+      "quizType": "challenge",
+      "questionCount": 25,
+      "questions": [
+        {
+          "id": "lvl1-ch-01",
+          "difficulty": "medium",
+          "stem": "Evaluate: 18 − 3 × (2 + 1)",
+          "choices": [
+            "9",
+            "12",
+            "15",
+            "45"
+          ],
+          "answer": 0,
+          "explanation": "2 + 1 = 3; 3 × 3 = 9; 18 − 9 = 9.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-ch-02",
+          "difficulty": "medium",
+          "stem": "Compute: 2.75 × 4",
+          "choices": [
+            "9",
+            "10",
+            "11",
+            "12"
+          ],
+          "answer": 2,
+          "explanation": "2.75 × 4 = 11.",
+          "tags": [
+            "decimals"
+          ]
+        },
+        {
+          "id": "lvl1-ch-03",
+          "difficulty": "medium",
+          "stem": "What is 40% of 45?",
+          "choices": [
+            "16",
+            "18",
+            "20",
+            "22"
+          ],
+          "answer": 1,
+          "explanation": "0.40 × 45 = 18.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-ch-04",
+          "difficulty": "medium",
+          "stem": "Compute: 5/8 of 64",
+          "choices": [
+            "24",
+            "32",
+            "40",
+            "48"
+          ],
+          "answer": 2,
+          "explanation": "64 × 5/8 = 40.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-ch-05",
+          "difficulty": "medium",
+          "stem": "Convert 0.5 gallon to quarts.",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "answer": 1,
+          "explanation": "Half a gallon is 2 quarts.",
+          "tags": [
+            "unit-conversion"
+          ]
+        },
+        {
+          "id": "lvl1-ch-06",
+          "difficulty": "medium",
+          "stem": "Evaluate: 7 + 18 ÷ (3 × 2)",
+          "choices": [
+            "10",
+            "13",
+            "16",
+            "25"
+          ],
+          "answer": 0,
+          "explanation": "3 × 2 = 6; 18 ÷ 6 = 3; 7 + 3 = 10.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-ch-07",
+          "difficulty": "medium",
+          "stem": "Compute: 6.3 ÷ 0.9",
+          "choices": [
+            "0.7",
+            "7",
+            "70",
+            "9"
+          ],
+          "answer": 1,
+          "explanation": "63 ÷ 9 = 7.",
+          "tags": [
+            "decimals"
+          ]
+        },
+        {
+          "id": "lvl1-ch-08",
+          "difficulty": "medium",
+          "stem": "A $120 item is marked down 15%. What is the sale price?",
+          "choices": [
+            "$96",
+            "$100",
+            "$102",
+            "$108"
+          ],
+          "answer": 2,
+          "explanation": "Discount is 18; sale price is 102.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-ch-09",
+          "difficulty": "medium",
+          "stem": "Compute: 7/12 + 1/6",
+          "choices": [
+            "3/4",
+            "2/3",
+            "5/6",
+            "7/18"
+          ],
+          "answer": 0,
+          "explanation": "1/6 = 2/12; sum is 9/12 = 3/4.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-ch-10",
+          "difficulty": "medium",
+          "stem": "Convert 1.5 miles to feet.",
+          "choices": [
+            "5,280",
+            "6,600",
+            "7,920",
+            "8,400"
+          ],
+          "answer": 2,
+          "explanation": "1.5 × 5,280 = 7,920.",
+          "tags": [
+            "unit-conversion"
+          ]
+        },
+        {
+          "id": "lvl1-ch-11",
+          "difficulty": "hard",
+          "stem": "Evaluate: 32 ÷ 2^2 + 5 × 3",
+          "choices": [
+            "23",
+            "31",
+            "47",
+            "63"
+          ],
+          "answer": 0,
+          "explanation": "2^2 = 4; 32 ÷ 4 = 8; 5 × 3 = 15; total 23.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-ch-12",
+          "difficulty": "hard",
+          "stem": "Compute: 0.125 × 64",
+          "choices": [
+            "4",
+            "6",
+            "8",
+            "16"
+          ],
+          "answer": 2,
+          "explanation": "0.125 is 1/8; 64 ÷ 8 = 8.",
+          "tags": [
+            "decimals",
+            "anchor"
+          ]
+        },
+        {
+          "id": "lvl1-ch-13",
+          "difficulty": "hard",
+          "stem": "A price rises from $80 to $92. What is the percent increase?",
+          "choices": [
+            "12%",
+            "15%",
+            "20%",
+            "25%"
+          ],
+          "answer": 1,
+          "explanation": "Increase is 12; 12/80 = 15%.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-ch-14",
+          "difficulty": "hard",
+          "stem": "If 5/7 of a number is 45, the number is",
+          "choices": [
+            "49",
+            "56",
+            "63",
+            "72"
+          ],
+          "answer": 2,
+          "explanation": "x = 45 × 7/5 = 63.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-ch-15",
+          "difficulty": "hard",
+          "stem": "How many square feet are in 3 square yards?",
+          "choices": [
+            "9",
+            "18",
+            "27",
+            "36"
+          ],
+          "answer": 2,
+          "explanation": "1 yd² = 9 ft², so 3 yd² = 27 ft².",
+          "tags": [
+            "unit-conversion",
+            "area"
+          ]
+        },
+        {
+          "id": "lvl1-ch-16",
+          "difficulty": "hard",
+          "stem": "Evaluate: (4 + 2)^2 ÷ 3",
+          "choices": [
+            "8",
+            "10",
+            "12",
+            "14"
+          ],
+          "answer": 2,
+          "explanation": "6^2 = 36; 36 ÷ 3 = 12.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-ch-17",
+          "difficulty": "hard",
+          "stem": "A worker earns $14.40 per hour. How much for 7.5 hours?",
+          "choices": [
+            "$96.00",
+            "$102.00",
+            "$108.00",
+            "$112.50"
+          ],
+          "answer": 2,
+          "explanation": "14.4 × 7.5 = 108.",
+          "tags": [
+            "decimals",
+            "money"
+          ]
+        },
+        {
+          "id": "lvl1-ch-18",
+          "difficulty": "hard",
+          "stem": "A town drops from 500 people to 425 people. Percent decrease?",
+          "choices": [
+            "10%",
+            "12%",
+            "15%",
+            "20%"
+          ],
+          "answer": 2,
+          "explanation": "Decrease is 75; 75/500 = 15%.",
+          "tags": [
+            "percents"
+          ]
+        },
+        {
+          "id": "lvl1-ch-19",
+          "difficulty": "hard",
+          "stem": "A class read 2/3 of a book Monday and 1/6 Tuesday. What fraction of the book was read by Tuesday night?",
+          "choices": [
+            "4/5",
+            "5/6",
+            "3/4",
+            "1"
+          ],
+          "answer": 1,
+          "explanation": "2/3 = 4/6; 4/6 + 1/6 = 5/6.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-ch-20",
+          "difficulty": "hard",
+          "stem": "A 48-quart cooler holds how many gallons?",
+          "choices": [
+            "10",
+            "11",
+            "12",
+            "16"
+          ],
+          "answer": 2,
+          "explanation": "48 ÷ 4 = 12.",
+          "tags": [
+            "unit-conversion"
+          ]
+        },
+        {
+          "id": "lvl1-ch-21",
+          "difficulty": "expert",
+          "stem": "Evaluate: 40 − [8 + 3 × (2^3 − 5)]",
+          "choices": [
+            "23",
+            "25",
+            "27",
+            "29"
+          ],
+          "answer": 0,
+          "explanation": "2^3 = 8; 8 − 5 = 3; 3 × 3 = 9; bracket is 17; 40 − 17 = 23.",
+          "tags": [
+            "pemdas"
+          ]
+        },
+        {
+          "id": "lvl1-ch-22",
+          "difficulty": "expert",
+          "stem": "A machine produces 0.75 pound of material per cycle. How many cycles are needed to produce 18 pounds?",
+          "choices": [
+            "18",
+            "21",
+            "24",
+            "27"
+          ],
+          "answer": 2,
+          "explanation": "18 ÷ 0.75 = 24.",
+          "tags": [
+            "decimals",
+            "word-problem"
+          ]
+        },
+        {
+          "id": "lvl1-ch-23",
+          "difficulty": "expert",
+          "stem": "An item is discounted 25% and then taxed 8% on the sale price. The original price is $80. Final price?",
+          "choices": [
+            "$60.00",
+            "$62.40",
+            "$64.80",
+            "$68.00"
+          ],
+          "answer": 2,
+          "explanation": "80 × 0.75 = 60; 60 × 1.08 = 64.8.",
+          "tags": [
+            "percents",
+            "multi-step"
+          ]
+        },
+        {
+          "id": "lvl1-ch-24",
+          "difficulty": "expert",
+          "stem": "If 3/8 of a tank is filled and then 1/4 of the tank is added, what fraction is full now?",
+          "choices": [
+            "5/8",
+            "7/8",
+            "1/2",
+            "3/4"
+          ],
+          "answer": 0,
+          "explanation": "1/4 = 2/8; 3/8 + 2/8 = 5/8.",
+          "tags": [
+            "fractions"
+          ]
+        },
+        {
+          "id": "lvl1-ch-25",
+          "difficulty": "expert",
+          "stem": "A shipment weighs 2.4 tons. If each crate holds 80 pounds, how many crates are needed?",
+          "choices": [
+            "50",
+            "55",
+            "60",
+            "65"
+          ],
+          "answer": 2,
+          "explanation": "2.4 tons = 4,800 lb. Then 4,800 ÷ 80 = 60.",
+          "tags": [
+            "unit-conversion",
+            "multi-step"
+          ]
+        }
+      ]
+    }
+  ]
+}

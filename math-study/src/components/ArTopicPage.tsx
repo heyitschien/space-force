@@ -4,13 +4,29 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import { getArTopicById } from '../data/arTopicContent';
 import { getPatternIdsForTopic } from '../data/ar20Patterns';
 import { getArQuestionById } from '../utils/arQuestionLookup';
+import { AR_TEST_QUESTION_SOLUTIONS } from '../data/arTestQuestionSolutions';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
+import { QuizEngine } from './quiz/QuizEngine';
+import {
+  AR_LEVEL1_TOPIC_QUIZ_IDS,
+  AR_LEVEL1_QUIZ_CONFIGS,
+} from '../data/quiz/arLevel1QuizConfig';
+import { getQuestionsForQuiz } from '../utils/quizSelection';
+
+const LEVEL_1_TOPIC_IDS = new Set([
+  'order-of-operations',
+  'decimals',
+  'fractions',
+  'percents',
+  'unit-conversion',
+]);
 
 export function ArTopicPage() {
   const { topicId } = useParams<{ topicId: string }>();
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
+  const [level1QuizId, setLevel1QuizId] = useState<string | null>(null);
   const [expandedQuestionIds, setExpandedQuestionIds] = useState<Set<string>>(new Set());
 
   const topic = topicId ? getArTopicById(topicId) : undefined;
@@ -160,7 +176,8 @@ export function ArTopicPage() {
               From the Test
             </h2>
             <p className="mb-4 text-sm text-slate-600">
-              Real questions from the 90-question pool. Click to reveal the correct answer.
+              Real questions from the 90-question pool. Click to reveal the correct answer and
+              solution steps.
             </p>
             <div className="space-y-4">
               {topic.testQuestionIds.map((qId) => {
@@ -168,6 +185,7 @@ export function ArTopicPage() {
               if (!q) return null;
               const isExpanded = expandedQuestionIds.has(q.id);
               const correctOption = q.options.find((o) => o.id === q.correct);
+              const solution = AR_TEST_QUESTION_SOLUTIONS[q.id];
               return (
                 <div
                   key={q.id}
@@ -186,6 +204,25 @@ export function ArTopicPage() {
                   </button>
                   {isExpanded && (
                     <div className="border-t border-slate-100 bg-rose-50/50 px-6 py-4">
+                      {solution && (
+                        <>
+                          <p className="mb-2 font-semibold text-rose-800">
+                            Pattern: {solution.patternLabel}
+                          </p>
+                          <ol className="mb-4 list-inside list-decimal space-y-3 text-sm text-slate-700">
+                            {solution.solutionSteps.map((s, i) => (
+                              <li key={i}>
+                                <span>{s.step}</span>
+                                {s.reason && (
+                                  <p className="mt-1 pl-4 text-xs italic text-slate-500">
+                                    Why: {s.reason}
+                                  </p>
+                                )}
+                              </li>
+                            ))}
+                          </ol>
+                        </>
+                      )}
                       <p className="font-semibold text-rose-800">
                         Correct answer: {correctOption?.text ?? q.correct}
                       </p>
@@ -201,6 +238,34 @@ export function ArTopicPage() {
           </section>
         )}
 
+        {LEVEL_1_TOPIC_IDS.has(topic.id) && (
+          <div className="mb-10 flex flex-wrap justify-center gap-4">
+            {(() => {
+              const ids = AR_LEVEL1_TOPIC_QUIZ_IDS[topic.id];
+              if (!ids) return null;
+              const masteryConfig = AR_LEVEL1_QUIZ_CONFIGS[ids.mastery];
+              const speedConfig = AR_LEVEL1_QUIZ_CONFIGS[ids.speed];
+              if (!masteryConfig || !speedConfig) return null;
+              return (
+                <>
+                  <button
+                    onClick={() => setLevel1QuizId(ids.mastery)}
+                    className="rounded-xl border-2 border-rose-600 px-6 py-3 font-semibold text-rose-600 shadow-md transition-colors hover:bg-rose-50"
+                  >
+                    Pattern Mastery Quiz (15 Q)
+                  </button>
+                  <button
+                    onClick={() => setLevel1QuizId(ids.speed)}
+                    className="rounded-xl border-2 border-rose-600 px-6 py-3 font-semibold text-rose-600 shadow-md transition-colors hover:bg-rose-50"
+                  >
+                    Speed Drill (10 Q)
+                  </button>
+                </>
+              );
+            })()}
+          </div>
+        )}
+
         <div className="flex justify-center">
           <button
             onClick={() => setPracticeTestOpen(true)}
@@ -214,6 +279,22 @@ export function ArTopicPage() {
       {practiceTestOpen && (
         <ArithmeticReasoningTestLauncher onClose={() => setPracticeTestOpen(false)} />
       )}
+
+      {level1QuizId && (() => {
+        const config = AR_LEVEL1_QUIZ_CONFIGS[level1QuizId];
+        if (!config) return null;
+        const questions = getQuestionsForQuiz(level1QuizId);
+        return (
+          <QuizEngine
+            config={config}
+            questions={questions}
+            onComplete={() => {}}
+            onClose={() => setLevel1QuizId(null)}
+            theme="rose"
+            showDifficultyBadge
+          />
+        );
+      })()}
     </div>
   );
 }
