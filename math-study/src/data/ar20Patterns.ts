@@ -1,10 +1,21 @@
+export type ArPatternFamily = 'percent' | 'ratio-rate' | 'motion-work' | 'geometry' | 'arithmetic';
+
 export interface ArPattern {
   id: number;
   name: string;
   formula: string;
   quickExample: string;
   topicIds: string[];
+  family: ArPatternFamily;
 }
+
+export const AR_PATTERN_FAMILIES: Array<{ id: ArPatternFamily; label: string }> = [
+  { id: 'percent', label: 'Percent Patterns' },
+  { id: 'ratio-rate', label: 'Ratio / Rate Patterns' },
+  { id: 'motion-work', label: 'Motion & Work' },
+  { id: 'geometry', label: 'Geometry' },
+  { id: 'arithmetic', label: 'Arithmetic Mechanics' },
+];
 
 export interface PatternStem {
   stem: string;
@@ -18,6 +29,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'd = rt',
     quickExample: '60 mph × 3 hr = 180 mi',
     topicIds: ['rate-distance-time'],
+    family: 'motion-work',
   },
   {
     id: 2,
@@ -25,6 +37,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'part = whole × (percent ÷ 100)',
     quickExample: '20% of 150 = 30',
     topicIds: ['percents'],
+    family: 'percent',
   },
   {
     id: 3,
@@ -32,6 +45,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'new = original × (1 ± percent/100)',
     quickExample: '$50 + 20% = $60',
     topicIds: ['percents'],
+    family: 'percent',
   },
   {
     id: 4,
@@ -39,6 +53,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'a:b → scale factor, then multiply',
     quickExample: '3:2, 15 boys → 10 girls',
     topicIds: ['ratios'],
+    family: 'ratio-rate',
   },
   {
     id: 5,
@@ -46,6 +61,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'unit rate × quantity = total',
     quickExample: '3 pencils $6 → 10 pencils $20',
     topicIds: ['ratios', 'rate-multiply'],
+    family: 'ratio-rate',
   },
   {
     id: 6,
@@ -53,6 +69,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'rate = 1/time; combined = sum of rates',
     quickExample: '1 worker 6 hr → 2 workers 3 hr',
     topicIds: ['work-rate'],
+    family: 'motion-work',
   },
   {
     id: 7,
@@ -60,6 +77,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'average = sum ÷ count',
     quickExample: '(80 + 90 + 70) ÷ 3 = 80',
     topicIds: ['averages'],
+    family: 'ratio-rate',
   },
   {
     id: 8,
@@ -67,6 +85,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'Cross method: high−target, target−low',
     quickExample: '10% + 30% → 20% = 1:1 mix',
     topicIds: ['mixture'],
+    family: 'ratio-rate',
   },
   {
     id: 9,
@@ -74,6 +93,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'A = lw',
     quickExample: '12 ft × 15 ft = 180 ft²',
     topicIds: ['area-volume'],
+    family: 'geometry',
   },
   {
     id: 10,
@@ -81,6 +101,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'a² + b² = c²',
     quickExample: '3² + 4² = 25 → c = 5',
     topicIds: ['area-volume'],
+    family: 'geometry',
   },
   {
     id: 11,
@@ -88,6 +109,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'multiply by conversion factor',
     quickExample: '2 miles = 2 × 5280 = 10,560 ft',
     topicIds: ['unit-conversion'],
+    family: 'arithmetic',
   },
   {
     id: 12,
@@ -95,6 +117,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'common denominator for add/subtract',
     quickExample: '1/3 + 1/6 = 2/6 + 1/6 = 1/2',
     topicIds: ['fractions'],
+    family: 'arithmetic',
   },
   {
     id: 13,
@@ -102,6 +125,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'ignore decimals, multiply, then place',
     quickExample: '2.5 × 0.4 = 1.00',
     topicIds: ['decimals'],
+    family: 'arithmetic',
   },
   {
     id: 14,
@@ -109,6 +133,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'percent profit = (profit ÷ cost) × 100',
     quickExample: 'Buy $40, sell $55 → 37.5% profit',
     topicIds: ['percents', 'inequalities'],
+    family: 'percent',
   },
   {
     id: 15,
@@ -116,6 +141,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'interest = principal × rate × time',
     quickExample: '$1000 × 5% × 1 yr = $50',
     topicIds: ['percents', 'rate-multiply'],
+    family: 'percent',
   },
   {
     id: 16,
@@ -123,6 +149,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'isolate variable with inverse operations',
     quickExample: '2x + 6 = 14 → x = 4',
     topicIds: ['word-problem-setup'],
+    family: 'arithmetic',
   },
   {
     id: 17,
@@ -130,6 +157,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'multiply numerators, multiply denominators',
     quickExample: '2/3 × 3/4 = 6/12 = 1/2',
     topicIds: ['fractions'],
+    family: 'arithmetic',
   },
   {
     id: 18,
@@ -137,6 +165,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'target sum = target avg × (n + 1)',
     quickExample: '4 tests avg 80 → need 105 for 85',
     topicIds: ['averages'],
+    family: 'ratio-rate',
   },
   {
     id: 19,
@@ -144,6 +173,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'P = favorable ÷ total',
     quickExample: '3 red, 7 blue → P(red) = 3/10',
     topicIds: ['ratios'],
+    family: 'ratio-rate',
   },
   {
     id: 20,
@@ -151,6 +181,7 @@ export const AR_20_PATTERNS: ArPattern[] = [
     formula: 'A = ½bh',
     quickExample: 'base 10, height 6 → area = 30',
     topicIds: ['area-volume'],
+    family: 'geometry',
   },
 ];
 
