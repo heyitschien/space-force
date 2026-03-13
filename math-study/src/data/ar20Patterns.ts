@@ -183,6 +183,14 @@ export const AR_20_PATTERNS: ArPattern[] = [
     topicIds: ['area-volume'],
     family: 'geometry',
   },
+  {
+    id: 21,
+    name: 'Order of Operations',
+    formula: 'P → E → M/D → A/S',
+    quickExample: '6 + 3 × 4 = 18',
+    topicIds: ['order-of-operations'],
+    family: 'arithmetic',
+  },
 ];
 
 export const PATTERN_STEMS: PatternStem[] = [
@@ -228,6 +236,8 @@ export const PATTERN_STEMS: PatternStem[] = [
   { stem: '13 hearts in 52-card deck. P(heart)?', patternId: 19 },
   { stem: 'Triangle base 10, height 6. Area?', patternId: 20 },
   { stem: 'Right triangle legs 5 and 12. Area?', patternId: 20 },
+  { stem: '6 + 3 × 4 = ?', patternId: 21 },
+  { stem: '(8 − 2) × 3 = ?', patternId: 21 },
 ];
 
 export function getPatternById(id: number): ArPattern | undefined {

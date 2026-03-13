@@ -11,6 +11,44 @@ export interface ArTopic {
 
 export const AR_TOPICS: ArTopic[] = [
   {
+    id: 'order-of-operations',
+    title: 'Order of Operations (PEMDAS)',
+    description: 'Parentheses, exponents, multiply/divide, add/subtract. The order you must follow in every expression.',
+    principles: [
+      'P → E → M/D (left to right) → A/S (left to right)',
+      'Parentheses first; then exponents',
+      'Multiplication and division have equal priority — do left to right',
+      'Addition and subtraction have equal priority — do left to right',
+    ],
+    rules: [
+      'Step 1: Simplify inside parentheses.',
+      'Step 2: Exponents.',
+      'Step 3: Multiply and divide left to right.',
+      'Step 4: Add and subtract left to right.',
+      'Common trap: 6 + 3 × 4 ≠ 36; multiply first → 6 + 12 = 18.',
+    ],
+    simpleExample: {
+      problem: '6 + 3 × 4 = ?',
+      solution: '3 × 4 = 12 first. 6 + 12 = 18.',
+      shortcut: 'Multiply before add.',
+    },
+    practiceProblems: [
+      {
+        problem: '(8 − 2) × 3 = ?',
+        solution: '8 − 2 = 6 first. 6 × 3 = 18.',
+      },
+      {
+        problem: '20 ÷ 4 + 3 = ?',
+        solution: '20 ÷ 4 = 5 first. 5 + 3 = 8.',
+      },
+      {
+        problem: '2 + 3² × 2 = ?',
+        solution: '3² = 9 first. 9 × 2 = 18. 2 + 18 = 20.',
+      },
+    ],
+    testQuestionIds: [],
+  },
+  {
     id: 'percents',
     title: 'Percents',
     description: 'Percent of a number, percent increase/decrease, tax, tips, discounts.',
@@ -25,11 +63,12 @@ export const AR_TOPICS: ArTopic[] = [
       'To find what percent A is of B: divide A by B and multiply by 100.',
       'For percent increase: new = old × (1 + percent/100).',
       'For successive discounts: apply each discount to the new price (e.g., 20% off then 15% off: price × 0.80 × 0.85).',
+      'Mental shortcuts: 10% = move decimal left; 5% = half of 10%; 25% = divide by 4; 50% = divide by 2.',
     ],
     simpleExample: {
       problem: 'What is 15% of 80?',
       solution: '15% of 80 = 0.15 × 80 = 12',
-      shortcut: 'Convert % to decimal, multiply. ~30 sec.',
+      shortcut: '10% of 80 = 8. 25% = divide by 4 → 20. ~15 sec.',
     },
     practiceProblems: [
       {
@@ -91,8 +130,8 @@ export const AR_TOPICS: ArTopic[] = [
       'For feet and inches: 1 ft = 12 in; convert to inches, compute, then convert back.',
     ],
     simpleExample: {
-      problem: 'How many days will 72 bottles last if you use 4 per day?',
-      solution: '72 ÷ 4 = 18 days.',
+      problem: 'Convert 288 ft² to square yards.',
+      solution: '288 ft² × (1 yd² / 9 ft²) = 288 ÷ 9 = 32 yd². Units cancel.',
     },
     practiceProblems: [
       {
@@ -147,8 +186,10 @@ export const AR_TOPICS: ArTopic[] = [
       'To add fractions: find a common denominator',
       '"X is 2/5 of Y" means X = (2/5) × Y, so Y = X ÷ (2/5) = X × (5/2)',
       '"One-fifth more" means multiply by 1.2 (or 6/5)',
+      'Always reduce fractions before computing when possible (e.g., 18/24 = 3/4).',
     ],
     rules: [
+      'Simplify first: 18/24 = 3/4. Reduces errors and speeds up.',
       'For "how much is left": find total taken (add fractions with common denominator), then subtract from 1.',
       'For "2/5 of 40 hours": 2/5 × 40 = 16.',
       'For "one-fifth more than predicted": actual = predicted × 1.2; solve for predicted.',
@@ -158,6 +199,10 @@ export const AR_TOPICS: ArTopic[] = [
       solution: '3/4 × 24 = 18.',
     },
     practiceProblems: [
+      {
+        problem: 'Simplify 18/24, then find 18/24 of 48.',
+        solution: '18/24 = 3/4. 3/4 × 48 = 36.',
+      },
       {
         problem: 'A recipe needs 1/3 cup sugar per batch. How many batches from 4 cups?',
         solution: '4 ÷ (1/3) = 4 × 3 = 12 batches.',
@@ -412,6 +457,10 @@ export const AR_TOPICS: ArTopic[] = [
       {
         problem: '0.06 × 0.5 = ?',
         solution: '6 × 5 = 30. Two + one = three places → 0.030.',
+      },
+      {
+        problem: '3.6 ÷ 0.4 = ?',
+        solution: 'Move decimals: 36 ÷ 4 = 9.',
       },
     ],
     testQuestionIds: [],

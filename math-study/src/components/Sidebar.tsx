@@ -62,6 +62,7 @@ const CATEGORIES: NavCategory[] = [
       { id: 'ar-20-patterns', label: '20 Patterns', href: '/arithmetic-reasoning/patterns' },
       { id: 'ar-pattern-drill', label: 'Pattern Drill', href: '/arithmetic-reasoning/pattern-drill' },
       { id: 'ar-section-l1', label: 'Level 1 (Number mechanics)', isSectionHeader: true },
+      { id: 'ar-order-of-operations', label: 'Order of Operations (PEMDAS)', href: '/arithmetic-reasoning/order-of-operations' },
       { id: 'ar-decimals', label: 'Decimal Operations', href: '/arithmetic-reasoning/decimals' },
       { id: 'ar-fractions', label: 'Fractions', href: '/arithmetic-reasoning/fractions' },
       { id: 'ar-percents', label: 'Percents', href: '/arithmetic-reasoning/percents' },
