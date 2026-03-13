@@ -4,7 +4,10 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import { getArTopicById } from '../data/arTopicContent';
 import { getPatternIdsForTopic } from '../data/ar20Patterns';
 import { getArQuestionById } from '../utils/arQuestionLookup';
-import { AR_TEST_QUESTION_SOLUTIONS } from '../data/arTestQuestionSolutions';
+import {
+  AR_TEST_QUESTION_SOLUTIONS,
+  type ArTestSolutionStep,
+} from '../data/arTestQuestionSolutions';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
@@ -210,7 +213,7 @@ export function ArTopicPage() {
                             Pattern: {solution.patternLabel}
                           </p>
                           <ol className="mb-4 list-inside list-decimal space-y-3 text-sm text-slate-700">
-                            {solution.solutionSteps.map((s, i) => (
+                            {solution.solutionSteps.map((s: ArTestSolutionStep, i: number) => (
                               <li key={i}>
                                 <span>{s.step}</span>
                                 {s.reason && (
