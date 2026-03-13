@@ -10,6 +10,7 @@ import {
 } from '../data/dstPatternContent';
 import { getArQuestionById } from '../utils/arQuestionLookup';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
+import { ArLevelTopicNav } from './ArLevelTopicNav';
 
 interface DstTopicLayoutProps {
   topic: ArTopic;
@@ -84,6 +85,8 @@ export function DstTopicLayout({ topic }: DstTopicLayoutProps) {
           </button>
         </div>
       </header>
+
+      <ArLevelTopicNav currentTopicId={topic.id} />
 
       <main className="mx-auto max-w-3xl px-4 py-8">
         <p className="mb-8 text-slate-600">Master the 6 motion patterns used on the ASVAB</p>

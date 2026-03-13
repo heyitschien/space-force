@@ -5,6 +5,7 @@ import { getArTopicById } from '../data/arTopicContent';
 import { getPatternIdsForTopic } from '../data/ar20Patterns';
 import { getArQuestionById } from '../utils/arQuestionLookup';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
+import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
 
 export function ArTopicPage() {
@@ -68,6 +69,8 @@ export function ArTopicPage() {
           </button>
         </div>
       </header>
+
+      <ArLevelTopicNav currentTopicId={topic.id} />
 
       <main className="mx-auto max-w-3xl px-4 py-8">
         <p className="mb-4 text-slate-600">{topic.description}</p>

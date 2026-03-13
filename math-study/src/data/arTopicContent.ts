@@ -92,6 +92,7 @@ export const AR_TOPICS: ArTopic[] = [
       'rate = total ÷ quantity',
     ],
     rules: [
+      'Per means divide. Rate = total ÷ quantity (e.g., $12 for 3 items → rate = 12 ÷ 3 = $4 per item).',
       'Identify the rate (cost per unit, pay per hour, etc.) and the quantity.',
       'Multiply rate × quantity to get the total.',
       'For savings: (original price − sale price) × number of items.',
@@ -109,6 +110,10 @@ export const AR_TOPICS: ArTopic[] = [
       {
         problem: 'You save $1.50 per case on 6 cases. Total savings?',
         solution: '$1.50 × 6 = $9.00.',
+      },
+      {
+        problem: 'A car uses 5 gallons in 150 miles. What is the miles per gallon?',
+        solution: '150 ÷ 5 = 30 mpg.',
       },
     ],
     testQuestionIds: ['ar-p1-001', 'ar-p1-021', 'ar-p2-028'],
@@ -224,6 +229,7 @@ export const AR_TOPICS: ArTopic[] = [
       'To find missing value: (sum + x) ÷ (n + 1) = target → solve for x',
     ],
     rules: [
+      'Weighted average shortcut: target sum = target avg × (n + 1); missing value = target sum − current sum.',
       'Add all known values to get the sum.',
       'For target average: (current sum + new value) ÷ (n + 1) = target. Solve for new value.',
       'Formula: new value = target × (n + 1) − current sum.',
@@ -281,10 +287,12 @@ export const AR_TOPICS: ArTopic[] = [
     description: 'Ratios, proportions, scale (map to real), simple probability.',
     principles: [
       'Ratio a:b means a/b; set up proportion a/b = c/d and cross-multiply',
+      'Cross multiply: a/b = c/d implies a × d = b × c',
       'Scale: map distance / real distance = constant',
       'Probability = favorable outcomes ÷ total outcomes',
     ],
     rules: [
+      'If one side of the ratio is known, divide to find the scale factor.',
       'For "3:4 red to blue, 80 blue": red/80 = 3/4, so red = 80 × (3/4) = 60.',
       'For scale ½ in = 1 mile: 4.5 in = 4.5 ÷ 0.5 = 9 miles.',
       'For "3 trucks for 24 homes, how many for 72": 72/24 = 3, so 3 × 3 = 9 trucks.',
@@ -404,11 +412,13 @@ export const AR_TOPICS: ArTopic[] = [
     title: 'Mixture Problems',
     description: 'Mixing two concentrations to get a target; cross method shortcut.',
     principles: [
+      'Target concentration always lies between the two values (e.g., 10% --- 20% --- 30%).',
       'Cross method: high − target, target − low gives ratio',
       'Ratio parts of high : parts of low',
       'Final concentration = (amount₁ × conc₁ + amount₂ × conc₂) ÷ total amount',
     ],
     rules: [
+      'If target is exactly in the middle, use equal amounts (1:1). Example: 10% and 30% → 20% = 1:1.',
       'Mix 10% and 30% to get 20%: 30−20=10, 20−10=10 → ratio 1:1.',
       'Mix $3/lb and $5/lb to get $4/lb: 5−4=1, 4−3=1 → 1:1 ratio.',
       'For "how much of each": set up equation or use the ratio.',
