@@ -52,34 +52,10 @@ export const AR_TOPICS: ArTopic[] = [
     id: 'percents',
     title: 'Percents',
     description: 'Percent of a number, percent increase/decrease, tax, tips, discounts.',
-    principles: [
-      'part = whole × (percent ÷ 100)',
-      'percent = (part ÷ whole) × 100',
-      'percent change = ((new − old) ÷ old) × 100',
-      '"X is Y% more than Z" means X = Z × (1 + Y/100)',
-    ],
-    rules: [
-      'To find a percent of a number: multiply the number by the decimal form (e.g., 12% = 0.12).',
-      'To find what percent A is of B: divide A by B and multiply by 100.',
-      'For percent increase: new = old × (1 + percent/100).',
-      'For successive discounts: apply each discount to the new price (e.g., 20% off then 15% off: price × 0.80 × 0.85).',
-      'Mental shortcuts: 10% = move decimal left; 5% = half of 10%; 25% = divide by 4; 50% = divide by 2.',
-    ],
-    simpleExample: {
-      problem: 'What is 15% of 80?',
-      solution: '15% of 80 = 0.15 × 80 = 12',
-      shortcut: '10% of 80 = 8. 25% = divide by 4 → 20. ~15 sec.',
-    },
-    practiceProblems: [
-      {
-        problem: 'A shirt costs $40. With 25% off, what is the sale price?',
-        solution: '25% off means you pay 75%. $40 × 0.75 = $30.',
-      },
-      {
-        problem: 'If 18 out of 24 students passed, what percent passed?',
-        solution: '18 ÷ 24 = 0.75 = 75%.',
-      },
-    ],
+    principles: [],
+    rules: [],
+    simpleExample: { problem: '', solution: '' },
+    practiceProblems: [],
     testQuestionIds: ['ar-p1-005', 'ar-p2-001', 'ar-p2-029'],
   },
   {

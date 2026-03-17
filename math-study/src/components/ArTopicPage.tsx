@@ -11,6 +11,7 @@ import {
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
+import { PercentsTopicLayout } from './PercentsTopicLayout';
 import { QuizEngine } from './quiz/QuizEngine';
 import {
   AR_LEVEL1_TOPIC_QUIZ_IDS,
@@ -36,6 +37,9 @@ export function ArTopicPage() {
 
   if (topic && topicId === 'rate-distance-time') {
     return <DstTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'percents') {
+    return <PercentsTopicLayout topic={topic} />;
   }
 
   const toggleQuestion = (id: string) => {
