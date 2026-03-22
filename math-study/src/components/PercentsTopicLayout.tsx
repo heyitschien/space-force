@@ -28,6 +28,11 @@ import {
   AR_LEVEL1_QUIZ_CONFIGS,
 } from '../data/quiz/arLevel1QuizConfig';
 import { getQuestionsForQuiz } from '../utils/quizSelection';
+import { Level1MemorySprint } from './Level1MemorySprint';
+import {
+  getLevel1MemoryDeck,
+  type Level1MemoryTopicId,
+} from '../data/level1MemoryDecks';
 
 interface PercentsTopicLayoutProps {
   topic: ArTopic;
@@ -81,6 +86,8 @@ export function PercentsTopicLayout({ topic }: PercentsTopicLayoutProps) {
   const [level1QuizId, setLevel1QuizId] = useState<string | null>(null);
   const [expandedQuestionIds, setExpandedQuestionIds] = useState<Set<string>>(new Set());
   const [revealedDrillIds, setRevealedDrillIds] = useState<Set<number>>(new Set());
+  const memoryDeck = getLevel1MemoryDeck(topic.id);
+  const memoryTopicId = topic.id as Level1MemoryTopicId;
 
   const toggleQuestion = (id: string) => {
     setExpandedQuestionIds((prev) => {
@@ -140,6 +147,32 @@ export function PercentsTopicLayout({ topic }: PercentsTopicLayoutProps) {
 
       <main className="mx-auto max-w-3xl px-4 py-8">
         <p className="mb-8 text-slate-600">{topic.description}</p>
+        {memoryDeck.length > 0 && (
+          <>
+            <section className="mb-6 rounded-xl border border-indigo-200 bg-indigo-50/60 p-4">
+              <p className="text-sm font-semibold text-indigo-900">
+                Start here for today: lock in percent facts and rules first.
+              </p>
+              <p className="mt-1 text-xs text-slate-600">
+                Do a 2-minute memory sprint before the full lesson.
+              </p>
+              <a
+                href="#think-about-it-memory-game"
+                className="mt-3 inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-500"
+              >
+                Start Today&apos;s 2-Min Drill
+              </a>
+            </section>
+            <section id="think-about-it-memory-game" className="mb-10">
+              <SectionHeading>Think About It — Memory Game</SectionHeading>
+              <p className="mb-4 text-sm text-slate-600">
+                Play this 2-minute retrieval sprint daily. It uses spaced review and immediate
+                feedback to strengthen long-term memory for key facts and rules.
+              </p>
+              <Level1MemorySprint topicId={memoryTopicId} deck={memoryDeck} />
+            </section>
+          </>
+        )}
 
         {/* Core Intuition */}
         <section className="mb-10">

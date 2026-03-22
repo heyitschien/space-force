@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { ArPatternFamily } from '../data/ar20Patterns';
-import { AR_20_PATTERNS, AR_PATTERN_FAMILIES } from '../data/ar20Patterns';
+import {
+  AR_20_PATTERNS,
+  AR_CORE_PATTERN_IDS,
+  AR_PATTERN_FAMILIES,
+  getCorePatternIds,
+  getStemsForPatternSet,
+  isCorePattern,
+} from '../data/ar20Patterns';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 
 const FAMILY_STYLES: Record<
@@ -35,8 +42,13 @@ const FAMILY_STYLES: Record<
   },
 };
 
+const CORE_STEM_COUNT = getStemsForPatternSet(AR_CORE_PATTERN_IDS).length;
+
 export function ArPatternsPage() {
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
+  const corePatterns = getCorePatternIds()
+    .map((id) => AR_20_PATTERNS.find((p) => p.id === id))
+    .filter((p): p is NonNullable<typeof p> => p != null);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -59,12 +71,19 @@ export function ArPatternsPage() {
           </Link>
           <div className="flex gap-2">
             <Link
-              to="/arithmetic-reasoning/pattern-drill"
+              to="/arithmetic-reasoning/pattern-drill?mode=core"
               className="rounded-lg border-2 border-rose-600 px-4 py-2 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-50"
             >
-              Pattern Drill
+              Core drill
+            </Link>
+            <Link
+              to="/arithmetic-reasoning/pattern-drill"
+              className="rounded-lg border-2 border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+            >
+              All patterns
             </Link>
             <button
+              type="button"
               onClick={() => setPracticeTestOpen(true)}
               className="rounded-lg bg-rose-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-rose-500"
             >
@@ -81,12 +100,37 @@ export function ArPatternsPage() {
 
         <div className="mb-10 rounded-xl border-2 border-rose-200 bg-rose-50/50 p-6">
           <h1 className="mb-2 text-2xl font-bold text-rose-800">
-            Master these 20 patterns. Solve most AR questions in 10–20 seconds.
+            Master these {AR_20_PATTERNS.length} patterns. Solve most AR questions in 10–20 seconds.
           </h1>
           <p className="text-slate-700">
             That&apos;s how people score <strong>90+ AFQT</strong>. The ASVAB loves repeating the same structures with
             different numbers. Recognize the pattern → apply the formula → done.
           </p>
+        </div>
+
+        <div className="mb-10 rounded-xl border-2 border-emerald-200 bg-emerald-50/40 p-5">
+          <h2 className="mb-2 text-lg font-bold text-emerald-900">Start here (highest yield)</h2>
+          <p className="mb-4 text-sm text-slate-700">
+            Drill the <strong>core</strong> set first ({CORE_STEM_COUNT} practice stems): percents, ratios/proportions,
+            unit conversion, and distance–speed–time. Then run the full pattern drill.
+          </p>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {corePatterns.map((p) => (
+              <a
+                key={p.id}
+                href={`#pattern-${p.id}`}
+                className="rounded-full border border-emerald-300 bg-white px-3 py-1 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-100"
+              >
+                #{p.id} {p.name}
+              </a>
+            ))}
+          </div>
+          <Link
+            to="/arithmetic-reasoning/pattern-drill?mode=core"
+            className="inline-flex rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-emerald-500"
+          >
+            Start core pattern drill
+          </Link>
         </div>
 
         <div className="mb-8 space-y-10">
@@ -105,14 +149,30 @@ export function ArPatternsPage() {
                       id={`pattern-${pattern.id}`}
                       className={`flex flex-col rounded-xl border-2 border-slate-200 p-4 shadow-sm transition-all ${styles.card}`}
                     >
-                      <span
-                        className={`mb-2 inline-block w-fit rounded-full px-2 py-0.5 text-xs font-bold ${styles.badge}`}
-                      >
-                        #{pattern.id}
-                      </span>
+                      <div className="mb-2 flex flex-wrap items-center gap-1">
+                        <span
+                          className={`inline-block w-fit rounded-full px-2 py-0.5 text-xs font-bold ${styles.badge}`}
+                        >
+                          #{pattern.id}
+                        </span>
+                        {isCorePattern(pattern.id) && (
+                          <span className="rounded-full bg-rose-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                            Core
+                          </span>
+                        )}
+                      </div>
                       <h3 className="mb-1 font-bold text-slate-800">{pattern.name}</h3>
                       <p className="mb-2 font-mono text-sm text-slate-700">{pattern.formula}</p>
-                      <p className="mb-3 text-xs text-slate-600">{pattern.quickExample}</p>
+                      <p className="mb-2 text-xs text-slate-600">{pattern.quickExample}</p>
+                      {pattern.triggerPhrases && pattern.triggerPhrases.length > 0 && (
+                        <p className="mb-2 text-[11px] leading-snug text-slate-500">
+                          <span className="font-semibold text-slate-600">Triggers: </span>
+                          {pattern.triggerPhrases.join(' · ')}
+                        </p>
+                      )}
+                      {pattern.timeTargetLabel && (
+                        <p className="mb-3 text-[11px] font-medium text-amber-800">{pattern.timeTargetLabel}</p>
+                      )}
                       <div className="mt-auto flex flex-wrap gap-1">
                         {pattern.topicIds.map((topicId) => (
                           <Link
@@ -134,12 +194,19 @@ export function ArPatternsPage() {
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link
+            to="/arithmetic-reasoning/pattern-drill?mode=core"
+            className="rounded-xl border-2 border-emerald-600 px-6 py-3 font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+          >
+            Core pattern drill ({CORE_STEM_COUNT})
+          </Link>
+          <Link
             to="/arithmetic-reasoning/pattern-drill"
             className="rounded-xl border-2 border-rose-600 px-6 py-3 font-semibold text-rose-600 transition-colors hover:bg-rose-50"
           >
-            Start Pattern Drill
+            All patterns drill
           </Link>
           <button
+            type="button"
             onClick={() => setPracticeTestOpen(true)}
             className="rounded-xl bg-rose-600 px-6 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-rose-500"
           >

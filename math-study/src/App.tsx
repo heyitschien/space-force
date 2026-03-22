@@ -133,6 +133,7 @@ function MathStudyPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState<ActiveCategory>('general-science');
   const [activeSection, setActiveSection] = useState('general-science');
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [quizOpen, setQuizOpen] = useState(false);
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
   const [generalSciencePracticeOpen, setGeneralSciencePracticeOpen] = useState(false);
@@ -177,18 +178,25 @@ function MathStudyPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeCategory]);
 
+  useEffect(() => {
+    if (!mobileNavOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileNavOpen]);
+
   return (
-    <div className="bg-gray-50 text-gray-900 min-h-screen">
-      <Header searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <Header
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+        onOpenMobileNav={() => setMobileNavOpen(true)}
+      />
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row p-4 gap-8">
-        <Sidebar
-          activeSection={activeSection}
-          activeCategory={activeCategory}
-          onCategorySelect={handleCategorySelect}
-        />
-
-        <main className="lg:w-3/4 space-y-12 pb-24">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 p-4 lg:flex-row">
+        <main className="min-w-0 flex-1 space-y-12 pb-24 lg:order-2 lg:w-3/4">
           {activeCategory === 'general-science' && (
             <GeneralScience visible={sectionMatchesSearch('general-science', searchTerm)} />
           )}
@@ -208,7 +216,37 @@ function MathStudyPage() {
             </>
           )}
         </main>
+
+        <div className="hidden shrink-0 lg:order-1 lg:block lg:w-1/4">
+          <Sidebar
+            activeSection={activeSection}
+            activeCategory={activeCategory}
+            onCategorySelect={handleCategorySelect}
+            variant="desktop"
+          />
+        </div>
       </div>
+
+      {mobileNavOpen && (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+            aria-label="Close menu"
+            onClick={() => setMobileNavOpen(false)}
+          />
+          <div className="fixed left-0 top-0 z-50 h-dvh w-[min(100vw,22rem)] max-w-full shadow-2xl lg:hidden">
+            <Sidebar
+              activeSection={activeSection}
+              activeCategory={activeCategory}
+              onCategorySelect={handleCategorySelect}
+              variant="drawer"
+              onNavigate={() => setMobileNavOpen(false)}
+              onCloseDrawer={() => setMobileNavOpen(false)}
+            />
+          </div>
+        </>
+      )}
 
       <PracticeMenu
         onGeneralScienceTest={() => setGeneralSciencePracticeOpen(true)}

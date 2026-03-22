@@ -12,12 +12,17 @@ import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLaunch
 import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
 import { PercentsTopicLayout } from './PercentsTopicLayout';
+import { RatiosProportionsTopicLayout } from './RatiosProportionsTopicLayout';
+import { RateQuantityTopicLayout } from './RateQuantityTopicLayout';
+import { StructuredArTopicLayout } from './StructuredArTopicLayout';
+import { UnitConversionTopicLayout } from './UnitConversionTopicLayout';
 import { QuizEngine } from './quiz/QuizEngine';
 import {
   AR_LEVEL1_TOPIC_QUIZ_IDS,
   AR_LEVEL1_QUIZ_CONFIGS,
 } from '../data/quiz/arLevel1QuizConfig';
 import { getQuestionsForQuiz } from '../utils/quizSelection';
+import { STRUCTURED_LESSON_CONTENT } from '../data/structuredLessonContent';
 
 const LEVEL_1_TOPIC_IDS = new Set([
   'order-of-operations',
@@ -38,8 +43,27 @@ export function ArTopicPage() {
   if (topic && topicId === 'rate-distance-time') {
     return <DstTopicLayout topic={topic} />;
   }
+  if (topic && topicId === 'ratios') {
+    return <RatiosProportionsTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'rate-multiply') {
+    return <RateQuantityTopicLayout topic={topic} />;
+  }
   if (topic && topicId === 'percents') {
     return <PercentsTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'unit-conversion') {
+    return <UnitConversionTopicLayout topic={topic} />;
+  }
+  if (
+    topic &&
+    topicId &&
+    (topicId === 'order-of-operations' || topicId === 'decimals' || topicId === 'fractions')
+  ) {
+    const content = STRUCTURED_LESSON_CONTENT[topicId];
+    if (content) {
+      return <StructuredArTopicLayout topic={topic} content={content} />;
+    }
   }
 
   const toggleQuestion = (id: string) => {
@@ -101,17 +125,34 @@ export function ArTopicPage() {
           const patternIds = getPatternIdsForTopic(topic.id);
           if (patternIds.length > 0) {
             return (
-              <div className="mb-8 flex flex-wrap gap-2">
-                <span className="text-sm text-slate-500">Patterns:</span>
-                {patternIds.map((pid) => (
+              <div className="mb-8 space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-sm text-slate-500">Patterns:</span>
+                  {patternIds.map((pid) => (
+                    <Link
+                      key={pid}
+                      to={`/arithmetic-reasoning/patterns#pattern-${pid}`}
+                      className="rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-200"
+                    >
+                      #{pid}
+                    </Link>
+                  ))}
+                </div>
+                <p className="text-sm text-slate-600">
                   <Link
-                    key={pid}
-                    to={`/arithmetic-reasoning/patterns#pattern-${pid}`}
-                    className="rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-200"
+                    to="/arithmetic-reasoning/pattern-drill?mode=core"
+                    className="font-medium text-rose-700 underline decoration-rose-300 underline-offset-2 hover:text-rose-800"
                   >
-                    #{pid}
+                    Practice naming the pattern
                   </Link>
-                ))}
+                  {' · '}
+                  <Link
+                    to="/arithmetic-reasoning/patterns"
+                    className="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-slate-900"
+                  >
+                    All AR patterns
+                  </Link>
+                </p>
               </div>
             );
           }

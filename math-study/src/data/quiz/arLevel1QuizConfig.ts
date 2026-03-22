@@ -123,4 +123,5 @@ export const BUCKET_TO_STUDY_PATH: Record<string, string> = {
   fractions: '/arithmetic-reasoning/fractions',
   percents: '/arithmetic-reasoning/percents',
   'unit-conversion': '/arithmetic-reasoning/unit-conversion',
+  'rate-multiply': '/arithmetic-reasoning/rate-multiply',
 };

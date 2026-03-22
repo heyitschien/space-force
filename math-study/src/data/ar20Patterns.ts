@@ -1,5 +1,7 @@
 export type ArPatternFamily = 'percent' | 'ratio-rate' | 'motion-work' | 'geometry' | 'arithmetic';
 
+export type ArPatternPriority = 'core' | 'standard';
+
 export interface ArPattern {
   id: number;
   name: string;
@@ -7,6 +9,25 @@ export interface ArPattern {
   quickExample: string;
   topicIds: string[];
   family: ArPatternFamily;
+  /** High-yield patterns for 80/20 study — shown on cards and core drill mode */
+  priority?: ArPatternPriority;
+  /** Short phrase cues that signal this pattern */
+  triggerPhrases?: string[];
+  /** Display-only speed goal (no timer enforcement in app v1) */
+  timeTargetLabel?: string;
+}
+
+/** Highest-yield pattern IDs: percent + ratio/rate + unit conversion + motion */
+export const AR_CORE_PATTERN_IDS = [1, 2, 3, 4, 5, 11, 14, 15] as const;
+
+const AR_CORE_PATTERN_ID_SET = new Set<number>(AR_CORE_PATTERN_IDS);
+
+export function getCorePatternIds(): readonly number[] {
+  return AR_CORE_PATTERN_IDS;
+}
+
+export function isCorePattern(patternId: number): boolean {
+  return AR_CORE_PATTERN_ID_SET.has(patternId);
 }
 
 export const AR_PATTERN_FAMILIES: Array<{ id: ArPatternFamily; label: string }> = [
@@ -30,6 +51,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '60 mph × 3 hr = 180 mi',
     topicIds: ['rate-distance-time'],
     family: 'motion-work',
+    priority: 'core',
+    triggerPhrases: ['mph', 'km/h', 'miles per hour', 'how far', 'how long to drive'],
+    timeTargetLabel: 'Under 20 sec',
   },
   {
     id: 2,
@@ -38,6 +62,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '20% of 150 = 30',
     topicIds: ['percents'],
     family: 'percent',
+    priority: 'core',
+    triggerPhrases: ['% of', 'percent of', 'tip on', 'what is … % of'],
+    timeTargetLabel: 'Under 20 sec',
   },
   {
     id: 3,
@@ -46,6 +73,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '$50 + 20% = $60',
     topicIds: ['percents'],
     family: 'percent',
+    priority: 'core',
+    triggerPhrases: ['increased by', 'decreased by', '% off', '% discount', 'markup'],
+    timeTargetLabel: 'Under 20 sec',
   },
   {
     id: 4,
@@ -54,6 +84,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '3:2, 15 boys → 10 girls',
     topicIds: ['ratios'],
     family: 'ratio-rate',
+    priority: 'core',
+    triggerPhrases: ['ratio', 'to … (boys to girls)', 'for every'],
+    timeTargetLabel: 'Under 25 sec',
   },
   {
     id: 5,
@@ -62,6 +95,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '3 pencils $6 → 10 pencils $20',
     topicIds: ['ratios', 'rate-multiply'],
     family: 'ratio-rate',
+    priority: 'core',
+    triggerPhrases: ['per hour', 'per mile', 'per item', 'per pound', 'cost for N'],
+    timeTargetLabel: 'Under 20 sec',
   },
   {
     id: 6,
@@ -110,6 +146,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '2 miles = 2 × 5280 = 10,560 ft',
     topicIds: ['unit-conversion'],
     family: 'arithmetic',
+    priority: 'core',
+    triggerPhrases: ['convert', 'how many … in', 'feet to inches', 'gallons to quarts'],
+    timeTargetLabel: 'Under 30 sec',
   },
   {
     id: 12,
@@ -134,6 +173,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: 'Buy $40, sell $55 → 37.5% profit',
     topicIds: ['percents', 'inequalities'],
     family: 'percent',
+    priority: 'core',
+    triggerPhrases: ['profit', 'sell for', 'cost', 'markup', 'percent profit'],
+    timeTargetLabel: 'Under 25 sec',
   },
   {
     id: 15,
@@ -142,6 +184,9 @@ export const AR_20_PATTERNS: ArPattern[] = [
     quickExample: '$1000 × 5% × 1 yr = $50',
     topicIds: ['percents', 'rate-multiply'],
     family: 'percent',
+    priority: 'core',
+    triggerPhrases: ['simple interest', 'principal', 'annual rate', 'per year'],
+    timeTargetLabel: 'Under 25 sec',
   },
   {
     id: 16,
@@ -239,6 +284,11 @@ export const PATTERN_STEMS: PatternStem[] = [
   { stem: '6 + 3 × 4 = ?', patternId: 21 },
   { stem: '(8 − 2) × 3 = ?', patternId: 21 },
 ];
+
+export function getStemsForPatternSet(patternIds: readonly number[]): PatternStem[] {
+  const set = new Set(patternIds);
+  return PATTERN_STEMS.filter((s) => set.has(s.patternId));
+}
 
 export function getPatternById(id: number): ArPattern | undefined {
   return AR_20_PATTERNS.find((p) => p.id === id);

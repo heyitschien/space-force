@@ -1699,15 +1699,15 @@
         {
           "id": "uni-m-01",
           "difficulty": "easy",
-          "stem": "Convert 5 gallons to quarts.",
+          "stem": "Convert 7 gallons to quarts.",
           "choices": [
-            "10",
-            "15",
-            "20",
-            "25"
+            "14",
+            "21",
+            "28",
+            "35"
           ],
           "answer": 2,
-          "explanation": "1 gallon = 4 quarts, so 5 × 4 = 20.",
+          "explanation": "Use 1 gal = 4 qt. 7 × 4 = 28.",
           "tags": [
             "gallon-quart"
           ]
@@ -1715,15 +1715,15 @@
         {
           "id": "uni-m-02",
           "difficulty": "easy",
-          "stem": "How many inches are in 3 feet?",
+          "stem": "How many inches are in 9 feet?",
           "choices": [
-            "12",
-            "24",
-            "36",
-            "48"
+            "81",
+            "96",
+            "108",
+            "120"
           ],
           "answer": 2,
-          "explanation": "1 foot = 12 inches.",
+          "explanation": "1 ft = 12 in, so 9 × 12 = 108.",
           "tags": [
             "feet-inches"
           ]
@@ -1731,33 +1731,33 @@
         {
           "id": "uni-m-03",
           "difficulty": "easy",
-          "stem": "How many ounces are in 2 pounds?",
+          "stem": "How many items are in 3 dozen?",
           "choices": [
-            "16",
             "24",
-            "32",
-            "48"
+            "30",
+            "36",
+            "144"
           ],
           "answer": 2,
-          "explanation": "1 pound = 16 ounces, so 2 × 16 = 32.",
+          "explanation": "1 dozen = 12. So 3 × 12 = 36.",
           "tags": [
-            "pounds-ounces"
+            "dozen"
           ]
         },
         {
           "id": "uni-m-04",
           "difficulty": "easy",
-          "stem": "How many items are in 2 dozen?",
+          "stem": "How many ounces are in 2.5 pounds?",
           "choices": [
-            "12",
-            "18",
-            "24",
-            "144"
+            "20",
+            "30",
+            "40",
+            "50"
           ],
           "answer": 2,
-          "explanation": "1 dozen = 12, so 2 dozen = 24.",
+          "explanation": "1 lb = 16 oz, so 2.5 × 16 = 40 oz.",
           "tags": [
-            "dozen"
+            "pounds-ounces"
           ]
         },
         {
@@ -1771,7 +1771,7 @@
             "16"
           ],
           "answer": 2,
-          "explanation": "1 yard = 3 feet, so 4 × 3 = 12.",
+          "explanation": "1 yd = 3 ft, so 4 × 3 = 12.",
           "tags": [
             "yards-feet"
           ]
@@ -1779,159 +1779,163 @@
         {
           "id": "uni-m-06",
           "difficulty": "medium",
-          "stem": "A room measures 15 ft by 12 ft. What is its area in square feet?",
+          "stem": "Convert 84 inches to feet.",
           "choices": [
-            "27",
-            "180",
-            "60",
-            "90"
+            "5",
+            "6",
+            "7",
+            "8"
           ],
-          "answer": 1,
-          "explanation": "15 × 12 = 180 square feet.",
+          "answer": 2,
+          "explanation": "Reverse direction means divide: 84 ÷ 12 = 7.",
           "tags": [
-            "area"
+            "reverse-conversion"
           ]
         },
         {
           "id": "uni-m-07",
           "difficulty": "medium",
-          "stem": "Convert 180 square feet to square yards.",
+          "stem": "A recipe calls for 3.5 quarts of broth. How many gallons is that?",
           "choices": [
-            "20",
-            "60",
-            "90",
-            "540"
+            "0.75",
+            "0.875",
+            "1.25",
+            "1.5"
           ],
-          "answer": 0,
-          "explanation": "1 yd² = 9 ft². So 180 ÷ 9 = 20.",
+          "answer": 1,
+          "explanation": "4 qt = 1 gal, so 3.5 ÷ 4 = 0.875 gal.",
           "tags": [
-            "square-units"
+            "quarts-gallons",
+            "reverse-conversion"
           ]
         },
         {
           "id": "uni-m-08",
           "difficulty": "medium",
-          "stem": "How many days will 72 bottles last if 4 are used each day?",
+          "stem": "Convert 324 square feet to square yards.",
           "choices": [
-            "16",
             "18",
-            "20",
-            "24"
+            "27",
+            "36",
+            "108"
           ],
-          "answer": 1,
-          "explanation": "72 ÷ 4 = 18 days.",
+          "answer": 2,
+          "explanation": "Square units use factor 9: 324 ÷ 9 = 36 yd².",
           "tags": [
-            "rate-conversion"
+            "square-units"
           ]
         },
         {
           "id": "uni-m-09",
           "difficulty": "medium",
-          "stem": "Convert 3.5 yards to inches.",
+          "stem": "Convert 5 ft 7 in to inches.",
           "choices": [
-            "42",
-            "84",
-            "108",
-            "126"
+            "57",
+            "60",
+            "67",
+            "72"
           ],
-          "answer": 3,
-          "explanation": "1 yard = 36 inches. 3.5 × 36 = 126.",
+          "answer": 2,
+          "explanation": "5 ft = 60 in, then 60 + 7 = 67 in.",
           "tags": [
-            "yards-inches"
+            "mixed-units"
           ]
         },
         {
           "id": "uni-m-10",
           "difficulty": "medium",
-          "stem": "A recipe uses 2 quarts of juice. How many gallons is that?",
+          "stem": "Convert 2.2 tons to pounds.",
           "choices": [
-            "1/4",
-            "1/2",
-            "2",
-            "8"
+            "2,200",
+            "3,200",
+            "4,400",
+            "5,200"
           ],
-          "answer": 1,
-          "explanation": "4 quarts = 1 gallon, so 2 quarts = 1/2 gallon.",
-          "tags": [
-            "quarts-gallons"
-          ]
-        },
-        {
-          "id": "uni-m-11",
-          "difficulty": "medium",
-          "stem": "How many pounds are in 3 tons?",
-          "choices": [
-            "300",
-            "600",
-            "3,000",
-            "6,000"
-          ],
-          "answer": 3,
-          "explanation": "1 ton = 2,000 pounds.",
+          "answer": 2,
+          "explanation": "1 ton = 2,000 lb, so 2.2 × 2,000 = 4,400 lb.",
           "tags": [
             "tons-pounds"
           ]
         },
         {
-          "id": "uni-m-12",
-          "difficulty": "hard",
-          "stem": "How many ounces are in 1.5 pounds?",
+          "id": "uni-m-11",
+          "difficulty": "medium",
+          "stem": "A pump moves 3 gallons every 2 minutes. How many quarts in 6 minutes?",
           "choices": [
-            "12",
-            "18",
             "24",
-            "36"
+            "30",
+            "36",
+            "48"
           ],
           "answer": 2,
-          "explanation": "1 pound = 16 ounces. 1.5 × 16 = 24.",
+          "explanation": "In 6 min, gallons = (6/2) × 3 = 9 gal. Then 9 × 4 = 36 qt.",
           "tags": [
-            "pounds-ounces"
+            "rate-conversion",
+            "multi-step-conversion"
           ]
         },
         {
-          "id": "uni-m-13",
+          "id": "uni-m-12",
           "difficulty": "hard",
-          "stem": "A 2-mile run is how many feet?",
+          "stem": "A 1.5-mile jog is how many feet?",
           "choices": [
             "5,280",
+            "6,600",
             "7,920",
-            "10,560",
-            "12,000"
+            "10,560"
           ],
           "answer": 2,
-          "explanation": "1 mile = 5,280 feet. 2 × 5,280 = 10,560.",
+          "explanation": "1 mile = 5,280 ft. 1.5 × 5,280 = 7,920 ft.",
           "tags": [
             "miles-feet"
           ]
         },
         {
-          "id": "uni-m-14",
+          "id": "uni-m-13",
           "difficulty": "hard",
-          "stem": "A storage bin holds 48 quarts. How many gallons does it hold?",
+          "stem": "A floor is 12 ft by 18 ft. What is the area in square yards?",
           "choices": [
-            "8",
-            "10",
-            "12",
-            "16"
+            "18",
+            "21",
+            "24",
+            "27"
           ],
           "answer": 2,
-          "explanation": "48 ÷ 4 = 12 gallons.",
+          "explanation": "Area = 12 × 18 = 216 ft². Then 216 ÷ 9 = 24 yd².",
           "tags": [
-            "quarts-gallons"
+            "area",
+            "square-units"
+          ]
+        },
+        {
+          "id": "uni-m-14",
+          "difficulty": "hard",
+          "stem": "45 quarts of juice are split equally into 6 jugs. How many gallons per jug?",
+          "choices": [
+            "1.25",
+            "1.5",
+            "1.875",
+            "2.25"
+          ],
+          "answer": 2,
+          "explanation": "Per jug: 45 ÷ 6 = 7.5 qt. Convert: 7.5 ÷ 4 = 1.875 gal.",
+          "tags": [
+            "quarts-gallons",
+            "multi-step-conversion"
           ]
         },
         {
           "id": "uni-m-15",
           "difficulty": "expert",
-          "stem": "A farmer has 1.5 tons of feed. If each animal needs 12.5 pounds per day, how many animal-days of feed are available?",
+          "stem": "A shelter has 1.2 tons of food. Each person needs 24 oz per meal, 3 meals/day, for 4 days. How many full people can be served?",
           "choices": [
             "120",
-            "180",
-            "200",
-            "240"
+            "128",
+            "133",
+            "144"
           ],
-          "answer": 3,
-          "explanation": "1.5 tons = 3,000 lb. Then 3,000 ÷ 12.5 = 240 animal-days.",
+          "answer": 2,
+          "explanation": "1.2 tons = 2,400 lb = 38,400 oz. Per person: 24 × 3 × 4 = 288 oz. 38,400 ÷ 288 = 133.33, so 133 full people.",
           "tags": [
             "multi-step-conversion",
             "rate"
@@ -1957,7 +1961,7 @@
             "8"
           ],
           "answer": 2,
-          "explanation": "Basic conversion fact.",
+          "explanation": "Memory fact: 1 gal = 4 qt.",
           "tags": [
             "speed"
           ]
@@ -1965,15 +1969,15 @@
         {
           "id": "uni-s-02",
           "difficulty": "easy",
-          "stem": "1 foot = how many inches?",
+          "stem": "1 yard = how many feet?",
           "choices": [
-            "10",
-            "12",
-            "16",
-            "18"
+            "2",
+            "3",
+            "4",
+            "6"
           ],
           "answer": 1,
-          "explanation": "Basic conversion fact.",
+          "explanation": "Memory fact: 1 yd = 3 ft.",
           "tags": [
             "speed"
           ]
@@ -1989,7 +1993,7 @@
             "24"
           ],
           "answer": 2,
-          "explanation": "Basic conversion fact.",
+          "explanation": "Memory fact: 1 lb = 16 oz.",
           "tags": [
             "speed"
           ]
@@ -1997,15 +2001,15 @@
         {
           "id": "uni-s-04",
           "difficulty": "easy",
-          "stem": "2 dozen =",
+          "stem": "1 gross =",
           "choices": [
             "12",
-            "18",
             "24",
+            "120",
             "144"
           ],
-          "answer": 2,
-          "explanation": "2 × 12 = 24.",
+          "answer": 3,
+          "explanation": "Memory fact: 1 gross = 144.",
           "tags": [
             "speed"
           ]
@@ -2013,15 +2017,15 @@
         {
           "id": "uni-s-05",
           "difficulty": "medium",
-          "stem": "3 yards =",
+          "stem": "36 inches =",
           "choices": [
-            "6 ft",
-            "9 ft",
-            "12 ft",
-            "15 ft"
+            "2 ft",
+            "3 ft",
+            "4 ft",
+            "6 ft"
           ],
           "answer": 1,
-          "explanation": "3 × 3 = 9.",
+          "explanation": "12 in = 1 ft, so 36 ÷ 12 = 3 ft.",
           "tags": [
             "speed"
           ]
@@ -2029,15 +2033,15 @@
         {
           "id": "uni-s-06",
           "difficulty": "medium",
-          "stem": "18 quarts =",
+          "stem": "20 quarts =",
           "choices": [
-            "2 gal",
-            "3 gal",
             "4 gal",
-            "4.5 gal"
+            "5 gal",
+            "6 gal",
+            "8 gal"
           ],
-          "answer": 3,
-          "explanation": "18 ÷ 4 = 4.5 gallons.",
+          "answer": 1,
+          "explanation": "4 qt = 1 gal, so 20 ÷ 4 = 5 gal.",
           "tags": [
             "speed"
           ]
@@ -2045,15 +2049,15 @@
         {
           "id": "uni-s-07",
           "difficulty": "medium",
-          "stem": "27 ft² =",
+          "stem": "45 ft² =",
           "choices": [
-            "2 yd²",
             "3 yd²",
+            "5 yd²",
             "9 yd²",
-            "27 yd²"
+            "15 yd²"
           ],
           "answer": 1,
-          "explanation": "27 ÷ 9 = 3.",
+          "explanation": "Square units divide by 9: 45 ÷ 9 = 5.",
           "tags": [
             "speed"
           ]
@@ -2061,15 +2065,15 @@
         {
           "id": "uni-s-08",
           "difficulty": "medium",
-          "stem": "2 miles =",
+          "stem": "72 oz =",
           "choices": [
-            "5,280 ft",
-            "7,920 ft",
-            "10,560 ft",
-            "12,560 ft"
+            "4 lb",
+            "4.5 lb",
+            "5 lb",
+            "6 lb"
           ],
-          "answer": 2,
-          "explanation": "2 × 5,280 = 10,560.",
+          "answer": 1,
+          "explanation": "Quick divide: 72 ÷ 16 = 4.5 lb.",
           "tags": [
             "speed"
           ]
@@ -2077,33 +2081,36 @@
         {
           "id": "uni-s-09",
           "difficulty": "medium",
-          "stem": "32 oz =",
+          "stem": "2.5 yards =",
           "choices": [
-            "1 lb",
-            "2 lb",
-            "3 lb",
-            "4 lb"
+            "72 in",
+            "84 in",
+            "90 in",
+            "96 in"
           ],
-          "answer": 1,
-          "explanation": "32 ÷ 16 = 2.",
+          "answer": 2,
+          "explanation": "2.5 yd × 3 = 7.5 ft; 7.5 × 12 = 90 in.",
           "tags": [
-            "speed"
+            "speed",
+            "two-step"
           ]
         },
         {
           "id": "uni-s-10",
           "difficulty": "medium",
-          "stem": "144 items =",
+          "stem": "At 2 gallons per day, how many quarts are used in 3 days?",
           "choices": [
-            "1 dozen",
-            "1 gross",
-            "12 gross",
-            "24 dozen"
+            "16",
+            "20",
+            "24",
+            "32"
           ],
-          "answer": 1,
-          "explanation": "1 gross = 144.",
+          "answer": 2,
+          "explanation": "3 days × 2 gal = 6 gal, then 6 × 4 = 24 qt.",
           "tags": [
-            "speed"
+            "speed",
+            "two-step",
+            "rate"
           ]
         }
       ]

@@ -1,0 +1,722 @@
+{
+  "levelId": "ar-level-2",
+  "title": "Level 2 (Ratio Thinking)",
+  "quizzes": [
+    {
+      "quizId": "ratios-mastery",
+      "title": "Ratios & Proportions Mastery Quiz",
+      "topicId": "ratios",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "ar-p2-012",
+          "text": "If 3 garbage trucks can collect the trash of 24 homes in a day, how many trucks are needed to collect in 72 houses?",
+          "options": [
+            { "id": "A", "text": "9" },
+            { "id": "B", "text": "3" },
+            { "id": "C", "text": "24" },
+            { "id": "D", "text": "8" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "Scale factor: 72 ÷ 24 = 3. Apply: 3 × 3 = 9 trucks."
+        },
+        {
+          "id": "ar-p2-014",
+          "text": "If a box has red and blue balls in a ratio of 3:4 red to blue, how many red balls are there if 80 blue balls are in the box?",
+          "options": [
+            { "id": "A", "text": "40" },
+            { "id": "B", "text": "60" },
+            { "id": "C", "text": "80" },
+            { "id": "D", "text": "30" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "hard",
+          "explanation": "80 ÷ 4 = 20 groups. 3 × 20 = 60 red balls."
+        },
+        {
+          "id": "ar-p2-018",
+          "text": "An architect's floor plan uses 1/2 inch to represent one mile. What is the actual distance represented by 4 1/2 inches?",
+          "options": [
+            { "id": "A", "text": "9 miles" },
+            { "id": "B", "text": "8 miles" },
+            { "id": "C", "text": "7 miles" },
+            { "id": "D", "text": "6 miles" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "4.5 ÷ 0.5 = 9 half-inches, so 9 miles."
+        },
+        {
+          "id": "ar-p2-019",
+          "text": "In the deck of cards, there are two spades, 3 hearts, 5 clubs, and 8 diamonds. What is the probability that Alan will pick out a spade?",
+          "options": [
+            { "id": "A", "text": "1/18" },
+            { "id": "B", "text": "1/2" },
+            { "id": "C", "text": "1/9" },
+            { "id": "D", "text": "1/8" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "hard",
+          "explanation": "2 spades out of 2+3+5+8 = 18 cards. 2/18 = 1/9."
+        },
+        {
+          "id": "rat-m-05",
+          "text": "2 pencils cost $6. How much does 1 pencil cost?",
+          "options": [
+            { "id": "A", "text": "$2" },
+            { "id": "B", "text": "$3" },
+            { "id": "C", "text": "$4" },
+            { "id": "D", "text": "$12" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "easy",
+          "explanation": "6 ÷ 2 = $3 per pencil."
+        },
+        {
+          "id": "rat-m-06",
+          "text": "5 workers complete 20 jobs. How many jobs does 1 worker complete?",
+          "options": [
+            { "id": "A", "text": "4" },
+            { "id": "B", "text": "5" },
+            { "id": "C", "text": "15" },
+            { "id": "D", "text": "100" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "easy",
+          "explanation": "20 ÷ 5 = 4 jobs per worker."
+        },
+        {
+          "id": "rat-m-07",
+          "text": "4 machines make 80 parts. How many machines are needed for 200 parts?",
+          "options": [
+            { "id": "A", "text": "5" },
+            { "id": "B", "text": "8" },
+            { "id": "C", "text": "10" },
+            { "id": "D", "text": "12" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "Scale: 200 ÷ 80 = 2.5. 4 × 2.5 = 10 machines."
+        },
+        {
+          "id": "rat-m-08",
+          "text": "6 gallons lasts 3 days. How long will 20 gallons last?",
+          "options": [
+            { "id": "A", "text": "5 days" },
+            { "id": "B", "text": "8 days" },
+            { "id": "C", "text": "10 days" },
+            { "id": "D", "text": "12 days" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "2 gal/day. 20 ÷ 2 = 10 days."
+        },
+        {
+          "id": "rat-m-09",
+          "text": "12 oz feeds 3 meals. How many meals does 60 oz feed?",
+          "options": [
+            { "id": "A", "text": "12" },
+            { "id": "B", "text": "15" },
+            { "id": "C", "text": "18" },
+            { "id": "D", "text": "20" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "4 oz per meal. 60 ÷ 4 = 15 meals."
+        },
+        {
+          "id": "rat-m-10",
+          "text": "A car travels 60 miles in 1.5 hours. How far does it travel in 5 hours?",
+          "options": [
+            { "id": "A", "text": "150 miles" },
+            { "id": "B", "text": "180 miles" },
+            { "id": "C", "text": "200 miles" },
+            { "id": "D", "text": "240 miles" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "60 ÷ 1.5 = 40 mph. 40 × 5 = 200 miles."
+        },
+        {
+          "id": "rat-m-11",
+          "text": "3 pipes fill a tank in 6 hours. How long for 6 pipes?",
+          "options": [
+            { "id": "A", "text": "2 hours" },
+            { "id": "B", "text": "3 hours" },
+            { "id": "C", "text": "9 hours" },
+            { "id": "D", "text": "12 hours" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "hard",
+          "explanation": "Twice the pipes = half the time. 6 ÷ 2 = 3 hours."
+        },
+        {
+          "id": "rat-m-12",
+          "text": "The ratio of boys to girls is 2:3. If there are 15 girls, how many boys?",
+          "options": [
+            { "id": "A", "text": "6" },
+            { "id": "B", "text": "10" },
+            { "id": "C", "text": "12" },
+            { "id": "D", "text": "9" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "medium",
+          "explanation": "15 ÷ 3 = 5. 2 × 5 = 10 boys."
+        },
+        {
+          "id": "rat-m-13",
+          "text": "2 cups flour make 12 cookies. How many cups for 36 cookies?",
+          "options": [
+            { "id": "A", "text": "4" },
+            { "id": "B", "text": "5" },
+            { "id": "C", "text": "6" },
+            { "id": "D", "text": "8" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "easy",
+          "explanation": "36 ÷ 12 = 3. 2 × 3 = 6 cups."
+        },
+        {
+          "id": "rat-m-14",
+          "text": "8 workers build a fence in 6 days. How many workers for 3 days?",
+          "options": [
+            { "id": "A", "text": "4" },
+            { "id": "B", "text": "12" },
+            { "id": "C", "text": "16" },
+            { "id": "D", "text": "24" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "hard",
+          "explanation": "Half the time needs twice the workers. 8 × 2 = 16."
+        },
+        {
+          "id": "rat-m-15",
+          "text": "A truck carries 2 tons feeding 50 people for 5 days. How many people for 10 days?",
+          "options": [
+            { "id": "A", "text": "25" },
+            { "id": "B", "text": "50" },
+            { "id": "C", "text": "75" },
+            { "id": "D", "text": "100" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "hard",
+          "explanation": "Same food, twice the time = half the people. 50 ÷ 2 = 25."
+        }
+      ]
+    },
+    {
+      "quizId": "ratios-speed",
+      "title": "Ratios & Proportions Speed Drill",
+      "topicId": "ratios",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "ar-p2-012",
+          "text": "If 3 garbage trucks can collect the trash of 24 homes in a day, how many trucks are needed to collect in 72 houses?",
+          "options": [
+            { "id": "A", "text": "9" },
+            { "id": "B", "text": "3" },
+            { "id": "C", "text": "24" },
+            { "id": "D", "text": "8" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "ar-p2-014",
+          "text": "If a box has red and blue balls in a ratio of 3:4 red to blue, how many red balls are there if 80 blue balls are in the box?",
+          "options": [
+            { "id": "A", "text": "40" },
+            { "id": "B", "text": "60" },
+            { "id": "C", "text": "80" },
+            { "id": "D", "text": "30" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "hard"
+        },
+        {
+          "id": "ar-p2-018",
+          "text": "An architect's floor plan uses 1/2 inch to represent one mile. What is the actual distance represented by 4 1/2 inches?",
+          "options": [
+            { "id": "A", "text": "9 miles" },
+            { "id": "B", "text": "8 miles" },
+            { "id": "C", "text": "7 miles" },
+            { "id": "D", "text": "6 miles" }
+          ],
+          "correct": "A",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "rat-m-05",
+          "text": "2 pencils cost $6. How much does 1 pencil cost?",
+          "options": [
+            { "id": "A", "text": "$2" },
+            { "id": "B", "text": "$3" },
+            { "id": "C", "text": "$4" },
+            { "id": "D", "text": "$12" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rat-m-07",
+          "text": "4 machines make 80 parts. How many machines for 200 parts?",
+          "options": [
+            { "id": "A", "text": "5" },
+            { "id": "B", "text": "8" },
+            { "id": "C", "text": "10" },
+            { "id": "D", "text": "12" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "rat-m-08",
+          "text": "6 gallons lasts 3 days. How long will 20 gallons last?",
+          "options": [
+            { "id": "A", "text": "5 days" },
+            { "id": "B", "text": "8 days" },
+            { "id": "C", "text": "10 days" },
+            { "id": "D", "text": "12 days" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "rat-m-10",
+          "text": "A car travels 60 miles in 1.5 hours. How far in 5 hours?",
+          "options": [
+            { "id": "A", "text": "150 miles" },
+            { "id": "B", "text": "180 miles" },
+            { "id": "C", "text": "200 miles" },
+            { "id": "D", "text": "240 miles" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "rat-m-11",
+          "text": "3 pipes fill a tank in 6 hours. How long for 6 pipes?",
+          "options": [
+            { "id": "A", "text": "2 hours" },
+            { "id": "B", "text": "3 hours" },
+            { "id": "C", "text": "9 hours" },
+            { "id": "D", "text": "12 hours" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "hard"
+        },
+        {
+          "id": "rat-m-12",
+          "text": "Ratio boys:girls = 2:3. 15 girls. How many boys?",
+          "options": [
+            { "id": "A", "text": "6" },
+            { "id": "B", "text": "10" },
+            { "id": "C", "text": "12" },
+            { "id": "D", "text": "9" }
+          ],
+          "correct": "B",
+          "bucket": "ratios",
+          "difficulty": "medium"
+        },
+        {
+          "id": "rat-m-13",
+          "text": "2 cups flour make 12 cookies. How many cups for 36 cookies?",
+          "options": [
+            { "id": "A", "text": "4" },
+            { "id": "B", "text": "5" },
+            { "id": "C", "text": "6" },
+            { "id": "D", "text": "8" }
+          ],
+          "correct": "C",
+          "bucket": "ratios",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "quizId": "rate-multiply-mastery",
+      "title": "Rate × Quantity Mastery Quiz",
+      "topicId": "rate-multiply",
+      "quizType": "mastery",
+      "questionCount": 15,
+      "questions": [
+        {
+          "id": "rq-m-01",
+          "text": "Apples cost $2.50 per pound. How much for 4 pounds?",
+          "options": [
+            { "id": "A", "text": "$8.00" },
+            { "id": "B", "text": "$10.00" },
+            { "id": "C", "text": "$9.00" },
+            { "id": "D", "text": "$12.00" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy",
+          "explanation": "Total = rate × quantity: $2.50 × 4 = $10."
+        },
+        {
+          "id": "rq-m-02",
+          "text": "A tow truck charges $3.50 per mile. What is the cost for 12 miles?",
+          "options": [
+            { "id": "A", "text": "$38.00" },
+            { "id": "B", "text": "$42.00" },
+            { "id": "C", "text": "$45.00" },
+            { "id": "D", "text": "$40.00" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy",
+          "explanation": "$3.50 × 12 = $42."
+        },
+        {
+          "id": "rq-m-03",
+          "text": "15 items cost $45. What is the cost per item?",
+          "options": [
+            { "id": "A", "text": "$2" },
+            { "id": "B", "text": "$3" },
+            { "id": "C", "text": "$4" },
+            { "id": "D", "text": "$5" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy",
+          "explanation": "Rate = total ÷ quantity: $45 ÷ 15 = $3 per item."
+        },
+        {
+          "id": "rq-m-04",
+          "text": "A worker earns $18 per hour. How much for a 35-hour week?",
+          "options": [
+            { "id": "A", "text": "$520" },
+            { "id": "B", "text": "$600" },
+            { "id": "C", "text": "$630" },
+            { "id": "D", "text": "$650" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "$18 × 35 = $630."
+        },
+        {
+          "id": "rq-m-05",
+          "text": "A car travels 150 miles using 5 gallons of gas. What is the miles per gallon?",
+          "options": [
+            { "id": "A", "text": "25 mpg" },
+            { "id": "B", "text": "28 mpg" },
+            { "id": "C", "text": "30 mpg" },
+            { "id": "D", "text": "35 mpg" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "mpg = miles ÷ gallons: 150 ÷ 5 = 30."
+        },
+        {
+          "id": "rq-m-06",
+          "text": "A worker produces 240 parts in 8 hours. How many parts in 5 hours at the same rate?",
+          "options": [
+            { "id": "A", "text": "120" },
+            { "id": "B", "text": "140" },
+            { "id": "C", "text": "150" },
+            { "id": "D", "text": "160" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "240 ÷ 8 = 30 parts/hour. 30 × 5 = 150 parts."
+        },
+        {
+          "id": "rq-m-07",
+          "text": "A machine makes 18 units every 6 minutes. How many units in 20 minutes at the same rate?",
+          "options": [
+            { "id": "A", "text": "48" },
+            { "id": "B", "text": "54" },
+            { "id": "C", "text": "60" },
+            { "id": "D", "text": "66" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "18 ÷ 6 = 3 units per minute. 3 × 20 = 60 units."
+        },
+        {
+          "id": "rq-m-08",
+          "text": "A writer earns $3 per 300 words. How much for 760 words?",
+          "options": [
+            { "id": "A", "text": "$6.10" },
+            { "id": "B", "text": "$7.20" },
+            { "id": "C", "text": "$7.60" },
+            { "id": "D", "text": "$8.10" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "hard",
+          "explanation": "$3 ÷ 300 = $0.01 per word. 0.01 × 760 = $7.60."
+        },
+        {
+          "id": "rq-m-09",
+          "text": "Printing costs $0.18 per card and sells for $0.30. Overhead is $6000. How many cards to break even?",
+          "options": [
+            { "id": "A", "text": "40,000" },
+            { "id": "B", "text": "45,000" },
+            { "id": "C", "text": "50,000" },
+            { "id": "D", "text": "55,000" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "hard",
+          "explanation": "Profit per card = $0.12. $6000 ÷ $0.12 = 50,000 cards."
+        },
+        {
+          "id": "rq-m-10",
+          "text": "While at work, Nina checks her email once every 80 minutes. In her 8-hour work shift, how many times does she check her email?",
+          "options": [
+            { "id": "A", "text": "6 times" },
+            { "id": "B", "text": "7 times" },
+            { "id": "C", "text": "5 times" },
+            { "id": "D", "text": "4 times" }
+          ],
+          "correct": "A",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "8 hours = 480 minutes. 480 ÷ 80 = 6 checks."
+        },
+        {
+          "id": "rq-m-11",
+          "text": "$5 per item × 6 items = ?",
+          "options": [
+            { "id": "A", "text": "$25" },
+            { "id": "B", "text": "$30" },
+            { "id": "C", "text": "$35" },
+            { "id": "D", "text": "$40" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy",
+          "explanation": "5 × 6 = $30."
+        },
+        {
+          "id": "rq-m-12",
+          "text": "A car travels 120 miles in 3 hours. What is its average speed?",
+          "options": [
+            { "id": "A", "text": "35 mph" },
+            { "id": "B", "text": "38 mph" },
+            { "id": "C", "text": "40 mph" },
+            { "id": "D", "text": "45 mph" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "easy",
+          "explanation": "120 ÷ 3 = 40 mph."
+        },
+        {
+          "id": "rq-m-13",
+          "text": "Monday and Thursday: 10am–12pm and 1pm–7pm each day. Saturday: 9am–12pm. Pay is $1 per hour. What is the total weekly pay?",
+          "options": [
+            { "id": "A", "text": "$17" },
+            { "id": "B", "text": "$18" },
+            { "id": "C", "text": "$19" },
+            { "id": "D", "text": "$20" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "hard",
+          "explanation": "Each weekday: 2 + 6 = 8 hr. Two days = 16 hr. Saturday = 3 hr. Total 19 hr → $19."
+        },
+        {
+          "id": "rq-m-14",
+          "text": "8 blocks are completed in 30 minutes at a steady rate. How long for 6 blocks?",
+          "options": [
+            { "id": "A", "text": "20 minutes" },
+            { "id": "B", "text": "22.5 minutes" },
+            { "id": "C", "text": "24 minutes" },
+            { "id": "D", "text": "25 minutes" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "6/8 = x/30 → x = 22.5 minutes."
+        },
+        {
+          "id": "rq-m-15",
+          "text": "Convert about 75 km/h to mph using 1 km ≈ 0.62 miles.",
+          "options": [
+            { "id": "A", "text": "42 mph" },
+            { "id": "B", "text": "44 mph" },
+            { "id": "C", "text": "47 mph" },
+            { "id": "D", "text": "50 mph" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "medium",
+          "explanation": "75 × 0.62 ≈ 46.5 → about 47 mph."
+        }
+      ]
+    },
+    {
+      "quizId": "rate-multiply-speed",
+      "title": "Rate × Quantity Speed Drill",
+      "topicId": "rate-multiply",
+      "quizType": "speed",
+      "questionCount": 10,
+      "questions": [
+        {
+          "id": "rq-s-01",
+          "text": "$4 × 25 = ?",
+          "options": [
+            { "id": "A", "text": "$90" },
+            { "id": "B", "text": "$100" },
+            { "id": "C", "text": "$110" },
+            { "id": "D", "text": "$120" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-02",
+          "text": "300 ÷ 3 = ?",
+          "options": [
+            { "id": "A", "text": "90" },
+            { "id": "B", "text": "100" },
+            { "id": "C", "text": "110" },
+            { "id": "D", "text": "120" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-03",
+          "text": "60 ÷ 4 = ?",
+          "options": [
+            { "id": "A", "text": "12" },
+            { "id": "B", "text": "14" },
+            { "id": "C", "text": "15" },
+            { "id": "D", "text": "16" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-04",
+          "text": "5 × 18 = ?",
+          "options": [
+            { "id": "A", "text": "85" },
+            { "id": "B", "text": "90" },
+            { "id": "C", "text": "95" },
+            { "id": "D", "text": "100" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-05",
+          "text": "120 ÷ 6 = ?",
+          "options": [
+            { "id": "A", "text": "18" },
+            { "id": "B", "text": "20" },
+            { "id": "C", "text": "22" },
+            { "id": "D", "text": "24" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-06",
+          "text": "$2.50 × 4 = ?",
+          "options": [
+            { "id": "A", "text": "$9" },
+            { "id": "B", "text": "$10" },
+            { "id": "C", "text": "$11" },
+            { "id": "D", "text": "$12" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-07",
+          "text": "$12 for 3 items → price per item?",
+          "options": [
+            { "id": "A", "text": "$3" },
+            { "id": "B", "text": "$4" },
+            { "id": "C", "text": "$5" },
+            { "id": "D", "text": "$6" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-08",
+          "text": "10 miles at $2 per mile = ?",
+          "options": [
+            { "id": "A", "text": "$15" },
+            { "id": "B", "text": "$18" },
+            { "id": "C", "text": "$20" },
+            { "id": "D", "text": "$22" }
+          ],
+          "correct": "C",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-09",
+          "text": "240 ÷ 8 = ?",
+          "options": [
+            { "id": "A", "text": "25" },
+            { "id": "B", "text": "30" },
+            { "id": "C", "text": "35" },
+            { "id": "D", "text": "40" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        },
+        {
+          "id": "rq-s-10",
+          "text": "480 minutes ÷ 80 minutes per cycle = ?",
+          "options": [
+            { "id": "A", "text": "5" },
+            { "id": "B", "text": "6" },
+            { "id": "C", "text": "7" },
+            { "id": "D", "text": "8" }
+          ],
+          "correct": "B",
+          "bucket": "rate-multiply",
+          "difficulty": "easy"
+        }
+      ]
+    }
+  ]
+}

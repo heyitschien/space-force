@@ -105,27 +105,6 @@ export const AR_TEST_QUESTION_SOLUTIONS: Record<string, ArTestQuestionSolution> 
       },
     ],
   },
-  'ar-p1-025': {
-    patternLabel: 'Multi-step conversion (tons → oz → residents)',
-    solutionSteps: [
-      {
-        step: 'Oz per person per day: 12 + 18 + 18 = 48 oz.',
-        reason: 'Each resident gets 3 meals: breakfast (12 oz) + lunch (18) + dinner (18).',
-      },
-      {
-        step: '3 tons = 6,000 lb = 96,000 oz.',
-        reason: '1 ton = 2,000 lb, 1 lb = 16 oz. So 3 × 2,000 × 16 = 96,000 oz total.',
-      },
-      {
-        step: 'Oz per day for 10 days: 96,000 ÷ 10 = 9,600 oz/day.',
-        reason: 'The truck carries 10 days of food, so we divide total oz by 10 to get daily supply.',
-      },
-      {
-        step: 'Residents: 9,600 ÷ 48 = 200.',
-        reason: 'Each person needs 48 oz/day. 9,600 oz ÷ 48 = how many people we can feed per day.',
-      },
-    ],
-  },
   'ar-p2-022': {
     patternLabel: 'Quarts to gallons, then weeks',
     solutionSteps: [
@@ -136,6 +115,100 @@ export const AR_TEST_QUESTION_SOLUTIONS: Record<string, ArTestQuestionSolution> 
       {
         step: '6.5 gal ÷ 2 gal/week = 3.25 weeks.',
         reason: 'We consume 2 gallons per week. Divide total gallons by weekly rate to get weeks.',
+      },
+    ],
+  },
+  // Ratios & Proportions
+  'ar-p1-001': {
+    patternLabel: 'Rate × quantity (easy)',
+    solutionSteps: [
+      {
+        step: 'Identify the rate: $3.50 per mile.',
+        reason: 'The tow charge is a constant — each mile costs $3.50. This is a ratio: cost/mile.',
+      },
+      {
+        step: 'Quantity: 12 miles.',
+        reason: 'We need the total cost for 12 miles. More miles → more cost (direct proportion).',
+      },
+      {
+        step: 'Cost = rate × quantity = $3.50 × 12 = $42.00.',
+        reason: 'Multiply dollars per mile by miles. The units cancel: ($/mile) × miles = $. 3.5 × 12 = 42.',
+      },
+    ],
+  },
+  'ar-p2-012': {
+    patternLabel: 'Direct proportion (medium)',
+    solutionSteps: [
+      {
+        step: 'Original ratio: 3 trucks serve 24 homes.',
+        reason: 'The ratio trucks:homes is constant. If we need more homes served, we need more trucks.',
+      },
+      {
+        step: 'Scale factor: 72 ÷ 24 = 3.',
+        reason: 'Houses went from 24 to 72. 72/24 = 3, so we need 3× as many homes served — and 3× the trucks.',
+      },
+      {
+        step: 'Trucks: 3 × 3 = 9 trucks.',
+        reason: 'Original trucks (3) × scale factor (3) = 9. Both sides of the ratio scale the same way.',
+      },
+    ],
+  },
+  'ar-p2-018': {
+    patternLabel: 'Map scale (medium)',
+    solutionSteps: [
+      {
+        step: 'Scale: 1/2 inch on map = 1 mile in real life.',
+        reason: 'Each half-inch represents 1 mile. So we count half-inches to get miles.',
+      },
+      {
+        step: '1/2 inch = 0.5 inch. Count half-inches: 4.5 ÷ 0.5 = 9.',
+        reason: '4.5 inches ÷ 0.5 inch per mile = 9. That means 9 half-inches, each worth 1 mile.',
+      },
+      {
+        step: '9 half-inches → 9 miles.',
+        reason: 'Each half-inch = 1 mile. 9 × 1 mile = 9 miles actual distance.',
+      },
+    ],
+  },
+  'ar-p2-014': {
+    patternLabel: 'Ratio split (hard)',
+    solutionSteps: [
+      {
+        step: 'Ratio 3:4 (red:blue) means for every 4 blue, there are 3 red.',
+        reason: 'The ratio tells us the relationship: 3 red per 4 blue. We work in groups of 4 blue.',
+      },
+      {
+        step: 'Groups of 4 blue: 80 ÷ 4 = 20 groups.',
+        reason: '80 blue balls ÷ 4 blue per group = 20. So we have 20 "ratio units" of 4 blue each.',
+      },
+      {
+        step: 'Red balls: 3 × 20 = 60.',
+        reason: 'Each group has 3 red. 20 groups × 3 red per group = 60 red balls.',
+      },
+    ],
+  },
+  'ar-p1-025': {
+    patternLabel: 'Multi-step ratio + unit conversion (elite)',
+    solutionSteps: [
+      {
+        step: 'Oz per person per day: 12 + 18 + 18 = 48 oz.',
+        reason: 'Each resident gets 3 meals: breakfast (12 oz) + lunch (18 oz) + dinner (18 oz). Add to get daily need.',
+      },
+      {
+        step: 'Oz per person for 10 days: 48 × 10 = 480 oz.',
+        reason: 'Daily need × 10 days = total oz needed per person for the full 10-day period.',
+      },
+      {
+        step: 'Convert tons to pounds: 3 tons × 2000 lb/ton = 6000 lb.',
+        reason: '1 ton = 2000 lb. We must convert to pounds first, then to ounces, to match consumption (oz).',
+      },
+      {
+        step: 'Convert pounds to ounces: 6000 lb × 16 oz/lb = 96,000 oz.',
+        reason: '1 lb = 16 oz. 6000 × 16 = 96,000 oz total supply. Now both supply and need are in ounces.',
+      },
+      {
+        step: 'Residents: 96,000 ÷ 480 = 200.',
+        reason: 'Total supply (oz) ÷ supply per person (oz) = number of full people. 96000/480 = 200.',
       },
     ],
   },

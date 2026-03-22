@@ -282,13 +282,21 @@ export function SolarSystem3D({
 }: SolarSystem3DProps) {
   return (
     <div
-      className={`relative overflow-hidden bg-slate-950 ${fullScreen ? 'h-full w-full' : 'w-full rounded-xl border border-slate-700'}`}
-      style={fullScreen ? undefined : { aspectRatio: '16/9', minHeight: 320 }}
+      className={`relative min-h-0 max-w-full touch-pan-y overflow-hidden bg-slate-950 ${fullScreen ? 'h-full w-full' : 'max-h-[min(70vh,520px)] w-full rounded-xl border border-slate-700 sm:max-h-none'}`}
+      style={
+        fullScreen
+          ? undefined
+          : {
+              aspectRatio: '16/9',
+              minHeight: 280,
+            }
+      }
       role="img"
       aria-label="Interactive 3D solar system"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 min-h-0 min-w-0 max-w-full">
         <Canvas
+          className="!h-full !w-full max-w-full touch-none"
           camera={{ position: [0, 12, 18], fov: 50 }}
           frameloop="always"
           gl={{ antialias: true }}

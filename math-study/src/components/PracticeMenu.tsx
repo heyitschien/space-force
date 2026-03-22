@@ -32,7 +32,10 @@ export function PracticeMenu({
   }, [open]);
 
   return (
-    <div ref={menuRef} className="fixed bottom-8 right-8 z-40">
+    <div
+      ref={menuRef}
+      className="fixed bottom-6 right-6 z-40 pb-[env(safe-area-inset-bottom)] pr-[env(safe-area-inset-right)] sm:bottom-8 sm:right-8"
+    >
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-4 text-white shadow-2xl transition-all hover:bg-indigo-500 hover:scale-105 focus:ring-4 focus:ring-indigo-300"

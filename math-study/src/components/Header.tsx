@@ -1,24 +1,36 @@
 import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
 
 interface HeaderProps {
   searchTerm: string;
   onSearchChange: (value: string) => void;
+  onOpenMobileNav?: () => void;
 }
 
-export function Header({ searchTerm, onSearchChange }: HeaderProps) {
+export function Header({ searchTerm, onSearchChange, onOpenMobileNav }: HeaderProps) {
   return (
-    <header className="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-4">
-        <Link to="/" className="flex items-center gap-2 hover:opacity-90">
+    <header className="sticky top-0 z-50 bg-blue-700 text-white shadow-lg">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-4 md:flex-row">
+        <div className="flex w-full items-center gap-3 md:w-auto md:gap-4">
+          {onOpenMobileNav && (
+            <button
+              type="button"
+              onClick={onOpenMobileNav}
+              className="rounded-lg p-2 text-white hover:bg-white/10 lg:hidden"
+              aria-label="Open study menu"
+            >
+              <Menu className="h-7 w-7" />
+            </button>
+          )}
+        <Link to="/" className="flex min-w-0 flex-1 items-center gap-2 hover:opacity-90 md:flex-none">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
-          <h1 className="text-2xl font-bold">ASVAB Study Portal</h1>
+          <h1 className="truncate text-xl font-bold sm:text-2xl">ASVAB Study Portal</h1>
         </Link>
         <Link
           to="/"
-          className="shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-colors hover:bg-white/30"
+          className="hidden shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-colors hover:bg-white/30 sm:inline-flex"
         >
           Home
         </Link>

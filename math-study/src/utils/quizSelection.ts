@@ -1,7 +1,8 @@
 import type { QuizQuestion } from '../data/quiz/types';
 import level1Data from '../data/quiz/arLevel1Quizzes.json';
+import level2Data from '../data/quiz/arLevel2Quizzes.json';
 
-interface Level1Quiz {
+interface ArQuiz {
   quizId: string;
   title: string;
   topicId: string;
@@ -21,10 +22,13 @@ function shuffleArray<T>(arr: T[]): T[] {
 
 /**
  * Get questions for a quiz by quizId. Returns shuffled copy for variety.
+ * Checks Level 1 and Level 2 quiz sources.
  */
 export function getQuestionsForQuiz(quizId: string): QuizQuestion[] {
-  const data = level1Data as { quizzes: Level1Quiz[] };
-  const quiz = data.quizzes.find((q) => q.quizId === quizId);
+  const l1 = level1Data as { quizzes: ArQuiz[] };
+  const l2 = level2Data as { quizzes: ArQuiz[] };
+  const quiz = l1.quizzes.find((q) => q.quizId === quizId)
+    ?? l2.quizzes.find((q) => q.quizId === quizId);
   if (!quiz) return [];
   return shuffleArray(quiz.questions);
 }

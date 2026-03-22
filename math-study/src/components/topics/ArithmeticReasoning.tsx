@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArithmeticReasoningTestLauncher } from '../ArithmeticReasoningTestLauncher';
+import { AR_20_PATTERNS } from '../../data/ar20Patterns';
 import { AR_TOPICS } from '../../data/arTopicContent';
 
 interface ArithmeticReasoningProps {
@@ -48,11 +49,11 @@ export function ArithmeticReasoning({ visible }: ArithmeticReasoningProps) {
             className="flex flex-col rounded-xl border-2 border-rose-300 bg-rose-50/80 p-5 shadow-sm transition-all hover:border-rose-400 hover:bg-rose-100/80 hover:shadow-md"
           >
             <span className="mb-1 text-xs font-bold uppercase tracking-wide text-rose-600">Start here</span>
-            <h4 className="font-bold text-rose-800">20 Patterns</h4>
+            <h4 className="font-bold text-rose-800">AR patterns ({AR_20_PATTERNS.length})</h4>
             <p className="mt-1 text-sm text-slate-600">
-              Master the 20 ASVAB math patterns. Solve most questions in 10–20 seconds.
+              Master the repeating ASVAB structures. Start with the core drill, then the full set.
             </p>
-            <span className="mt-3 text-sm font-medium text-rose-600">View all 20 →</span>
+            <span className="mt-3 text-sm font-medium text-rose-600">View patterns →</span>
           </Link>
           {AR_TOPICS.map((topic) => (
             <Link
@@ -70,10 +71,16 @@ export function ArithmeticReasoning({ visible }: ArithmeticReasoningProps) {
 
       <div className="flex flex-wrap justify-center gap-4">
         <Link
+          to="/arithmetic-reasoning/pattern-drill?mode=core"
+          className="rounded-xl border-2 border-emerald-600 px-6 py-3 font-semibold text-emerald-700 shadow-md transition-colors hover:bg-emerald-50"
+        >
+          Core pattern drill
+        </Link>
+        <Link
           to="/arithmetic-reasoning/pattern-drill"
           className="rounded-xl border-2 border-rose-600 px-6 py-3 font-semibold text-rose-600 shadow-md transition-colors hover:bg-rose-50"
         >
-          Pattern Drill
+          All patterns drill
         </Link>
         <button
           onClick={() => setPracticeTestOpen(true)}

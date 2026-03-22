@@ -148,35 +148,35 @@ add_quiz("percents-speed","Percents Speed Drill","percents","speed",per_s)
 
 # Unit conversion
 uni_m = [
-q("uni-m-01","easy","Convert 5 gallons to quarts.",["10","15","20","25"],2,"1 gallon = 4 quarts, so 5 × 4 = 20.",["gallon-quart"]),
-q("uni-m-02","easy","How many inches are in 3 feet?",["12","24","36","48"],2,"1 foot = 12 inches.",["feet-inches"]),
-q("uni-m-03","easy","How many ounces are in 2 pounds?",["16","24","32","48"],2,"1 pound = 16 ounces, so 2 × 16 = 32.",["pounds-ounces"]),
-q("uni-m-04","easy","How many items are in 2 dozen?",["12","18","24","144"],2,"1 dozen = 12, so 2 dozen = 24.",["dozen"]),
-q("uni-m-05","easy","Convert 4 yards to feet.",["7","10","12","16"],2,"1 yard = 3 feet, so 4 × 3 = 12.",["yards-feet"]),
-q("uni-m-06","medium","A room measures 15 ft by 12 ft. What is its area in square feet?",["27","180","60","90"],1,"15 × 12 = 180 square feet.",["area"]),
-q("uni-m-07","medium","Convert 180 square feet to square yards.",["20","60","90","540"],0,"1 yd² = 9 ft². So 180 ÷ 9 = 20.",["square-units"]),
-q("uni-m-08","medium","How many days will 72 bottles last if 4 are used each day?",["16","18","20","24"],1,"72 ÷ 4 = 18 days.",["rate-conversion"]),
-q("uni-m-09","medium","Convert 3.5 yards to inches.",["42","84","108","126"],3,"1 yard = 36 inches. 3.5 × 36 = 126.",["yards-inches"]),
-q("uni-m-10","medium","A recipe uses 2 quarts of juice. How many gallons is that?",["1/4","1/2","2","8"],1,"4 quarts = 1 gallon, so 2 quarts = 1/2 gallon.",["quarts-gallons"]),
-q("uni-m-11","medium","How many pounds are in 3 tons?",["300","600","3,000","6,000"],3,"1 ton = 2,000 pounds.",["tons-pounds"]),
-q("uni-m-12","hard","How many ounces are in 1.5 pounds?",["12","18","24","36"],2,"1 pound = 16 ounces. 1.5 × 16 = 24.",["pounds-ounces"]),
-q("uni-m-13","hard","A 2-mile run is how many feet?",["5,280","7,920","10,560","12,000"],2,"1 mile = 5,280 feet. 2 × 5,280 = 10,560.",["miles-feet"]),
-q("uni-m-14","hard","A storage bin holds 48 quarts. How many gallons does it hold?",["8","10","12","16"],2,"48 ÷ 4 = 12 gallons.",["quarts-gallons"]),
-q("uni-m-15","expert","A farmer has 1.5 tons of feed. If each animal needs 12.5 pounds per day, how many animal-days of feed are available?",["120","180","200","240"],3,"1.5 tons = 3,000 lb. Then 3,000 ÷ 12.5 = 240 animal-days.",["multi-step-conversion","rate"])
+q("uni-m-01","easy","Convert 7 gallons to quarts.",["14","21","28","35"],2,"Use 1 gal = 4 qt. 7 × 4 = 28.",["gallon-quart"]),
+q("uni-m-02","easy","How many inches are in 9 feet?",["81","96","108","120"],2,"1 ft = 12 in, so 9 × 12 = 108.",["feet-inches"]),
+q("uni-m-03","easy","How many items are in 3 dozen?",["24","30","36","144"],2,"1 dozen = 12. So 3 × 12 = 36.",["dozen"]),
+q("uni-m-04","easy","How many ounces are in 2.5 pounds?",["20","30","40","50"],2,"1 lb = 16 oz, so 2.5 × 16 = 40 oz.",["pounds-ounces"]),
+q("uni-m-05","easy","Convert 4 yards to feet.",["7","10","12","16"],2,"1 yd = 3 ft, so 4 × 3 = 12.",["yards-feet"]),
+q("uni-m-06","medium","Convert 84 inches to feet.",["5","6","7","8"],2,"Reverse direction means divide: 84 ÷ 12 = 7.",["reverse-conversion"]),
+q("uni-m-07","medium","A recipe calls for 3.5 quarts of broth. How many gallons is that?",["0.75","0.875","1.25","1.5"],1,"4 qt = 1 gal, so 3.5 ÷ 4 = 0.875 gal.",["quarts-gallons","reverse-conversion"]),
+q("uni-m-08","medium","Convert 324 square feet to square yards.",["18","27","36","108"],2,"Square units use factor 9: 324 ÷ 9 = 36 yd².",["square-units"]),
+q("uni-m-09","medium","Convert 5 ft 7 in to inches.",["57","60","67","72"],2,"5 ft = 60 in, then 60 + 7 = 67 in.",["mixed-units"]),
+q("uni-m-10","medium","Convert 2.2 tons to pounds.",["2,200","3,200","4,400","5,200"],2,"1 ton = 2,000 lb, so 2.2 × 2,000 = 4,400 lb.",["tons-pounds"]),
+q("uni-m-11","medium","A pump moves 3 gallons every 2 minutes. How many quarts in 6 minutes?",["24","30","36","48"],2,"In 6 min, gallons = (6/2) × 3 = 9 gal. Then 9 × 4 = 36 qt.",["rate-conversion","multi-step-conversion"]),
+q("uni-m-12","hard","A 1.5-mile jog is how many feet?",["5,280","6,600","7,920","10,560"],2,"1 mile = 5,280 ft. 1.5 × 5,280 = 7,920 ft.",["miles-feet"]),
+q("uni-m-13","hard","A floor is 12 ft by 18 ft. What is the area in square yards?",["18","21","24","27"],2,"Area = 12 × 18 = 216 ft². Then 216 ÷ 9 = 24 yd².",["area","square-units"]),
+q("uni-m-14","hard","45 quarts of juice are split equally into 6 jugs. How many gallons per jug?",["1.25","1.5","1.875","2.25"],2,"Per jug: 45 ÷ 6 = 7.5 qt. Convert: 7.5 ÷ 4 = 1.875 gal.",["quarts-gallons","multi-step-conversion"]),
+q("uni-m-15","expert","A shelter has 1.2 tons of food. Each person needs 24 oz per meal, 3 meals/day, for 4 days. How many full people can be served?",["120","128","133","144"],2,"1.2 tons = 2,400 lb = 38,400 oz. Per person: 24 × 3 × 4 = 288 oz. 38,400 ÷ 288 = 133.33, so 133 full people.",["multi-step-conversion","rate"])
 ]
 add_quiz("unit-conversion-mastery","Unit Conversion Mastery Quiz","unit-conversion","mastery",uni_m)
 
 uni_s = [
-q("uni-s-01","easy","1 gallon = how many quarts?",["2","3","4","8"],2,"Basic conversion fact.",["speed"]),
-q("uni-s-02","easy","1 foot = how many inches?",["10","12","16","18"],1,"Basic conversion fact.",["speed"]),
-q("uni-s-03","easy","1 pound = how many ounces?",["8","12","16","24"],2,"Basic conversion fact.",["speed"]),
-q("uni-s-04","easy","2 dozen =",["12","18","24","144"],2,"2 × 12 = 24.",["speed"]),
-q("uni-s-05","medium","3 yards =",["6 ft","9 ft","12 ft","15 ft"],1,"3 × 3 = 9.",["speed"]),
-q("uni-s-06","medium","18 quarts =",["2 gal","3 gal","4 gal","4.5 gal"],3,"18 ÷ 4 = 4.5 gallons.",["speed"]),
-q("uni-s-07","medium","27 ft² =",["2 yd²","3 yd²","9 yd²","27 yd²"],1,"27 ÷ 9 = 3.",["speed"]),
-q("uni-s-08","medium","2 miles =",["5,280 ft","7,920 ft","10,560 ft","12,560 ft"],2,"2 × 5,280 = 10,560.",["speed"]),
-q("uni-s-09","medium","32 oz =",["1 lb","2 lb","3 lb","4 lb"],1,"32 ÷ 16 = 2.",["speed"]),
-q("uni-s-10","medium","144 items =",["1 dozen","1 gross","12 gross","24 dozen"],1,"1 gross = 144.",["speed"])
+q("uni-s-01","easy","1 gallon = how many quarts?",["2","3","4","8"],2,"Memory fact: 1 gal = 4 qt.",["speed"]),
+q("uni-s-02","easy","1 yard = how many feet?",["2","3","4","6"],1,"Memory fact: 1 yd = 3 ft.",["speed"]),
+q("uni-s-03","easy","1 pound = how many ounces?",["8","12","16","24"],2,"Memory fact: 1 lb = 16 oz.",["speed"]),
+q("uni-s-04","easy","1 gross =",["12","24","120","144"],3,"Memory fact: 1 gross = 144.",["speed"]),
+q("uni-s-05","medium","36 inches =",["2 ft","3 ft","4 ft","6 ft"],1,"12 in = 1 ft, so 36 ÷ 12 = 3 ft.",["speed"]),
+q("uni-s-06","medium","20 quarts =",["4 gal","5 gal","6 gal","8 gal"],1,"4 qt = 1 gal, so 20 ÷ 4 = 5 gal.",["speed"]),
+q("uni-s-07","medium","45 ft² =",["3 yd²","5 yd²","9 yd²","15 yd²"],1,"Square units divide by 9: 45 ÷ 9 = 5.",["speed"]),
+q("uni-s-08","medium","72 oz =",["4 lb","4.5 lb","5 lb","6 lb"],1,"Quick divide: 72 ÷ 16 = 4.5 lb.",["speed"]),
+q("uni-s-09","medium","2.5 yards =",["72 in","84 in","90 in","96 in"],2,"2.5 yd × 3 = 7.5 ft; 7.5 × 12 = 90 in.",["speed","two-step"]),
+q("uni-s-10","medium","At 2 gallons per day, how many quarts are used in 3 days?",["16","20","24","32"],2,"3 days × 2 gal = 6 gal, then 6 × 4 = 24 qt.",["speed","two-step","rate"])
 ]
 add_quiz("unit-conversion-speed","Unit Conversion Speed Drill","unit-conversion","speed",uni_s)
 

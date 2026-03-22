@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, X } from 'lucide-react';
 
 interface NavItemLink {
   id: string;
@@ -37,13 +37,13 @@ interface NavCategory {
   items: NavItem[];
 }
 
-const CONTENT_CATEGORY_IDS = ['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'];
+export const CONTENT_CATEGORY_IDS = ['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'] as const;
 
 const CATEGORIES: NavCategory[] = [
   {
     id: 'general-science',
     label: '1. General Science',
-    expanded: true,
+    expanded: false,
     items: [
       { id: 'general-science-astronomy', label: 'Astronomy', href: '/astronomy' },
       { id: 'general-science-biology', label: 'Biology', href: '/biology' },
@@ -55,11 +55,11 @@ const CATEGORIES: NavCategory[] = [
   {
     id: 'arithmetic-reasoning',
     label: '2. Arithmetic Reasoning',
-    expanded: true,
+    expanded: false,
     items: [
       { id: 'ar-section-entry', label: 'Entry', isSectionHeader: true },
       { id: 'arithmetic-reasoning-overview', label: 'Overview', href: '#arithmetic-reasoning' },
-      { id: 'ar-20-patterns', label: '20 Patterns', href: '/arithmetic-reasoning/patterns' },
+      { id: 'ar-20-patterns', label: 'AR Patterns', href: '/arithmetic-reasoning/patterns' },
       { id: 'ar-pattern-drill', label: 'Pattern Drill', href: '/arithmetic-reasoning/pattern-drill' },
       { id: 'ar-section-l1', label: 'Level 1 (Number mechanics)', isSectionHeader: true },
       { id: 'ar-order-of-operations', label: 'Order of Operations (PEMDAS)', href: '/arithmetic-reasoning/order-of-operations' },
@@ -98,7 +98,7 @@ const CATEGORIES: NavCategory[] = [
   {
     id: 'mathematics-knowledge',
     label: '5. Mathematics Knowledge',
-    expanded: true,
+    expanded: false,
     items: [
       { id: 'algebra', label: 'Algebra & Lines', href: '#algebra' },
       { id: 'geometry-2d', label: '2D Geometry', href: '#geometry-2d' },
@@ -140,43 +140,94 @@ interface SidebarProps {
   activeSection: string;
   activeCategory: string;
   onCategorySelect: (categoryId: string, sectionId?: string) => void;
+  variant?: 'desktop' | 'drawer';
+  onNavigate?: () => void;
+  onCloseDrawer?: () => void;
 }
 
 function isRouteHref(href: string): boolean {
   return href.startsWith('/');
 }
 
-export function Sidebar({ activeSection, activeCategory, onCategorySelect }: SidebarProps) {
+export function Sidebar({
+  activeSection,
+  activeCategory,
+  onCategorySelect,
+  variant = 'desktop',
+  onNavigate,
+  onCloseDrawer,
+}: SidebarProps) {
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(CATEGORIES.map((c) => [c.id, c.expanded]))
+    Object.fromEntries(CATEGORIES.map((c) => [c.id, false])),
   );
+
+  useEffect(() => {
+    setExpanded((prev) => {
+      const next = { ...prev };
+      for (const id of CONTENT_CATEGORY_IDS) {
+        next[id] = id === activeCategory;
+      }
+      return next;
+    });
+  }, [activeCategory]);
 
   const toggle = (id: string) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const handleCategoryClick = (cat: NavCategory) => {
-    if (CONTENT_CATEGORY_IDS.includes(cat.id)) {
+    if (CONTENT_CATEGORY_IDS.includes(cat.id as (typeof CONTENT_CATEGORY_IDS)[number])) {
       onCategorySelect(cat.id);
+      setExpanded((prev) => ({
+        ...prev,
+        ...Object.fromEntries(CONTENT_CATEGORY_IDS.map((id) => [id, id === cat.id])),
+      }));
+      return;
     }
     toggle(cat.id);
   };
 
-  const itemClasses = 'block rounded-md px-3 py-2 pl-6 font-medium transition-colors text-sm';
-  const categoryClasses = 'flex items-center gap-1 rounded-md px-3 py-2 font-semibold text-gray-700 transition-colors cursor-pointer hover:bg-gray-100';
+  const fireNavigate = () => {
+    onNavigate?.();
+  };
+
+  const itemClasses =
+    'block min-w-0 break-words rounded-md px-3 py-2 pl-6 text-sm font-medium transition-colors';
+  const categoryClasses =
+    'flex min-w-0 items-center gap-2 rounded-md px-3 py-2 text-left font-semibold text-gray-700 transition-colors hover:bg-gray-100';
+
+  const navShell =
+    variant === 'drawer'
+      ? 'h-full w-full min-w-0 overflow-y-auto overflow-x-hidden bg-white p-4 shadow-xl'
+      : 'h-fit w-full min-w-0 space-y-1 rounded-xl bg-white p-4 shadow-sm lg:sticky lg:top-24';
 
   return (
-    <nav className="lg:w-1/4 space-y-1 bg-white p-4 rounded-xl shadow-sm h-fit sticky top-24">
-      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">
-        Table of Contents
-      </h3>
+    <nav className={navShell} aria-label="Study navigation">
+      {variant === 'drawer' && (
+        <div className="mb-4 flex items-center justify-between border-b border-gray-200 pb-3">
+          <h3 className="text-sm font-bold text-gray-800">Menu</h3>
+          <button
+            type="button"
+            onClick={onCloseDrawer}
+            className="rounded-lg p-2 text-gray-600 hover:bg-gray-100"
+            aria-label="Close menu"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+      )}
+      {variant === 'desktop' && (
+        <h3 className="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          Table of Contents
+        </h3>
+      )}
       <div className="space-y-1">
         {CATEGORIES.map((cat) => (
           <div key={cat.id}>
             <button
               type="button"
               onClick={() => handleCategoryClick(cat)}
-              className={`w-full text-left ${categoryClasses} ${
+              className={`w-full cursor-pointer ${categoryClasses} ${
                 activeCategory === cat.id ? 'bg-emerald-50 text-emerald-800' : ''
               }`}
             >
@@ -185,7 +236,7 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
               ) : (
                 <ChevronRight className="h-4 w-4 shrink-0 text-gray-500" />
               )}
-              {cat.label}
+              <span className="min-w-0 flex-1 break-words">{cat.label}</span>
             </button>
             {expanded[cat.id] && (
               <div className="mt-0.5 space-y-0.5">
@@ -194,7 +245,7 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
                     return (
                       <div
                         key={item.id}
-                        className="mt-3 first:mt-0 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500"
+                        className="mt-3 break-words px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500 first:mt-0"
                       >
                         {item.label}
                       </div>
@@ -204,7 +255,7 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
                     return (
                       <div
                         key={item.id}
-                        className={`${itemClasses} text-gray-400 cursor-not-allowed`}
+                        className={`${itemClasses} cursor-not-allowed text-gray-400`}
                       >
                         {item.label} <span className="text-xs">(soon)</span>
                       </div>
@@ -216,8 +267,9 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
                       <NavLink
                         key={item.id}
                         to={href}
+                        onClick={fireNavigate}
                         className={({ isActive }) =>
-                          `${itemClasses} ${isActive ? 'bg-emerald-50 text-emerald-700' : 'hover:bg-gray-100 text-gray-700'}`
+                          `${itemClasses} ${isActive ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-100'}`
                         }
                       >
                         {item.label}
@@ -231,10 +283,13 @@ export function Sidebar({ activeSection, activeCategory, onCategorySelect }: Sid
                       href={href}
                       onClick={(e) => {
                         e.preventDefault();
-                        const categoryId = href.includes('arithmetic') ? 'arithmetic-reasoning' : 'mathematics-knowledge';
+                        const categoryId = href.includes('arithmetic')
+                          ? 'arithmetic-reasoning'
+                          : 'mathematics-knowledge';
                         onCategorySelect(categoryId, item.id.replace(/-overview$/, ''));
+                        fireNavigate();
                       }}
-                      className={`${itemClasses} ${isActive ? 'bg-emerald-50 text-emerald-700' : 'hover:bg-gray-100 text-gray-700'}`}
+                      className={`${itemClasses} ${isActive ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-100'}`}
                     >
                       {item.label}
                     </a>
