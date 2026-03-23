@@ -14,6 +14,7 @@ import { DstTopicLayout } from './DstTopicLayout';
 import { PercentsTopicLayout } from './PercentsTopicLayout';
 import { RatiosProportionsTopicLayout } from './RatiosProportionsTopicLayout';
 import { RateQuantityTopicLayout } from './RateQuantityTopicLayout';
+import { AveragesTopicLayout } from './AveragesTopicLayout';
 import { StructuredArTopicLayout } from './StructuredArTopicLayout';
 import { UnitConversionTopicLayout } from './UnitConversionTopicLayout';
 import { QuizEngine } from './quiz/QuizEngine';
@@ -48,6 +49,9 @@ export function ArTopicPage() {
   }
   if (topic && topicId === 'rate-multiply') {
     return <RateQuantityTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'averages') {
+    return <AveragesTopicLayout topic={topic} />;
   }
   if (topic && topicId === 'percents') {
     return <PercentsTopicLayout topic={topic} />;

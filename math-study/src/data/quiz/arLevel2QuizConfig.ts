@@ -53,4 +53,5 @@ export const AR_LEVEL2_QUIZ_CONFIGS: Record<string, QuizConfig> = {
 export const BUCKET_TO_STUDY_PATH: Record<string, string> = {
   ratios: '/arithmetic-reasoning/ratios',
   'rate-multiply': '/arithmetic-reasoning/rate-multiply',
+  averages: '/arithmetic-reasoning/averages',
 };

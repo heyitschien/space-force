@@ -442,17 +442,3 @@ export const RATE_QUANTITY_STRATEGY = {
     'Multiply or divide',
   ],
 };
-
-export const RATE_QUANTITY_NEXT_STEP = {
-  title: '⚡ YOUR NEXT STEP',
-  intro: 'If you want to go FULL mastery:',
-  bullets: [
-    'Turn this into your interactive mobile UI (like your app)',
-    'Build auto-expanding problem solver',
-    'Create 100-question adaptive drill system',
-    'Or run you through a live ASVAB simulation',
-  ],
-  ctaTitle: '🔥 Say this:',
-  ctaQuote: '"Run me through a live drill"',
-  closing: "And I'll train you like you're in the real test.\n\nLet's lock this in.",
-};

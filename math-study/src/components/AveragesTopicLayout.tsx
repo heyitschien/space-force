@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import type { ArTopic } from '../data/arTopicContent';
 import {
-  RATE_QUANTITY_INTRO,
-  RATE_QUANTITY_CORE,
-  RATE_QUANTITY_PATTERNS,
-  RATE_QUANTITY_PATTERN_SECTION_INTRO,
-  RATE_QUANTITY_MASTER_METHOD,
-  RATE_QUANTITY_WORKED_EXAMPLES,
-  RATE_QUANTITY_MENTAL_MODELS,
-  RATE_QUANTITY_DRILL_SETS,
-  RATE_QUANTITY_SPEED_SECTION,
-  RATE_QUANTITY_SPEED_DRILLS,
-  RATE_QUANTITY_TRAPS,
-  RATE_QUANTITY_STRATEGY,
+  AVERAGES_INTRO,
+  AVERAGES_CORE,
+  AVERAGES_PATTERNS,
+  AVERAGES_PATTERN_SECTION_INTRO,
+  AVERAGES_MASTER_METHOD,
+  AVERAGES_WORKED_EXAMPLES,
+  AVERAGES_MENTAL_MODELS,
+  AVERAGES_DRILL_SETS,
+  AVERAGES_SPEED_SECTION,
+  AVERAGES_SPEED_DRILLS,
+  AVERAGES_TRAPS,
+  AVERAGES_STRATEGY,
   type SolvedProblem,
-} from '../data/rateQuantityContent';
+} from '../data/averagesContent';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 import { ArLevelTopicNav } from './ArLevelTopicNav';
-import { QuizEngine } from './quiz/QuizEngine';
 import { Level1MemorySprint } from './Level1MemorySprint';
 import {
   getLevel1MemoryDeck,
   type Level1MemoryTopicId,
 } from '../data/level1MemoryDecks';
+import { QuizEngine } from './quiz/QuizEngine';
 import {
   AR_LEVEL2_TOPIC_QUIZ_IDS,
   AR_LEVEL2_QUIZ_CONFIGS,
@@ -36,7 +36,7 @@ import {
   type ArTestSolutionStep,
 } from '../data/arTestQuestionSolutions';
 
-interface RateQuantityTopicLayoutProps {
+interface AveragesTopicLayoutProps {
   topic: ArTopic;
 }
 
@@ -50,7 +50,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function FormulaBlock({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-4 font-mono text-sm text-slate-800">
+    <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-4 font-mono text-sm text-slate-800 whitespace-pre-wrap">
       {children}
     </pre>
   );
@@ -76,12 +76,13 @@ function ReasoningProblemCard({ problem }: { problem: SolvedProblem }) {
   );
 }
 
-export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps) {
+export function AveragesTopicLayout({ topic }: AveragesTopicLayoutProps) {
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
   const [level2QuizId, setLevel2QuizId] = useState<string | null>(null);
   const [expandedQuestionIds, setExpandedQuestionIds] = useState<Set<string>>(new Set());
   const [revealedDrillIds, setRevealedDrillIds] = useState<Set<string>>(new Set());
   const [revealedSpeedIds, setRevealedSpeedIds] = useState<Set<string>>(new Set());
+
   const memoryDeck = getLevel1MemoryDeck(topic.id);
   const memoryTopicId = topic.id as Level1MemoryTopicId;
 
@@ -115,14 +116,14 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-4">
+        <div className="mx-auto flex max-w-4xl min-w-0 items-center justify-between gap-3">
           <Link
             to="/"
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            className="flex shrink-0 items-center gap-2 rounded-lg px-2 py-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 sm:px-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 shrink-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -134,15 +135,15 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-            Back to Math Study
+            <span className="hidden sm:inline">Back to Math Study</span>
           </Link>
-          <h1 className="text-lg font-bold text-slate-900 sm:text-xl">
+          <h1 className="min-w-0 truncate text-center text-base font-bold text-slate-900 sm:text-lg md:text-xl">
             {topic.title} — Arithmetic Reasoning
           </h1>
           <button
             type="button"
             onClick={() => setPracticeTestOpen(true)}
-            className="rounded-lg bg-rose-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-rose-500"
+            className="shrink-0 rounded-lg bg-rose-600 px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-rose-500 sm:text-sm"
           >
             Practice Test
           </button>
@@ -151,15 +152,15 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
 
       <ArLevelTopicNav currentTopicId={topic.id} />
 
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <main className="mx-auto max-w-4xl min-w-0 px-4 py-8">
         <section className="mb-10 rounded-2xl border border-rose-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-3 text-2xl font-extrabold text-rose-800">
-            {RATE_QUANTITY_INTRO.headline}
+          <h2 className="mb-3 text-xl font-extrabold text-rose-800 sm:text-2xl">
+            {AVERAGES_INTRO.headline}
           </h2>
-          <p className="mb-2 text-sm font-semibold text-slate-600">{RATE_QUANTITY_INTRO.tagline}</p>
-          <p className="mb-4 text-slate-700">{RATE_QUANTITY_INTRO.insight}</p>
+          <p className="mb-2 text-sm font-semibold text-slate-600">{AVERAGES_INTRO.tagline}</p>
+          <p className="mb-4 text-slate-700">{AVERAGES_INTRO.insight}</p>
           <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
-            {RATE_QUANTITY_INTRO.goals.map((goal) => (
+            {AVERAGES_INTRO.goals.map((goal) => (
               <li key={goal} className="rounded-lg bg-rose-50 px-3 py-2">
                 {goal}
               </li>
@@ -168,7 +169,7 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
           {memoryDeck.length > 0 && (
             <div className="mt-5 rounded-xl border border-indigo-200 bg-indigo-50/60 p-4">
               <p className="text-sm font-semibold text-indigo-900">
-                Start here for today: lock in rate × quantity facts first.
+                Start here for today: lock in mean, totals, and missing-score moves first.
               </p>
               <p className="mt-1 text-xs text-slate-600">
                 Do a 2-minute memory sprint before the full lesson.
@@ -188,23 +189,28 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
             <SectionHeading>🧠 Think About It — Memory Game</SectionHeading>
             <p className="mb-4 text-sm text-slate-600">
               Play this 2-minute retrieval sprint daily. It uses spaced review and immediate
-              feedback to strengthen long-term memory of rate and unit rules.
+              feedback to strengthen long-term memory of average formulas and ASVAB traps.
             </p>
-            <Level1MemorySprint topicId={memoryTopicId} deck={memoryDeck} />
+            <Level1MemorySprint
+              topicId={memoryTopicId}
+              deck={memoryDeck}
+              title="Think About It: 2-Min Memory Game (Averages)"
+              subtitle="Retrieval sprint: mean, Total = Avg × Count, missing scores, and count traps."
+            />
           </section>
         )}
 
         <section className="mb-10">
-          <SectionHeading>{RATE_QUANTITY_CORE.title}</SectionHeading>
+          <SectionHeading>{AVERAGES_CORE.title}</SectionHeading>
           <div className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-slate-700">{RATE_QUANTITY_CORE.coreIdeaLead}</p>
-            <FormulaBlock>{RATE_QUANTITY_CORE.coreFormula}</FormulaBlock>
+            <p className="text-slate-700">{AVERAGES_CORE.coreIdeaLead}</p>
+            <FormulaBlock>{AVERAGES_CORE.coreFormula}</FormulaBlock>
             <div>
               <p className="mb-2 text-lg font-semibold text-slate-800">
-                {RATE_QUANTITY_CORE.threeFormsTitle}
+                {AVERAGES_CORE.threeFormsTitle}
               </p>
               <ol className="list-inside list-decimal space-y-1 text-sm text-slate-700">
-                {RATE_QUANTITY_CORE.threeForms.map((f) => (
+                {AVERAGES_CORE.threeForms.map((f) => (
                   <li key={f}>
                     <strong>{f}</strong>
                   </li>
@@ -212,10 +218,10 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
               </ol>
             </div>
             <div>
-              <p className="mb-2 text-sm font-semibold text-slate-800">{RATE_QUANTITY_CORE.triangleTitle}</p>
-              <FormulaBlock>{RATE_QUANTITY_CORE.triangleArt}</FormulaBlock>
+              <p className="mb-2 text-sm font-semibold text-slate-800">{AVERAGES_CORE.triangleTitle}</p>
+              <FormulaBlock>{AVERAGES_CORE.triangleArt}</FormulaBlock>
               <ul className="mt-3 space-y-1 text-sm text-slate-600">
-                {RATE_QUANTITY_CORE.triangleMantras.map((m) => (
+                {AVERAGES_CORE.triangleMantras.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
               </ul>
@@ -225,9 +231,9 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
 
         <section className="mb-10">
           <SectionHeading>🎯 ASVAB PATTERN RECOGNITION</SectionHeading>
-          <p className="mb-4 text-sm text-slate-600">{RATE_QUANTITY_PATTERN_SECTION_INTRO}</p>
+          <p className="mb-4 text-sm text-slate-600">{AVERAGES_PATTERN_SECTION_INTRO}</p>
           <div className="space-y-4">
-            {RATE_QUANTITY_PATTERNS.map((pattern) => (
+            {AVERAGES_PATTERNS.map((pattern) => (
               <div
                 key={pattern.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -250,54 +256,43 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
         </section>
 
         <section className="mb-10">
-          <SectionHeading>{RATE_QUANTITY_MASTER_METHOD.title}</SectionHeading>
+          <SectionHeading>{AVERAGES_MASTER_METHOD.title}</SectionHeading>
           <p className="mb-4 text-sm font-semibold text-slate-800">
-            {RATE_QUANTITY_MASTER_METHOD.subtitle}
+            {AVERAGES_MASTER_METHOD.subtitle}
           </p>
           <div className="space-y-4">
-            {RATE_QUANTITY_MASTER_METHOD.steps.map((s) => (
+            {AVERAGES_MASTER_METHOD.steps.map((s) => (
               <div
                 key={s.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
                 <p className="mb-2 text-lg font-bold text-slate-800">{s.title}</p>
                 <p className="text-sm text-slate-700">{s.body}</p>
-                {s.bullets && (
-                  <ul className="mt-2 list-inside list-disc text-sm text-slate-700">
-                    {s.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                )}
               </div>
             ))}
           </div>
         </section>
 
         <section className="mb-10">
-          <SectionHeading>🔍 VISUAL EXAMPLES (STEP-BY-STEP)</SectionHeading>
+          <SectionHeading>🔍 WORKED EXAMPLES (STEP-BY-STEP)</SectionHeading>
           <div className="space-y-4">
-            {RATE_QUANTITY_WORKED_EXAMPLES.map((problem) => (
+            {AVERAGES_WORKED_EXAMPLES.map((problem) => (
               <ReasoningProblemCard key={problem.title} problem={problem} />
             ))}
           </div>
         </section>
 
         <section className="mb-10">
-          <SectionHeading>🧠 MENTAL MODELS (ELITE UNDERSTANDING)</SectionHeading>
+          <SectionHeading>🧠 MENTAL MODELS</SectionHeading>
           <div className="space-y-4">
-            {RATE_QUANTITY_MENTAL_MODELS.map((model) => (
+            {AVERAGES_MENTAL_MODELS.map((model) => (
               <div
                 key={model.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
                 <p className="mb-2 text-lg font-bold text-slate-800">{model.title}</p>
-                {model.question && (
-                  <p className="text-sm text-slate-700">{model.question}</p>
-                )}
-                {model.formula && (
-                  <FormulaBlock>{model.formula}</FormulaBlock>
-                )}
+                {model.question && <p className="text-sm text-slate-700">{model.question}</p>}
+                {model.formula && <FormulaBlock>{model.formula}</FormulaBlock>}
                 {model.note && (
                   <p className="mt-2 text-xs italic text-slate-600 whitespace-pre-line">
                     {model.note}
@@ -309,8 +304,8 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
         </section>
 
         <section className="mb-10">
-          <SectionHeading>🧪 PRACTICE SYSTEM (TRAIN LIKE ELITE)</SectionHeading>
-          {RATE_QUANTITY_DRILL_SETS.map((set, setIdx) => (
+          <SectionHeading>🧪 PRACTICE DRILLS (TAP TO REVEAL)</SectionHeading>
+          {AVERAGES_DRILL_SETS.map((set, setIdx) => (
             <div
               key={set.title}
               className="mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -332,7 +327,10 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
                         <>
                           <ol className="mt-3 space-y-2 text-sm text-slate-700">
                             {item.steps.map((st, idx) => (
-                              <li key={idx} className="rounded-md border border-slate-100 bg-white px-2 py-1.5">
+                              <li
+                                key={idx}
+                                className="rounded-md border border-slate-100 bg-white px-2 py-1.5"
+                              >
                                 <p className="font-mono text-rose-700">{st.step}</p>
                                 <p className="mt-0.5 text-xs italic text-slate-600">Why: {st.why}</p>
                               </li>
@@ -343,9 +341,7 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
                           </p>
                         </>
                       ) : (
-                        <p className="mt-2 text-xs text-slate-500">
-                          Click to reveal work + answer
-                        </p>
+                        <p className="mt-2 text-xs text-slate-500">Click to reveal work + answer</p>
                       )}
                     </button>
                   );
@@ -356,10 +352,10 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
         </section>
 
         <section className="mb-10">
-          <SectionHeading>{RATE_QUANTITY_SPEED_SECTION.title}</SectionHeading>
-          <p className="mb-4 text-sm text-slate-600">{RATE_QUANTITY_SPEED_SECTION.subtitle}</p>
+          <SectionHeading>{AVERAGES_SPEED_SECTION.title}</SectionHeading>
+          <p className="mb-4 text-sm text-slate-600">{AVERAGES_SPEED_SECTION.subtitle}</p>
           <div className="space-y-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            {RATE_QUANTITY_SPEED_DRILLS.map((d, idx) => {
+            {AVERAGES_SPEED_DRILLS.map((d, idx) => {
               const id = `spd-${idx}`;
               const open = revealedSpeedIds.has(id);
               return (
@@ -385,8 +381,8 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
           <section className="mb-10">
             <SectionHeading>Problems from the Actual Test</SectionHeading>
             <p className="mb-4 text-sm text-slate-600">
-              Real questions from your practice tests (easy → elite). Click each to reveal the
-              answer and worked solution.
+              Real questions from your practice tests. Click each to reveal the answer and worked
+              solution.
             </p>
             <div className="space-y-4">
               {topic.testQuestionIds.map((qId) => {
@@ -405,7 +401,7 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
                       onClick={() => toggleQuestion(q.id)}
                       className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-slate-50"
                     >
-                      <span className="font-medium text-slate-800">{q.text}</span>
+                      <span className="min-w-0 font-medium text-slate-800">{q.text}</span>
                       {isExpanded ? (
                         <ChevronDown className="h-5 w-5 shrink-0 text-slate-400" />
                       ) : (
@@ -449,9 +445,9 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
         )}
 
         <section className="mb-10">
-          <SectionHeading>🚨 COMMON TRAPS (READ THIS CAREFULLY)</SectionHeading>
+          <SectionHeading>🚨 COMMON TRAPS</SectionHeading>
           <div className="space-y-4">
-            {RATE_QUANTITY_TRAPS.map((trap) => (
+            {AVERAGES_TRAPS.map((trap) => (
               <div
                 key={trap.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -464,10 +460,10 @@ export function RateQuantityTopicLayout({ topic }: RateQuantityTopicLayoutProps)
         </section>
 
         <section className="mb-10 rounded-2xl border border-rose-200 bg-white p-6 shadow-sm">
-          <SectionHeading>{RATE_QUANTITY_STRATEGY.title}</SectionHeading>
-          <p className="mb-4 text-slate-700">{RATE_QUANTITY_STRATEGY.insight}</p>
+          <SectionHeading>{AVERAGES_STRATEGY.title}</SectionHeading>
+          <p className="mb-4 text-slate-700">{AVERAGES_STRATEGY.insight}</p>
           <ol className="list-inside list-decimal space-y-2 text-sm text-slate-700">
-            {RATE_QUANTITY_STRATEGY.steps.map((step) => (
+            {AVERAGES_STRATEGY.steps.map((step) => (
               <li key={step}>
                 <strong>{step}</strong>
               </li>

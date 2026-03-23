@@ -7,7 +7,8 @@ export type Level1MemoryTopicId =
   | 'percents'
   | 'unit-conversion'
   | 'ratios'
-  | 'rate-multiply';
+  | 'rate-multiply'
+  | 'averages';
 
 export interface Level1MemoryCard {
   id: string;
@@ -510,6 +511,124 @@ const RATE_MULTIPLY_MEMORY_DECK: Level1MemoryCard[] = [
   },
 ];
 
+const AVERAGES_MEMORY_DECK: Level1MemoryCard[] = [
+  {
+    id: 'avg-mem-001',
+    prompt: 'The mean (average) of several numbers equals:',
+    choices: [
+      'Sum of the numbers ÷ how many numbers',
+      'The middle number only',
+      'The largest minus the smallest',
+      'Sum × count',
+    ],
+    answerIndex: 0,
+    explanation: 'Mean = total of all values divided by the count — “fair share.”',
+    tags: ['core'],
+  },
+  {
+    id: 'avg-mem-002',
+    prompt: 'The ASVAB “power move” for many average problems is:',
+    choices: [
+      'Total = Average × Count',
+      'Total = Average ÷ Count',
+      'Average = Count ÷ Total',
+      'Total = Average + Count',
+    ],
+    answerIndex: 0,
+    explanation: 'If you know the average you need and how many items, multiply to get the target total.',
+    tags: ['core'],
+  },
+  {
+    id: 'avg-mem-003',
+    prompt: 'To find a missing score to reach a target average, you usually:',
+    choices: [
+      'Guess and check only',
+      'Target total = target avg × total count; missing = target total − current sum',
+      'Divide the target average by the number of known scores',
+      'Add all known scores and stop',
+    ],
+    answerIndex: 1,
+    explanation: 'Need total points for the final count, subtract what you already have.',
+    tags: ['method'],
+  },
+  {
+    id: 'avg-mem-004',
+    prompt: 'For “average of 88 on 4 tests,” the total points you need is:',
+    choices: ['88 ÷ 4', '88 × 4', '88 + 4', '88 − 4'],
+    answerIndex: 1,
+    explanation: 'Total = average × count → 88 × 4 = 352 points across four tests.',
+    tags: ['formula'],
+  },
+  {
+    id: 'avg-mem-005',
+    prompt: '“Average after 4 tests is 86” tells you:',
+    choices: [
+      'Nothing without each grade',
+      'The sum of the four scores is 86 × 4',
+      'The last test was 86',
+      'You must divide 86 by 4 again',
+    ],
+    answerIndex: 1,
+    explanation: 'Total = average × count — you get the combined points without seeing individual grades.',
+    tags: ['trap'],
+  },
+  {
+    id: 'avg-mem-006',
+    prompt: 'A common trap: “4th test score” means your target average uses a count of:',
+    choices: ['3', '4', '2', '5'],
+    answerIndex: 1,
+    explanation: 'Four tests total → divide (or multiply for target total) by 4, not 3.',
+    tags: ['trap'],
+  },
+  {
+    id: 'avg-mem-007',
+    prompt: 'After a 5th test, average rises from 86 (over 4) to 88 (over 5). The 5th score is:',
+    choices: [
+      '88 − 86',
+      '(88 × 5) − (86 × 4)',
+      '(86 + 88) ÷ 2',
+      '86 × 5 ÷ 4',
+    ],
+    answerIndex: 1,
+    explanation: 'New total minus old total equals the new score: 440 − 344 = 96.',
+    tags: ['pattern'],
+  },
+  {
+    id: 'avg-mem-008',
+    prompt: 'In words: “What total do I need?” then “What total do I have?” then:',
+    choices: [
+      'Multiply the two totals',
+      'Subtract: need − have = missing piece',
+      'Add the averages',
+      'Divide need by have',
+    ],
+    answerIndex: 1,
+    explanation: 'Missing value = target total − current sum — the gap is what you still need.',
+    tags: ['mental'],
+  },
+  {
+    id: 'avg-mem-009',
+    prompt: 'Average of 70, 80, and 90 is:',
+    choices: ['70', '80', '90', '240'],
+    answerIndex: 1,
+    explanation: 'Sum = 240; 240 ÷ 3 = 80.',
+    tags: ['drill'],
+  },
+  {
+    id: 'avg-mem-010',
+    prompt: 'If problems mention dropping the lowest score or special counting rules, you should:',
+    choices: [
+      'Ignore it and use all scores',
+      'Rebuild the sum and count that actually go into the final average',
+      'Always use the original count',
+      'Double the average',
+    ],
+    answerIndex: 1,
+    explanation: 'Wrong sum or wrong count breaks Total = Avg × Count — read the setup carefully.',
+    tags: ['trap'],
+  },
+];
+
 export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]> = {
   'order-of-operations': PEMDAS_MEMORY_DECK,
   decimals: DECIMALS_MEMORY_DECK,
@@ -518,6 +637,7 @@ export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]
   'unit-conversion': UNIT_MEMORY_DECK,
   ratios: RATIOS_MEMORY_DECK,
   'rate-multiply': RATE_MULTIPLY_MEMORY_DECK,
+  averages: AVERAGES_MEMORY_DECK,
 };
 
 export function getLevel1MemoryDeck(topicId: string): Level1MemoryCard[] {
