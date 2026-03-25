@@ -10,6 +10,7 @@ import {
   isCorePattern,
 } from '../data/ar20Patterns';
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const FAMILY_STYLES: Record<
   ArPatternFamily,
@@ -45,6 +46,7 @@ const FAMILY_STYLES: Record<
 const CORE_STEM_COUNT = getStemsForPatternSet(AR_CORE_PATTERN_IDS).length;
 
 export function ArPatternsPage() {
+  usePersistMathStudyCategory('arithmetic-reasoning');
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
   const corePatterns = getCorePatternIds()
     .map((id) => AR_20_PATTERNS.find((p) => p.id === id))

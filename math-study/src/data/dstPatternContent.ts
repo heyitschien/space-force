@@ -27,6 +27,21 @@ export interface DstTestQuestionSolution {
   solutionSteps: string[];
 }
 
+export const DST_INTRO = {
+  headline: 'LEVEL 3 — DISTANCE, SPEED & TIME (MASTER THE 6 PATTERNS)',
+  tagline: 'Motion problems on the ASVAB are pattern recognition first, algebra second.',
+  insight:
+    'Lock in d = vt and the triangle, then match the story to one of six setups: basic motion, separation, catch-up, round-trip average speed, wind/current, or fuel pipeline.',
+  goals: [
+    'Use Distance = Speed × Time (and speed = d/t, time = d/s) with consistent units.',
+    'Opposite directions: add speeds, then multiply by time.',
+    'Catch-up: head start distance, then relative speed (faster − slower).',
+    'Round trip: average speed = total distance ÷ total time (not the average of the two speeds).',
+    'Wind/current: ground speed = still water/air speed ± current.',
+    'Fuel: chain hours × mph → miles → mpg → gallons → price.',
+  ],
+};
+
 export const DST_PATTERN_MAP: Array<{ pattern: number; situation: string; keyTrick: string }> = [
   { pattern: 1, situation: 'Basic Motion', keyTrick: 'multiply' },
   { pattern: 2, situation: 'Opposite Directions', keyTrick: 'add speeds' },

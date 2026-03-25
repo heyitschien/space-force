@@ -1,41 +1,9 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ChevronDown, ChevronRight, X } from 'lucide-react';
-
-interface NavItemLink {
-  id: string;
-  label: string;
-  href: string;
-  comingSoon?: false;
-  isSectionHeader?: false;
-}
-
-interface NavItemPlaceholder {
-  id: string;
-  label: string;
-  href: null;
-  comingSoon: true;
-  isSectionHeader?: false;
-}
-
-interface NavItemSectionHeader {
-  id: string;
-  label: string;
-  isSectionHeader: true;
-}
-
-type NavItem = NavItemLink | NavItemPlaceholder | NavItemSectionHeader;
-
-function isSectionHeader(item: NavItem): item is NavItemSectionHeader {
-  return 'isSectionHeader' in item && item.isSectionHeader === true;
-}
-
-interface NavCategory {
-  id: string;
-  label: string;
-  expanded: boolean;
-  items: NavItem[];
-}
+import type { NavCategory } from '../types/studyNav';
+import { isNavSectionHeader } from '../types/studyNav';
+import { ARITHMETIC_REASONING_NAV_ITEMS } from '../data/arithmeticReasoningNav';
 
 export const CONTENT_CATEGORY_IDS = ['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'] as const;
 
@@ -56,32 +24,7 @@ const CATEGORIES: NavCategory[] = [
     id: 'arithmetic-reasoning',
     label: '2. Arithmetic Reasoning',
     expanded: false,
-    items: [
-      { id: 'ar-section-entry', label: 'Entry', isSectionHeader: true },
-      { id: 'arithmetic-reasoning-overview', label: 'Overview', href: '#arithmetic-reasoning' },
-      { id: 'ar-20-patterns', label: 'AR Patterns', href: '/arithmetic-reasoning/patterns' },
-      { id: 'ar-pattern-drill', label: 'Pattern Drill', href: '/arithmetic-reasoning/pattern-drill' },
-      { id: 'ar-section-l1', label: 'Level 1 (Number mechanics)', isSectionHeader: true },
-      { id: 'ar-order-of-operations', label: 'Order of Operations (PEMDAS)', href: '/arithmetic-reasoning/order-of-operations' },
-      { id: 'ar-decimals', label: 'Decimal Operations', href: '/arithmetic-reasoning/decimals' },
-      { id: 'ar-fractions', label: 'Fractions', href: '/arithmetic-reasoning/fractions' },
-      { id: 'ar-percents', label: 'Percents', href: '/arithmetic-reasoning/percents' },
-      { id: 'ar-unit-conversion', label: 'Unit Conversion', href: '/arithmetic-reasoning/unit-conversion' },
-      { id: 'ar-section-l2', label: 'Level 2 (Ratio thinking)', isSectionHeader: true },
-      { id: 'ar-ratios', label: 'Ratios & Proportions', href: '/arithmetic-reasoning/ratios' },
-      { id: 'ar-rate-multiply', label: 'Rate × Quantity', href: '/arithmetic-reasoning/rate-multiply' },
-      { id: 'ar-averages', label: 'Averages', href: '/arithmetic-reasoning/averages' },
-      { id: 'ar-mixture', label: 'Mixture Problems', href: '/arithmetic-reasoning/mixture' },
-      { id: 'ar-section-l3', label: 'Level 3 (Motion & work)', isSectionHeader: true },
-      { id: 'ar-rate-distance-time', label: 'Distance, Speed & Time', href: '/arithmetic-reasoning/rate-distance-time' },
-      { id: 'ar-work-rate', label: 'Work Rate', href: '/arithmetic-reasoning/work-rate' },
-      { id: 'ar-section-l4', label: 'Level 4 (Word problem)', isSectionHeader: true },
-      { id: 'ar-word-problem-setup', label: 'Word Problem Setup', href: '/arithmetic-reasoning/word-problem-setup' },
-      { id: 'ar-section-l5', label: 'Level 5 (Geometry)', isSectionHeader: true },
-      { id: 'ar-area-volume', label: 'Area & Volume', href: '/arithmetic-reasoning/area-volume' },
-      { id: 'ar-section-l6', label: 'Level 6 (Algebra)', isSectionHeader: true },
-      { id: 'ar-inequalities', label: 'Inequalities', href: '/arithmetic-reasoning/inequalities' },
-    ],
+    items: ARITHMETIC_REASONING_NAV_ITEMS,
   },
   {
     id: 'word-knowledge',
@@ -241,7 +184,7 @@ export function Sidebar({
             {expanded[cat.id] && (
               <div className="mt-0.5 space-y-0.5">
                 {cat.items.map((item) => {
-                  if (isSectionHeader(item)) {
+                  if (isNavSectionHeader(item)) {
                     return (
                       <div
                         key={item.id}

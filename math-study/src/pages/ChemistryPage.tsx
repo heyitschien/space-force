@@ -9,6 +9,7 @@ import { MatterClassificationDiagram } from '../components/diagrams/MatterClassi
 import { ChemicalProcessesDiagram } from '../components/diagrams/ChemicalProcessesDiagram';
 import { CHEMISTRY_FACTS_CARDS, getChemistryFactById } from '../data/chemistryFacts';
 import type { ChemistryTopicId } from '../data/chemistryFacts';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const TABS = [
   { id: 'atomic', label: 'Atomic Structure', section: 'atomic' as const },
@@ -112,6 +113,7 @@ function ContrastStrip() {
 }
 
 export function ChemistryPage() {
+  usePersistMathStudyCategory('general-science');
   const [selectedId, setSelectedId] = useState<ChemistryTopicId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);

@@ -12,6 +12,7 @@ import {
   getEarthScienceFactById,
 } from '../data/earthScienceFacts';
 import type { EarthScienceTopicId } from '../data/earthScienceFacts';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const TABS = [
   { id: 'layers', label: 'Earth Layers', section: 'layers' as const },
@@ -152,6 +153,7 @@ function ContrastStrip({
 }
 
 export function EarthSciencePage() {
+  usePersistMathStudyCategory('general-science');
   const [selectedId, setSelectedId] = useState<EarthScienceTopicId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);

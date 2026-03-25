@@ -8,6 +8,7 @@ import {
   getPatternById,
   getStemsForPatternSet,
 } from '../data/ar20Patterns';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 function shuffle<T>(arr: T[]): T[] {
   const out = [...arr];
@@ -21,6 +22,7 @@ function shuffle<T>(arr: T[]): T[] {
 type DrillMode = 'core' | 'all';
 
 export function PatternRecognitionDrill() {
+  usePersistMathStudyCategory('arithmetic-reasoning');
   const [searchParams, setSearchParams] = useSearchParams();
   const [drillMode, setDrillMode] = useState<DrillMode>(() =>
     searchParams.get('mode') === 'core' ? 'core' : 'all',

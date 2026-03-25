@@ -8,7 +8,8 @@ export type Level1MemoryTopicId =
   | 'unit-conversion'
   | 'ratios'
   | 'rate-multiply'
-  | 'averages';
+  | 'averages'
+  | 'rate-distance-time';
 
 export interface Level1MemoryCard {
   id: string;
@@ -629,6 +630,124 @@ const AVERAGES_MEMORY_DECK: Level1MemoryCard[] = [
   },
 ];
 
+const DST_MEMORY_DECK: Level1MemoryCard[] = [
+  {
+    id: 'dst-mem-001',
+    prompt: 'The core relationship distance, speed, and time uses:',
+    choices: [
+      'Distance = Speed × Time',
+      'Distance = Speed ÷ Time',
+      'Time = Speed × Distance',
+      'Speed = Time × Distance',
+    ],
+    answerIndex: 0,
+    explanation: 'd = vt. Rearrange: speed = distance ÷ time; time = distance ÷ speed.',
+    tags: ['core'],
+  },
+  {
+    id: 'dst-mem-002',
+    prompt: 'Two objects leave the same point and travel in opposite directions. After t hours, distance apart is:',
+    choices: [
+      'The larger speed × t only',
+      '(Speed₁ + Speed₂) × t',
+      '(Speed₁ − Speed₂) × t',
+      'Speed₁ × Speed₂ ÷ t',
+    ],
+    answerIndex: 1,
+    explanation: 'Separation rate is the sum of speeds; multiply by time.',
+    tags: ['pattern'],
+  },
+  {
+    id: 'dst-mem-003',
+    prompt: 'Catch-up problems usually need:',
+    choices: [
+      'Only the slower speed',
+      'Head start distance, then relative speed (faster − slower)',
+      'Adding both speeds only',
+      'Dividing distances only',
+    ],
+    answerIndex: 1,
+    explanation: 'Close the gap at the difference in speeds after you know how far ahead the leader is.',
+    tags: ['pattern'],
+  },
+  {
+    id: 'dst-mem-004',
+    prompt: 'Average speed for a round trip is:',
+    choices: [
+      'The average of the two speeds (going and returning)',
+      'Total distance ÷ total time',
+      'Twice the slower speed',
+      'Half the sum of speeds',
+    ],
+    answerIndex: 1,
+    explanation: 'Always total miles (or km) ÷ total hours — not the mean of the two rates.',
+    tags: ['trap'],
+  },
+  {
+    id: 'dst-mem-005',
+    prompt: 'Boat speed in still water is 18 mph; river current is 3 mph downstream. Downstream ground speed is:',
+    choices: ['15 mph', '18 mph', '21 mph', '54 mph'],
+    answerIndex: 2,
+    explanation: 'With the current: add — 18 + 3 = 21 mph.',
+    tags: ['wind-current'],
+  },
+  {
+    id: 'dst-mem-006',
+    prompt: 'Same boat going upstream against a 3 mph current:',
+    choices: ['21 mph', '18 mph', '15 mph', '6 mph'],
+    answerIndex: 2,
+    explanation: 'Against the current: subtract — 18 − 3 = 15 mph.',
+    tags: ['wind-current'],
+  },
+  {
+    id: 'dst-mem-007',
+    prompt: 'Fuel cost from hours driven usually follows:',
+    choices: [
+      'Hours × price per gallon only',
+      'Hours × mph → miles → miles ÷ mpg → gallons × price',
+      'Mpg × hours only',
+      'Speed ÷ gallons',
+    ],
+    answerIndex: 1,
+    explanation: 'Pipeline: distance first (speed × time), then gallons, then dollars.',
+    tags: ['fuel'],
+  },
+  {
+    id: 'dst-mem-008',
+    prompt: 'Before you multiply speed × time, you should:',
+    choices: [
+      'Round all numbers to tens',
+      'Use compatible units (e.g., miles with mph, not mph with minutes unless you convert)',
+      'Always convert to km',
+      'Ignore time units',
+    ],
+    answerIndex: 1,
+    explanation: 'Mixed units (hours vs minutes, miles vs feet) break the setup — convert first.',
+    tags: ['units'],
+  },
+  {
+    id: 'dst-mem-009',
+    prompt: '30 minutes as a fraction of an hour is:',
+    choices: ['0.3 hr', '0.5 hr', '1/3 hr', '2 hr'],
+    answerIndex: 1,
+    explanation: '30 min = 0.5 hr — common in head-start catch-up problems.',
+    tags: ['drill'],
+  },
+  {
+    id: 'dst-mem-010',
+    prompt: 'If someone leaves 30 minutes early at 45 mph, head start distance is:',
+    choices: [
+      '45 × 30 miles',
+      '45 × 0.5 miles',
+      '45 ÷ 30 miles',
+      '30 ÷ 45 miles',
+    ],
+    answerIndex: 1,
+    explanation: '0.5 hour × 45 mph = 22.5 miles lead.',
+    tags: ['catch-up'],
+  },
+];
+
 export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]> = {
   'order-of-operations': PEMDAS_MEMORY_DECK,
   decimals: DECIMALS_MEMORY_DECK,
@@ -638,6 +757,7 @@ export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]
   ratios: RATIOS_MEMORY_DECK,
   'rate-multiply': RATE_MULTIPLY_MEMORY_DECK,
   averages: AVERAGES_MEMORY_DECK,
+  'rate-distance-time': DST_MEMORY_DECK,
 };
 
 export function getLevel1MemoryDeck(topicId: string): Level1MemoryCard[] {

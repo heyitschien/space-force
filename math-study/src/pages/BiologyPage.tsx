@@ -13,6 +13,7 @@ import {
   BIOLOGY_FACTS_CARDS,
 } from '../data/biologyFacts';
 import type { BiologyTopicId } from '../data/biologyFacts';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const TABS = [
   { id: 'cell', label: 'Cell', section: 'cell' as const },
@@ -96,6 +97,7 @@ function FactInfoPanel({
 }
 
 export function BiologyPage() {
+  usePersistMathStudyCategory('general-science');
   const [selectedId, setSelectedId] = useState<BiologyTopicId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);

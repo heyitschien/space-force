@@ -14,6 +14,7 @@ import {
   getMeasurementPhysicsFactById,
 } from '../data/measurementPhysicsFacts';
 import type { MeasurementPhysicsTopicId } from '../data/measurementPhysicsFacts';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const TABS = [
   { id: 'metrics', label: 'Metric Conversion', section: 'metrics' as const },
@@ -152,6 +153,7 @@ function ContrastStrip({
 }
 
 export function MeasurementPhysicsPage() {
+  usePersistMathStudyCategory('general-science');
   const [selectedId, setSelectedId] = useState<MeasurementPhysicsTopicId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);

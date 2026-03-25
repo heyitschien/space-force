@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Algebra } from './components/topics/Algebra';
@@ -26,19 +26,39 @@ import { MeasurementPhysicsPage } from './pages/MeasurementPhysicsPage';
 import { ArTopicPage } from './components/ArTopicPage';
 import { ArPatternsPage } from './components/ArPatternsPage';
 import { PatternRecognitionDrill } from './components/PatternRecognitionDrill';
+import {
+  MATH_SECTION_IDS_FOR_HASH,
+  readActiveCategory,
+  writeActiveCategory,
+  readMkSection,
+  writeMkSection,
+  categoryFromHash,
+} from './utils/mathStudyNavPersistence';
 
-const MATH_SECTION_IDS = [
-  'algebra',
-  'geometry-2d',
-  'geometry-3d',
-  'exponents-radicals',
-  'factoring',
-  'probability-stats',
-  'units-conversions',
-  'special-topics',
-] as const;
+const MATH_SECTION_IDS = MATH_SECTION_IDS_FOR_HASH;
 
 type ActiveCategory = 'general-science' | 'arithmetic-reasoning' | 'mathematics-knowledge';
+
+function resolveInitialCategory(): ActiveCategory {
+  if (typeof window === 'undefined') return 'general-science';
+  const hash = window.location.hash.slice(1);
+  const fromHash = categoryFromHash(hash);
+  if (fromHash) return fromHash;
+  return readActiveCategory() ?? 'general-science';
+}
+
+function resolveInitialSection(category: ActiveCategory): string {
+  if (category === 'mathematics-knowledge') {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.slice(1);
+      if ((MATH_SECTION_IDS_FOR_HASH as readonly string[]).includes(hash)) return hash;
+    }
+    const s = readMkSection();
+    if (s && (MATH_SECTION_IDS_FOR_HASH as readonly string[]).includes(s)) return s;
+    return 'algebra';
+  }
+  return 'general-science';
+}
 
 const SEARCH_TERMS: Record<string, string[]> = {
   'general-science': [
@@ -130,9 +150,12 @@ export default function App() {
 }
 
 function MathStudyPage() {
+  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('general-science');
-  const [activeSection, setActiveSection] = useState('general-science');
+  const [activeCategory, setActiveCategory] = useState<ActiveCategory>(() => resolveInitialCategory());
+  const [activeSection, setActiveSection] = useState(() =>
+    resolveInitialSection(resolveInitialCategory()),
+  );
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [quizOpen, setQuizOpen] = useState(false);
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
@@ -142,8 +165,14 @@ function MathStudyPage() {
 
   const handleCategorySelect = (categoryId: string, sectionId?: string) => {
     if (!['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'].includes(categoryId)) return;
-    setActiveCategory(categoryId as ActiveCategory);
+    const cat = categoryId as ActiveCategory;
+    setActiveCategory(cat);
+    writeActiveCategory(cat);
     if (sectionId) {
+      if (cat === 'mathematics-knowledge') {
+        writeMkSection(sectionId);
+        setActiveSection(sectionId);
+      }
       setTimeout(() => {
         document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
@@ -151,15 +180,22 @@ function MathStudyPage() {
   };
 
   useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (hash === 'arithmetic-reasoning') {
-      setActiveCategory('arithmetic-reasoning');
-      setTimeout(() => document.getElementById('arithmetic-reasoning')?.scrollIntoView({ behavior: 'smooth' }), 100);
-    } else if (hash && (MATH_SECTION_IDS as readonly string[]).includes(hash)) {
-      setActiveCategory('mathematics-knowledge');
-      setTimeout(() => document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' }), 100);
+    if (location.pathname !== '/') return;
+    const hash = location.hash.slice(1);
+    if (!hash) return;
+    const cat = categoryFromHash(hash);
+    if (!cat) return;
+    setActiveCategory(cat);
+    writeActiveCategory(cat);
+    const scrollTargetId = hash === 'arithmetic-reasoning' ? 'arithmetic-reasoning' : hash;
+    if ((MATH_SECTION_IDS_FOR_HASH as readonly string[]).includes(hash)) {
+      setActiveSection(hash);
+      writeMkSection(hash);
     }
-  }, []);
+    setTimeout(() => {
+      document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     if (activeCategory !== 'mathematics-knowledge') return;
@@ -171,7 +207,10 @@ function MathStudyPage() {
           current = id;
         }
       }
-      if (current) setActiveSection(current);
+      if (current) {
+        setActiveSection(current);
+        writeMkSection(current);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll();

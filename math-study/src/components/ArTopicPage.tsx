@@ -24,6 +24,7 @@ import {
 } from '../data/quiz/arLevel1QuizConfig';
 import { getQuestionsForQuiz } from '../utils/quizSelection';
 import { STRUCTURED_LESSON_CONTENT } from '../data/structuredLessonContent';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 const LEVEL_1_TOPIC_IDS = new Set([
   'order-of-operations',
@@ -35,6 +36,7 @@ const LEVEL_1_TOPIC_IDS = new Set([
 
 export function ArTopicPage() {
   const { topicId } = useParams<{ topicId: string }>();
+  usePersistMathStudyCategory('arithmetic-reasoning');
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
   const [level1QuizId, setLevel1QuizId] = useState<string | null>(null);
   const [expandedQuestionIds, setExpandedQuestionIds] = useState<Set<string>>(new Set());

@@ -6,6 +6,7 @@ import { GeneralScienceTestLauncher } from '../components/GeneralScienceTestLaun
 import { SolarSystem3D } from '../components/diagrams/SolarSystem3D';
 import { getFactById, ASVAB_FACTS_CARDS } from '../data/planetFacts';
 import type { CelestialId } from '../data/planetFacts';
+import { usePersistMathStudyCategory } from '../hooks/usePersistMathStudyCategory';
 
 function PlanetInfoPanel({ selectedId, onClose }: { selectedId: CelestialId | null; onClose: () => void }) {
   if (!selectedId) return null;
@@ -41,6 +42,7 @@ function PlanetInfoPanel({ selectedId, onClose }: { selectedId: CelestialId | nu
 }
 
 export function AstronomyPage() {
+  usePersistMathStudyCategory('general-science');
   const [selectedId, setSelectedId] = useState<CelestialId | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [showFactsGrid, setShowFactsGrid] = useState(false);
