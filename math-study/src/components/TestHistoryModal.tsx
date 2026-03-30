@@ -1,7 +1,11 @@
 import { Clock, X } from 'lucide-react';
-import { getResults, getArResults } from '../utils/testResults';
+import { getResults, getArResults, getWkResults, getPcResults } from '../utils/testResults';
 
-type TestHistorySection = 'general-science' | 'arithmetic-reasoning';
+type TestHistorySection =
+  | 'general-science'
+  | 'arithmetic-reasoning'
+  | 'word-knowledge'
+  | 'paragraph-comprehension';
 
 interface TestHistoryModalProps {
   isOpen: boolean;
@@ -30,11 +34,37 @@ function formatTime(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
+function formatModeLabel(mode: string): string {
+  if (mode === 'mix') return 'Mix';
+  if (mode === 'adaptive') return 'Adaptive';
+  return `Practice Test ${mode.replace('practice-', '')}`;
+}
+
 export function TestHistoryModal({ isOpen, onClose, section = 'general-science' }: TestHistoryModalProps) {
   if (!isOpen) return null;
 
-  const results = section === 'arithmetic-reasoning' ? getArResults() : getResults();
-  const sectionLabel = section === 'arithmetic-reasoning' ? 'Arithmetic Reasoning' : 'General Science';
+  const results =
+    section === 'arithmetic-reasoning'
+      ? getArResults()
+      : section === 'word-knowledge'
+        ? getWkResults()
+        : section === 'paragraph-comprehension'
+          ? getPcResults()
+          : getResults();
+  const sectionLabel =
+    section === 'arithmetic-reasoning'
+      ? 'Arithmetic Reasoning'
+      : section === 'word-knowledge'
+        ? 'Word Knowledge'
+        : section === 'paragraph-comprehension'
+          ? 'Paragraph Comprehension'
+          : 'General Science';
+  const scoreColorClass =
+    section === 'word-knowledge'
+      ? 'text-violet-600'
+      : section === 'paragraph-comprehension'
+        ? 'text-emerald-600'
+        : 'text-indigo-600';
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 p-4">
@@ -61,12 +91,10 @@ export function TestHistoryModal({ isOpen, onClose, section = 'general-science' 
                 >
                   <div>
                     <p className="font-semibold text-slate-800">{formatDate(r.date)}</p>
-                    <p className="text-sm text-slate-500">
-                      {r.mode === 'mix' ? 'Mix' : `Practice Test ${r.mode.replace('practice-', '')}`}
-                    </p>
+                    <p className="text-sm text-slate-500">{formatModeLabel(r.mode)}</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="text-2xl font-black text-indigo-600">{r.percentage}%</span>
+                    <span className={`text-2xl font-black ${scoreColorClass}`}>{r.percentage}%</span>
                     <div className="flex items-center gap-1 text-sm text-slate-500">
                       <Clock className="h-4 w-4" />
                       {formatTime(r.timeUsedSeconds)}

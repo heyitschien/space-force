@@ -1,0 +1,1229 @@
+{
+  "meta": {
+    "section": "Paragraph Comprehension",
+    "timeMinutes": 13,
+    "questionsPerTest": 15,
+    "sources": [
+      "practice-1",
+      "practice-2",
+      "practice-3"
+    ]
+  },
+  "questions": [
+    {
+      "id": "pc-p1-001",
+      "order": 1,
+      "passage": "An important stage of personal time management is to take control of appointments. Determined by external obligation, appointments constitute interaction with other people and an agreed-on interface between your activities and those of others. Start with a simple appointment diary. List all appointments, including regular and recurring ones. Now, be ruthless and eliminate the unnecessary. There may be committees where you can't productively contribute or where a subordinate may be able to participate. Eliminate the waste of your time.",
+      "text": "Effectively managing your appointments allows you to",
+      "options": [
+        {
+          "id": "A",
+          "text": "spend more time with your subordinates."
+        },
+        {
+          "id": "B",
+          "text": "delegate responsibility to subordinates."
+        },
+        {
+          "id": "C",
+          "text": "make more efficient use of your time."
+        },
+        {
+          "id": "D",
+          "text": "attend only the most important meetings."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-002",
+      "order": 2,
+      "passage": "The U.S. Congress consists of 100 senators and 435 representatives. Two senators are elected from each state. The number of representatives from each state is based on population, although each state has at least one representative. Senators serve six-year terms, and representatives serve two-year terms.",
+      "text": "According to this passage,",
+      "options": [
+        {
+          "id": "A",
+          "text": "there are equal numbers of senators and representatives."
+        },
+        {
+          "id": "B",
+          "text": "the number of representatives from each state is decided by a lottery."
+        },
+        {
+          "id": "C",
+          "text": "it's possible for a state to have no representatives."
+        },
+        {
+          "id": "D",
+          "text": "senators and representatives have different term lengths."
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-003",
+      "order": 3,
+      "passage": "Indo-European languages consist of those languages spoken by most of Europe and in those parts of the world that Europeans have colonized since the 16th century (such as the United States). Indo-European languages are also spoken in India, Iran, parts of western Afghanistan, and in some areas of Asia.",
+      "text": "The author of this passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "Indo-European languages are spoken in areas all over the world."
+        },
+        {
+          "id": "B",
+          "text": "Indo-European languages include all the languages spoken in the world."
+        },
+        {
+          "id": "C",
+          "text": "only Europeans speak Indo-European languages."
+        },
+        {
+          "id": "D",
+          "text": "Indo-European language speakers can easily understand one another."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-004",
+      "order": 4,
+      "passage": "In privatization, the government relies on the private sector to provide a service. However, the government divests itself of the entire process, including all assets. With privatized functions, the government may specify quality, quantity, and timeliness requirements, but it has no control over the operations of the activity. Also, the government may not be the only customer. Whoever the government chooses to provide the services would likely provide the same services to others.",
+      "text": "This paragraph best supports the statement that",
+      "options": [
+        {
+          "id": "A",
+          "text": "the government must closely supervise privatized functions."
+        },
+        {
+          "id": "B",
+          "text": "privatized functions consist of a mixture of government employees, military personnel, and private contractors."
+        },
+        {
+          "id": "C",
+          "text": "privatized functions are those institutions that provide services only to a government agency."
+        },
+        {
+          "id": "D",
+          "text": "privatized functions provide essential services to the government."
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pc-p1-005",
+      "order": 5,
+      "passage": "The success or failure of a conference lies largely with its leader. A leader's zest and enthusiasm must be real, apparent, and contagious. The leader is responsible for getting the ball rolling and making the attendees feel as if the meeting is theirs and its success depends on their participation. A good, thorough introduction helps establish the right climate.",
+      "text": "A good title to this paragraph would be",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"Lead by Example.\""
+        },
+        {
+          "id": "B",
+          "text": "\"The Importance of Proper Introductions.\""
+        },
+        {
+          "id": "C",
+          "text": "\"Leading a Successful Conference.\""
+        },
+        {
+          "id": "D",
+          "text": "\"Conference Participation Basics.\""
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-006",
+      "order": 6,
+      "passage": "Cloud seeding is accomplished by dropping particles of dry ice (solid carbon dioxide) from a plane onto super-cooled clouds. This process encourages condensation of water droplets in the clouds, which usually, but not always, results in rain or snow.",
+      "text": "From this passage, it's reasonable to assume that",
+      "options": [
+        {
+          "id": "A",
+          "text": "cloud seeding could be used to end a drought."
+        },
+        {
+          "id": "B",
+          "text": "cloud seeding is prohibitively expensive."
+        },
+        {
+          "id": "C",
+          "text": "cloud seeding is rarely used."
+        },
+        {
+          "id": "D",
+          "text": "cloud seeding can be accomplished by using regular ice."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-007",
+      "order": 7,
+      "passage": "To write or not to write \u2014 that is the question. If assigned a writing task, there's no option. However, if someone is looking for a specific answer, find out if they need a short answer or a detailed one. Can the requirement be met with a telephone call, e-mail, or short note, or is something more necessary? A former CEO of a major corporation once commented that he had looked at 13,000 pieces of paper in a 5-day period. Think how much easier and more economical it would be if people would use the telephone, send an e-mail, or write a short note.",
+      "text": "The main point of this passage is that",
+      "options": [
+        {
+          "id": "A",
+          "text": "written records are important because they provide detailed documentation."
+        },
+        {
+          "id": "B",
+          "text": "more businesspeople should invest time and energy improving their writing skills."
+        },
+        {
+          "id": "C",
+          "text": "writing may not be the best way to communicate information."
+        },
+        {
+          "id": "D",
+          "text": "it's pointless for businesspeople to spend time improving their writing skills."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-008",
+      "order": 8,
+      "passage": "The transistor, a small, solid-state device that can amplify sound, was invented in 1947. At first, it was too expensive and too difficult to produce to be used in cheap, mass-market products. By 1954, though, these cost and production problems had been overcome, and the first transistor radio was put on the market.",
+      "text": "According to this passage,",
+      "options": [
+        {
+          "id": "A",
+          "text": "there was no market for transistors before 1954."
+        },
+        {
+          "id": "B",
+          "text": "when transistors could be produced cheaply and easily, the transistor radio was put on the market."
+        },
+        {
+          "id": "C",
+          "text": "transistors were invented in 1947 by order of the Department of Defense."
+        },
+        {
+          "id": "D",
+          "text": "transistors are still expensive to produce."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-009",
+      "order": 9,
+      "passage": "I returned from the City about three o'clock on that May afternoon pretty well disgusted with life. I had been three months in the Old Country and was fed up with it. If people had told me a year ago that I would've been feeling like that I should've laughed at them; but there was the fact. The weather made me liverish, the talk of the ordinary Englishman made me sick, I couldn't get enough exercise, and the amusements of London seemed as flat as soda water that had been standing in the sun.",
+      "text": "The author is speaking of his travels in",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spain."
+        },
+        {
+          "id": "B",
+          "text": "Great Britain."
+        },
+        {
+          "id": "C",
+          "text": "Germany."
+        },
+        {
+          "id": "D",
+          "text": "Scotland."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-010",
+      "order": 10,
+      "passage": "Surveys show that the average child under the age of 18 watches four hours of television per day. Although some of the programming may be educational, most isn't. Spending this much time watching television interferes with a child's ability to pursue other interests, such as reading, participating in sports, and playing with friends.",
+      "text": "The author of this passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "television viewing should be restricted."
+        },
+        {
+          "id": "B",
+          "text": "parents who let their children watch this much television are neglectful."
+        },
+        {
+          "id": "C",
+          "text": "reading, participating in sports, playing with friends, and watching television should all be given equal time."
+        },
+        {
+          "id": "D",
+          "text": "adults over 18 can watch as much television as they want."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-011",
+      "order": 11,
+      "passage": "High school and college graduates attempting to find jobs should participate in mock job interviews. These mock interviews help students prepare for the types of questions they'll be asked, make them more comfortable with common interview formats, and help them critique their performance before facing a real interviewer. Because they're such a valuable aid, schools should organize mock job interviews for all of their graduating students.",
+      "text": "The above passage states that mock job interviews",
+      "options": [
+        {
+          "id": "A",
+          "text": "frighten students."
+        },
+        {
+          "id": "B",
+          "text": "should be offered to the best students."
+        },
+        {
+          "id": "C",
+          "text": "help prepare students for real job interviews."
+        },
+        {
+          "id": "D",
+          "text": "should be organized by students."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-012",
+      "order": 12,
+      "passage": "High school and college graduates attempting to find jobs should participate in mock job interviews. These mock interviews help students prepare for the types of questions they'll be asked, make them more comfortable with common interview formats, and help them critique their performance before facing a real interviewer. Because they're such a valuable aid, schools should organize mock job interviews for all of their graduating students.",
+      "text": "From the above passage, it is reasonable to assume that",
+      "options": [
+        {
+          "id": "A",
+          "text": "mock interviews can increase a student's confidence when he or she goes into a real job interview."
+        },
+        {
+          "id": "B",
+          "text": "mock interviews are expensive to organize."
+        },
+        {
+          "id": "C",
+          "text": "few students are interested in mock interviews."
+        },
+        {
+          "id": "D",
+          "text": "students don't need job interview preparation."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p1-013",
+      "order": 13,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "According to the above passage, due process",
+      "options": [
+        {
+          "id": "A",
+          "text": "is an outdated concept."
+        },
+        {
+          "id": "B",
+          "text": "guarantees fairness in the justice system."
+        },
+        {
+          "id": "C",
+          "text": "never became part of the U.S. Constitution."
+        },
+        {
+          "id": "D",
+          "text": "is the process by which winning lottery tickets are selected."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p1-014",
+      "order": 14,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "According to the above passage, it's reasonable to assume that the 5th Amendment",
+      "options": [
+        {
+          "id": "A",
+          "text": "is about taxes."
+        },
+        {
+          "id": "B",
+          "text": "guarantees due process in all criminal and civil cases."
+        },
+        {
+          "id": "C",
+          "text": "guarantees due process in federal law."
+        },
+        {
+          "id": "D",
+          "text": "should never have become part of the Bill of Rights."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pc-p1-015",
+      "order": 15,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "The author of the above passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "Without the passage of the 14th Amendment, many laws restricting civil rights would still exist in various states."
+        },
+        {
+          "id": "B",
+          "text": "The Supreme Court overstepped its jurisdiction when it struck down laws infringing on citizens' civil rights."
+        },
+        {
+          "id": "C",
+          "text": "The Supreme Court had every right to strike down state laws before the passage of the 14th Amendment."
+        },
+        {
+          "id": "D",
+          "text": "The 14th Amendment was opposed by all states."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pc-p2-001",
+      "order": 1,
+      "passage": "It is important to have good credit in the world today. Many large purchases are made by borrowing money and paying it back over a set period of time. Several factors should be considered before making a purchase. Is this item a need or a want? Is the item important enough to pay the interest necessary to borrow money? Banks and credit cards charge interest on the money you borrow from them. Interest is based on an Annual Percentage Rate (APR). There are different types of credit that are used. The three most common are installment loans, credit cards, and lines of credit. Once you have credit cards, you need to protect yourself from theft and fraud. You should keep track of your credit cards by making a list of them. Write down account numbers, addresses, and contact phone numbers for each card and store the list in a safe place. If a card is lost or stolen, this information will be vital for contacting the issuer of the card.",
+      "text": "Which of the following is not a typical form of credit?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Credit Card"
+        },
+        {
+          "id": "B",
+          "text": "Line of Credit"
+        },
+        {
+          "id": "C",
+          "text": "Installment Loan"
+        },
+        {
+          "id": "D",
+          "text": "Bank Draft"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-002",
+      "order": 2,
+      "passage": "It is important to have good credit in the world today. Many large purchases are made by borrowing money and paying it back over a set period of time. Several factors should be considered before making a purchase. Is this item a need or a want? Is the item important enough to pay the interest necessary to borrow money? Banks and credit cards charge interest on the money you borrow from them. Interest is based on an Annual Percentage Rate (APR). There are different types of credit that are used. The three most common are installment loans, credit cards, and lines of credit. Once you have credit cards, you need to protect yourself from theft and fraud. You should keep track of your credit cards by making a list of them. Write down account numbers, addresses, and contact phone numbers for each card and store the list in a safe place. If a card is lost or stolen, this information will be vital for contacting the issuer of the card.",
+      "text": "The main idea of this passage is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Credit Cards are risky"
+        },
+        {
+          "id": "B",
+          "text": "Credit Cards are expensive"
+        },
+        {
+          "id": "C",
+          "text": "Good credit is important and requires responsible action by the holder."
+        },
+        {
+          "id": "D",
+          "text": "Once you have credit, you can make large purchases"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-003",
+      "order": 3,
+      "passage": "It is important to have good credit in the world today. Many large purchases are made by borrowing money and paying it back over a set period of time. Several factors should be considered before making a purchase. Is this item a need or a want? Is the item important enough to pay the interest necessary to borrow money? Banks and credit cards charge interest on the money you borrow from them. Interest is based on an Annual Percentage Rate (APR). There are different types of credit that are used. The three most common are installment loans, credit cards, and lines of credit. Once you have credit cards, you need to protect yourself from theft and fraud. You should keep track of your credit cards by making a list of them. Write down account numbers, addresses, and contact phone numbers for each card and store the list in a safe place. If a card is lost or stolen, this information will be vital for contacting the issuer of the card.",
+      "text": "How do banks make money by giving you credit:",
+      "options": [
+        {
+          "id": "A",
+          "text": "They charge interest on the money you borrow"
+        },
+        {
+          "id": "B",
+          "text": "They are backed by the government"
+        },
+        {
+          "id": "C",
+          "text": "Not evident in this passage."
+        },
+        {
+          "id": "D",
+          "text": "Both A & B are correct"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-004",
+      "order": 4,
+      "passage": "When I asked why they had moved to Lexington, Kentucky, the boy, whose name was Tony, explained that their house back in West Virginia had caught fire. Tony's father heard his son, and had walked past by them and acknowledged me. \"Tony was a brave young man that night,\" his father said proudly.",
+      "text": "According to the passage above, how many people are engaged in conversation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One"
+        },
+        {
+          "id": "B",
+          "text": "Two"
+        },
+        {
+          "id": "C",
+          "text": "Three"
+        },
+        {
+          "id": "D",
+          "text": "Four"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-005",
+      "order": 5,
+      "passage": "The torrid flames caused irreparable damage to the furniture and other things in the boys' rooms. But that night we realized just how much we have to be thankful for. Our family was safe, and that's all that really mattered.\"",
+      "text": "The main idea of the passage above is?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Safety is what really matters"
+        },
+        {
+          "id": "B",
+          "text": "The family was poor"
+        },
+        {
+          "id": "C",
+          "text": "There was a fire in the boy's room"
+        },
+        {
+          "id": "D",
+          "text": "The family was religious"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-006",
+      "order": 6,
+      "passage": "We felt a little like spies. My little brother and I had our noses pressed firmly against the window in our front den as we watched our new neighbors unpacking their U-Haul van. The license plate on their SUV passively announced that they had moved from the state of West Virginia. I decided it was my civic duty to welcome them to Lexington, Kentucky!",
+      "text": "According to the passage above, where did the family move from?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ohio"
+        },
+        {
+          "id": "B",
+          "text": "West Virginia"
+        },
+        {
+          "id": "C",
+          "text": "Kentucky"
+        },
+        {
+          "id": "D",
+          "text": "Atlanta"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-007",
+      "order": 7,
+      "passage": "On the 28th day of April in the year 1789, a group of men declared mutiny against their captain and took control of his ship, the HMS Bounty. The captain was William Bligh.",
+      "text": "From the passage above, we can safely infer?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Captain Bligh was a great leader"
+        },
+        {
+          "id": "B",
+          "text": "It was a beautiful spring morning"
+        },
+        {
+          "id": "C",
+          "text": "The men were unhappy with Captain Bligh"
+        },
+        {
+          "id": "D",
+          "text": "HMS stands for His Majesty's Ship"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-008",
+      "order": 8,
+      "passage": "His ship had set sail from England in December of 1787. The plan had been to pick up a cargo of breadfruit saplings in Tahiti and deliver them to the West Indies. After the ten-month journey, Bligh and his crew arrived in Tahiti, where they enjoyed the tropical island paradise for more than five months. Trouble began brewing. Fletcher Christian was his master's mate; he was second in command and had been Bligh's friend. Yet something moved Christian to lead 25 members of Captain Bligh's crew in a mutiny against the captain. On April 28, 1789, Christian took control of the ship and set Bligh and 18 loyal supporters adrift in an overcrowded, 23-foot-long boat, abandoning them in the middle of the Pacific Ocean. And what became of Captain Bligh and his faithful men? Amazingly, they did not drown, starve, or end up lost at sea. Although they were abandoned with little food, no charts, and a broken sextant, Bligh's excellent seafaring skills took them to Timor in the East Indies.",
+      "text": "What was Bligh's position on the boat?",
+      "options": [
+        {
+          "id": "A",
+          "text": "First Mate"
+        },
+        {
+          "id": "B",
+          "text": "Captain"
+        },
+        {
+          "id": "C",
+          "text": "Owner"
+        },
+        {
+          "id": "D",
+          "text": "Chaplin"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-009",
+      "order": 9,
+      "passage": "His ship had set sail from England in December of 1787. The plan had been to pick up a cargo of breadfruit saplings in Tahiti and deliver them to the West Indies. After the ten-month journey, Bligh and his crew arrived in Tahiti, where they enjoyed the tropical island paradise for more than five months. Trouble began brewing. Fletcher Christian was his master's mate; he was second in command and had been Bligh's friend. Yet something moved Christian to lead 25 members of Captain Bligh's crew in a mutiny against the captain. On April 28, 1789, Christian took control of the ship and set Bligh and 18 loyal supporters adrift in an overcrowded, 23-foot-long boat, abandoning them in the middle of the Pacific Ocean. And what became of Captain Bligh and his faithful men? Amazingly, they did not drown, starve, or end up lost at sea. Although they were abandoned with little food, no charts, and a broken sextant, Bligh's excellent seafaring skills took them to Timor in the East Indies.",
+      "text": "How long did it take for the crew to mutiny?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One year"
+        },
+        {
+          "id": "B",
+          "text": "Two Years"
+        },
+        {
+          "id": "C",
+          "text": "16-17 Months"
+        },
+        {
+          "id": "D",
+          "text": "22-24 Months"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-010",
+      "order": 10,
+      "passage": "His ship had set sail from England in December of 1787. The plan had been to pick up a cargo of breadfruit saplings in Tahiti and deliver them to the West Indies. After the ten-month journey, Bligh and his crew arrived in Tahiti, where they enjoyed the tropical island paradise for more than five months. Trouble began brewing. Fletcher Christian was his master's mate; he was second in command and had been Bligh's friend. Yet something moved Christian to lead 25 members of Captain Bligh's crew in a mutiny against the captain. On April 28, 1789, Christian took control of the ship and set Bligh and 18 loyal supporters adrift in an overcrowded, 23-foot-long boat, abandoning them in the middle of the Pacific Ocean. And what became of Captain Bligh and his faithful men? Amazingly, they did not drown, starve, or end up lost at sea. Although they were abandoned with little food, no charts, and a broken sextant, Bligh's excellent seafaring skills took them to Timor in the East Indies.",
+      "text": "How many people can fit into a 23-foot-long boat?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "At least 19"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-011",
+      "order": 11,
+      "passage": "In December of 1941, the Japanese attacked Pearl Harbor. With its Pacific fleet shattered, the U.S. was catapulted into war. President Roosevelt needed a new commander in the Pacific. He chose Chester Nimitz over 28 other men with more seniority.",
+      "text": "According to the passage above, who was President when the Japanese attacked Pearl Harbor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kennedy"
+        },
+        {
+          "id": "B",
+          "text": "Eisenhower"
+        },
+        {
+          "id": "C",
+          "text": "Roosevelt"
+        },
+        {
+          "id": "D",
+          "text": "Nimitz"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-012",
+      "order": 12,
+      "passage": "Admiral Nimitz didn't sound like a man who had 2 million people, 5,000 ships, and 20,000 planes at his command. In fact, he was quite a soft-spoken man. One journalist wrote: \"the Admiral was...the despair of his public relations men; it simply was not in him to make sweeping statements or to give out colorful interviews.\"",
+      "text": "The main idea of the passage above is?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nimitz was a quiet person"
+        },
+        {
+          "id": "B",
+          "text": "The Navy had lots of ships and planes"
+        },
+        {
+          "id": "C",
+          "text": "Nimitz did not like the PR people"
+        },
+        {
+          "id": "D",
+          "text": "Nimitz preferred black and white television"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-013",
+      "order": 13,
+      "passage": "He was born into poverty, yet left the world with one of the most prestigious gifts. Alfred Nobel, inventor of dynamite and creator of the Nobel Prize, was born October 21, 1833. He excelled in his studies and made his parents proud. His father taught him the value of hard work and a good education. Alfred's studies in chemistry led to his greatest invention. He combined the nitroglycerine with gunpowder and created a powerful explosive that many were interested in obtaining. However, the ingredients had to be kept separate and the nitroglycerine was extremely dangerous.",
+      "text": "According to this passage, what did Nobel's father teach him?",
+      "options": [
+        {
+          "id": "A",
+          "text": "explosives"
+        },
+        {
+          "id": "B",
+          "text": "chemistry"
+        },
+        {
+          "id": "C",
+          "text": "the value of hard work"
+        },
+        {
+          "id": "D",
+          "text": "how to make dynamite"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p2-014",
+      "order": 14,
+      "passage": "Pablo Picasso was born Pablo Nepomuceno Crispin Crispiniano de los Remedios Cipriano de la Santisima Trinidad Ruis Picasso. For a person with such a long legal name, Pablo ended up being known by his last name. Picasso is both legend and reality, an eclectic mix of genius and talent in the world of art that few have been able to imitate, much less match. Picasso's style changed a lot over his life, and his most lasting contribution to modern art was the development of a style called Cubism. Picasso had several recognizable artistic periods. The three phases of Cubism were Facet Cubism, Analytic Cubism, and Synthetic Cubism. Picasso's painting, Les Demoiselles d'Avignon, which he painted in 1907, is considered by many to be the first Cubist painting. This piece is now in the Museum of Modern Art in New York. Soon, many painters all over the world took up this style because Picasso started a revolution where the soldiers carried paintbrushes.",
+      "text": "The main idea of this passage is?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Picasso's influence on an artistic style known as cubism"
+        },
+        {
+          "id": "B",
+          "text": "The first cubist painting"
+        },
+        {
+          "id": "C",
+          "text": "Why soldiers carry paint brushes"
+        },
+        {
+          "id": "D",
+          "text": "Picasso had a long name"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p2-015",
+      "order": 15,
+      "passage": "Pablo Picasso was born Pablo Nepomuceno Crispin Crispiniano de los Remedios Cipriano de la Santisima Trinidad Ruis Picasso. For a person with such a long legal name, Pablo ended up being known by his last name. Picasso is both legend and reality, an eclectic mix of genius and talent in the world of art that few have been able to imitate, much less match. Picasso's style changed a lot over his life, and his most lasting contribution to modern art was the development of a style called Cubism. Picasso had several recognizable artistic periods. The three phases of Cubism were Facet Cubism, Analytic Cubism, and Synthetic Cubism. Picasso's painting, Les Demoiselles d'Avignon, which he painted in 1907, is considered by many to be the first Cubist painting. This piece is now in the Museum of Modern Art in New York. Soon, many painters all over the world took up this style because Picasso started a revolution where the soldiers carried paintbrushes.",
+      "text": "Which of the following is not a phase of cubism?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Facet"
+        },
+        {
+          "id": "B",
+          "text": "Autistic"
+        },
+        {
+          "id": "C",
+          "text": "Analytical"
+        },
+        {
+          "id": "D",
+          "text": "Synthetic"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-001",
+      "order": 1,
+      "passage": "An important stage of personal time management is to take control of appointments. Determined by external obligation, appointments constitute interaction with other people and an agreed-on interface between your activities and those of others. Start with a simple appointment diary. List all appointments, including regular and recurring ones. Now, be ruthless and eliminate the unnecessary. There may be committees where you can't productively contribute or where a subordinate may be able to participate. Eliminate the waste of your time.",
+      "text": "Effectively managing your appointments allows you to",
+      "options": [
+        {
+          "id": "A",
+          "text": "spend more time with your subordinates."
+        },
+        {
+          "id": "B",
+          "text": "delegate responsibility to subordinates."
+        },
+        {
+          "id": "C",
+          "text": "make more efficient use of your time."
+        },
+        {
+          "id": "D",
+          "text": "attend only the most important meetings."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-002",
+      "order": 2,
+      "passage": "The U.S. Congress consists of 100 senators and 435 representatives. Two senators are elected from each state. The number of representatives from each state is based on population, although each state has at least one representative. Senators serve six-year terms, and representatives serve two-year terms.",
+      "text": "According to this passage,",
+      "options": [
+        {
+          "id": "A",
+          "text": "there are equal numbers of senators and representatives."
+        },
+        {
+          "id": "B",
+          "text": "the number of representatives from each state is decided by a lottery."
+        },
+        {
+          "id": "C",
+          "text": "it's possible for a state to have no representatives."
+        },
+        {
+          "id": "D",
+          "text": "senators and representatives have different term lengths."
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-003",
+      "order": 3,
+      "passage": "Indo-European languages consist of those languages spoken by most of Europe and in those parts of the world that Europeans have colonized since the 16th century (such as the United States). Indo-European languages are also spoken in India, Iran, parts of western Afghanistan, and in some areas of Asia.",
+      "text": "The author of this passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "Indo-European languages are spoken in areas all over the world."
+        },
+        {
+          "id": "B",
+          "text": "Indo-European languages include all the languages spoken in the world."
+        },
+        {
+          "id": "C",
+          "text": "only Europeans speak Indo-European languages."
+        },
+        {
+          "id": "D",
+          "text": "Indo-European language speakers can easily understand one another."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-004",
+      "order": 4,
+      "passage": "In privatization, the government relies on the private sector to provide a service. However, the government divests itself of the entire process, including all assets. With privatized functions, the government may specify quality, quantity, and timeliness requirements, but it has no control over the operations of the activity. Also, the government may not be the only customer. Whoever the government chooses to provide the services would likely provide the same services to others.",
+      "text": "This paragraph best supports the statement that",
+      "options": [
+        {
+          "id": "A",
+          "text": "the government must closely supervise privatized functions."
+        },
+        {
+          "id": "B",
+          "text": "privatized functions consist of a mixture of government employees, military personnel, and private contractors."
+        },
+        {
+          "id": "C",
+          "text": "privatized functions are those institutions that provide services only to a government agency."
+        },
+        {
+          "id": "D",
+          "text": "privatized functions provide essential services to the government."
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pc-p3-005",
+      "order": 5,
+      "passage": "The success or failure of a conference lies largely with its leader. A leader's zest and enthusiasm must be real, apparent, and contagious. The leader is responsible for getting the ball rolling and making the attendees feel as if the meeting is theirs and its success depends on their participation. A good, thorough introduction helps establish the right climate.",
+      "text": "A good title to this paragraph would be",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"Lead by Example.\""
+        },
+        {
+          "id": "B",
+          "text": "\"The Importance of Proper Introductions.\""
+        },
+        {
+          "id": "C",
+          "text": "\"Leading a Successful Conference.\""
+        },
+        {
+          "id": "D",
+          "text": "\"Conference Participation Basics.\""
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-006",
+      "order": 6,
+      "passage": "Cloud seeding is accomplished by dropping particles of dry ice (solid carbon dioxide) from a plane onto super-cooled clouds. This process encourages condensation of water droplets in the clouds, which usually, but not always, results in rain or snow.",
+      "text": "From this passage, it's reasonable to assume that",
+      "options": [
+        {
+          "id": "A",
+          "text": "cloud seeding could be used to end a drought."
+        },
+        {
+          "id": "B",
+          "text": "cloud seeding is prohibitively expensive."
+        },
+        {
+          "id": "C",
+          "text": "cloud seeding is rarely used."
+        },
+        {
+          "id": "D",
+          "text": "cloud seeding can be accomplished by using regular ice."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-007",
+      "order": 7,
+      "passage": "To write or not to write \u2014 that is the question. If assigned a writing task, there's no option. However, if someone is looking for a specific answer, find out if they need a short answer or a detailed one. Can the requirement be met with a telephone call, e-mail, or short note, or is something more necessary? A former CEO of a major corporation once commented that he had looked at 13,000 pieces of paper in a 5-day period. Think how much easier and more economical it would be if people would use the telephone, send an e-mail, or write a short note.",
+      "text": "The main point of this passage is that",
+      "options": [
+        {
+          "id": "A",
+          "text": "written records are important because they provide detailed documentation."
+        },
+        {
+          "id": "B",
+          "text": "more businesspeople should invest time and energy improving their writing skills."
+        },
+        {
+          "id": "C",
+          "text": "writing may not be the best way to communicate information."
+        },
+        {
+          "id": "D",
+          "text": "it's pointless for businesspeople to spend time improving their writing skills."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-008",
+      "order": 8,
+      "passage": "The transistor, a small, solid-state device that can amplify sound, was invented in 1947. At first, it was too expensive and too difficult to produce to be used in cheap, mass-market products. By 1954, though, these cost and production problems had been overcome, and the first transistor radio was put on the market.",
+      "text": "According to this passage,",
+      "options": [
+        {
+          "id": "A",
+          "text": "there was no market for transistors before 1954."
+        },
+        {
+          "id": "B",
+          "text": "when transistors could be produced cheaply and easily, the transistor radio was put on the market."
+        },
+        {
+          "id": "C",
+          "text": "transistors were invented in 1947 by order of the Department of Defense."
+        },
+        {
+          "id": "D",
+          "text": "transistors are still expensive to produce."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-009",
+      "order": 9,
+      "passage": "I returned from the City about three o'clock on that May afternoon pretty well disgusted with life. I had been three months in the Old Country and was fed up with it. If people had told me a year ago that I would've been feeling like that I should've laughed at them; but there was the fact. The weather made me liverish, the talk of the ordinary Englishman made me sick, I couldn't get enough exercise, and the amusements of London seemed as flat as soda water that had been standing in the sun.",
+      "text": "The author is speaking of his travels in",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spain."
+        },
+        {
+          "id": "B",
+          "text": "Great Britain."
+        },
+        {
+          "id": "C",
+          "text": "Germany."
+        },
+        {
+          "id": "D",
+          "text": "Scotland."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-010",
+      "order": 10,
+      "passage": "Surveys show that the average child under the age of 18 watches four hours of television per day. Although some of the programming may be educational, most isn't. Spending this much time watching television interferes with a child's ability to pursue other interests, such as reading, participating in sports, and playing with friends.",
+      "text": "The author of this passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "television viewing should be restricted."
+        },
+        {
+          "id": "B",
+          "text": "parents who let their children watch this much television are neglectful."
+        },
+        {
+          "id": "C",
+          "text": "reading, participating in sports, playing with friends, and watching television should all be given equal time."
+        },
+        {
+          "id": "D",
+          "text": "adults over 18 can watch as much television as they want."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-011",
+      "order": 11,
+      "passage": "High school and college graduates attempting to find jobs should participate in mock job interviews. These mock interviews help students prepare for the types of questions they'll be asked, make them more comfortable with common interview formats, and help them critique their performance before facing a real interviewer. Because they're such a valuable aid, schools should organize mock job interviews for all of their graduating students.",
+      "text": "The above passage states that mock job interviews",
+      "options": [
+        {
+          "id": "A",
+          "text": "frighten students."
+        },
+        {
+          "id": "B",
+          "text": "should be offered to the best students."
+        },
+        {
+          "id": "C",
+          "text": "help prepare students for real job interviews."
+        },
+        {
+          "id": "D",
+          "text": "should be organized by students."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-012",
+      "order": 12,
+      "passage": "High school and college graduates attempting to find jobs should participate in mock job interviews. These mock interviews help students prepare for the types of questions they'll be asked, make them more comfortable with common interview formats, and help them critique their performance before facing a real interviewer. Because they're such a valuable aid, schools should organize mock job interviews for all of their graduating students.",
+      "text": "From the above passage, it is reasonable to assume that",
+      "options": [
+        {
+          "id": "A",
+          "text": "mock interviews can increase a student's confidence when he or she goes into a real job interview."
+        },
+        {
+          "id": "B",
+          "text": "mock interviews are expensive to organize."
+        },
+        {
+          "id": "C",
+          "text": "few students are interested in mock interviews."
+        },
+        {
+          "id": "D",
+          "text": "students don't need job interview preparation."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pc-p3-013",
+      "order": 13,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "According to the above passage, due process",
+      "options": [
+        {
+          "id": "A",
+          "text": "is an outdated concept."
+        },
+        {
+          "id": "B",
+          "text": "guarantees fairness in the justice system."
+        },
+        {
+          "id": "C",
+          "text": "never became part of the U.S. Constitution."
+        },
+        {
+          "id": "D",
+          "text": "is the process by which winning lottery tickets are selected."
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pc-p3-014",
+      "order": 14,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "According to the above passage, it's reasonable to assume that the 5th Amendment",
+      "options": [
+        {
+          "id": "A",
+          "text": "is about taxes."
+        },
+        {
+          "id": "B",
+          "text": "guarantees due process in all criminal and civil cases."
+        },
+        {
+          "id": "C",
+          "text": "guarantees due process in federal law."
+        },
+        {
+          "id": "D",
+          "text": "should never have become part of the Bill of Rights."
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pc-p3-015",
+      "order": 15,
+      "passage": "Due process, the guarantee of fairness in the administration of justice, is part of the 5th Amendment to the U.S. Constitution. The 14th Amendment further requires states to abide by due process. After this amendment was enacted, the U.S. Supreme Court struck down many state laws that infringed on the civil rights guaranteed to citizens in the Bill of Rights.",
+      "text": "The author of the above passage would agree that",
+      "options": [
+        {
+          "id": "A",
+          "text": "Without the passage of the 14th Amendment, many laws restricting civil rights would still exist in various states."
+        },
+        {
+          "id": "B",
+          "text": "The Supreme Court overstepped its jurisdiction when it struck down laws infringing on citizens' civil rights."
+        },
+        {
+          "id": "C",
+          "text": "The Supreme Court had every right to strike down state laws before the passage of the 14th Amendment."
+        },
+        {
+          "id": "D",
+          "text": "The 14th Amendment was opposed by all states."
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "hard"
+    }
+  ]
+}

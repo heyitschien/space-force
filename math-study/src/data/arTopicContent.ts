@@ -380,11 +380,12 @@ export const AR_TOPICS: ArTopic[] = [
   {
     id: 'work-rate',
     title: 'Work Rate',
-    description: 'Jobs per hour; combined rates when workers or pipes work together.',
+    description:
+      'Jobs per hour (rate = 1 ÷ time alone); add rates when crews or pipes work together, subtract drains, handle multi-phase stories like distance = speed × time.',
     principles: [
       'rate = 1 ÷ time to complete job',
-      'combined rate = sum of individual rates',
-      'time = 1 ÷ combined rate',
+      'combined rate = sum of individual rates (subtract opposing drains)',
+      'time = (job left) ÷ relevant combined rate',
     ],
     rules: [
       'One worker in 6 hours: rate = 1/6 job per hour.',
@@ -392,17 +393,20 @@ export const AR_TOPICS: ArTopic[] = [
       'For pipes: Pipe A fills in 4 hr (rate 1/4), Pipe B in 6 hr (rate 1/6). Together: 1/4 + 1/6 = 5/12 → 12/5 hr.',
     ],
     simpleExample: {
-      problem: '1 worker finishes in 6 hours. How long with 2 workers?',
-      solution: 'Rate = 1/6 per hour. 2 workers: 2/6 = 1/3 per hour. Time = 1 ÷ (1/3) = 3 hours.',
-      shortcut: 'Double workers → half the time. ~20 sec.',
+      problem:
+        'One soldier can dig a trench in 6 hours at a steady rate. Two soldiers dig at that same individual speed and work together. How many hours will they need to dig one trench?',
+      solution: 'Rate = 1/6 per hour each. 2 soldiers: 2/6 = 1/3 per hour. Time = 1 ÷ (1/3) = 3 hours.',
+      shortcut: 'Same skill → double crew ≈ half the time. ~20 sec.',
     },
     practiceProblems: [
       {
-        problem: 'Pipe A fills tank in 4 hr, Pipe B in 6 hr. How long together?',
+        problem:
+          'A tank has two inlet pipes: Pipe A could fill the empty tank in 4 hours alone, Pipe B in 6 hours alone. Both are opened together from empty. How many hours to fill the tank?',
         solution: '1/4 + 1/6 = 5/12. Time = 12/5 = 2.4 hours.',
       },
       {
-        problem: '3 workers complete a job in 8 hours. How long for 1 worker?',
+        problem:
+          'Three loaders, all equally fast, can move a shipment in 8 hours working together. How many hours would one loader need for the same shipment alone?',
         solution: 'Combined rate = 1/8. One worker = 1/24. Time = 24 hours.',
       },
     ],

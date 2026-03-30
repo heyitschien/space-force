@@ -4,6 +4,8 @@ import { ClipboardList, History, Lightbulb, FileText } from 'lucide-react';
 interface PracticeMenuProps {
   onGeneralScienceTest: () => void;
   onArithmeticReasoningTest: () => void;
+  onWordKnowledgeTest: () => void;
+  onParagraphComprehensionTest: () => void;
   onMathPracticeTest: () => void;
   onPracticeQuestion: () => void;
   onTestHistory: () => void;
@@ -12,6 +14,8 @@ interface PracticeMenuProps {
 export function PracticeMenu({
   onGeneralScienceTest,
   onArithmeticReasoningTest,
+  onWordKnowledgeTest,
+  onParagraphComprehensionTest,
   onMathPracticeTest,
   onPracticeQuestion,
   onTestHistory,
@@ -80,6 +84,36 @@ export function PracticeMenu({
               <div>
                 <p className="font-semibold text-slate-800">Arithmetic Reasoning Test</p>
                 <p className="text-xs text-slate-500">30 questions, 36 min</p>
+              </div>
+            </button>
+            <button
+              onClick={() => {
+                onWordKnowledgeTest();
+                setOpen(false);
+              }}
+              className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left transition-colors hover:bg-violet-50"
+            >
+              <div className="rounded-lg bg-violet-100 p-2">
+                <FileText className="h-5 w-5 text-violet-600" />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-800">Word Knowledge Test</p>
+                <p className="text-xs text-slate-500">Up to 35 questions, 11 min</p>
+              </div>
+            </button>
+            <button
+              onClick={() => {
+                onParagraphComprehensionTest();
+                setOpen(false);
+              }}
+              className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left transition-colors hover:bg-emerald-50"
+            >
+              <div className="rounded-lg bg-emerald-100 p-2">
+                <FileText className="h-5 w-5 text-emerald-700" />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-800">Paragraph Comprehension Test</p>
+                <p className="text-xs text-slate-500">15 questions, 13 min</p>
               </div>
             </button>
             <button

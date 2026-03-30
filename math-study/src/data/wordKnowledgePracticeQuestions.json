@@ -1,0 +1,2744 @@
+{
+  "meta": {
+    "section": "Word Knowledge",
+    "timeMinutes": 11,
+    "questionsPerTest": 35,
+    "sources": [
+      "practice-1",
+      "practice-2",
+      "practice-3"
+    ]
+  },
+  "questions": [
+    {
+      "id": "wk-p1-001",
+      "order": 1,
+      "text": "Tim promised to meet us at the apex.",
+      "options": [
+        {
+          "id": "A",
+          "text": "top"
+        },
+        {
+          "id": "B",
+          "text": "bottom"
+        },
+        {
+          "id": "C",
+          "text": "canyon"
+        },
+        {
+          "id": "D",
+          "text": "river"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-002",
+      "order": 2,
+      "text": "Assimilate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "absorb"
+        },
+        {
+          "id": "B",
+          "text": "react"
+        },
+        {
+          "id": "C",
+          "text": "pretend"
+        },
+        {
+          "id": "D",
+          "text": "lie"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-003",
+      "order": 3,
+      "text": "Brittle most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "soft"
+        },
+        {
+          "id": "B",
+          "text": "fragile"
+        },
+        {
+          "id": "C",
+          "text": "study"
+        },
+        {
+          "id": "D",
+          "text": "hard"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-004",
+      "order": 4,
+      "text": "Datum most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "fiscal year date"
+        },
+        {
+          "id": "B",
+          "text": "congruence"
+        },
+        {
+          "id": "C",
+          "text": "fact"
+        },
+        {
+          "id": "D",
+          "text": "positive result"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-005",
+      "order": 5,
+      "text": "The exchange student was proficient in French, German, and English.",
+      "options": [
+        {
+          "id": "A",
+          "text": "poor"
+        },
+        {
+          "id": "B",
+          "text": "knowledgeable"
+        },
+        {
+          "id": "C",
+          "text": "adept"
+        },
+        {
+          "id": "D",
+          "text": "exacting"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-006",
+      "order": 6,
+      "text": "The judge imposed a severe penalty due to Tom's actions.",
+      "options": [
+        {
+          "id": "A",
+          "text": "scheduled"
+        },
+        {
+          "id": "B",
+          "text": "made an example of"
+        },
+        {
+          "id": "C",
+          "text": "levied"
+        },
+        {
+          "id": "D",
+          "text": "questioned"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-007",
+      "order": 7,
+      "text": "Mary went to the store and bought peanuts galore.",
+      "options": [
+        {
+          "id": "A",
+          "text": "abundant"
+        },
+        {
+          "id": "B",
+          "text": "salty"
+        },
+        {
+          "id": "C",
+          "text": "on sale"
+        },
+        {
+          "id": "D",
+          "text": "roasted"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-008",
+      "order": 8,
+      "text": "He ran headlong into the fight.",
+      "options": [
+        {
+          "id": "A",
+          "text": "headfirst"
+        },
+        {
+          "id": "B",
+          "text": "reluctantly"
+        },
+        {
+          "id": "C",
+          "text": "happily"
+        },
+        {
+          "id": "D",
+          "text": "recklessly"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-009",
+      "order": 9,
+      "text": "Frugal most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "quiet"
+        },
+        {
+          "id": "B",
+          "text": "amazing"
+        },
+        {
+          "id": "C",
+          "text": "delayed"
+        },
+        {
+          "id": "D",
+          "text": "economical"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-010",
+      "order": 10,
+      "text": "The word most opposite in meaning to stimulate is",
+      "options": [
+        {
+          "id": "A",
+          "text": "support"
+        },
+        {
+          "id": "B",
+          "text": "arrest"
+        },
+        {
+          "id": "C",
+          "text": "travel"
+        },
+        {
+          "id": "D",
+          "text": "dislike"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-011",
+      "order": 11,
+      "text": "Licit most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "historical"
+        },
+        {
+          "id": "B",
+          "text": "lawful"
+        },
+        {
+          "id": "C",
+          "text": "storied"
+        },
+        {
+          "id": "D",
+          "text": "willfully"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-012",
+      "order": 12,
+      "text": "Vacate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "crawl"
+        },
+        {
+          "id": "B",
+          "text": "impel"
+        },
+        {
+          "id": "C",
+          "text": "exhume"
+        },
+        {
+          "id": "D",
+          "text": "leave"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-013",
+      "order": 13,
+      "text": "The sergeant gave his reasoned opinion.",
+      "options": [
+        {
+          "id": "A",
+          "text": "irate"
+        },
+        {
+          "id": "B",
+          "text": "logical"
+        },
+        {
+          "id": "C",
+          "text": "impressive"
+        },
+        {
+          "id": "D",
+          "text": "uninformed"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-014",
+      "order": 14,
+      "text": "Tacit most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "loud"
+        },
+        {
+          "id": "B",
+          "text": "understood"
+        },
+        {
+          "id": "C",
+          "text": "commendable"
+        },
+        {
+          "id": "D",
+          "text": "transparent"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-015",
+      "order": 15,
+      "text": "The brass was not burnished.",
+      "options": [
+        {
+          "id": "A",
+          "text": "yellow"
+        },
+        {
+          "id": "B",
+          "text": "dull"
+        },
+        {
+          "id": "C",
+          "text": "expensive"
+        },
+        {
+          "id": "D",
+          "text": "polished"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-016",
+      "order": 16,
+      "text": "The commodity was sold.",
+      "options": [
+        {
+          "id": "A",
+          "text": "product"
+        },
+        {
+          "id": "B",
+          "text": "stock"
+        },
+        {
+          "id": "C",
+          "text": "idea"
+        },
+        {
+          "id": "D",
+          "text": "table"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-017",
+      "order": 17,
+      "text": "Her motives were contrived.",
+      "options": [
+        {
+          "id": "A",
+          "text": "premeditated"
+        },
+        {
+          "id": "B",
+          "text": "emotional"
+        },
+        {
+          "id": "C",
+          "text": "obscure"
+        },
+        {
+          "id": "D",
+          "text": "amusing"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-018",
+      "order": 18,
+      "text": "Supplicate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "make superior"
+        },
+        {
+          "id": "B",
+          "text": "to be unnecessary"
+        },
+        {
+          "id": "C",
+          "text": "to beg"
+        },
+        {
+          "id": "D",
+          "text": "to be expansive"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-019",
+      "order": 19,
+      "text": "The word most opposite in meaning to hypocrisy is",
+      "options": [
+        {
+          "id": "A",
+          "text": "honesty"
+        },
+        {
+          "id": "B",
+          "text": "happy"
+        },
+        {
+          "id": "C",
+          "text": "angry"
+        },
+        {
+          "id": "D",
+          "text": "threatening"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-020",
+      "order": 20,
+      "text": "Bob found the peaches to be extremely succulent.",
+      "options": [
+        {
+          "id": "A",
+          "text": "large"
+        },
+        {
+          "id": "B",
+          "text": "tasteless"
+        },
+        {
+          "id": "C",
+          "text": "old"
+        },
+        {
+          "id": "D",
+          "text": "juicy"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-021",
+      "order": 21,
+      "text": "The Army soldiers were ordered to immediate garrison duty.",
+      "options": [
+        {
+          "id": "A",
+          "text": "field"
+        },
+        {
+          "id": "B",
+          "text": "combat"
+        },
+        {
+          "id": "C",
+          "text": "latrine"
+        },
+        {
+          "id": "D",
+          "text": "fort"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-022",
+      "order": 22,
+      "text": "Furtherance most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "advancement"
+        },
+        {
+          "id": "B",
+          "text": "finance"
+        },
+        {
+          "id": "C",
+          "text": "practicality"
+        },
+        {
+          "id": "D",
+          "text": "destruction"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-023",
+      "order": 23,
+      "text": "Domicile most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "office"
+        },
+        {
+          "id": "B",
+          "text": "shopping"
+        },
+        {
+          "id": "C",
+          "text": "home"
+        },
+        {
+          "id": "D",
+          "text": "vacation"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-024",
+      "order": 24,
+      "text": "Abrogate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "recover"
+        },
+        {
+          "id": "B",
+          "text": "aid"
+        },
+        {
+          "id": "C",
+          "text": "foreclose"
+        },
+        {
+          "id": "D",
+          "text": "abolish"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-025",
+      "order": 25,
+      "text": "Compensation most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "punishment"
+        },
+        {
+          "id": "B",
+          "text": "payment for work or loss"
+        },
+        {
+          "id": "C",
+          "text": "refusal"
+        },
+        {
+          "id": "D",
+          "text": "jealousy"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-026",
+      "order": 26,
+      "text": "He gave a brusque account of the events.",
+      "options": [
+        {
+          "id": "A",
+          "text": "passionate"
+        },
+        {
+          "id": "B",
+          "text": "lengthy"
+        },
+        {
+          "id": "C",
+          "text": "uncensored"
+        },
+        {
+          "id": "D",
+          "text": "concise"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-027",
+      "order": 27,
+      "text": "The vote resulted in the demise of the proposed new law.",
+      "options": [
+        {
+          "id": "A",
+          "text": "passage"
+        },
+        {
+          "id": "B",
+          "text": "death"
+        },
+        {
+          "id": "C",
+          "text": "postponement"
+        },
+        {
+          "id": "D",
+          "text": "abatement"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-028",
+      "order": 28,
+      "text": "We commemorated our veterans during the ceremony.",
+      "options": [
+        {
+          "id": "A",
+          "text": "denied"
+        },
+        {
+          "id": "B",
+          "text": "remembered"
+        },
+        {
+          "id": "C",
+          "text": "thanked"
+        },
+        {
+          "id": "D",
+          "text": "took pictures of"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-029",
+      "order": 29,
+      "text": "Bore most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "deepen"
+        },
+        {
+          "id": "B",
+          "text": "hide"
+        },
+        {
+          "id": "C",
+          "text": "burrow"
+        },
+        {
+          "id": "D",
+          "text": "jump"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-030",
+      "order": 30,
+      "text": "That custom still prevails.",
+      "options": [
+        {
+          "id": "A",
+          "text": "angers"
+        },
+        {
+          "id": "B",
+          "text": "persists"
+        },
+        {
+          "id": "C",
+          "text": "surprises"
+        },
+        {
+          "id": "D",
+          "text": "excites"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-031",
+      "order": 31,
+      "text": "Defray most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "invade"
+        },
+        {
+          "id": "B",
+          "text": "obstruct"
+        },
+        {
+          "id": "C",
+          "text": "pay"
+        },
+        {
+          "id": "D",
+          "text": "reverse"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p1-032",
+      "order": 32,
+      "text": "Chasm most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "abyss"
+        },
+        {
+          "id": "B",
+          "text": "sky"
+        },
+        {
+          "id": "C",
+          "text": "mountain"
+        },
+        {
+          "id": "D",
+          "text": "valley"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-033",
+      "order": 33,
+      "text": "Fundamental most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "radical"
+        },
+        {
+          "id": "B",
+          "text": "religious"
+        },
+        {
+          "id": "C",
+          "text": "basic"
+        },
+        {
+          "id": "D",
+          "text": "excessive"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p1-034",
+      "order": 34,
+      "text": "Susceptible most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "travel"
+        },
+        {
+          "id": "B",
+          "text": "resistant"
+        },
+        {
+          "id": "C",
+          "text": "limited"
+        },
+        {
+          "id": "D",
+          "text": "vulnerable"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-1",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p1-035",
+      "order": 35,
+      "text": "Emblem most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "symbol"
+        },
+        {
+          "id": "B",
+          "text": "picture"
+        },
+        {
+          "id": "C",
+          "text": "statue"
+        },
+        {
+          "id": "D",
+          "text": "religion"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-1",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-001",
+      "order": 1,
+      "text": "Cycle most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "An interval during which a recurring sequence of events occurs."
+        },
+        {
+          "id": "B",
+          "text": "Preceding"
+        },
+        {
+          "id": "C",
+          "text": "Of surpassing excellence."
+        },
+        {
+          "id": "D",
+          "text": "a warm ocean current"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-002",
+      "order": 2,
+      "text": "Erratic most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Military expeditions made by Christian Europeans against Muslims"
+        },
+        {
+          "id": "B",
+          "text": "Directly and without evasion"
+        },
+        {
+          "id": "C",
+          "text": "Likely to perform unpredictably"
+        },
+        {
+          "id": "D",
+          "text": "Head strong"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-003",
+      "order": 3,
+      "text": "Fanatic most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Likely to fail or be inaccurate"
+        },
+        {
+          "id": "B",
+          "text": "Physically weak"
+        },
+        {
+          "id": "C",
+          "text": "Lacking strength or vigor"
+        },
+        {
+          "id": "D",
+          "text": "Marked by excessive enthusiasm for and intense devotion to a cause or idea"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-004",
+      "order": 4,
+      "text": "Benefit most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Wander from a straight course"
+        },
+        {
+          "id": "B",
+          "text": "Expel from a place"
+        },
+        {
+          "id": "C",
+          "text": "Extremely delicate"
+        },
+        {
+          "id": "D",
+          "text": "Something that aids or promotes wellbeing"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-005",
+      "order": 5,
+      "text": "Fallible most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Not based on fact; dubious"
+        },
+        {
+          "id": "B",
+          "text": "Likely to fail or be inaccurate"
+        },
+        {
+          "id": "C",
+          "text": "Another way of doing something"
+        },
+        {
+          "id": "D",
+          "text": "Refrain from voting"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-006",
+      "order": 6,
+      "text": "Atone most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Realize beforehand"
+        },
+        {
+          "id": "B",
+          "text": "Make amends for"
+        },
+        {
+          "id": "C",
+          "text": "Full of love and generosity"
+        },
+        {
+          "id": "D",
+          "text": "Run away"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-007",
+      "order": 7,
+      "text": "Frail most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Destroy completely"
+        },
+        {
+          "id": "B",
+          "text": "Physically weak"
+        },
+        {
+          "id": "C",
+          "text": "Full of love and generosity"
+        },
+        {
+          "id": "D",
+          "text": "Make sense of; assign a meaning to"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-008",
+      "order": 8,
+      "text": "Interpret most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Preceding"
+        },
+        {
+          "id": "B",
+          "text": "Assign a meaning to"
+        },
+        {
+          "id": "C",
+          "text": "Put out or expel from a place"
+        },
+        {
+          "id": "D",
+          "text": "Likely to fail or be inaccurate"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-009",
+      "order": 9,
+      "text": "Feeble most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Of surpassing excellence"
+        },
+        {
+          "id": "B",
+          "text": "Not based on fact; dubious"
+        },
+        {
+          "id": "C",
+          "text": "Change the nature of something"
+        },
+        {
+          "id": "D",
+          "text": "Lacking strength or vigor"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-010",
+      "order": 10,
+      "text": "Charitable most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use up resources"
+        },
+        {
+          "id": "B",
+          "text": "Full of love and generosity"
+        },
+        {
+          "id": "C",
+          "text": "A military expedition"
+        },
+        {
+          "id": "D",
+          "text": "A dictator"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-011",
+      "order": 11,
+      "text": "Devour most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Refrain from voting"
+        },
+        {
+          "id": "B",
+          "text": "Ill-mannered"
+        },
+        {
+          "id": "C",
+          "text": "A recurring sequence of events"
+        },
+        {
+          "id": "D",
+          "text": "Destroy completely"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-012",
+      "order": 12,
+      "text": "Coffer most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "A chest especially for storing valuables"
+        },
+        {
+          "id": "B",
+          "text": "Use up resources"
+        },
+        {
+          "id": "C",
+          "text": "Vulnerably delicate"
+        },
+        {
+          "id": "D",
+          "text": "Pronounce not guilty of criminal charges"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-013",
+      "order": 13,
+      "text": "Mundane most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "A group of islands"
+        },
+        {
+          "id": "B",
+          "text": "On the point of death"
+        },
+        {
+          "id": "C",
+          "text": "Boring"
+        },
+        {
+          "id": "D",
+          "text": "Question thoroughly"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-014",
+      "order": 14,
+      "text": "Convert most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Of surpassing excellence"
+        },
+        {
+          "id": "B",
+          "text": "Make sense of; assign a meaning to"
+        },
+        {
+          "id": "C",
+          "text": "Change the nature, purpose, or function of something"
+        },
+        {
+          "id": "D",
+          "text": "Lacking strength or vigor"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-015",
+      "order": 15,
+      "text": "Alternative most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Make sense of; assign meaning"
+        },
+        {
+          "id": "B",
+          "text": "Physically weak"
+        },
+        {
+          "id": "C",
+          "text": "A dictatorial person"
+        },
+        {
+          "id": "D",
+          "text": "Another way of doing something"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-016",
+      "order": 16,
+      "text": "Commend most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Express approval of"
+        },
+        {
+          "id": "B",
+          "text": "An interval of recurring events"
+        },
+        {
+          "id": "C",
+          "text": "Likely to perform unpredictably"
+        },
+        {
+          "id": "D",
+          "text": "Not based on fact"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-017",
+      "order": 17,
+      "text": "Fragile most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Delicate"
+        },
+        {
+          "id": "B",
+          "text": "Directly and without evasion"
+        },
+        {
+          "id": "C",
+          "text": "Refrain from voting"
+        },
+        {
+          "id": "D",
+          "text": "Ill-mannered"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-018",
+      "order": 18,
+      "text": "Consume most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Promote"
+        },
+        {
+          "id": "B",
+          "text": "Unpredictable"
+        },
+        {
+          "id": "C",
+          "text": "Direct"
+        },
+        {
+          "id": "D",
+          "text": "Use up"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-019",
+      "order": 19,
+      "text": "Abstain most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Devoted"
+        },
+        {
+          "id": "B",
+          "text": "Refrain"
+        },
+        {
+          "id": "C",
+          "text": "Realize"
+        },
+        {
+          "id": "D",
+          "text": "Transform"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-020",
+      "order": 20,
+      "text": "Forthright most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Evade"
+        },
+        {
+          "id": "B",
+          "text": "Apprehend"
+        },
+        {
+          "id": "C",
+          "text": "Direct"
+        },
+        {
+          "id": "D",
+          "text": "Important"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-021",
+      "order": 21,
+      "text": "Anticipate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apologize"
+        },
+        {
+          "id": "B",
+          "text": "Realize beforehand"
+        },
+        {
+          "id": "C",
+          "text": "Dilatory"
+        },
+        {
+          "id": "D",
+          "text": "Alternative"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-022",
+      "order": 22,
+      "text": "Brilliant most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "A warm ocean current"
+        },
+        {
+          "id": "B",
+          "text": "A dictatorial person"
+        },
+        {
+          "id": "C",
+          "text": "Of surpassing excellence"
+        },
+        {
+          "id": "D",
+          "text": "Lacking strength or vigor"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-023",
+      "order": 23,
+      "text": "Fugitive most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Physically weak"
+        },
+        {
+          "id": "B",
+          "text": "Likely to be inaccurate"
+        },
+        {
+          "id": "C",
+          "text": "Destroy completely"
+        },
+        {
+          "id": "D",
+          "text": "On the run"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-024",
+      "order": 24,
+      "text": "Autocrat most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Anything that precedes something in time"
+        },
+        {
+          "id": "B",
+          "text": "A dictator or dictatorial person"
+        },
+        {
+          "id": "C",
+          "text": "Circus performer"
+        },
+        {
+          "id": "D",
+          "text": "Librarian"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-025",
+      "order": 25,
+      "text": "Fanciful most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Generous"
+        },
+        {
+          "id": "B",
+          "text": "Not based on fact"
+        },
+        {
+          "id": "C",
+          "text": "An expedition"
+        },
+        {
+          "id": "D",
+          "text": "Weak"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-026",
+      "order": 26,
+      "text": "Alter most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apologize"
+        },
+        {
+          "id": "B",
+          "text": "Impose"
+        },
+        {
+          "id": "C",
+          "text": "Change"
+        },
+        {
+          "id": "D",
+          "text": "Wander"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-027",
+      "order": 27,
+      "text": "Crusade most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Likely to fail"
+        },
+        {
+          "id": "B",
+          "text": "Another way to do something"
+        },
+        {
+          "id": "C",
+          "text": "Use up resources"
+        },
+        {
+          "id": "D",
+          "text": "Military expeditions made by Christian Europeans against Muslims"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p2-028",
+      "order": 28,
+      "text": "Eject most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Engage"
+        },
+        {
+          "id": "B",
+          "text": "Contemptible"
+        },
+        {
+          "id": "C",
+          "text": "Expel"
+        },
+        {
+          "id": "D",
+          "text": "Enthusiastic"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-029",
+      "order": 29,
+      "text": "Crucial most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Explanation"
+        },
+        {
+          "id": "B",
+          "text": "Of the greatest importance"
+        },
+        {
+          "id": "C",
+          "text": "Direction"
+        },
+        {
+          "id": "D",
+          "text": "Well being"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p2-030",
+      "order": 30,
+      "text": "Acquit most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pronounce not guilty of criminal charges"
+        },
+        {
+          "id": "B",
+          "text": "Anything that precedes in time"
+        },
+        {
+          "id": "C",
+          "text": "Put out or expel from a place"
+        },
+        {
+          "id": "D",
+          "text": "Something that aids wellbeing"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-031",
+      "order": 31,
+      "text": "Boorish most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Guilty"
+        },
+        {
+          "id": "B",
+          "text": "Intelligent"
+        },
+        {
+          "id": "C",
+          "text": "Ill-mannered"
+        },
+        {
+          "id": "D",
+          "text": "Stowaway"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-032",
+      "order": 32,
+      "text": "Forerunner most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inventor"
+        },
+        {
+          "id": "B",
+          "text": "Anything that precedes something similar in time"
+        },
+        {
+          "id": "C",
+          "text": "Running behind"
+        },
+        {
+          "id": "D",
+          "text": "Storm"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-2",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p2-033",
+      "order": 33,
+      "text": "Tenable most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Destroy and strip of possession"
+        },
+        {
+          "id": "B",
+          "text": "Return to a statistical mean"
+        },
+        {
+          "id": "C",
+          "text": "Based on sound reasoning or evidence"
+        },
+        {
+          "id": "D",
+          "text": "Without force or vitality"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-2",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p2-034",
+      "order": 34,
+      "text": "Asperity most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "Return to bad behavior"
+        },
+        {
+          "id": "B",
+          "text": "Take delight in"
+        },
+        {
+          "id": "C",
+          "text": "A sketchy summary"
+        },
+        {
+          "id": "D",
+          "text": "Harshness of manner"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p2-035",
+      "order": 35,
+      "text": "Incalculable most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "An assistant or subordinate"
+        },
+        {
+          "id": "B",
+          "text": "Concerned with worldly matters"
+        },
+        {
+          "id": "C",
+          "text": "Lacking firmness of will"
+        },
+        {
+          "id": "D",
+          "text": "Not capable of being calculated"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-2",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p3-001",
+      "order": 1,
+      "text": "The gold was kept in a secure vault.",
+      "options": [
+        {
+          "id": "A",
+          "text": "locked"
+        },
+        {
+          "id": "B",
+          "text": "safe"
+        },
+        {
+          "id": "C",
+          "text": "unknown"
+        },
+        {
+          "id": "D",
+          "text": "thick"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-002",
+      "order": 2,
+      "text": "Assimilate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "absorb"
+        },
+        {
+          "id": "B",
+          "text": "react"
+        },
+        {
+          "id": "C",
+          "text": "pretend"
+        },
+        {
+          "id": "D",
+          "text": "lie"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-003",
+      "order": 3,
+      "text": "Theorize most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "know"
+        },
+        {
+          "id": "B",
+          "text": "speculate"
+        },
+        {
+          "id": "C",
+          "text": "study"
+        },
+        {
+          "id": "D",
+          "text": "travel"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-004",
+      "order": 4,
+      "text": "Symmetrical most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "uplifted"
+        },
+        {
+          "id": "B",
+          "text": "congruent"
+        },
+        {
+          "id": "C",
+          "text": "handsome"
+        },
+        {
+          "id": "D",
+          "text": "positive"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-005",
+      "order": 5,
+      "text": "The exchange student was proficient in French, German, and English.",
+      "options": [
+        {
+          "id": "A",
+          "text": "poor"
+        },
+        {
+          "id": "B",
+          "text": "knowledgeable"
+        },
+        {
+          "id": "C",
+          "text": "adept"
+        },
+        {
+          "id": "D",
+          "text": "exacting"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-006",
+      "order": 6,
+      "text": "The students were scheduled to observe a plenary session of Congress.",
+      "options": [
+        {
+          "id": "A",
+          "text": "scheduled"
+        },
+        {
+          "id": "B",
+          "text": "example"
+        },
+        {
+          "id": "C",
+          "text": "special"
+        },
+        {
+          "id": "D",
+          "text": "full"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p3-007",
+      "order": 7,
+      "text": "He tried to goad his audience.",
+      "options": [
+        {
+          "id": "A",
+          "text": "insult"
+        },
+        {
+          "id": "B",
+          "text": "incite"
+        },
+        {
+          "id": "C",
+          "text": "please"
+        },
+        {
+          "id": "D",
+          "text": "bore"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-008",
+      "order": 8,
+      "text": "He ran headlong into the fight.",
+      "options": [
+        {
+          "id": "A",
+          "text": "headfirst"
+        },
+        {
+          "id": "B",
+          "text": "reluctantly"
+        },
+        {
+          "id": "C",
+          "text": "happily"
+        },
+        {
+          "id": "D",
+          "text": "recklessly"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-009",
+      "order": 9,
+      "text": "Flagrant most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "quiet"
+        },
+        {
+          "id": "B",
+          "text": "amazing"
+        },
+        {
+          "id": "C",
+          "text": "delayed"
+        },
+        {
+          "id": "D",
+          "text": "glaring"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-010",
+      "order": 10,
+      "text": "The word most opposite in meaning to stimulate is",
+      "options": [
+        {
+          "id": "A",
+          "text": "support"
+        },
+        {
+          "id": "B",
+          "text": "arrest"
+        },
+        {
+          "id": "C",
+          "text": "travel"
+        },
+        {
+          "id": "D",
+          "text": "dislike"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-011",
+      "order": 11,
+      "text": "Legacy most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "history"
+        },
+        {
+          "id": "B",
+          "text": "bequest"
+        },
+        {
+          "id": "C",
+          "text": "story"
+        },
+        {
+          "id": "D",
+          "text": "will"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-012",
+      "order": 12,
+      "text": "The actions of the CEO were unconscionable.",
+      "options": [
+        {
+          "id": "A",
+          "text": "clever"
+        },
+        {
+          "id": "B",
+          "text": "illegal"
+        },
+        {
+          "id": "C",
+          "text": "excessive"
+        },
+        {
+          "id": "D",
+          "text": "automatic"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-013",
+      "order": 13,
+      "text": "The sergeant gave his reasoned opinion.",
+      "options": [
+        {
+          "id": "A",
+          "text": "irate"
+        },
+        {
+          "id": "B",
+          "text": "logical"
+        },
+        {
+          "id": "C",
+          "text": "impressive"
+        },
+        {
+          "id": "D",
+          "text": "uninformed"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-014",
+      "order": 14,
+      "text": "Laudable most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "loud"
+        },
+        {
+          "id": "B",
+          "text": "fluid"
+        },
+        {
+          "id": "C",
+          "text": "commendable"
+        },
+        {
+          "id": "D",
+          "text": "transparent"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p3-015",
+      "order": 15,
+      "text": "The brass was burnished.",
+      "options": [
+        {
+          "id": "A",
+          "text": "yellow"
+        },
+        {
+          "id": "B",
+          "text": "old"
+        },
+        {
+          "id": "C",
+          "text": "expensive"
+        },
+        {
+          "id": "D",
+          "text": "polished"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-016",
+      "order": 16,
+      "text": "The commodity was sold.",
+      "options": [
+        {
+          "id": "A",
+          "text": "product"
+        },
+        {
+          "id": "B",
+          "text": "stock"
+        },
+        {
+          "id": "C",
+          "text": "idea"
+        },
+        {
+          "id": "D",
+          "text": "table"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-017",
+      "order": 17,
+      "text": "Her motives were oblique.",
+      "options": [
+        {
+          "id": "A",
+          "text": "pure"
+        },
+        {
+          "id": "B",
+          "text": "emotional"
+        },
+        {
+          "id": "C",
+          "text": "obscure"
+        },
+        {
+          "id": "D",
+          "text": "amusing"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-018",
+      "order": 18,
+      "text": "Superfluous most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "superior"
+        },
+        {
+          "id": "B",
+          "text": "unnecessary"
+        },
+        {
+          "id": "C",
+          "text": "helpful"
+        },
+        {
+          "id": "D",
+          "text": "expensive"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-019",
+      "order": 19,
+      "text": "The word most opposite in meaning to hypocrisy is",
+      "options": [
+        {
+          "id": "A",
+          "text": "honesty"
+        },
+        {
+          "id": "B",
+          "text": "happy"
+        },
+        {
+          "id": "C",
+          "text": "angry"
+        },
+        {
+          "id": "D",
+          "text": "threatening"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-020",
+      "order": 20,
+      "text": "The report indicated a significant hemorrhage of corporate earnings.",
+      "options": [
+        {
+          "id": "A",
+          "text": "gain"
+        },
+        {
+          "id": "B",
+          "text": "payout"
+        },
+        {
+          "id": "C",
+          "text": "trade"
+        },
+        {
+          "id": "D",
+          "text": "loss"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-021",
+      "order": 21,
+      "text": "The army soldiers were ordered to immediate garrison duty.",
+      "options": [
+        {
+          "id": "A",
+          "text": "field"
+        },
+        {
+          "id": "B",
+          "text": "combat"
+        },
+        {
+          "id": "C",
+          "text": "latrine"
+        },
+        {
+          "id": "D",
+          "text": "fort"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-022",
+      "order": 22,
+      "text": "Fiscal most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "year"
+        },
+        {
+          "id": "B",
+          "text": "financial"
+        },
+        {
+          "id": "C",
+          "text": "calendar"
+        },
+        {
+          "id": "D",
+          "text": "three months"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-023",
+      "order": 23,
+      "text": "Domicile most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "office"
+        },
+        {
+          "id": "B",
+          "text": "domestic"
+        },
+        {
+          "id": "C",
+          "text": "home"
+        },
+        {
+          "id": "D",
+          "text": "vacation"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-024",
+      "order": 24,
+      "text": "Abate most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "recover"
+        },
+        {
+          "id": "B",
+          "text": "aid"
+        },
+        {
+          "id": "C",
+          "text": "foreclose"
+        },
+        {
+          "id": "D",
+          "text": "end"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-025",
+      "order": 25,
+      "text": "To commission most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "to give"
+        },
+        {
+          "id": "B",
+          "text": "to rescind"
+        },
+        {
+          "id": "C",
+          "text": "to earn"
+        },
+        {
+          "id": "D",
+          "text": "to authorize"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-026",
+      "order": 26,
+      "text": "He gave a succinct account of the events.",
+      "options": [
+        {
+          "id": "A",
+          "text": "passionate"
+        },
+        {
+          "id": "B",
+          "text": "lengthy"
+        },
+        {
+          "id": "C",
+          "text": "uncensored"
+        },
+        {
+          "id": "D",
+          "text": "concise"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-027",
+      "order": 27,
+      "text": "The vote resulted in the demise of the proposed new law.",
+      "options": [
+        {
+          "id": "A",
+          "text": "passage"
+        },
+        {
+          "id": "B",
+          "text": "death"
+        },
+        {
+          "id": "C",
+          "text": "postponement"
+        },
+        {
+          "id": "D",
+          "text": "abatement"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-028",
+      "order": 28,
+      "text": "The politician exuded charisma.",
+      "options": [
+        {
+          "id": "A",
+          "text": "odors"
+        },
+        {
+          "id": "B",
+          "text": "falseness"
+        },
+        {
+          "id": "C",
+          "text": "charm"
+        },
+        {
+          "id": "D",
+          "text": "generosity"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-029",
+      "order": 29,
+      "text": "Burrow most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "deepen"
+        },
+        {
+          "id": "B",
+          "text": "hide"
+        },
+        {
+          "id": "C",
+          "text": "nestle"
+        },
+        {
+          "id": "D",
+          "text": "jump"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-030",
+      "order": 30,
+      "text": "That custom still prevails.",
+      "options": [
+        {
+          "id": "A",
+          "text": "angers"
+        },
+        {
+          "id": "B",
+          "text": "persists"
+        },
+        {
+          "id": "C",
+          "text": "surprises"
+        },
+        {
+          "id": "D",
+          "text": "excites"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-031",
+      "order": 31,
+      "text": "Contravene most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "invade"
+        },
+        {
+          "id": "B",
+          "text": "obstruct"
+        },
+        {
+          "id": "C",
+          "text": "argue"
+        },
+        {
+          "id": "D",
+          "text": "reverse"
+        }
+      ],
+      "correct": "B",
+      "source": "practice-3",
+      "difficulty": "hard"
+    },
+    {
+      "id": "wk-p3-032",
+      "order": 32,
+      "text": "Chasm most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "hole"
+        },
+        {
+          "id": "B",
+          "text": "sky"
+        },
+        {
+          "id": "C",
+          "text": "mountain"
+        },
+        {
+          "id": "D",
+          "text": "valley"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-033",
+      "order": 33,
+      "text": "Fundamental most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "radical"
+        },
+        {
+          "id": "B",
+          "text": "religious"
+        },
+        {
+          "id": "C",
+          "text": "basic"
+        },
+        {
+          "id": "D",
+          "text": "excessive"
+        }
+      ],
+      "correct": "C",
+      "source": "practice-3",
+      "difficulty": "easy"
+    },
+    {
+      "id": "wk-p3-034",
+      "order": 34,
+      "text": "Susceptible most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "travel"
+        },
+        {
+          "id": "B",
+          "text": "resistant"
+        },
+        {
+          "id": "C",
+          "text": "limited"
+        },
+        {
+          "id": "D",
+          "text": "vulnerable"
+        }
+      ],
+      "correct": "D",
+      "source": "practice-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": "wk-p3-035",
+      "order": 35,
+      "text": "To emit most nearly means",
+      "options": [
+        {
+          "id": "A",
+          "text": "to give off"
+        },
+        {
+          "id": "B",
+          "text": "to smell"
+        },
+        {
+          "id": "C",
+          "text": "to contain"
+        },
+        {
+          "id": "D",
+          "text": "to admit"
+        }
+      ],
+      "correct": "A",
+      "source": "practice-3",
+      "difficulty": "easy"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import {
 import { ArithmeticReasoningTestLauncher } from './ArithmeticReasoningTestLauncher';
 import { ArLevelTopicNav } from './ArLevelTopicNav';
 import { DstTopicLayout } from './DstTopicLayout';
+import { WorkRateTopicLayout } from './WorkRateTopicLayout';
 import { PercentsTopicLayout } from './PercentsTopicLayout';
 import { RatiosProportionsTopicLayout } from './RatiosProportionsTopicLayout';
 import { RateQuantityTopicLayout } from './RateQuantityTopicLayout';
@@ -45,6 +46,9 @@ export function ArTopicPage() {
 
   if (topic && topicId === 'rate-distance-time') {
     return <DstTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'work-rate') {
+    return <WorkRateTopicLayout topic={topic} />;
   }
   if (topic && topicId === 'ratios') {
     return <RatiosProportionsTopicLayout topic={topic} />;

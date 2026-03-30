@@ -9,7 +9,8 @@ export type Level1MemoryTopicId =
   | 'ratios'
   | 'rate-multiply'
   | 'averages'
-  | 'rate-distance-time';
+  | 'rate-distance-time'
+  | 'work-rate';
 
 export interface Level1MemoryCard {
   id: string;
@@ -748,6 +749,104 @@ const DST_MEMORY_DECK: Level1MemoryCard[] = [
   },
 ];
 
+const WORK_RATE_MEMORY_DECK: Level1MemoryCard[] = [
+  {
+    id: 'wr-mem-001',
+    prompt: 'One worker finishes a job in T hours alone. Their rate (in jobs per hour) is:',
+    choices: ['T', '1/T', 'T²', '1 − T'],
+    answerIndex: 1,
+    explanation: 'Rate = (1 whole job) ÷ time alone → 1/T.',
+    tags: ['core'],
+  },
+  {
+    id: 'wr-mem-002',
+    prompt: 'Two workers: A alone = a hours, B alone = b hours, same job. Combined rate is:',
+    choices: ['1/a + 1/b', '1/(a + b)', '(a + b)/2', 'a × b'],
+    answerIndex: 0,
+    explanation: 'Add jobs per hour: 1/a + 1/b.',
+    tags: ['core'],
+  },
+  {
+    id: 'wr-mem-003',
+    prompt: 'Time to finish one full job when combined rate is R (jobs/hour) is:',
+    choices: ['R hours', '1/R hours', 'R² hours', '1 + R hours'],
+    answerIndex: 1,
+    explanation: 'Flip the rate: time = 1 ÷ R.',
+    tags: ['core'],
+  },
+  {
+    id: 'wr-mem-004',
+    prompt: 'Pipe fills in 4 hr; drain empties in 8 hr. Net rate toward full (jobs/hr) is:',
+    choices: ['1/12', '1/8', '1/4 − 1/8', '1/4 + 1/8'],
+    answerIndex: 2,
+    explanation: 'Drain opposes fill: 1/4 − 1/8 = 1/8 tank/hr toward full.',
+    tags: ['trap'],
+  },
+  {
+    id: 'wr-mem-005',
+    prompt: 'A finishes in 4 hr; B in 6 hr. Someone guesses “together = 5 hr” (average of 4 and 6). You:',
+    choices: [
+      'Accept it — average time is correct',
+      'Reject it — add rates 1/4 + 1/6 and flip',
+      'Multiply 4 × 6 ÷ 5',
+      'Add 4 + 6 then halve again',
+    ],
+    answerIndex: 1,
+    explanation: 'Combined time is NOT the average of individual times — use rates.',
+    tags: ['trap'],
+  },
+  {
+    id: 'wr-mem-006',
+    prompt: '3 identical workers finish a job in 6 hours. One worker alone would take:',
+    choices: ['2 hr', '6 hr', '18 hr', '9 hr'],
+    answerIndex: 2,
+    explanation: '3 workers ⇒ 3× the rate of one; if together = 1/6 job/hr, one = 1/18 → 18 hr.',
+    tags: ['scaling'],
+  },
+  {
+    id: 'wr-mem-007',
+    prompt: 'Partial-work problems usually need:',
+    choices: [
+      'Only the first worker’s time',
+      'Phases: work done so far, then remainder ÷ new rate',
+      'The slower worker only',
+      'Squaring each rate',
+    ],
+    answerIndex: 1,
+    explanation: 'Finish phase 1 (rate × time), subtract from 1 job, then attack the remainder.',
+    tags: ['pattern'],
+  },
+  {
+    id: 'wr-mem-008',
+    prompt: 'Work done when rate is 1/8 job/hr for 4 hours equals:',
+    choices: ['32 jobs', '4/8 = 1/2 job', '8/4 jobs', '1/32 job'],
+    answerIndex: 1,
+    explanation: 'Work = rate × time → (1/8) × 4 = 1/2.',
+    tags: ['drill'],
+  },
+  {
+    id: 'wr-mem-009',
+    prompt: 'Distance problems use d = vt. The work-rate analogy treats “1 job” like:',
+    choices: [
+      'Time only',
+      'Distance — amount completed = rate × time',
+      'Speed only',
+      'Always 100 separate jobs',
+    ],
+    answerIndex: 1,
+    explanation: 'One job ≈ one “distance”; rate (1/time) plays the role of speed when time is unknown.',
+    tags: ['bridge'],
+  },
+  {
+    id: 'wr-mem-010',
+    prompt: '1/4 + 1/6 equals (for combining two fill rates):',
+    choices: ['2/10', '5/12', '1/10', '2/24'],
+    answerIndex: 1,
+    explanation: 'Common denominator 12: 3/12 + 2/12 = 5/12 job per hour.',
+    tags: ['drill'],
+  },
+];
+
 export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]> = {
   'order-of-operations': PEMDAS_MEMORY_DECK,
   decimals: DECIMALS_MEMORY_DECK,
@@ -758,6 +857,7 @@ export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]
   'rate-multiply': RATE_MULTIPLY_MEMORY_DECK,
   averages: AVERAGES_MEMORY_DECK,
   'rate-distance-time': DST_MEMORY_DECK,
+  'work-rate': WORK_RATE_MEMORY_DECK,
 };
 
 export function getLevel1MemoryDeck(topicId: string): Level1MemoryCard[] {

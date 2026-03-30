@@ -30,13 +30,19 @@ const CATEGORIES: NavCategory[] = [
     id: 'word-knowledge',
     label: '3. Word Knowledge',
     expanded: false,
-    items: [{ id: 'word-knowledge-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+    items: [{ id: 'word-knowledge-practice', label: 'Practice tests', href: '/word-knowledge' }],
   },
   {
     id: 'paragraph-comprehension',
     label: '4. Paragraph Comprehension',
     expanded: false,
-    items: [{ id: 'paragraph-comprehension-placeholder', label: 'Coming Soon', href: null, comingSoon: true }],
+    items: [
+      {
+        id: 'paragraph-comprehension-practice',
+        label: 'Practice tests',
+        href: '/paragraph-comprehension',
+      },
+    ],
   },
   {
     id: 'mathematics-knowledge',

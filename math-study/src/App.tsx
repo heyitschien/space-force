@@ -23,6 +23,10 @@ import { BiologyPage } from './pages/BiologyPage';
 import { ChemistryPage } from './pages/ChemistryPage';
 import { EarthSciencePage } from './pages/EarthSciencePage';
 import { MeasurementPhysicsPage } from './pages/MeasurementPhysicsPage';
+import { WordKnowledgePage } from './pages/WordKnowledgePage';
+import { ParagraphComprehensionPage } from './pages/ParagraphComprehensionPage';
+import { WordKnowledgeTestLauncher } from './components/WordKnowledgeTestLauncher';
+import { ParagraphComprehensionTestLauncher } from './components/ParagraphComprehensionTestLauncher';
 import { ArTopicPage } from './components/ArTopicPage';
 import { ArPatternsPage } from './components/ArPatternsPage';
 import { PatternRecognitionDrill } from './components/PatternRecognitionDrill';
@@ -141,6 +145,8 @@ export default function App() {
       <Route path="/chemistry" element={<ChemistryPage />} />
       <Route path="/earth-science" element={<EarthSciencePage />} />
       <Route path="/measurement-physics" element={<MeasurementPhysicsPage />} />
+      <Route path="/word-knowledge" element={<WordKnowledgePage />} />
+      <Route path="/paragraph-comprehension" element={<ParagraphComprehensionPage />} />
       <Route path="/arithmetic-reasoning/patterns" element={<ArPatternsPage />} />
       <Route path="/arithmetic-reasoning/pattern-drill" element={<PatternRecognitionDrill />} />
       <Route path="/arithmetic-reasoning/:topicId" element={<ArTopicPage />} />
@@ -161,6 +167,9 @@ function MathStudyPage() {
   const [asvabPracticeOpen, setAsvabPracticeOpen] = useState(false);
   const [generalSciencePracticeOpen, setGeneralSciencePracticeOpen] = useState(false);
   const [arithmeticReasoningPracticeOpen, setArithmeticReasoningPracticeOpen] = useState(false);
+  const [wordKnowledgePracticeOpen, setWordKnowledgePracticeOpen] = useState(false);
+  const [paragraphComprehensionPracticeOpen, setParagraphComprehensionPracticeOpen] =
+    useState(false);
   const [testHistoryOpen, setTestHistoryOpen] = useState(false);
 
   const handleCategorySelect = (categoryId: string, sectionId?: string) => {
@@ -290,6 +299,8 @@ function MathStudyPage() {
       <PracticeMenu
         onGeneralScienceTest={() => setGeneralSciencePracticeOpen(true)}
         onArithmeticReasoningTest={() => setArithmeticReasoningPracticeOpen(true)}
+        onWordKnowledgeTest={() => setWordKnowledgePracticeOpen(true)}
+        onParagraphComprehensionTest={() => setParagraphComprehensionPracticeOpen(true)}
         onMathPracticeTest={() => setAsvabPracticeOpen(true)}
         onPracticeQuestion={() => setQuizOpen(true)}
         onTestHistory={() => setTestHistoryOpen(true)}
@@ -303,6 +314,14 @@ function MathStudyPage() {
       )}
       {arithmeticReasoningPracticeOpen && (
         <ArithmeticReasoningTestLauncher onClose={() => setArithmeticReasoningPracticeOpen(false)} />
+      )}
+      {wordKnowledgePracticeOpen && (
+        <WordKnowledgeTestLauncher onClose={() => setWordKnowledgePracticeOpen(false)} />
+      )}
+      {paragraphComprehensionPracticeOpen && (
+        <ParagraphComprehensionTestLauncher
+          onClose={() => setParagraphComprehensionPracticeOpen(false)}
+        />
       )}
     </div>
   );
