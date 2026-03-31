@@ -642,7 +642,7 @@ const DST_MEMORY_DECK: Level1MemoryCard[] = [
       'Speed = Time × Distance',
     ],
     answerIndex: 0,
-    explanation: 'd = vt. Rearrange: speed = distance ÷ time; time = distance ÷ speed.',
+    explanation: 'd = st. Rearrange: speed = distance ÷ time; time = distance ÷ speed.',
     tags: ['core'],
   },
   {
@@ -826,7 +826,7 @@ const WORK_RATE_MEMORY_DECK: Level1MemoryCard[] = [
   },
   {
     id: 'wr-mem-009',
-    prompt: 'Distance problems use d = vt. The work-rate analogy treats “1 job” like:',
+    prompt: 'Distance problems use d = st. The work-rate analogy treats “1 job” like:',
     choices: [
       'Time only',
       'Distance — amount completed = rate × time',

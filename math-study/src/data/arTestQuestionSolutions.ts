@@ -212,4 +212,48 @@ export const AR_TEST_QUESTION_SOLUTIONS: Record<string, ArTestQuestionSolution> 
       },
     ],
   },
+  // Word problem setup
+  'ar-p1-002': {
+    patternLabel: 'Two-number relationships (sum / difference)',
+    solutionSteps: [
+      {
+        step: 'Let x = smaller number; larger = x + 8.',
+        reason: '“One is 8 more than the other” links both numbers to one variable; using the smaller keeps the setup clean.',
+      },
+      {
+        step: 'Sum: x + (x + 8) = 70 → 2x = 62 → x = 31.',
+        reason: 'Sum means add both expressions; solve for x to get the smaller number.',
+      },
+    ],
+  },
+  'ar-p2-015': {
+    patternLabel: 'Grouping / remainder (partial room)',
+    solutionSteps: [
+      {
+        step: '47 ÷ 6 = 7 remainder 5.',
+        reason: 'Seven full rooms of 6 use 42 people; five people are left for the room that is not full.',
+      },
+      {
+        step: 'Answer the question asked: 5 in the incomplete room — not 7 (full rooms).',
+        reason: 'Remainder answers “how many in the room that is not full”; the quotient counts full groups only.',
+      },
+    ],
+  },
+  'ar-p2-026': {
+    patternLabel: 'Trips / capacity (round up)',
+    solutionSteps: [
+      {
+        step: 'Need whole trips for 104 people at 42 per trip; 100 miles and 1 day do not change trip count here.',
+        reason: 'Unless speed or time caps how many people move per day, extra distance/time details are distractors.',
+      },
+      {
+        step: '104 ÷ 42 = 2 remainder 20. Two trips move 84; 20 people still need another trip.',
+        reason: 'Any leftover people require one more full trip.',
+      },
+      {
+        step: 'Total trips = 3.',
+        reason: 'Round up: 2 + 1 = 3 trips to transport everyone.',
+      },
+    ],
+  },
 };
