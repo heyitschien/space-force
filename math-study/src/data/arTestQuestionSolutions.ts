@@ -256,4 +256,44 @@ export const AR_TEST_QUESTION_SOLUTIONS: Record<string, ArTestQuestionSolution> 
       },
     ],
   },
+  // Area & volume
+  'ar-p1-006': {
+    patternLabel: 'Rectangle area (square feet)',
+    solutionSteps: [
+      {
+        step: 'Area = length × width = 12 ft × 12 ft = 144 square feet.',
+        reason: 'Carpeting covers the floor — a rectangle — so multiply the two side lengths in feet.',
+      },
+    ],
+  },
+  'ar-p1-007': {
+    patternLabel: 'Area then unit conversion + rate × quantity',
+    solutionSteps: [
+      {
+        step: 'Floor area: 16 ft × 18 ft = 288 ft².',
+        reason: 'The carpet is a rectangle; multiply the dimensions given in feet.',
+      },
+      {
+        step: 'Convert to square yards: 1 yd² = 9 ft², so 288 ÷ 9 = 32 yd².',
+        reason: 'The price is per square yard, not per square foot.',
+      },
+      {
+        step: 'Cost: 32 yd² × $0.65/yd² = $20.80.',
+        reason: 'Total cost = area in the billed units × price per unit.',
+      },
+    ],
+  },
+  'ar-p2-027': {
+    patternLabel: 'Pythagorean theorem (pole & shadow)',
+    solutionSteps: [
+      {
+        step: 'The pole (8 ft) and shadow (6 ft) are perpendicular; the line is the hypotenuse.',
+        reason: 'Ground meets vertical pole at a right angle; the slanted line closes the triangle.',
+      },
+      {
+        step: 'c² = 8² + 6² = 64 + 36 = 100, so c = √100 = 10 feet.',
+        reason: 'For a right triangle, a² + b² = c² where c is the longest side.',
+      },
+    ],
+  },
 };

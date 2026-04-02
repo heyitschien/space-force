@@ -10,7 +10,8 @@ export type Level1MemoryTopicId =
   | 'rate-multiply'
   | 'averages'
   | 'rate-distance-time'
-  | 'work-rate';
+  | 'work-rate'
+  | 'area-volume';
 
 export interface Level1MemoryCard {
   id: string;
@@ -847,6 +848,125 @@ const WORK_RATE_MEMORY_DECK: Level1MemoryCard[] = [
   },
 ];
 
+const AREA_VOLUME_MEMORY_DECK: Level1MemoryCard[] = [
+  {
+    id: 'av-mem-001',
+    prompt: 'Area of a rectangle with length L and width W is:',
+    choices: ['L + W', 'L × W', '2L + 2W', 'L² + W²'],
+    answerIndex: 1,
+    explanation: 'Rectangle area = length × width (how many unit squares fit inside).',
+    tags: ['area'],
+  },
+  {
+    id: 'av-mem-002',
+    prompt: 'Area of a square with side length s is:',
+    choices: ['2s', '4s', 's²', 's³'],
+    answerIndex: 2,
+    explanation: 'All sides equal → area = s × s = s².',
+    tags: ['area'],
+  },
+  {
+    id: 'av-mem-003',
+    prompt: 'Area of a triangle is:',
+    choices: ['base × height', '(1/2) × base × height', 'base + height', 'base² + height²'],
+    answerIndex: 1,
+    explanation: 'Triangle area = one-half base times height.',
+    tags: ['area'],
+  },
+  {
+    id: 'av-mem-004',
+    prompt: 'Area of a circle with radius r (using π) is:',
+    choices: ['2πr', 'πr²', 'πd', 'πr'],
+    answerIndex: 1,
+    explanation: 'Circle area = π times squared radius.',
+    tags: ['area'],
+  },
+  {
+    id: 'av-mem-005',
+    prompt: 'A problem gives the diameter of a circle. Before using A = πr² you should:',
+    choices: [
+      'Use diameter as r',
+      'Divide diameter by 2 to get r',
+      'Square the diameter only',
+      'Multiply diameter by π only',
+    ],
+    answerIndex: 1,
+    explanation: 'Radius is half the diameter; the area formula uses r, not d.',
+    tags: ['trap'],
+  },
+  {
+    id: 'av-mem-006',
+    prompt: 'How many square feet are in one square yard?',
+    choices: ['3', '6', '9', '12'],
+    answerIndex: 2,
+    explanation: '1 yd = 3 ft → 1 yd² = 3 ft × 3 ft = 9 ft².',
+    tags: ['units'],
+  },
+  {
+    id: 'av-mem-007',
+    prompt: 'To convert square feet to square yards you:',
+    choices: [
+      'Multiply by 3',
+      'Divide by 3',
+      'Divide by 9',
+      'Multiply by 9',
+    ],
+    answerIndex: 2,
+    explanation: 'Fewer yd² than ft² → divide ft² by 9.',
+    tags: ['units'],
+  },
+  {
+    id: 'av-mem-008',
+    prompt: 'Volume of a rectangular box (prism) with length ℓ, width w, height h is:',
+    choices: ['ℓ + w + h', 'ℓ × w × h', '2(ℓw + wh + hℓ)', '(ℓ + w) × h'],
+    answerIndex: 1,
+    explanation: 'Box volume = length × width × height (cubic units).',
+    tags: ['volume'],
+  },
+  {
+    id: 'av-mem-009',
+    prompt: 'Volume of a cube with edge length s is:',
+    choices: ['s²', '6s²', 's³', '12s'],
+    answerIndex: 2,
+    explanation: 'Cube: all edges equal → V = s × s × s = s³.',
+    tags: ['volume'],
+  },
+  {
+    id: 'av-mem-010',
+    prompt: 'Volume of a right cylinder with radius r and height h (using π) is:',
+    choices: ['2πrh', 'πr²h', '2πr + h', 'πr² + h'],
+    answerIndex: 1,
+    explanation: 'Base area πr² times height h.',
+    tags: ['volume'],
+  },
+  {
+    id: 'av-mem-011',
+    prompt: 'In a² + b² = c² for a right triangle, c is always:',
+    choices: [
+      'The shortest side',
+      'Either leg',
+      'The hypotenuse (longest side, opposite the right angle)',
+      'The height only',
+    ],
+    answerIndex: 2,
+    explanation: 'c is the hypotenuse; a and b are the two legs meeting at the right angle.',
+    tags: ['pythagorean'],
+  },
+  {
+    id: 'av-mem-012',
+    prompt: 'Carpet costs $C per square yard. Room area must be in yd² before you:',
+    choices: [
+      'Add C to the length',
+      'Multiply area (in yd²) by C for total cost',
+      'Divide C by room width only',
+      'Ignore units — multiply feet by C',
+    ],
+    answerIndex: 1,
+    explanation: 'Match area units to the price unit (yd² with $/yd²), then multiply.',
+    tags: ['trap'],
+  },
+];
+
 export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]> = {
   'order-of-operations': PEMDAS_MEMORY_DECK,
   decimals: DECIMALS_MEMORY_DECK,
@@ -858,6 +978,7 @@ export const LEVEL1_MEMORY_DECKS: Record<Level1MemoryTopicId, Level1MemoryCard[]
   averages: AVERAGES_MEMORY_DECK,
   'rate-distance-time': DST_MEMORY_DECK,
   'work-rate': WORK_RATE_MEMORY_DECK,
+  'area-volume': AREA_VOLUME_MEMORY_DECK,
 };
 
 export function getLevel1MemoryDeck(topicId: string): Level1MemoryCard[] {
