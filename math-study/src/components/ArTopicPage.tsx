@@ -20,6 +20,7 @@ import { AveragesTopicLayout } from './AveragesTopicLayout';
 import { StructuredArTopicLayout } from './StructuredArTopicLayout';
 import { UnitConversionTopicLayout } from './UnitConversionTopicLayout';
 import { AreaVolumeTopicLayout } from './AreaVolumeTopicLayout';
+import { InequalitiesTopicLayout } from './InequalitiesTopicLayout';
 import { QuizEngine } from './quiz/QuizEngine';
 import {
   AR_LEVEL1_TOPIC_QUIZ_IDS,
@@ -72,6 +73,9 @@ export function ArTopicPage() {
   }
   if (topic && topicId === 'area-volume') {
     return <AreaVolumeTopicLayout topic={topic} />;
+  }
+  if (topic && topicId === 'inequalities') {
+    return <InequalitiesTopicLayout topic={topic} />;
   }
   if (
     topic &&
