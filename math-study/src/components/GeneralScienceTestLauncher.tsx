@@ -49,7 +49,7 @@ export function GeneralScienceTestLauncher({ onClose }: GeneralScienceTestLaunch
           General Science Practice Test
         </h1>
         <p className="mb-6 text-slate-600">
-          Choose a test mode. Each test has 25 questions and an 11-minute timer.
+          Choose a test mode. Each test has 25 questions; an 11-minute reference (ASVAB section time) is shown beside an elapsed stopwatch — the test does not auto-stop.
         </p>
         <button
           onClick={() => {

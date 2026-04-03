@@ -49,7 +49,7 @@ export function ArithmeticReasoningTestLauncher({ onClose }: ArithmeticReasoning
           Arithmetic Reasoning Practice Test
         </h1>
         <p className="mb-6 text-slate-600">
-          Choose a test mode. Each test has 30 questions and a 36-minute timer.
+          Choose a test mode. Each test has 30 questions; a 36-minute reference (ASVAB section time) is shown beside an elapsed stopwatch — the test does not auto-stop.
         </p>
         <button
           onClick={() => {

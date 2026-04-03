@@ -69,7 +69,7 @@ export function ParagraphComprehensionTestLauncher({
           Paragraph Comprehension Practice Test
         </h1>
         <p className="mb-6 text-slate-600">
-          Choose a test mode. Each run has 15 questions and a 13-minute timer.
+          Choose a test mode. Each run has 15 questions; a 13-minute reference (ASVAB section time) is shown beside an elapsed stopwatch — the test does not auto-stop.
         </p>
         <button
           onClick={() => {

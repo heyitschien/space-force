@@ -65,7 +65,7 @@ export function WordKnowledgeTestLauncher({ onClose }: WordKnowledgeTestLauncher
       <div className="mx-auto max-w-2xl">
         <h1 className="mb-2 text-3xl font-bold text-slate-900">Word Knowledge Practice Test</h1>
         <p className="mb-6 text-slate-600">
-          Choose a test mode. Each fixed form has up to 35 questions and an 11-minute timer.
+          Choose a test mode. Each fixed form has up to 35 questions; an 11-minute reference (ASVAB section time) is shown beside an elapsed stopwatch — the test does not auto-stop.
         </p>
         <button
           onClick={() => {

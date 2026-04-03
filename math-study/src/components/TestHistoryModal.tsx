@@ -192,7 +192,7 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
                         <p className="font-semibold text-slate-800">{formatDate(r.date)}</p>
                         <p className="text-sm text-slate-500">{formatModeLabel(r.mode)}</p>
                         {r.timeExpired && (
-                          <p className="text-xs font-medium text-amber-700">Timer expired</p>
+                          <p className="text-xs font-medium text-amber-700">Over reference pace</p>
                         )}
                         {r.maxWeightedScore != null && r.weightedScore != null && (
                           <p className="text-xs text-slate-600">

@@ -68,7 +68,7 @@ export function PracticeMenu({
               </div>
               <div>
                 <p className="font-semibold text-slate-800">General Science Test</p>
-                <p className="text-xs text-slate-500">25 questions, 11 min</p>
+                <p className="text-xs text-slate-500">25 questions — 11 min reference pace</p>
               </div>
             </button>
             <button
@@ -83,7 +83,7 @@ export function PracticeMenu({
               </div>
               <div>
                 <p className="font-semibold text-slate-800">Arithmetic Reasoning Test</p>
-                <p className="text-xs text-slate-500">30 questions, 36 min</p>
+                <p className="text-xs text-slate-500">30 questions — 36 min reference pace</p>
               </div>
             </button>
             <button
@@ -98,7 +98,7 @@ export function PracticeMenu({
               </div>
               <div>
                 <p className="font-semibold text-slate-800">Word Knowledge Test</p>
-                <p className="text-xs text-slate-500">Up to 35 questions, 11 min</p>
+                <p className="text-xs text-slate-500">Up to 35 questions — 11 min reference pace</p>
               </div>
             </button>
             <button
@@ -113,7 +113,7 @@ export function PracticeMenu({
               </div>
               <div>
                 <p className="font-semibold text-slate-800">Paragraph Comprehension Test</p>
-                <p className="text-xs text-slate-500">15 questions, 13 min</p>
+                <p className="text-xs text-slate-500">15 questions — 13 min reference pace</p>
               </div>
             </button>
             <button

@@ -52,7 +52,7 @@ interface PcData {
 }
 
 const DATA = pcData as PcData;
-const TOTAL_SECONDS = DATA.meta.timeMinutes * 60;
+const REFERENCE_SECONDS = DATA.meta.timeMinutes * 60;
 const QUESTIONS_PER_TEST = DATA.meta.questionsPerTest;
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -97,9 +97,7 @@ export function ParagraphComprehensionPracticeTest({
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
   const [weightedScore, setWeightedScore] = useState(0);
-  const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS);
-  const [timeExpired, setTimeExpired] = useState(false);
-  const [timeUsed, setTimeUsed] = useState(0);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [answerHistory, setAnswerHistory] = useState<
     Array<{ question: PcQuestion; selectedAnswer: OptionId; correct: boolean }>
   >([]);
@@ -113,8 +111,7 @@ export function ParagraphComprehensionPracticeTest({
     setShowFeedback(false);
     setScore(0);
     setWeightedScore(0);
-    setSecondsLeft(TOTAL_SECONDS);
-    setTimeExpired(false);
+    setElapsedSeconds(0);
     setAnswerHistory([]);
     savedRef.current = false;
     setPhase('running');
@@ -129,15 +126,7 @@ export function ParagraphComprehensionPracticeTest({
     if (phase !== 'running') return;
 
     const timer = setInterval(() => {
-      setSecondsLeft((prev) => {
-        if (prev <= 1) {
-          setTimeExpired(true);
-          setTimeUsed(TOTAL_SECONDS);
-          setPhase('complete');
-          return 0;
-        }
-        return prev - 1;
-      });
+      setElapsedSeconds((s) => s + 1);
     }, 1000);
     return () => clearInterval(timer);
   }, [phase]);
@@ -148,7 +137,8 @@ export function ParagraphComprehensionPracticeTest({
     savedRef.current = true;
 
     const pct = questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
-    const finalTimeUsed = timeUsed || TOTAL_SECONDS - secondsLeft;
+    const finalTimeUsed = elapsedSeconds;
+    const overReferencePace = elapsedSeconds > REFERENCE_SECONDS;
     const missed = answerHistory.filter((a) => !a.correct);
     const maxWeighted =
       mode === 'adaptive'
@@ -173,7 +163,7 @@ export function ParagraphComprehensionPracticeTest({
       total: questions.length,
       percentage: pct,
       timeUsedSeconds: finalTimeUsed,
-      timeExpired,
+      timeExpired: overReferencePace,
       missedQuestionIds: missed.map((a) => a.question.id),
       attemptDetails: answerHistory.map((a) => ({
         questionId: a.question.id,
@@ -186,17 +176,7 @@ export function ParagraphComprehensionPracticeTest({
         missedByDifficulty,
       }),
     });
-  }, [
-    phase,
-    mode,
-    score,
-    questions,
-    timeUsed,
-    secondsLeft,
-    timeExpired,
-    answerHistory,
-    weightedScore,
-  ]);
+  }, [phase, mode, score, questions, elapsedSeconds, answerHistory, weightedScore]);
 
   const handleAnswerSelect = (optionId: OptionId) => {
     if (showFeedback || phase !== 'running') return;
@@ -220,13 +200,12 @@ export function ParagraphComprehensionPracticeTest({
       const lastDifficulty = lastEntry ? getDifficulty(lastEntry.question) : 'medium';
       const usedIds = new Set(questions.map((q) => q.id));
       const next = selectNextQuestion(DATA.questions as PcQuestion[], usedIds, lastDifficulty, lastCorrect);
-      if (next && questions.length < QUESTIONS_PER_TEST && !timeExpired) {
+      if (next && questions.length < QUESTIONS_PER_TEST) {
         setQuestions((prev) => [...prev, next]);
         setCurrentIndex(questions.length);
         setSelectedAnswer(null);
         setShowFeedback(false);
       } else {
-        setTimeUsed(TOTAL_SECONDS - secondsLeft);
         setPhase('complete');
       }
     } else if (currentIndex < questions.length - 1) {
@@ -234,7 +213,6 @@ export function ParagraphComprehensionPracticeTest({
       setSelectedAnswer(null);
       setShowFeedback(false);
     } else {
-      setTimeUsed(TOTAL_SECONDS - secondsLeft);
       setPhase('complete');
     }
   };
@@ -260,11 +238,11 @@ export function ParagraphComprehensionPracticeTest({
             Paragraph Comprehension Practice Test
           </h1>
           <p className="mb-6 text-slate-600">
-            {QUESTIONS_PER_TEST} questions • {DATA.meta.timeMinutes} minutes
+            {QUESTIONS_PER_TEST} questions • {DATA.meta.timeMinutes} min reference (ASVAB section time)
           </p>
           <p className="mb-8 text-center text-sm text-slate-500">
             Read each passage carefully, then answer the question. Questions are from your three
-            practice PDFs. Timer starts when you begin.
+            practice PDFs. A stopwatch runs while you work; you can finish the full test even past the reference time.
           </p>
           <button
             onClick={startTest}
@@ -280,7 +258,8 @@ export function ParagraphComprehensionPracticeTest({
   if (phase === 'complete') {
     const percentage =
       questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
-    const finalTimeUsed = timeUsed || TOTAL_SECONDS - secondsLeft;
+    const finalTimeUsed = elapsedSeconds;
+    const overReferencePace = elapsedSeconds > REFERENCE_SECONDS;
     const missedQuestions = answerHistory.filter((a) => !a.correct);
     const maxWeighted =
       mode === 'adaptive'
@@ -366,7 +345,8 @@ export function ParagraphComprehensionPracticeTest({
                 </p>
                 <p className="text-4xl font-black text-slate-900">{formatTime(finalTimeUsed)}</p>
                 <p className="mt-1 text-sm text-slate-400">
-                  {timeExpired ? 'Time expired' : 'Completed early'}
+                  Reference: {DATA.meta.timeMinutes} min —{' '}
+                  {overReferencePace ? 'Over reference pace' : 'Within reference pace'}
                 </p>
               </div>
             </div>
@@ -467,19 +447,30 @@ export function ParagraphComprehensionPracticeTest({
             </h2>
             <h1 className="text-2xl font-bold text-slate-900">Paragraph Comprehension</h1>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
+            <div className="text-right text-[10px] font-semibold uppercase tracking-wider text-slate-500 sm:text-left">
+              Elapsed{' '}
+              <span
+                className={`font-mono text-sm normal-case ${
+                  elapsedSeconds > REFERENCE_SECONDS ? 'text-amber-700' : 'text-slate-800'
+                }`}
+              >
+                {formatTime(elapsedSeconds)}
+              </span>
+              <span className="text-slate-400"> · Ref {DATA.meta.timeMinutes} min</span>
+            </div>
             <div
               className={`flex items-center gap-2 rounded-full border px-4 py-2 shadow-sm ${
-                secondsLeft <= 60 ? 'border-red-300 bg-red-50' : 'border-slate-200 bg-white'
+                elapsedSeconds > REFERENCE_SECONDS ? 'border-amber-200 bg-amber-50' : 'border-slate-200 bg-white'
               }`}
             >
               <Clock className="h-4 w-4 text-slate-400" />
               <span
                 className={`font-mono font-bold ${
-                  secondsLeft <= 60 ? 'text-red-700' : 'text-slate-700'
+                  elapsedSeconds > REFERENCE_SECONDS ? 'text-amber-800' : 'text-slate-700'
                 }`}
               >
-                {formatTime(secondsLeft)}
+                {formatTime(elapsedSeconds)}
               </span>
             </div>
             <div className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
@@ -602,7 +593,7 @@ export function ParagraphComprehensionPracticeTest({
         </div>
 
         <p className="mt-8 text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400">
-          Paragraph Comprehension • 13 minutes • 15 questions
+          Paragraph Comprehension • 13 min reference • 15 questions
         </p>
       </div>
     </div>
