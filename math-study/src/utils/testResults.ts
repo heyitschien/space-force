@@ -103,22 +103,81 @@ function trimStored<T>(updated: T[]): T[] {
   return updated.slice(0, MAX_STORED_PER_KEY);
 }
 
+function testHistoryApiUrl(): string | null {
+  const base = import.meta.env.VITE_TEST_HISTORY_API_URL as string | undefined;
+  if (!base?.trim() || typeof fetch !== 'function') return null;
+  return `${base.replace(/\/$/, '')}/test-attempts`;
+}
+
+/** True when the client is configured to POST attempts to your API (local or Vercel). */
+export function isTestHistoryCloudSyncConfigured(): boolean {
+  return testHistoryApiUrl() != null;
+}
+
+/**
+ * POST a single attempt to `/test-attempts` (Neon via server). Resolves ok for HTTP 204.
+ */
+export async function pushAttemptToServer(
+  payload: Record<string, unknown>
+): Promise<{ ok: boolean; status: number }> {
+  const url = testHistoryApiUrl();
+  if (!url) return { ok: false, status: 0 };
+  const key = import.meta.env.VITE_TEST_HISTORY_API_KEY as string | undefined;
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(key ? { Authorization: `Bearer ${key}` } : {}),
+      },
+      body: JSON.stringify(payload),
+    });
+    return { ok: res.ok, status: res.status };
+  } catch {
+    return { ok: false, status: 0 };
+  }
+}
+
+/** Upload every attempt in localStorage (all sections) to the server. Skips if API URL unset. */
+export async function syncAllLocalAttemptsToServer(): Promise<{
+  configured: boolean;
+  pushed: number;
+  failed: number;
+  errors: string[];
+}> {
+  const url = testHistoryApiUrl();
+  if (!url) {
+    return { configured: false, pushed: 0, failed: 0, errors: [] };
+  }
+
+  const jobs: Array<{ testKind: string; row: Record<string, unknown> }> = [
+    ...getResults().map((r) => ({ testKind: 'general-science', row: { ...r } })),
+    ...getArResults().map((r) => ({ testKind: 'arithmetic-reasoning', row: { ...r } })),
+    ...getWkResults().map((r) => ({ testKind: 'word-knowledge', row: { ...r } })),
+    ...getPcResults().map((r) => ({ testKind: 'paragraph-comprehension', row: { ...r } })),
+    ...getMathEnduranceResults().map((r) => ({ testKind: 'math-endurance', row: { ...r } })),
+  ];
+
+  let pushed = 0;
+  let failed = 0;
+  const errors: string[] = [];
+
+  for (const { testKind, row } of jobs) {
+    const { ok, status } = await pushAttemptToServer({ testKind, ...row });
+    if (ok) pushed += 1;
+    else {
+      failed += 1;
+      const id = typeof row.id === 'string' ? row.id : '?';
+      errors.push(`${testKind} (${id}): HTTP ${status || 'network'}`);
+    }
+  }
+
+  return { configured: true, pushed, failed, errors };
+}
+
 /** Optional server sync (Neon via Vercel API). No-op if env not set. */
 function maybeSyncAttempt(payload: Record<string, unknown>): void {
-  const base = import.meta.env.VITE_TEST_HISTORY_API_URL as string | undefined;
-  if (!base || typeof fetch !== 'function') return;
-  const key = import.meta.env.VITE_TEST_HISTORY_API_KEY as string | undefined;
-  const url = `${base.replace(/\/$/, '')}/test-attempts`;
-  void fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(key ? { Authorization: `Bearer ${key}` } : {}),
-    },
-    body: JSON.stringify(payload),
-  }).catch(() => {
-    /* ignore network errors — local save is primary */
-  });
+  void pushAttemptToServer(payload);
 }
 
 export function saveResult(result: Omit<TestResult, 'id'>): void {

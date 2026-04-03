@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Clock, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Clock, CloudUpload, X } from 'lucide-react';
 import {
   getResults,
   getArResults,
   getWkResults,
   getPcResults,
   getMathEnduranceResults,
+  isTestHistoryCloudSyncConfigured,
+  syncAllLocalAttemptsToServer,
   type QuestionAttemptDetail,
 } from '../utils/testResults';
 import {
@@ -110,6 +112,8 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
     () => initialSection ?? 'general-science'
   );
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [syncBusy, setSyncBusy] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
@@ -269,6 +273,47 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
               );
             })}
           </ul>
+        </div>
+
+        <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 md:px-6">
+          {!isTestHistoryCloudSyncConfigured() ? (
+            <p className="text-center text-xs text-slate-500">
+              Cloud backup is off. Set <span className="font-mono">VITE_TEST_HISTORY_API_URL</span> (and
+              matching API key if required), run <span className="font-mono">npm run dev:vercel</span> on
+              port 3000 beside <span className="font-mono">npm run dev</span>, then reload.
+            </p>
+          ) : (
+            <div className="flex flex-col gap-2">
+              <button
+                type="button"
+                disabled={syncBusy}
+                onClick={async () => {
+                  setSyncBusy(true);
+                  setSyncMessage(null);
+                  const { configured, pushed, failed, errors } = await syncAllLocalAttemptsToServer();
+                  setSyncBusy(false);
+                  if (!configured) {
+                    setSyncMessage('Sync URL is not configured.');
+                    return;
+                  }
+                  if (failed === 0) {
+                    setSyncMessage(`Uploaded ${pushed} attempt(s) to Neon (duplicates skipped on server).`);
+                  } else {
+                    setSyncMessage(
+                      `Uploaded ${pushed}, failed ${failed}. ${errors.slice(0, 3).join(' ')}${errors.length > 3 ? '…' : ''}`
+                    );
+                  }
+                }}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition-colors hover:bg-slate-100 disabled:opacity-60"
+              >
+                <CloudUpload className="h-4 w-4" />
+                {syncBusy ? 'Uploading…' : 'Upload all on-device attempts to Neon'}
+              </button>
+              {syncMessage && (
+                <p className="text-center text-xs text-slate-600">{syncMessage}</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
