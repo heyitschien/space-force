@@ -1,3 +1,5 @@
+import type { HistoryLookupSection } from './testHistoryLookup';
+
 const GS_STORAGE_KEY = 'asvab-general-science-results';
 const AR_STORAGE_KEY = 'asvab-arithmetic-reasoning-results';
 const WK_STORAGE_KEY = 'asvab-word-knowledge-results';
@@ -13,6 +15,22 @@ export interface QuestionAttemptDetail {
   questionId: string;
   selected: TestAnswerLetter;
   correct: TestAnswerLetter;
+}
+
+/** Normalized row for Test History UI (localStorage or Neon payload). */
+export interface TestHistoryRow {
+  id: string;
+  date: string;
+  mode: string;
+  percentage: number;
+  timeUsedSeconds: number;
+  score: number;
+  total: number;
+  timeExpired: boolean;
+  missedQuestionIds: string[];
+  attemptDetails?: QuestionAttemptDetail[];
+  weightedScore?: number;
+  maxWeightedScore?: number;
 }
 
 export type GeneralScienceTestMode = 'practice-1' | 'practice-2' | 'practice-3' | 'mix' | 'adaptive';
@@ -112,6 +130,128 @@ function testHistoryApiUrl(): string | null {
 /** True when the client is configured to POST attempts to your API (local or Vercel). */
 export function isTestHistoryCloudSyncConfigured(): boolean {
   return testHistoryApiUrl() != null;
+}
+
+function isHistorySection(s: string): s is HistoryLookupSection {
+  return (
+    s === 'general-science' ||
+    s === 'arithmetic-reasoning' ||
+    s === 'word-knowledge' ||
+    s === 'paragraph-comprehension' ||
+    s === 'math-endurance'
+  );
+}
+
+function parseHistoryPayload(raw: unknown): TestHistoryRow | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const p = raw as Record<string, unknown>;
+  if (typeof p.id !== 'string' || typeof p.date !== 'string' || typeof p.mode !== 'string') {
+    return null;
+  }
+  if (
+    typeof p.score !== 'number' ||
+    typeof p.total !== 'number' ||
+    typeof p.percentage !== 'number' ||
+    typeof p.timeUsedSeconds !== 'number' ||
+    typeof p.timeExpired !== 'boolean'
+  ) {
+    return null;
+  }
+  if (!Array.isArray(p.missedQuestionIds)) return null;
+  const missedQuestionIds = p.missedQuestionIds.filter((x): x is string => typeof x === 'string');
+
+  let attemptDetails: QuestionAttemptDetail[] | undefined;
+  if (Array.isArray(p.attemptDetails)) {
+    const details: QuestionAttemptDetail[] = [];
+    for (const a of p.attemptDetails) {
+      if (!a || typeof a !== 'object') continue;
+      const o = a as Record<string, unknown>;
+      if (typeof o.questionId !== 'string') continue;
+      if (o.selected !== 'A' && o.selected !== 'B' && o.selected !== 'C' && o.selected !== 'D') continue;
+      if (o.correct !== 'A' && o.correct !== 'B' && o.correct !== 'C' && o.correct !== 'D') continue;
+      details.push({
+        questionId: o.questionId,
+        selected: o.selected,
+        correct: o.correct,
+      });
+    }
+    if (details.length > 0) attemptDetails = details;
+  }
+
+  const row: TestHistoryRow = {
+    id: p.id,
+    date: p.date,
+    mode: p.mode,
+    percentage: p.percentage,
+    timeUsedSeconds: p.timeUsedSeconds,
+    score: p.score,
+    total: p.total,
+    timeExpired: p.timeExpired,
+    missedQuestionIds,
+    attemptDetails,
+  };
+  if (typeof p.weightedScore === 'number') row.weightedScore = p.weightedScore;
+  if (typeof p.maxWeightedScore === 'number') row.maxWeightedScore = p.maxWeightedScore;
+  return row;
+}
+
+/** Load attempts from Neon via GET /test-attempts (same auth as POST). */
+export async function fetchTestHistoryFromServer(): Promise<{
+  ok: boolean;
+  rowsBySection: Partial<Record<HistoryLookupSection, TestHistoryRow[]>>;
+  error?: string;
+}> {
+  const url = testHistoryApiUrl();
+  if (!url) {
+    return { ok: false, rowsBySection: {}, error: 'Cloud history not configured' };
+  }
+  const key = import.meta.env.VITE_TEST_HISTORY_API_KEY as string | undefined;
+  try {
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: { ...(key ? { Authorization: `Bearer ${key}` } : {}) },
+    });
+    if (!res.ok) {
+      return { ok: false, rowsBySection: {}, error: `Server returned ${res.status}` };
+    }
+    const data = (await res.json()) as { attempts?: unknown[] };
+    const attempts = Array.isArray(data.attempts) ? data.attempts : [];
+    const rowsBySection: Partial<Record<HistoryLookupSection, TestHistoryRow[]>> = {};
+    for (const raw of attempts) {
+      if (typeof raw !== 'object' || raw === null) continue;
+      const tk = (raw as Record<string, unknown>).testKind;
+      if (typeof tk !== 'string' || !isHistorySection(tk)) continue;
+      const row = parseHistoryPayload(raw);
+      if (!row) continue;
+      const list = rowsBySection[tk] ?? [];
+      list.push(row);
+      rowsBySection[tk] = list;
+    }
+    for (const sect of Object.keys(rowsBySection) as HistoryLookupSection[]) {
+      const list = rowsBySection[sect];
+      if (!list) continue;
+      list.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      rowsBySection[sect] = list.slice(0, MAX_STORED_PER_KEY);
+    }
+    return { ok: true, rowsBySection };
+  } catch {
+    return { ok: false, rowsBySection: {}, error: 'Network error fetching history' };
+  }
+}
+
+/** Prefer server copy; add local-only attempts (e.g. not yet synced). */
+export function mergeServerAndLocalHistory(
+  server: TestHistoryRow[] | undefined,
+  local: TestHistoryRow[]
+): TestHistoryRow[] {
+  const map = new Map<string, TestHistoryRow>();
+  for (const r of server ?? []) map.set(r.id, r);
+  for (const r of local) {
+    if (!map.has(r.id)) map.set(r.id, r);
+  }
+  return [...map.values()]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, MAX_STORED_PER_KEY);
 }
 
 /**

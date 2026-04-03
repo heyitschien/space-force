@@ -1,11 +1,12 @@
 import { neon } from '@neondatabase/serverless';
+import { eq, desc } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/neon-http';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { testAttempts } from '../db/schema';
 
 function cors(res: VercelResponse): void {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 }
 
@@ -14,11 +15,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   if (req.method === 'OPTIONS') {
     res.status(204).end();
-    return;
-  }
-
-  if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
@@ -34,6 +30,40 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const url = process.env.DATABASE_URL;
   if (!url) {
     res.status(503).json({ error: 'DATABASE_URL is not configured' });
+    return;
+  }
+
+  const sql = neon(url);
+  const db = drizzle(sql);
+
+  if (req.method === 'GET') {
+    try {
+      const rawKind = req.query?.testKind;
+      const testKind = typeof rawKind === 'string' && rawKind.length > 0 ? rawKind : undefined;
+      const rows = testKind
+        ? await db
+            .select()
+            .from(testAttempts)
+            .where(eq(testAttempts.testKind, testKind))
+            .orderBy(desc(testAttempts.recordedAt))
+            .limit(120)
+        : await db
+            .select()
+            .from(testAttempts)
+            .orderBy(desc(testAttempts.recordedAt))
+            .limit(400);
+      const attempts = rows.map((r) => r.payload);
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json({ attempts });
+    } catch (e) {
+      console.error(e);
+      res.status(500).json({ error: 'Query failed' });
+    }
+    return;
+  }
+
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
@@ -53,9 +83,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     res.status(400).json({ error: 'Missing testKind or id' });
     return;
   }
-
-  const sql = neon(url);
-  const db = drizzle(sql);
 
   try {
     await db

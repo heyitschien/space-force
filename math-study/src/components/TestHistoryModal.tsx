@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Clock, CloudUpload, Download, X } from 'lucide-react';
 import {
   getResults,
@@ -8,8 +8,11 @@ import {
   getMathEnduranceResults,
   isTestHistoryCloudSyncConfigured,
   syncAllLocalAttemptsToServer,
+  fetchTestHistoryFromServer,
+  mergeServerAndLocalHistory,
   downloadLocalAttemptsExportFile,
   type QuestionAttemptDetail,
+  type TestHistoryRow,
 } from '../utils/testResults';
 import {
   lookupQuestionForHistory,
@@ -24,21 +27,6 @@ interface TestHistoryModalProps {
   onClose: () => void;
   /** Opens with this tab selected (e.g. section launcher). */
   initialSection?: TestHistorySection;
-}
-
-interface UnifiedResult {
-  id: string;
-  date: string;
-  mode: string;
-  percentage: number;
-  timeUsedSeconds: number;
-  score: number;
-  total: number;
-  timeExpired: boolean;
-  missedQuestionIds: string[];
-  attemptDetails?: QuestionAttemptDetail[];
-  weightedScore?: number;
-  maxWeightedScore?: number;
 }
 
 interface WrongDetailRow {
@@ -83,7 +71,7 @@ function formatModeLabel(mode: string): string {
   return `Practice Test ${mode.replace('practice-', '')}`;
 }
 
-function loadResultsForSection(section: TestHistorySection): UnifiedResult[] {
+function localRowsForSection(section: TestHistorySection): TestHistoryRow[] {
   switch (section) {
     case 'general-science':
       return getResults().map((r) => ({ ...r, mode: r.mode }));
@@ -115,10 +103,49 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [syncBusy, setSyncBusy] = useState(false);
   const [syncMessage, setSyncMessage] = useState<string | null>(null);
+  const [serverRowsBySection, setServerRowsBySection] = useState<
+    Partial<Record<TestHistorySection, TestHistoryRow[]>> | undefined
+  >(undefined);
+  const [historyLoadError, setHistoryLoadError] = useState<string | null>(null);
+  const [historyLoading, setHistoryLoading] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen || !isTestHistoryCloudSyncConfigured()) {
+      return;
+    }
+    let cancelled = false;
+    const id = requestAnimationFrame(() => {
+      if (cancelled) return;
+      setHistoryLoading(true);
+      setHistoryLoadError(null);
+      void fetchTestHistoryFromServer()
+        .then((r) => {
+          if (cancelled) return;
+          if (r.ok) {
+            setServerRowsBySection(r.rowsBySection);
+            setHistoryLoadError(null);
+          } else {
+            setServerRowsBySection(undefined);
+            setHistoryLoadError(r.error ?? 'Failed to load cloud history');
+          }
+        })
+        .finally(() => {
+          if (!cancelled) setHistoryLoading(false);
+        });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(id);
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const results = loadResultsForSection(activeSection);
+  const localRows = localRowsForSection(activeSection);
+  const cloudConfigured = isTestHistoryCloudSyncConfigured();
+  const results = cloudConfigured
+    ? mergeServerAndLocalHistory(serverRowsBySection?.[activeSection], localRows)
+    : localRows;
   const pctClass = scoreColorClass(activeSection);
 
   const toggleExpand = (id: string) => {
@@ -162,11 +189,21 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
         </div>
 
         <div className="max-h-[min(65vh,32rem)] overflow-y-auto p-4 md:p-6">
+          {historyLoading && cloudConfigured && (
+            <p className="mb-2 text-center text-xs text-slate-500">Loading cloud history…</p>
+          )}
+          {historyLoadError && cloudConfigured && (
+            <p className="mb-2 text-center text-xs font-medium text-amber-800">
+              {historyLoadError} — showing this device only until the request succeeds.
+            </p>
+          )}
           {results.length === 0 ? (
             <p className="text-center text-slate-500">No test results yet for this section.</p>
           ) : (
             <p className="mb-3 text-center text-xs text-slate-500">
-              Showing up to 50 most recent attempts per section (stored on this device).
+              {cloudConfigured && !historyLoadError
+                ? 'Up to 50 attempts per section: merged from the cloud (all devices) plus any unsynced rows on this device.'
+                : 'Up to 50 attempts per section on this device.'}
             </p>
           )}
           <ul className="space-y-3">
@@ -313,6 +350,8 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
                   }
                   if (failed === 0) {
                     setSyncMessage(`Uploaded ${pushed} attempt(s) to Neon (duplicates skipped on server).`);
+                    const refreshed = await fetchTestHistoryFromServer();
+                    if (refreshed.ok) setServerRowsBySection(refreshed.rowsBySection);
                   } else {
                     setSyncMessage(
                       `Uploaded ${pushed}, failed ${failed}. ${errors.slice(0, 3).join(' ')}${errors.length > 3 ? '…' : ''}`
