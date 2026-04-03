@@ -1,5 +1,4 @@
 import { neon } from '@neondatabase/serverless';
-import { eq, desc } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/neon-http';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { testAttempts } from '../db/schema';
@@ -33,6 +32,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
+  /** Single HTTP driver for Neon (Drizzle insert + raw SELECT for reliable GET on Vercel). */
   const sql = neon(url);
   const db = drizzle(sql);
 
@@ -41,22 +41,36 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const rawKind = req.query?.testKind;
       const testKind = typeof rawKind === 'string' && rawKind.length > 0 ? rawKind : undefined;
       const rows = testKind
-        ? await db
-            .select()
-            .from(testAttempts)
-            .where(eq(testAttempts.testKind, testKind))
-            .orderBy(desc(testAttempts.recordedAt))
-            .limit(120)
-        : await db
-            .select()
-            .from(testAttempts)
-            .orderBy(desc(testAttempts.recordedAt))
-            .limit(400);
-      const attempts = rows.map((r) => r.payload);
+        ? await sql`
+            SELECT payload
+            FROM test_attempts
+            WHERE test_kind = ${testKind}
+            ORDER BY recorded_at DESC
+            LIMIT 120
+          `
+        : await sql`
+            SELECT payload
+            FROM test_attempts
+            ORDER BY recorded_at DESC
+            LIMIT 400
+          `;
+      const attempts = (rows as Array<{ payload: unknown }>)
+        .map((r) => {
+          try {
+            const p = r.payload;
+            if (p == null) return null;
+            if (typeof p === 'string') return JSON.parse(p) as Record<string, unknown>;
+            if (typeof p === 'object') return p as Record<string, unknown>;
+            return null;
+          } catch {
+            return null;
+          }
+        })
+        .filter((x): x is Record<string, unknown> => x != null && typeof x === 'object');
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json({ attempts });
     } catch (e) {
-      console.error(e);
+      console.error('[test-attempts GET]', e);
       res.status(500).json({ error: 'Query failed' });
     }
     return;
