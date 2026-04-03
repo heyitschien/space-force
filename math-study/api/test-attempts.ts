@@ -1,7 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { testAttempts } from '../db/schema';
+import { testAttempts } from '../db/schema.js';
 
 function cors(res: VercelResponse): void {
   res.setHeader('Access-Control-Allow-Origin', '*');
