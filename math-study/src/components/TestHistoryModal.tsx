@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Clock, CloudUpload, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Clock, CloudUpload, Download, X } from 'lucide-react';
 import {
   getResults,
   getArResults,
@@ -8,6 +8,7 @@ import {
   getMathEnduranceResults,
   isTestHistoryCloudSyncConfigured,
   syncAllLocalAttemptsToServer,
+  downloadLocalAttemptsExportFile,
   type QuestionAttemptDetail,
 } from '../utils/testResults';
 import {
@@ -276,6 +277,20 @@ export function TestHistoryModal({ isOpen, onClose, initialSection }: TestHistor
         </div>
 
         <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 md:px-6">
+          <div className="mb-3 flex flex-col gap-2">
+            <button
+              type="button"
+              onClick={() => downloadLocalAttemptsExportFile()}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition-colors hover:bg-slate-100"
+            >
+              <Download className="h-4 w-4" />
+              Download JSON for Neon CLI
+            </button>
+            <p className="text-center text-[11px] leading-snug text-slate-500">
+              From <span className="font-mono">math-study</span>:{' '}
+              <span className="font-mono">npx tsx scripts/sync-local-results-to-neon.ts path/to/export.json</span>
+            </p>
+          </div>
           {!isTestHistoryCloudSyncConfigured() ? (
             <p className="text-center text-xs text-slate-500">
               Cloud backup is off. Set <span className="font-mono">VITE_TEST_HISTORY_API_URL</span> (and

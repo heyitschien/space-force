@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
+    "sync:neon": "tsx scripts/sync-local-results-to-neon.ts",
     "preview": "vite preview",
     "quiz:generate": "python3 docs/gpt-lesson-update/quiz-design/lve-1-quiz.py && node scripts/convertLevel1Quiz.js"
   },
@@ -40,6 +41,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "typescript": "~5.9.3",
+    "tsx": "^4.21.0",
     "typescript-eslint": "^8.48.0",
     "vite": "^7.3.1"
   }

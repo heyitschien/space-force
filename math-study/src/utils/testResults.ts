@@ -349,3 +349,27 @@ export function getMathEnduranceResults(): MathEnduranceTestResult[] {
     return [];
   }
 }
+
+/** Shape matches `scripts/sync-local-results-to-neon.ts` import. */
+export function buildLocalAttemptsExportObject(): Record<string, unknown[]> {
+  return {
+    'general-science': getResults() as unknown[],
+    'arithmetic-reasoning': getArResults() as unknown[],
+    'word-knowledge': getWkResults() as unknown[],
+    'paragraph-comprehension': getPcResults() as unknown[],
+    'math-endurance': getMathEnduranceResults() as unknown[],
+  };
+}
+
+/** Download JSON for `npx tsx scripts/sync-local-results-to-neon.ts <file>`. */
+export function downloadLocalAttemptsExportFile(): void {
+  const data = buildLocalAttemptsExportObject();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `asvab-test-attempts-export-${new Date().toISOString().slice(0, 10)}.json`;
+  a.rel = 'noopener';
+  a.click();
+  URL.revokeObjectURL(url);
+}
