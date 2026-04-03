@@ -40,10 +40,12 @@ export function PatternRecognitionDrill() {
   }, [drillMode]);
 
   useEffect(() => {
-    setCurrentIndex(0);
-    setSelectedId(null);
-    setCorrectCount(0);
-    setIsComplete(false);
+    queueMicrotask(() => {
+      setCurrentIndex(0);
+      setSelectedId(null);
+      setCorrectCount(0);
+      setIsComplete(false);
+    });
   }, [drillMode]);
 
   const setMode = useCallback(

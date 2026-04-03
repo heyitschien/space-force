@@ -52,6 +52,7 @@ export function ChemistryQuizModal({ isOpen, onClose }: ChemistryQuizModalProps)
         : CHEMISTRY_QUIZ_QUESTIONS,
     [retryMode, missedSet]
   );
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- quizSeed forces new set on reset
   const questions = useMemo(() => buildQuestionSet(currentPool), [quizSeed, currentPool]);
 
   const currentQuestion = questions[currentIndex];

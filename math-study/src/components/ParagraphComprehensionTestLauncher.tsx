@@ -41,6 +41,7 @@ export function ParagraphComprehensionTestLauncher({
 }: ParagraphComprehensionTestLauncherProps) {
   const [selectedMode, setSelectedMode] = useState<ParagraphComprehensionTestMode | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyMountKey, setHistoryMountKey] = useState(0);
 
   if (selectedMode) {
     return (
@@ -71,7 +72,10 @@ export function ParagraphComprehensionTestLauncher({
           Choose a test mode. Each run has 15 questions and a 13-minute timer.
         </p>
         <button
-          onClick={() => setHistoryOpen(true)}
+          onClick={() => {
+            setHistoryMountKey((k) => k + 1);
+            setHistoryOpen(true);
+          }}
           className="mb-8 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white py-3 font-semibold text-slate-700 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-50/50 hover:text-emerald-800"
         >
           <History className="h-5 w-5" />
@@ -99,9 +103,10 @@ export function ParagraphComprehensionTestLauncher({
         </div>
       </div>
       <TestHistoryModal
+        key={historyMountKey}
         isOpen={historyOpen}
         onClose={() => setHistoryOpen(false)}
-        section="paragraph-comprehension"
+        initialSection="paragraph-comprehension"
       />
     </div>
   );

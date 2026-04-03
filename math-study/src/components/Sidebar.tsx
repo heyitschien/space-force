@@ -111,12 +111,14 @@ export function Sidebar({
   );
 
   useEffect(() => {
-    setExpanded((prev) => {
-      const next = { ...prev };
-      for (const id of CONTENT_CATEGORY_IDS) {
-        next[id] = id === activeCategory;
-      }
-      return next;
+    queueMicrotask(() => {
+      setExpanded((prev) => {
+        const next = { ...prev };
+        for (const id of CONTENT_CATEGORY_IDS) {
+          next[id] = id === activeCategory;
+        }
+        return next;
+      });
     });
   }, [activeCategory]);
 

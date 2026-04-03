@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface UnitDef {
   label: string;
@@ -94,33 +94,38 @@ export function UnitConverter() {
   const [result, setResult] = useState<string>('—');
   const [error, setError] = useState<string>('');
 
-  const units = UC_DATA[category]?.units ?? {};
+  const units = useMemo(() => UC_DATA[category]?.units ?? {}, [category]);
   const unitKeys = Object.keys(units);
 
   useEffect(() => {
-    if (unitKeys.length > 0) {
-      setFromUnit((prev) => (UC_DATA[category]?.units?.[prev] ? prev : unitKeys[0]));
-      setToUnit((prev) => (UC_DATA[category]?.units?.[prev] ? prev : unitKeys[1] ?? unitKeys[0]));
+    const keys = Object.keys(UC_DATA[category]?.units ?? {});
+    if (keys.length > 0) {
+      queueMicrotask(() => {
+        setFromUnit((prev) => (UC_DATA[category]?.units?.[prev] ? prev : keys[0]));
+        setToUnit((prev) => (UC_DATA[category]?.units?.[prev] ? prev : keys[1] ?? keys[0]));
+      });
     }
   }, [category]);
 
   useEffect(() => {
-    setError('');
-    const numValue = Number(value);
-    if (!Number.isFinite(numValue)) {
-      setResult('—');
-      if (value !== '' && value !== '-') setError('Enter a valid number.');
-      return;
-    }
-    const from = units[fromUnit];
-    const to = units[toUnit];
-    if (!from || !to) {
-      setResult('—');
-      return;
-    }
-    const baseValue = from.toBase(numValue);
-    const outValue = to.fromBase(baseValue);
-    setResult(`${formatNumber(outValue)} ${to.label}`);
+    queueMicrotask(() => {
+      setError('');
+      const numValue = Number(value);
+      if (!Number.isFinite(numValue)) {
+        setResult('—');
+        if (value !== '' && value !== '-') setError('Enter a valid number.');
+        return;
+      }
+      const from = units[fromUnit];
+      const to = units[toUnit];
+      if (!from || !to) {
+        setResult('—');
+        return;
+      }
+      const baseValue = from.toBase(numValue);
+      const outValue = to.fromBase(baseValue);
+      setResult(`${formatNumber(outValue)} ${to.label}`);
+    });
   }, [category, value, fromUnit, toUnit, units]);
 
   return (

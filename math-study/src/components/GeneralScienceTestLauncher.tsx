@@ -21,6 +21,7 @@ const MODES: { id: GeneralScienceTestMode; label: string; description: string }[
 export function GeneralScienceTestLauncher({ onClose }: GeneralScienceTestLauncherProps) {
   const [selectedMode, setSelectedMode] = useState<GeneralScienceTestMode | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyMountKey, setHistoryMountKey] = useState(0);
 
   if (selectedMode) {
     return (
@@ -51,7 +52,10 @@ export function GeneralScienceTestLauncher({ onClose }: GeneralScienceTestLaunch
           Choose a test mode. Each test has 25 questions and an 11-minute timer.
         </p>
         <button
-          onClick={() => setHistoryOpen(true)}
+          onClick={() => {
+            setHistoryMountKey((k) => k + 1);
+            setHistoryOpen(true);
+          }}
           className="mb-8 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white py-3 font-semibold text-slate-700 shadow-sm transition-all hover:border-indigo-300 hover:bg-indigo-50/50 hover:text-indigo-700"
         >
           <History className="h-5 w-5" />
@@ -77,7 +81,12 @@ export function GeneralScienceTestLauncher({ onClose }: GeneralScienceTestLaunch
           ))}
         </div>
       </div>
-      <TestHistoryModal isOpen={historyOpen} onClose={() => setHistoryOpen(false)} />
+      <TestHistoryModal
+        key={historyMountKey}
+        isOpen={historyOpen}
+        onClose={() => setHistoryOpen(false)}
+        initialSection="general-science"
+      />
     </div>
   );
 }

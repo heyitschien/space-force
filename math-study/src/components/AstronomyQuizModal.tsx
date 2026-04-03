@@ -28,10 +28,8 @@ export function AstronomyQuizModal({
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
 
-  const questions = useMemo(
-    () => shuffleQuestions(ASTRONOMY_QUIZ_QUESTIONS),
-    [quizSeed]
-  );
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- quizSeed forces reshuffle on reset
+  const questions = useMemo(() => shuffleQuestions(ASTRONOMY_QUIZ_QUESTIONS), [quizSeed]);
 
   const currentQuestion = questions[currentIndex];
   const isComplete = currentIndex >= questions.length;

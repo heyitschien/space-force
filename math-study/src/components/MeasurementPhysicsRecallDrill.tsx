@@ -34,7 +34,8 @@ export function MeasurementPhysicsRecallDrill({
         ...item,
         options: shuffleOptions(item.options),
       })),
-    [phase]
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- phase resets shuffle when drill restarts
+    [phase],
   );
 
   const currentItem = itemsWithShuffledOptions[currentIndex];

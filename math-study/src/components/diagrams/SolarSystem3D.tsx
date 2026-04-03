@@ -165,11 +165,15 @@ function AsteroidBelt({ onSelect, showLabel }: { onSelect: () => void; showLabel
     }
   });
 
-  const asteroids = Array.from({ length: 80 }, (_, i) => ({
-    angle: (i / 80) * Math.PI * 2 + i * 0.3,
-    dist: radius + (Math.random() - 0.5) * 1.5,
-    size: 0.03 + Math.random() * 0.04,
-  }));
+  const asteroids = Array.from({ length: 80 }, (_, i) => {
+    const u0 = ((i * 7919) % 1000) / 1000;
+    const u1 = ((i * 4243) % 1000) / 1000;
+    return {
+      angle: (i / 80) * Math.PI * 2 + i * 0.3,
+      dist: radius + (u0 - 0.5) * 1.5,
+      size: 0.03 + u1 * 0.04,
+    };
+  });
 
   return (
     <>

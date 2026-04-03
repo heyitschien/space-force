@@ -113,7 +113,7 @@ export function BiologyPage() {
 
   useEffect(() => {
     if (selectedId && !activeTabTopicIds.includes(selectedId)) {
-      setSelectedId(null);
+      queueMicrotask(() => setSelectedId(null));
     }
   }, [activeTabTopicIds, selectedId]);
 

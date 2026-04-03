@@ -1,64 +1,30 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { AlertCircle, Award, BookOpen, CheckCircle2, ChevronRight, Clock, RotateCcw, X, Zap } from 'lucide-react';
+import {
+  ASVAB_PHASE0_QUESTIONS,
+  type AsvabPhase0OptionId,
+  type AsvabPhase0Question,
+} from '../data/asvabPhase0EnduranceQuestions';
+import { saveMathEnduranceResult } from '../utils/testResults';
 
 interface AsvabPracticeTestProps {
   onClose: () => void;
 }
 
-type OptionId = 'A' | 'B' | 'C' | 'D';
-
-interface QuestionOption {
-  id: OptionId;
-  text: string;
-}
-
-interface Question {
-  id: number;
-  section: string;
-  text: string;
-  options: QuestionOption[];
-  correct: OptionId;
-  explanation: string;
-}
-
-const QUESTIONS: Question[] = [
-  { id: 1, section: 'PART 1: PEMDAS MASTERY', text: 'Simplify the following expression: 12 + [3 × (8 - 2)²] ÷ 9 - 4', options: [{ id: 'A', text: '12' }, { id: 'B', text: '20' }, { id: 'C', text: '24' }, { id: 'D', text: '32' }], correct: 'B', explanation: 'Following PEMDAS: \n1. Parentheses: (8 - 2) = 6 \n2. Exponents: 6² = 36 \n3. Multiplication (inside brackets): 3 × 36 = 108 \n4. Division: 108 ÷ 9 = 12 \n5. Addition/Subtraction: 12 + 12 - 4 = 20.' },
-  { id: 2, section: 'PART 1: FRACTIONS & WORD DECODER', text: 'An Air Force technician spends 1/3 of her shift on repairs and 2/5 of her shift on inspections. If she has 4 hours remaining for administrative work, how long was her total shift?', options: [{ id: 'A', text: '12 hours' }, { id: 'B', text: '15 hours' }, { id: 'C', text: '18 hours' }, { id: 'D', text: '20 hours' }], correct: 'B', explanation: 'Common denominator for 1/3 and 2/5 is 15. \n1/3 = 5/15, 2/5 = 6/15. \nTotal used = 11/15. \nRemaining = 4/15. \nIf 4/15 = 4 hours, then 15/15 = 15 hours.' },
-  { id: 3, section: 'PART 1: DECIMAL DIVISION', text: 'A fuel tank holds 52.5 gallons. If a generator consumes 0.75 gallons per hour, how many hours will the tank last?', options: [{ id: 'A', text: '60 hours' }, { id: 'B', text: '65 hours' }, { id: 'C', text: '70 hours' }, { id: 'D', text: '75 hours' }], correct: 'C', explanation: 'Shift decimal twice: 5250 ÷ 75. \n75 goes into 150 twice, so 75 into 525 is 7. \nResult is 70.' },
-  { id: 4, section: 'PART 1: PERCENT MARKUP/DOWN', text: 'A toolkit originally costs $120. It is marked down by 25% for a sale. After the discount, a 10% oversize shipping fee is added to the sale price. What is the final cost?', options: [{ id: 'A', text: '$90' }, { id: 'B', text: '$99' }, { id: 'C', text: '$102' }, { id: 'D', text: '$108' }], correct: 'B', explanation: '25% of 120 is 30. Sale price = 90. \n10% of 90 is 9. \n90 + 9 = 99.' },
-  { id: 5, section: 'PART 4: WORD PROBLEM DECODER', text: "Which equation correctly represents the statement: '7 less than three times a number is 26'?", options: [{ id: 'A', text: '7 - 3x = 26' }, { id: 'B', text: '3x - 7 = 26' }, { id: 'C', text: '3(x - 7) = 26' }, { id: 'D', text: '3x + 7 = 26' }], correct: 'B', explanation: "'7 less than' means -7 at the END. 'Three times a number' is 3x. 'is' is =. \n3x - 7 = 26." },
-  { id: 6, section: 'SPEED DRILL: PEMDAS', text: 'Simplify: 20 - (5 + 3)² ÷ 16 + 4', options: [{ id: 'A', text: '8' }, { id: 'B', text: '12' }, { id: 'C', text: '20' }, { id: 'D', text: '24' }], correct: 'C', explanation: '1. (5+3) = 8 \n2. 8² = 64 \n3. 64 ÷ 16 = 4 \n4. 20 - 4 + 4 = 20.' },
-  { id: 7, section: 'SPEED DRILL: LESS THAN REVERSAL', text: '12 less than five times a number is 48. Find the number.', options: [{ id: 'A', text: '7.2' }, { id: 'B', text: '10' }, { id: 'C', text: '12' }, { id: 'D', text: '15' }], correct: 'C', explanation: 'Equation: 5x - 12 = 48. \nAdd 12: 5x = 60. \nDivide by 5: x = 12.' },
-  { id: 8, section: 'PART 1: PERCENT RECALL', text: 'What is 15% of 200?', options: [{ id: 'A', text: '15' }, { id: 'B', text: '20' }, { id: 'C', text: '30' }, { id: 'D', text: '45' }], correct: 'C', explanation: '10% of 200 is 20. 5% of 200 is half that (10). \n20 + 10 = 30.' },
-  { id: 9, section: 'PART 1: FRACTION CAPACITY', text: 'An aircraft uses 1/4 of its fuel on takeoff and 1/2 for cruising. If it has 50 gallons left, what was the total capacity?', options: [{ id: 'A', text: '100 gallons' }, { id: 'B', text: '150 gallons' }, { id: 'C', text: '200 gallons' }, { id: 'D', text: '250 gallons' }], correct: 'C', explanation: '1/4 + 1/2 = 1/4 + 2/4 = 3/4 used. \n1/4 remains. \nIf 1/4 = 50, then total = 50 * 4 = 200.' },
-  { id: 10, section: 'PART 1: DECIMAL PIECES', text: 'A wire 6.4 meters long is cut into 0.4 meter pieces. How many pieces are there?', options: [{ id: 'A', text: '14' }, { id: 'B', text: '16' }, { id: 'C', text: '18' }, { id: 'D', text: '20' }], correct: 'B', explanation: '6.4 ÷ 0.4. Move decimal: 64 ÷ 4 = 16.' },
-  { id: 11, section: 'PART 1: PERCENT INCREASE', text: 'A supply price increases from $50 to $60. What is the percent increase?', options: [{ id: 'A', text: '10%' }, { id: 'B', text: '15%' }, { id: 'C', text: '20%' }, { id: 'D', text: '25%' }], correct: 'C', explanation: 'Change = $10. Original = $50. \nRatio = 10/50 = 1/5 = 20%.' },
-  { id: 12, section: 'PART 4: DIFFERENCE DECODER', text: 'The difference between 100 and twice a number is 40. What is the number?', options: [{ id: 'A', text: '20' }, { id: 'B', text: '30' }, { id: 'C', text: '40' }, { id: 'D', text: '60' }], correct: 'B', explanation: '100 - 2x = 40. \n100 - 40 = 2x \n60 = 2x → x = 30.' },
-  { id: 13, section: 'PART 4: RATIO TOTALS', text: 'In a unit, the ratio of men to women is 3:4. If there are 21 men, how many total people are in the unit?', options: [{ id: 'A', text: '28' }, { id: 'B', text: '42' }, { id: 'C', text: '49' }, { id: 'D', text: '56' }], correct: 'C', explanation: 'Men = 3 parts. 3 parts = 21, so 1 part = 7. \nTotal parts = 3 + 4 = 7 parts. \n7 * 7 = 49 total people.' },
-  { id: 14, section: 'SPEED DRILL: PEMDAS', text: '(10 + 2) × 3 - 4² ÷ 2', options: [{ id: 'A', text: '10' }, { id: 'B', text: '28' }, { id: 'C', text: '32' }, { id: 'D', text: '40' }], correct: 'B', explanation: '1. (10+2) = 12 \n2. 12 * 3 = 36 \n3. 4² = 16 \n4. 16 ÷ 2 = 8 \n5. 36 - 8 = 28.' },
-  { id: 15, section: 'SPEED DRILL: LESS THAN REVERSAL', text: '5 less than half a number is 10. Find the number.', options: [{ id: 'A', text: '15' }, { id: 'B', text: '20' }, { id: 'C', text: '25' }, { id: 'D', text: '30' }], correct: 'D', explanation: 'Equation: 1/2x - 5 = 10. \nAdd 5: 1/2x = 15. \nMultiply by 2: x = 30.' },
-  { id: 16, section: 'PART 1: PERCENT LOGIC', text: 'A $200 radio is on sale for 20% off. After the discount, a 5% tax is added. What is the final price?', options: [{ id: 'A', text: '$160' }, { id: 'B', text: '$168' }, { id: 'C', text: '$170' }, { id: 'D', text: '$175' }], correct: 'B', explanation: '1. 20% of 200 = 40. Sale price = 160. \n2. 5% of 160 = 8. \n3. 160 + 8 = 168.' },
-  { id: 17, section: 'PART 1: FRACTION REVERSAL', text: 'If 2/3 of a number is 16, what is the number?', options: [{ id: 'A', text: '20' }, { id: 'B', text: '24' }, { id: 'C', text: '32' }, { id: 'D', text: '48' }], correct: 'B', explanation: '2/3x = 16. Multiply by 3/2. \n16 * 3 = 48. 48 ÷ 2 = 24.' },
-  { id: 18, section: 'PART 4: SUM DECODER', text: 'The sum of three times a number and 5 is 20. Find the number.', options: [{ id: 'A', text: '5' }, { id: 'B', text: '6' }, { id: 'C', text: '7' }, { id: 'D', text: '10' }], correct: 'A', explanation: '3x + 5 = 20. \n3x = 15. \nx = 5.' },
-  { id: 19, section: 'SPEED DRILL: DECIMAL DIVISION', text: 'Evaluate: 48 ÷ 0.12', options: [{ id: 'A', text: '4' }, { id: 'B', text: '40' }, { id: 'C', text: '400' }, { id: 'D', text: '4000' }], correct: 'C', explanation: 'Move decimal twice: 4800 ÷ 12. \n12 * 4 = 48. Add zeros: 400.' },
-  { id: 20, section: 'SPEED DRILL: RATIOS', text: 'The ratio of cars to trucks is 1:5. If there are 60 total vehicles, how many are cars?', options: [{ id: 'A', text: '10' }, { id: 'B', text: '12' }, { id: 'C', text: '15' }, { id: 'D', text: '50' }], correct: 'A', explanation: 'Total parts = 1 + 5 = 6. \n60 ÷ 6 = 10 per part. \nCars (1 part) = 10.' },
-  { id: 21, section: 'SPEED DRILL: PERCENT', text: '30% of a number is 90. What is the number?', options: [{ id: 'A', text: '270' }, { id: 'B', text: '300' }, { id: 'C', text: '330' }, { id: 'D', text: '400' }], correct: 'B', explanation: '0.3x = 90. \n900 ÷ 3 = 300.' },
-  { id: 22, section: 'SPEED DRILL: PEMDAS', text: '5 + 2 × (10 - 7)²', options: [{ id: 'A', text: '23' }, { id: 'B', text: '41' }, { id: 'C', text: '63' }, { id: 'D', text: '121' }], correct: 'A', explanation: '1. (10-7) = 3 \n2. 3² = 9 \n3. 2 * 9 = 18 \n4. 5 + 18 = 23.' },
-  { id: 23, section: 'PART 1: COMPLEX PERCENT', text: 'A number increased by 20% of itself is 60. What is the number?', options: [{ id: 'A', text: '40' }, { id: 'B', text: '48' }, { id: 'C', text: '50' }, { id: 'D', text: '55' }], correct: 'C', explanation: 'x + 0.2x = 60 \n1.2x = 60 \n600 ÷ 12 = 50.' },
-  { id: 24, section: 'SPEED DRILL: LESS THAN REVERSAL', text: '15 less than four times a number is 25. Find the number.', options: [{ id: 'A', text: '10' }, { id: 'B', text: '12.5' }, { id: 'C', text: '15' }, { id: 'D', text: '20' }], correct: 'A', explanation: '4x - 15 = 25. \n4x = 40. \nx = 10.' },
-  { id: 25, section: 'PART 1: FRACTION REMAINDER', text: 'A soldier spends 1/5 of his pay on rent and 2/5 on food. If he has $1,200 left, what is his total pay?', options: [{ id: 'A', text: '$2,000' }, { id: 'B', text: '$2,400' }, { id: 'C', text: '$3,000' }, { id: 'D', text: '$4,000' }], correct: 'C', explanation: 'Used = 1/5 + 2/5 = 3/5. \nRemaining = 2/5. \nIf 2/5 = 1200, then 1/5 = 600. \nTotal (5/5) = 600 * 5 = 3000.' },
-  { id: 26, section: 'PART 1: DECIMAL MULTIPLIER', text: 'If 1.5 liters of fuel weigh 1.2 kg, how much do 15 liters weigh?', options: [{ id: 'A', text: '8 kg' }, { id: 'B', text: '10 kg' }, { id: 'C', text: '12 kg' }, { id: 'D', text: '15 kg' }], correct: 'C', explanation: '15 liters is exactly 10 times more than 1.5 liters. \nWeight = 1.2 kg * 10 = 12 kg.' },
-  { id: 27, section: 'FINAL DRILL: WORD PROBLEM', text: '18 is 3 more than 3 times a number. Find the number.', options: [{ id: 'A', text: '4' }, { id: 'B', text: '5' }, { id: 'C', text: '6' }, { id: 'D', text: '7' }], correct: 'B', explanation: '18 = 3x + 3. \n15 = 3x. \nx = 5.' },
-];
+const QUESTIONS = ASVAB_PHASE0_QUESTIONS;
 
 export function AsvabPracticeTest({ onClose }: AsvabPracticeTestProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<OptionId | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<AsvabPhase0OptionId | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);
   const [startTime, setStartTime] = useState(() => Date.now());
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [answerHistory, setAnswerHistory] = useState<
+    Array<{ question: AsvabPhase0Question; selectedAnswer: AsvabPhase0OptionId; correct: boolean }>
+  >([]);
+  const savedRef = useRef(false);
 
   useEffect(() => {
     if (quizComplete) {
@@ -72,7 +38,31 @@ export function AsvabPracticeTest({ onClose }: AsvabPracticeTestProps) {
     return () => clearInterval(timer);
   }, [quizComplete, startTime]);
 
-  const handleAnswerSelect = (optionId: OptionId) => {
+  useEffect(() => {
+    if (!quizComplete) return;
+    if (savedRef.current) return;
+    savedRef.current = true;
+
+    const pct = Math.round((score / QUESTIONS.length) * 100);
+    const missed = answerHistory.filter((a) => !a.correct);
+    saveMathEnduranceResult({
+      date: new Date().toISOString(),
+      mode: 'phase-0',
+      score,
+      total: QUESTIONS.length,
+      percentage: pct,
+      timeUsedSeconds: elapsedTime,
+      timeExpired: false,
+      missedQuestionIds: missed.map((a) => a.question.id),
+      attemptDetails: answerHistory.map((a) => ({
+        questionId: a.question.id,
+        selected: a.selectedAnswer,
+        correct: a.question.correct,
+      })),
+    });
+  }, [quizComplete, score, answerHistory, elapsedTime]);
+
+  const handleAnswerSelect = (optionId: AsvabPhase0OptionId) => {
     if (showExplanation) return;
     setSelectedAnswer(optionId);
     setShowExplanation(true);
@@ -82,6 +72,11 @@ export function AsvabPracticeTest({ onClose }: AsvabPracticeTestProps) {
   };
 
   const nextQuestion = () => {
+    const q = QUESTIONS[currentQuestion];
+    if (selectedAnswer == null) return;
+    const correct = selectedAnswer === q.correct;
+    setAnswerHistory((prev) => [...prev, { question: q, selectedAnswer, correct }]);
+
     if (currentQuestion < QUESTIONS.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
       setSelectedAnswer(null);
@@ -99,6 +94,8 @@ export function AsvabPracticeTest({ onClose }: AsvabPracticeTestProps) {
     setQuizComplete(false);
     setStartTime(Date.now());
     setElapsedTime(0);
+    setAnswerHistory([]);
+    savedRef.current = false;
   };
 
   const formatTime = (seconds: number) => {

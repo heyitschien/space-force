@@ -21,6 +21,7 @@ const MODES: { id: ArithmeticReasoningTestMode; label: string; description: stri
 export function ArithmeticReasoningTestLauncher({ onClose }: ArithmeticReasoningTestLauncherProps) {
   const [selectedMode, setSelectedMode] = useState<ArithmeticReasoningTestMode | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyMountKey, setHistoryMountKey] = useState(0);
 
   if (selectedMode) {
     return (
@@ -51,7 +52,10 @@ export function ArithmeticReasoningTestLauncher({ onClose }: ArithmeticReasoning
           Choose a test mode. Each test has 30 questions and a 36-minute timer.
         </p>
         <button
-          onClick={() => setHistoryOpen(true)}
+          onClick={() => {
+            setHistoryMountKey((k) => k + 1);
+            setHistoryOpen(true);
+          }}
           className="mb-8 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white py-3 font-semibold text-slate-700 shadow-sm transition-all hover:border-rose-300 hover:bg-rose-50/50 hover:text-rose-700"
         >
           <History className="h-5 w-5" />
@@ -78,9 +82,10 @@ export function ArithmeticReasoningTestLauncher({ onClose }: ArithmeticReasoning
         </div>
       </div>
       <TestHistoryModal
+        key={historyMountKey}
         isOpen={historyOpen}
         onClose={() => setHistoryOpen(false)}
-        section="arithmetic-reasoning"
+        initialSection="arithmetic-reasoning"
       />
     </div>
   );

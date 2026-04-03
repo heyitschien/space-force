@@ -158,6 +158,62 @@ export function ArithmeticReasoningPracticeTest({
     return () => clearInterval(timer);
   }, [phase]);
 
+  useEffect(() => {
+    if (phase !== 'complete') return;
+    if (savedRef.current) return;
+    savedRef.current = true;
+
+    const pct = questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
+    const finalTimeUsed = timeUsed || TOTAL_SECONDS - secondsLeft;
+    const missed = answerHistory.filter((a) => !a.correct);
+    const maxWeighted =
+      mode === 'adaptive'
+        ? questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[getDifficulty(q)], 0)
+        : undefined;
+    const missedByDifficulty =
+      mode === 'adaptive'
+        ? missed.reduce(
+            (acc, { question }) => {
+              const d = getDifficulty(question);
+              acc[d] = (acc[d] ?? 0) + 1;
+              return acc;
+            },
+            { easy: 0, medium: 0, hard: 0 } as Record<Difficulty, number>
+          )
+        : undefined;
+
+    saveArResult({
+      date: new Date().toISOString(),
+      mode,
+      score,
+      total: questions.length,
+      percentage: pct,
+      timeUsedSeconds: finalTimeUsed,
+      timeExpired,
+      missedQuestionIds: missed.map((a) => a.question.id),
+      attemptDetails: answerHistory.map((a) => ({
+        questionId: a.question.id,
+        selected: a.selectedAnswer,
+        correct: a.question.correct,
+      })),
+      ...(mode === 'adaptive' && {
+        weightedScore,
+        maxWeightedScore: maxWeighted,
+        missedByDifficulty,
+      }),
+    });
+  }, [
+    phase,
+    mode,
+    score,
+    questions,
+    timeUsed,
+    secondsLeft,
+    timeExpired,
+    answerHistory,
+    weightedScore,
+  ]);
+
   const handleAnswerSelect = (optionId: OptionId) => {
     if (showFeedback || phase !== 'running') return;
     setSelectedAnswer(optionId);
@@ -258,25 +314,6 @@ export function ArithmeticReasoningPracticeTest({
             { easy: 0, medium: 0, hard: 0 } as Record<Difficulty, number>
           )
         : undefined;
-
-    if (!savedRef.current) {
-      savedRef.current = true;
-      saveArResult({
-        date: new Date().toISOString(),
-        mode,
-        score,
-        total: questions.length,
-        percentage,
-        timeUsedSeconds: finalTimeUsed,
-        timeExpired,
-        missedQuestionIds: missedQuestions.map((a) => a.question.id),
-        ...(mode === 'adaptive' && {
-          weightedScore,
-          maxWeightedScore: maxWeighted,
-          missedByDifficulty,
-        }),
-      });
-    }
 
     return (
       <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-50 p-4 md:p-8 font-sans">

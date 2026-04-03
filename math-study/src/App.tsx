@@ -171,6 +171,7 @@ function MathStudyPage() {
   const [paragraphComprehensionPracticeOpen, setParagraphComprehensionPracticeOpen] =
     useState(false);
   const [testHistoryOpen, setTestHistoryOpen] = useState(false);
+  const [testHistoryMountKey, setTestHistoryMountKey] = useState(0);
 
   const handleCategorySelect = (categoryId: string, sectionId?: string) => {
     if (!['general-science', 'arithmetic-reasoning', 'mathematics-knowledge'].includes(categoryId)) return;
@@ -194,16 +195,19 @@ function MathStudyPage() {
     if (!hash) return;
     const cat = categoryFromHash(hash);
     if (!cat) return;
-    setActiveCategory(cat);
-    writeActiveCategory(cat);
+
     const scrollTargetId = hash === 'arithmetic-reasoning' ? 'arithmetic-reasoning' : hash;
-    if ((MATH_SECTION_IDS_FOR_HASH as readonly string[]).includes(hash)) {
-      setActiveSection(hash);
-      writeMkSection(hash);
-    }
-    setTimeout(() => {
-      document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    queueMicrotask(() => {
+      setActiveCategory(cat);
+      writeActiveCategory(cat);
+      if ((MATH_SECTION_IDS_FOR_HASH as readonly string[]).includes(hash)) {
+        setActiveSection(hash);
+        writeMkSection(hash);
+      }
+      setTimeout(() => {
+        document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
@@ -303,11 +307,18 @@ function MathStudyPage() {
         onParagraphComprehensionTest={() => setParagraphComprehensionPracticeOpen(true)}
         onMathPracticeTest={() => setAsvabPracticeOpen(true)}
         onPracticeQuestion={() => setQuizOpen(true)}
-        onTestHistory={() => setTestHistoryOpen(true)}
+        onTestHistory={() => {
+          setTestHistoryMountKey((k) => k + 1);
+          setTestHistoryOpen(true);
+        }}
       />
 
       <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
-      <TestHistoryModal isOpen={testHistoryOpen} onClose={() => setTestHistoryOpen(false)} />
+      <TestHistoryModal
+        key={testHistoryMountKey}
+        isOpen={testHistoryOpen}
+        onClose={() => setTestHistoryOpen(false)}
+      />
       {asvabPracticeOpen && <AsvabPracticeTest onClose={() => setAsvabPracticeOpen(false)} />}
       {generalSciencePracticeOpen && (
         <GeneralScienceTestLauncher onClose={() => setGeneralSciencePracticeOpen(false)} />

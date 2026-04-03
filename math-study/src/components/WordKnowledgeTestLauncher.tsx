@@ -39,6 +39,7 @@ const MODES: { id: WordKnowledgeTestMode; label: string; description: string }[]
 export function WordKnowledgeTestLauncher({ onClose }: WordKnowledgeTestLauncherProps) {
   const [selectedMode, setSelectedMode] = useState<WordKnowledgeTestMode | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyMountKey, setHistoryMountKey] = useState(0);
 
   if (selectedMode) {
     return (
@@ -67,7 +68,10 @@ export function WordKnowledgeTestLauncher({ onClose }: WordKnowledgeTestLauncher
           Choose a test mode. Each fixed form has up to 35 questions and an 11-minute timer.
         </p>
         <button
-          onClick={() => setHistoryOpen(true)}
+          onClick={() => {
+            setHistoryMountKey((k) => k + 1);
+            setHistoryOpen(true);
+          }}
           className="mb-8 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white py-3 font-semibold text-slate-700 shadow-sm transition-all hover:border-violet-300 hover:bg-violet-50/50 hover:text-violet-700"
         >
           <History className="h-5 w-5" />
@@ -94,9 +98,10 @@ export function WordKnowledgeTestLauncher({ onClose }: WordKnowledgeTestLauncher
         </div>
       </div>
       <TestHistoryModal
+        key={historyMountKey}
         isOpen={historyOpen}
         onClose={() => setHistoryOpen(false)}
-        section="word-knowledge"
+        initialSection="word-knowledge"
       />
     </div>
   );
